@@ -6,7 +6,7 @@ const config: Config = {
   title: "Harbor",
   tagline:
     "Tokenize any market data. Earn yield and get protected leverage exposure.",
-  favicon: "img/WhiteHarborLogo.svg",
+  favicon: "img/logowhitenobg.png",
 
   // Set the production url of your site here
   url: "https://docs.harborfinance.io",
