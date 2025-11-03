@@ -70,7 +70,7 @@ For detailed information, explore the sections below or start with our [Technica
 - [Stability Pools](/stability-pools) - Learn about system security and yield
 - [How Yield is Generated](/yield) - Understand the yield concentration mechanism
 - [Maiden Voyage](/maiden-voyage) - How new markets are launched
-- [TIDE Token](/steam-token/overview) - Governance and incentives
+- [TIDE Token](/steam-token/overview) - Governance, incentives and claim on revenue
 - [Roadmap](/roadmap) - Protocol development plans
 - [FAQ](/faq) - Common questions and answers
 
