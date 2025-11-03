@@ -6,6 +6,21 @@ npm-debug.log*
 build/
 .docusaurus/
 
+# Old build artifacts (should not be committed)
+*.html
+sitemap.xml
+assets/
+architecture/
+faq/
+fees/
+genesis-vaults/
+risk-considerations/
+roadmap/
+stability-pools/
+steam-token/
+technical-overview/
+yield/
+
 # Cache
 .cache/
 
