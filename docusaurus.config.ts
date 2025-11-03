@@ -16,7 +16,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // Note: When using custom domain, baseUrl should be "/"
-  // organizationName and projectName are not needed for custom domain deployments
+  // organizationName and projectName are not set to avoid auto-detection of baseUrl
 
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
