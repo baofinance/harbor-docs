@@ -2,51 +2,57 @@
 sidebar_position: 1
 ---
 
-# STEAM Token Overview
+# TIDE Token Overview
 
-**STEAM** is the native governance, incentive, and revenue-sharing token of the Zhenglong ecosystem. It plays a central role in coordinating the protocol's growth, securing market health, and rewarding community participation.
+**TIDE** is the native governance and utility token of the Harbor ecosystem. It plays a central role in coordinating the protocol's growth, securing market health, and rewarding community participation.
 
 ## Overview
 
-STEAM turns users, builders, and liquidity providers into long-term stakeholders aligned with Zhenglong's success through multiple utilities:
+TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and a claim on protocol revenue.
 
-- Governance power through veSTEAM (vote-escrowed STEAM)
-- Boosting rewards in Stability Pools and liquidity provision
-- Protocol revenue sharing and redistribution
-- Control over emissions and incentives via gauge voting
-- Alignment of long-term interests with the protocol's success
+## Token Launch Strategy
+
+### Points Phase Leading to Token Launch
+
+Harbor has implemented a **12-week points accumulation period** before token launch:
+
+- **Points System**: Early participants earn points during the first 12 weeks
+- **Reduces Mercenary Farming**: No liquid token means genuine users, not short-term farmers
+- **Flexibility**: Team can adjust reward rates based on real usage data
+- **Strategic Launch**: Points-to-TIDE conversion announced strategically to maximize TVL growth
+
+This approach builds a committed community and ensures stable tokenomics at launch.
 
 ## Token Utilities
 
-### 1. Governance Power (veSTEAM)
+### 1. Governance Power
 
-STEAM holders who lock their tokens as **veSTEAM** gain the ability to:
+TIDE holders gain the ability to:
 
-- Vote on new incentivized market launches
-- Direct incentive emissions toward Stability Pools, liquidity pools, or strategic initiatives
-- Influence protocol parameters like minimum collateral ratios and fee structures
-- Direct protocol revenue
-- Participate in gauge voting to determine where incentives flow
+- Propose and vote on protocol changes and upgrades
+- Shape the future direction of Harbor
 
-The longer the STEAM is locked, the more veSTEAM is received, and the greater the governance power.
+During the early growth phase, incentive allocation is team-directed for agility, with community oversight through transparency and proposals. Long-term, Harbor will transition to a governance committee structure combining core contributors and elected community representatives.
 
-### 2. Boosted Rewards
+### 2. Stability Pool Rewards
 
-- veSTEAM holders receive **boosted returns** on Stability Pool deposits and liquidity provision
-- Lock duration affects boost multipliers - longer locks provide greater benefits
-- Enhance yields across all protocol participation
-- Access premium features and advance governance weight
+- Stability Pool participants may earn targetted TIDE rewards
+- ~75% of protocol revenue goes to stability pools
+- Team-directed incentive allocations ensure efficient capital deployment
+- Yields scale with protocol usage and adoption
 
-### 3. Revenue Sharing
+### 3. Value Accrual through Buyback & Burn
 
-- Portions of protocol revenue — including minting fees, redemption fees, and yield from yield-bearing collateral — are shared with veSTEAM lockers
-- veSTEAM holders can vote on directing fee allocation
-- Revenue increases with protocol adoption and usage
-- Provides sustainable, non-inflationary returns
+Harbor's long-term tokenomics focus on making TIDE deflationary:
 
-### 4. Gauge Voting System
+- **Pre-$10M TVL**: 25% of protocol revenue builds Protocol-Owned Liquidity (buying TIDE)
+- **Post-$10M TVL**: Treasury takes declining percentage (target: ≤5%), rest to stability pools + POL
+- **Long-term**: Once POL reaches 15% of circulating supply & Treasury owns > 30% of TIDE supplu, 25% allocation switches to buyback & burn
+- **Continuous Buy Pressure**: Protocol becomes steady TIDE buyer as revenue grows.
 
-- Governance is conducted through a **gauge voting model**
-- veSTEAM holders vote on how emissions are distributed across different Stability Pools and markets
-- Dynamically allocates incentives based on community priorities and market demand
-- Enables flexible adaptation to changing market conditions
+### 4. Protocol-Owned Liquidity (POL)
+
+- Harbor builds permanent liquidity using protocol revenue
+- Target: 15% of TIDE circulating supply paired with base assets
+- Provides stability and reduces reliance on mercenary liquidity mining
+- Creates inherent buy pressure for TIDE from protocol operations

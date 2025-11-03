@@ -3,13 +3,13 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Zhenglong",
+  title: "Harbor",
   tagline:
     "Tokenize any market data. Earn yield and get protected leverage exposure.",
-  favicon: "img/logo.svg",
+  favicon: "img/WhiteHarborLogo.svg",
 
   // Set the production url of your site here
-  url: "https://docs.zhenglong.finance",
+  url: "https://docs.harborfinance.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -40,7 +40,7 @@ const config: Config = {
           routeBasePath: "/",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/zhenglong-protocol/docs/tree/main/",
+          editUrl: "https://github.com/harbor-protocol/docs/tree/main/",
         },
         blog: false,
         theme: {
@@ -58,14 +58,13 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "./img/docusaurus-social-card.jpg",
-    favicon: "img/logo.svg",
+    favicon: "img/WhiteHarborLogo.svg",
     navbar: {
-      title: "Zhenglong",
       logo: {
-        alt: "Zhenglong Logo",
-        src: "img/logo.svg",
-        srcDark: "img/logo.svg",
-        width: 40,
+        alt: "Harbor Logo",
+        src: "img/Logowhitenobg.svg",
+        srcDark: "img/Logowhitenobg.svg",
+        width: 120,
         height: 40,
       },
       items: [
@@ -76,12 +75,12 @@ const config: Config = {
           label: "Documentation",
         },
         {
-          href: "https://github.com/zhenglong-protocol",
+          href: "https://github.com/harbor-protocol",
           label: "GitHub",
           position: "right",
         },
         {
-          href: "https://discord.gg/zhenglong",
+          href: "https://discord.com/invite/BW3P62vJXT",
           label: "Discord",
           position: "right",
         },
@@ -116,15 +115,15 @@ const config: Config = {
           items: [
             {
               label: "Discord",
-              href: "https://discord.gg/zhenglong",
+              href: "https://discord.com/invite/BW3P62vJXT",
             },
             {
-              label: "Twitter",
-              href: "https://twitter.com/zhenglong",
+              label: "Twitter/X",
+              href: "https://x.com/0xHarborFi",
             },
             {
               label: "GitHub",
-              href: "https://github.com/zhenglong-protocol",
+              href: "https://github.com/harbor-protocol",
             },
           ],
         },
@@ -133,12 +132,12 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/zhenglong-protocol",
+              href: "https://github.com/harbor-protocol",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Zhenglong. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Harbor. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

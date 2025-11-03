@@ -15,11 +15,11 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Core Features",
-      items: ["stability-pools", "yield", "genesis-vaults", "fees"],
+      items: ["stability-pools", "yield", "maiden-voyage", "fees"],
     },
     {
       type: "category",
-      label: "STEAM Token",
+      label: "TIDE Token",
       items: [
         "steam-token/overview",
         "steam-token/governance",

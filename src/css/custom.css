@@ -4,119 +4,241 @@
  * work well for content-centric websites.
  */
 
+/* Harbor Color Palette */
+:root {
+  --harbor-blue: #1E4775;
+  --harbor-coral: #FF8A7A;
+  --harbor-mint: #B8EBD5;
+  --harbor-white: #ffffff;
+}
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #4a7c59;
-  --ifm-color-primary-dark: #3a6147;
-  --ifm-color-primary-darker: #2a4635;
-  --ifm-color-primary-darkest: #1a2b23;
-  --ifm-color-primary-light: #6b9e76;
-  --ifm-color-primary-lighter: #8bc094;
-  --ifm-color-primary-lightest: #ade2b2;
+  --ifm-color-primary: #1E4775;
+  --ifm-color-primary-dark: #173d64;
+  --ifm-color-primary-darker: #123754;
+  --ifm-color-primary-darkest: #0d2b43;
+  --ifm-color-primary-light: #2a5989;
+  --ifm-color-primary-lighter: #356b9d;
+  --ifm-color-primary-lightest: #417eb1;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(30, 71, 117, 0.1);
+  
+  /* Background colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8f9fa;
+  
+  /* Navbar colors */
+  --ifm-navbar-background-color: #1E4775;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #B8EBD5;
+  
+  /* Text colors */
+  --ifm-font-color-base: #333333;
+  --ifm-heading-color: #1E4775;
+  
+  /* Footer colors */
+  --ifm-footer-background-color: #1E4775;
+  --ifm-footer-color: #ffffff;
+  --ifm-footer-link-color: rgba(255, 255, 255, 0.8);
+  --ifm-footer-link-hover-color: #B8EBD5;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #4a7c59;
-  --ifm-color-primary-dark: #3a6147;
-  --ifm-color-primary-darker: #2a4635;
-  --ifm-color-primary-darkest: #1a2b23;
-  --ifm-color-primary-light: #6b9e76;
-  --ifm-color-primary-lighter: #8bc094;
-  --ifm-color-primary-lightest: #ade2b2;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #1E4775;
+  --ifm-color-primary-dark: #173d64;
+  --ifm-color-primary-darker: #123754;
+  --ifm-color-primary-darkest: #0d2b43;
+  --ifm-color-primary-light: #2a5989;
+  --ifm-color-primary-lighter: #356b9d;
+  --ifm-color-primary-lightest: #417eb1;
+  --docusaurus-highlighted-code-line-bg: rgba(30, 71, 117, 0.3);
+  
+  /* Keep blue theme in dark mode but adjust backgrounds */
+  --ifm-background-color: #0a1220;
+  --ifm-background-surface-color: #0f1a2d;
+  --ifm-navbar-background-color: #1E4775;
 }
 
-/* Custom styles */
+/* Custom styles - Blue and White Theme */
 .navbar {
-  background-color: rgba(26, 26, 26, 0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(74, 124, 89, 0.2);
+  background-color: #1E4775;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar__brand {
-  color: var(--ifm-color-primary);
+  color: #ffffff;
 }
 
 .navbar__link {
-  color: rgba(245, 245, 245, 0.8);
+  color: #ffffff;
   transition: color 0.2s ease;
+  font-weight: 500;
 }
 
 .navbar__link:hover {
-  color: #f5f5f5;
+  color: #B8EBD5;
 }
 
+.navbar__logo {
+  margin-right: 0;
+}
+
+/* Main content area */
+.main-wrapper {
+  background-color: #ffffff;
+}
+
+/* Footer */
 .footer {
-  background-color: #1a1a1a;
-  border-top: 1px solid rgba(74, 124, 89, 0.2);
+  background-color: #1E4775;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer__link-item {
-  color: rgba(245, 245, 245, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   transition: color 0.2s ease;
 }
 
 .footer__link-item:hover {
-  color: #f5f5f5;
+  color: #B8EBD5;
 }
 
 .footer__copyright {
-  color: rgba(245, 245, 245, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
+.footer__title {
+  color: #ffffff;
+}
+
+/* Sidebar */
 .theme-doc-sidebar-container {
-  background-color: #1a1a1a;
-  border-right: 1px solid rgba(74, 124, 89, 0.2);
+  background-color: #f8f9fa;
+  border-right: 1px solid rgba(30, 71, 117, 0.1);
 }
 
 .menu__link {
-  color: rgba(245, 245, 245, 0.8);
+  color: #1E4775;
   transition: color 0.2s ease;
 }
 
 .menu__link:hover {
-  color: #f5f5f5;
+  color: #FF8A7A;
+  background-color: rgba(30, 71, 117, 0.05);
 }
 
 .menu__link--active {
-  color: var(--ifm-color-primary);
+  color: #1E4775;
+  background-color: rgba(30, 71, 117, 0.1);
+  font-weight: 600;
 }
 
+.menu__caret::before {
+  background-color: #1E4775;
+}
+
+/* Table of contents */
 .table-of-contents {
-  background-color: #1a1a1a;
-  border-left: 1px solid rgba(74, 124, 89, 0.2);
+  background-color: #f8f9fa;
+  border-left: 1px solid rgba(30, 71, 117, 0.1);
 }
 
 .table-of-contents__link {
-  color: rgba(245, 245, 245, 0.8);
+  color: #1E4775;
   transition: color 0.2s ease;
 }
 
 .table-of-contents__link:hover {
-  color: #f5f5f5;
+  color: #FF8A7A;
 }
 
 .table-of-contents__link--active {
-  color: var(--ifm-color-primary);
+  color: #1E4775;
+  font-weight: 600;
 }
 
+/* Pagination */
 .pagination-nav__link {
-  border: 1px solid rgba(74, 124, 89, 0.2);
+  border: 1px solid rgba(30, 71, 117, 0.2);
   transition: all 0.2s ease;
+  color: #1E4775;
 }
 
 .pagination-nav__link:hover {
-  border-color: var(--ifm-color-primary);
-  background-color: rgba(74, 124, 89, 0.1);
+  border-color: #1E4775;
+  background-color: rgba(30, 71, 117, 0.05);
 }
 
 .pagination-nav__label {
-  color: rgba(245, 245, 245, 0.8);
+  color: #1E4775;
 }
 
 .pagination-nav__sublabel {
-  color: var(--ifm-color-primary);
+  color: #1E4775;
+  opacity: 0.7;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #1E4775;
+}
+
+/* Body text - charcoal for readability */
+p, li, td, th, div, span {
+  color: #333333;
+}
+
+/* Links */
+a {
+  color: #1E4775;
+}
+
+a:hover {
+  color: #FF8A7A;
+}
+
+/* Code blocks */
+.prism-code {
+  background-color: #f8f9fa;
+}
+
+/* Search */
+.navbar__search-input {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar__search-input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: #B8EBD5;
+}
+
+/* Buttons */
+.button--primary {
+  background-color: #1E4775;
+  border-color: #1E4775;
+  color: #ffffff;
+}
+
+.button--primary:hover {
+  background-color: #173d64;
+  border-color: #173d64;
+}
+
+.button--secondary {
+  background-color: #FF8A7A;
+  border-color: #FF8A7A;
+  color: #ffffff;
+}
+
+.button--secondary:hover {
+  background-color: #ff7563;
+  border-color: #ff7563;
 }

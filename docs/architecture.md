@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Architecture Overview
 
-Zhenglong Protocol is built on a robust and secure architecture that enables the creation and management of synthetic assets. This document provides a high-level overview of the protocol's architecture.
+Harbor Protocol is built on a robust and secure architecture that enables the creation and management of synthetic assets. This document provides a high-level overview of the protocol's architecture.
 
 ## System Components
 
@@ -15,13 +15,13 @@ Zhenglong Protocol is built on a robust and secure architecture that enables the
 
 ### 2. Token System
 
-#### ZHE Tokens
+#### HA Tokens (Harbor Anchored)
 
 - 1:1 price with oracle price
 - Fully collateralized
 - Redeemable for underlying assets at any time
 
-#### STEAMED Tokens
+#### HS Tokens (Harbor Sail)
 
 - Variable leverage exposure
 - Liquidation protection
@@ -32,11 +32,11 @@ Zhenglong Protocol is built on a robust and secure architecture that enables the
 - Collateral management
 - Automated rebalancing
 - Yield from collateral
-- STEAM rewards distribution
+- TIDE rewards distribution
 
 ### 4. Governance System
 
-- STEAM token holders
+- TIDE token holders
 - Proposal creation and voting
 - Parameter adjustments
 - Emergency controls
@@ -54,8 +54,8 @@ Zhenglong Protocol is built on a robust and secure architecture that enables the
 
 1. Collateral yield from stETH and other yield-bearing assets
 2. Trading fees from market operations
-3. STEAM rewards for participation
-4. Boost multipliers for STEAM holders
+3. TIDE rewards for participation
+4. Boost multipliers for TIDE holders
 
 ### Risk Management
 

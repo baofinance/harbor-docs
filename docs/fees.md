@@ -6,11 +6,11 @@ sidebar_position: 6
 
 ## Dynamic Fees: Built-In Market Regulation
 
-Zhenglong uses a real-time, responsive fee system for all mints and redemptions. It works like a pressure valve:
+Harbor uses a real-time, responsive fee system for all mints and redemptions. It works like a pressure valve:
 
-- **Under normal conditions**, fees are low - maybe 0.25% for minting zheTOKENS and 1% for minting steamedTOKENS.
-- **If the system is at risk** (e.g., someone tries to mint a large amount of zheTOKENS), fees scale up in proportion to how much stress the action would cause.
-- **If the system needs help** - for example, to improve its collateral ratio - it can offer zero or even negative fees, essentially paying users to take helpful actions like minting steamedTOKENS.
+- **Under normal conditions**, fees are low - maybe 0.25% for minting haTOKENS and 1% for minting hsTOKENS.
+- **If the system is at risk** (e.g., someone tries to mint a large amount of haTOKENS), fees scale up in proportion to how much stress the action would cause.
+- **If the system needs help** - for example, to improve its collateral ratio - it can offer zero or even negative fees, essentially paying users to take helpful actions like minting hsTOKENS.
 
 ## Tiered Fee Structure
 
@@ -20,13 +20,13 @@ Fees are tiered: if a large transaction pushes the system past certain threshold
 
 This fee system creates a self-correcting market:
 
-- **If everyone wants zheTOKENS**, it becomes increasingly expensive to mint zheTOKENS and cheaper to mint steamedTOKENS, encouraging balance.
-- **If everyone wants leverage**, the opposite happens - zheTOKENS minting becomes cheaper, drawing users to the stable side.
+- **If everyone wants haTOKENS**, it becomes increasingly expensive to mint haTOKENS and cheaper to mint hsTOKENS, encouraging balance.
+- **If everyone wants leverage**, the opposite happens - haTOKENS minting becomes cheaper, drawing users to the stable side.
 - **Arbitrageurs and advanced users** will step in to exploit these dynamics, ensuring no imbalance goes unchecked.
 
 ## System Integration
 
-Together with [Stability Pools](./stability-pools) (which manage ongoing systemic risk), the dynamic fee system helps Zhenglong maintain both flexibility and robustness. User behavior is steered gently - but powerfully - through financial incentives at the entry and exit points.
+Together with [Stability Pools](./stability-pools) (which manage ongoing systemic risk), the dynamic fee system helps Harbor maintain both flexibility and robustness. User behavior is steered gently - but powerfully - through financial incentives at the entry and exit points.
 
 ## Key Benefits
 

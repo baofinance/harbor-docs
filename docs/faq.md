@@ -4,30 +4,30 @@ sidebar_position: 7
 
 # FAQ
 
-Zhenglong: Supercharged Yield. Smarter Leverage. Fully Steamed.
+Harbor: Supercharged Yield. Smarter Leverage. Set Sail.
 
 # Frequently Asked Questions
 
-Find answers to common questions about the Zhenglong Protocol.
+Find answers to common questions about the Harbor Protocol.
 
 ## General Questions
 
-### What is Zhenglong?
+### What is Harbor?
 
-Zhenglong is a decentralized platform for creating and trading synthetic assets – tokens that mirror the value of real-world or digital assets without requiring direct custody of those assets.
+Harbor is a decentralized platform for creating and trading synthetic assets – tokens that mirror the value of real-world or digital assets without requiring direct custody of those assets.
 
-### What are ZHE Tokens?
+### What are HA Tokens (Harbor Anchored)?
 
-ZHE tokens are pegged tokens that track real-world assets with 1:1 price matching. They are:
+HA tokens are pegged tokens that track real-world assets with 1:1 price matching. They are:
 
 - Fully collateralized
 - Redeemable for underlying assets
 - Available for trading 24/7
 - Zero slippage on minting and redemption
 
-### What are STEAMED Tokens?
+### What are HS Tokens (Harbor Sail)?
 
-STEAMED tokens provide:
+HS tokens provide:
 
 - Variable leverage exposure
 - Liquidation protection
@@ -43,7 +43,7 @@ Stability pools are liquidity pools that:
 - Maintain protocol stability
 - Generate yield for participants
 - Enable automated rebalancing
-- Distribute STEAM rewards
+- Distribute TIDE rewards
 
 ### How do I participate in Stability Pools?
 
@@ -67,21 +67,21 @@ Yield comes from:
 
 - Collateral token rewards
 - Trading fees
-- STEAM rewards
+- TIDE rewards
 - Boost multipliers
 
 ## Trading
 
-### How do I trade ZHE tokens?
+### How do I trade HA tokens?
 
 1. Connect your wallet
 2. Choose a trading pair
 3. Enter amount
 4. Confirm transaction
 
-### How do I trade STEAMED tokens?
+### How do I trade HS tokens?
 
-1. Select a STEAMED token
+1. Select an HS token
 2. Choose leverage level
 3. Set stop-loss
 4. Execute trade
@@ -153,9 +153,9 @@ Protection mechanisms:
 
 ## Governance
 
-### What is STEAM token?
+### What is TIDE token?
 
-STEAM is the governance token that:
+TIDE is the governance token that:
 
 - Controls protocol parameters
 - Receives protocol fees
@@ -164,7 +164,7 @@ STEAM is the governance token that:
 
 ### How do I participate in governance?
 
-1. Hold STEAM tokens
+1. Hold TIDE tokens
 2. Create proposals
 3. Vote on proposals
 4. Discuss in forums
@@ -203,6 +203,6 @@ Report through:
 Updates are available on:
 
 - Official blog
-- Twitter
-- Discord
-- GitHub
+- [Twitter/X](https://x.com/0xHarborFi)
+- [Discord](https://discord.com/invite/BW3P62vJXT)
+- [GitHub](https://github.com/harbor-protocol)

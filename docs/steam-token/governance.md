@@ -2,20 +2,49 @@
 sidebar_position: 2
 ---
 
-# Governance & veSTEAM
+# Governance & TIDE
 
-## Locking STEAM for veSTEAM
+## Governance Structure
 
-- **Maximum Lock Duration**: 1 year (12 months) is the maximum lock period
-- **Linear veSTEAM Calculation**: The amount of veSTEAM you receive increases linearly based on your lock length:
-  - 3 months lock = 0.25 veSTEAM per locked STEAM
-  - 6 months lock = 0.5 veSTEAM per locked STEAM
-  - 9 months lock = 0.75 veSTEAM per locked STEAM
-  - 12 months lock = 1 veSTEAM per locked STEAM (maximum)
-- **Voting Power**: Longer locks grant proportionally higher voting power and greater share of rewards
-- **Decaying Locks**: Lock time gradually decreases over time unless renewed
-- **Alignment Incentives**: Users who lock STEAM align their interests with the long-term health and growth of Zhenglong
+Harbor has adopted a **team-directed incentive model** for the early growth phase, prioritizing agility and efficient capital deployment while maintaining transparency and community input.
 
-### veSTEAM Lock Duration
+### Why Team-Directed Governance?
 
-The relationship between lock duration and veSTEAM received is directly proportional. Locking for the maximum duration of 12 months provides the maximum benefit of 1 veSTEAM per STEAM locked.
+- **Early-Stage Agility**: Conditions change rapidly in early protocol life. Team control enables quick adjustments to incentive programs based on performance
+- **Simplicity**: Avoids complexity of vote-escrow models, gauge voting, and bribe markets that can leak value
+- **ROI Focus**: Every TIDE emitted is treated as an investment requiring measurable returns in growth or stability
+- **Prevents Unnecessary Inflation**: Team can cut ineffective programs quickly, minimizing token dilution
+
+### Community Oversight
+
+While incentives are team-directed, Harbor maintains transparency through:
+
+- Regular reporting on incentive allocations and results
+- Community proposals and discussion forums
+- Open communication channels (Discord, governance forums)
+- Clear rationale for major decisions
+
+### Long-Term Evolution
+
+As Harbor matures, governance will transition to a **governance committee model**:
+
+- Combines core contributors with elected community representatives
+- Provides oversight of treasury and token usage
+- Maintains responsible stewardship of TIDE supply
+- Ensures community voice while preserving execution efficiency
+
+## TIDE Holder Rights
+
+TIDE holders can:
+
+- **Propose Protocol Changes**: Submit proposals for community discussion
+- **Vote on Major Decisions**: Participate in governance votes on significant protocol upgrades
+- **Participate in Discussions**: Shape protocol direction through active community engagement
+- **Treasury Oversight**: Provide input on treasury usage and strategic initiatives
+
+## Alignment Incentives
+
+- TIDE holders benefit from protocol growth through buyback & burn mechanism
+- Long-term holders accumulate value as protocol revenue increases
+- Treasury maintains ≥30% TIDE holdings for sustainability
+- Team interests aligned with token holders through founder allocations

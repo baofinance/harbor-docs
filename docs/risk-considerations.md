@@ -4,13 +4,13 @@ sidebar_position: 4
 
 # Risk Considerations
 
-While Zhenglong is designed with security as a top priority, it's important for users to understand the potential risks involved. This document outlines the key risks to be aware of when interacting with the protocol.
+While Harbor is designed with security as a top priority, it's important for users to understand the potential risks involved. This document outlines the key risks to be aware of when interacting with the protocol.
 
 ## System Risks
 
 ### Black Swan Scenarios
 
-Despite its safeguards, Zhenglong cannot guarantee perfect outcomes under **severe and sustained market duress**. We transparently highlight edge-case risks.
+Despite its safeguards, Harbor cannot guarantee perfect outcomes under **severe and sustained market duress**. We transparently highlight edge-case risks.
 
 #### Stability Pool Drain Risk
 
@@ -31,22 +31,22 @@ If the Stability Pool is exhausted and further rebalancing is needed, the protoc
 
 In this state:
 
-- **Pegged tokens (zheTokens)** are no longer fully backed by $1 of collateral
+- **Pegged tokens (haTokens)** are no longer fully backed by $1 of collateral
 - They begin to **float freely** and effectively **peg to the collateral value**
 - The system continues to function, but:
-  - **zheTokens become partially collateralized**, priced by market expectations of recovery
-  - **SteamedTokens drop to $0**, as they represent the residual risk buffer — now exhausted
+  - **haTokens become partially collateralized**, priced by market expectations of recovery
+  - **hsTokens drop to $0**, as they represent the residual risk buffer — now exhausted
 
 This is the protocol's **graceful degradation mode**, which ensures fairness and ongoing composability — rather than hard shutdowns or arbitrary halts.
 
 ### Post-Stress Recovery Path
 
-If Zhenglong's global **collateralization ratio drops below 100%**, the system enters a **distressed mode** where it remains fully functional, but with different economic behavior:
+If Harbor's global **collateralization ratio drops below 100%**, the system enters a **distressed mode** where it remains fully functional, but with different economic behavior:
 
-- **Pegged tokens (zheTokens)** are backed by the proportional value of the remaining collateral
+- **Pegged tokens (haTokens)** are backed by the proportional value of the remaining collateral
 - Recovery depends on:
-  - **Organic market dynamics**: As confidence returns and zheTokens appreciate toward $1
-  - **Protocol incentives**: STEAM rewards redirected to recapitalize the Stability Pool
+  - **Organic market dynamics**: As confidence returns and haTokens appreciate toward $1
+  - **Protocol incentives**: TIDE rewards redirected to recapitalize the Stability Pool
   - **Governance intervention**: Community measures to raise system health
 
 ## Smart Contract Risks
@@ -89,7 +89,7 @@ Despite audits and security measures, smart contracts may contain:
 
 ## Prevention and Defense Layers
 
-Zhenglong is designed to minimize the likelihood of ever reaching critical states, through:
+Harbor is designed to minimize the likelihood of ever reaching critical states, through:
 
 ### Conservative Collateral Thresholds
 
@@ -114,14 +114,14 @@ Using advanced blockchain analytics, the protocol continuously scans for:
 ### 1. Diversification
 
 - Spread exposure across multiple protocol positions
-- Use both Collateral and Steamed pools
-- Consider balancing zheToken and steamedToken holdings
+- Use both Collateral and Sail pools
+- Consider balancing haToken and hsToken holdings
 
 ### 2. Position Sizing
 
 - Only commit funds you can afford to lose in worst-case scenarios
 - Scale exposure based on your risk tolerance
-- Consider the correlation of Zhenglong positions with your other investments
+- Consider the correlation of Harbor positions with your other investments
 
 ### 3. Active Monitoring
 
@@ -137,6 +137,6 @@ Using advanced blockchain analytics, the protocol continuously scans for:
 
 ## Conclusion
 
-While Zhenglong incorporates multiple safeguards and is designed for resilience, users should maintain awareness of these risks and make informed decisions based on their individual risk tolerance. The protocol's transparent approach to risk disclosure and graceful degradation mechanisms aims to provide users with both protection and clarity.
+While Harbor incorporates multiple safeguards and is designed for resilience, users should maintain awareness of these risks and make informed decisions based on their individual risk tolerance. The protocol's transparent approach to risk disclosure and graceful degradation mechanisms aims to provide users with both protection and clarity.
 
-No DeFi protocol can guarantee zero risk, but Zhenglong's focus on risk management, transparent mechanisms, and community governance provides a foundation for responsible participation in synthetic assets.
+No DeFi protocol can guarantee zero risk, but Harbor's focus on risk management, transparent mechanisms, and community governance provides a foundation for responsible participation in synthetic assets.
