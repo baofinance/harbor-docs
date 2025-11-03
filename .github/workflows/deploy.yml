@@ -31,9 +31,7 @@ jobs:
         run: npm ci
 
       - name: Build website
-        env:
-          BASE_URL: /
-        run: npm run build
+        run: npm run build -- --base-url /
 
       - name: Copy CNAME to build directory
         run: cp CNAME build/CNAME

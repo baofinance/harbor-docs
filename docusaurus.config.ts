@@ -12,12 +12,11 @@ const config: Config = {
   url: "https://docs.harborfinance.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.NODE_ENV === 'production' && process.env.GITHUB_REPOSITORY ? '/harbor-docs/' : '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "baofinance", // Your GitHub org/user name.
-  projectName: "Zhenglong-Docs", // Your repo name.
+  // Note: When using custom domain, baseUrl should be "/"
+  // organizationName and projectName are not needed for custom domain deployments
 
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
