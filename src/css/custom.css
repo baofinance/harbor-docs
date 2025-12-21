@@ -6,15 +6,15 @@
 
 /* Harbor Color Palette */
 :root {
-  --harbor-blue: #1E4775;
-  --harbor-coral: #FF8A7A;
-  --harbor-mint: #B8EBD5;
+  --harbor-blue: #1e4775;
+  --harbor-coral: #ff8a7a;
+  --harbor-mint: #b8ebd5;
   --harbor-white: #ffffff;
 }
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #1E4775;
+  --ifm-color-primary: #1e4775;
   --ifm-color-primary-dark: #173d64;
   --ifm-color-primary-darker: #123754;
   --ifm-color-primary-darkest: #0d2b43;
@@ -23,30 +23,30 @@
   --ifm-color-primary-lightest: #417eb1;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(30, 71, 117, 0.1);
-  
+
   /* Background colors */
   --ifm-background-color: #ffffff;
   --ifm-background-surface-color: #f8f9fa;
-  
+
   /* Navbar colors */
-  --ifm-navbar-background-color: #1E4775;
+  --ifm-navbar-background-color: #1e4775;
   --ifm-navbar-link-color: #ffffff;
-  --ifm-navbar-link-hover-color: #B8EBD5;
-  
+  --ifm-navbar-link-hover-color: #b8ebd5;
+
   /* Text colors */
   --ifm-font-color-base: #333333;
-  --ifm-heading-color: #1E4775;
-  
+  --ifm-heading-color: #1e4775;
+
   /* Footer colors */
-  --ifm-footer-background-color: #1E4775;
+  --ifm-footer-background-color: #1e4775;
   --ifm-footer-color: #ffffff;
   --ifm-footer-link-color: rgba(255, 255, 255, 0.8);
-  --ifm-footer-link-hover-color: #B8EBD5;
+  --ifm-footer-link-hover-color: #b8ebd5;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #1E4775;
+  --ifm-color-primary: #1e4775;
   --ifm-color-primary-dark: #173d64;
   --ifm-color-primary-darker: #123754;
   --ifm-color-primary-darkest: #0d2b43;
@@ -54,16 +54,16 @@
   --ifm-color-primary-lighter: #356b9d;
   --ifm-color-primary-lightest: #417eb1;
   --docusaurus-highlighted-code-line-bg: rgba(30, 71, 117, 0.3);
-  
+
   /* Keep blue theme in dark mode but adjust backgrounds */
   --ifm-background-color: #0a1220;
   --ifm-background-surface-color: #0f1a2d;
-  --ifm-navbar-background-color: #1E4775;
+  --ifm-navbar-background-color: #1e4775;
 }
 
 /* Custom styles - Blue and White Theme */
 .navbar {
-  background-color: #1E4775;
+  background-color: #1e4775;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .navbar__link:hover {
-  color: #B8EBD5;
+  color: #b8ebd5;
 }
 
 .navbar__logo {
@@ -92,7 +92,7 @@
 
 /* Footer */
 .footer {
-  background-color: #1E4775;
+  background-color: #1e4775;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -102,7 +102,7 @@
 }
 
 .footer__link-item:hover {
-  color: #B8EBD5;
+  color: #b8ebd5;
 }
 
 .footer__copyright {
@@ -120,23 +120,23 @@
 }
 
 .menu__link {
-  color: #1E4775;
+  color: #1e4775;
   transition: color 0.2s ease;
 }
 
 .menu__link:hover {
-  color: #FF8A7A;
+  color: #ff8a7a;
   background-color: rgba(30, 71, 117, 0.05);
 }
 
 .menu__link--active {
-  color: #1E4775;
+  color: #1e4775;
   background-color: rgba(30, 71, 117, 0.1);
   font-weight: 600;
 }
 
 .menu__caret::before {
-  background-color: #1E4775;
+  background-color: #1e4775;
 }
 
 /* Table of contents */
@@ -146,16 +146,16 @@
 }
 
 .table-of-contents__link {
-  color: #1E4775;
+  color: #1e4775;
   transition: color 0.2s ease;
 }
 
 .table-of-contents__link:hover {
-  color: #FF8A7A;
+  color: #ff8a7a;
 }
 
 .table-of-contents__link--active {
-  color: #1E4775;
+  color: #1e4775;
   font-weight: 600;
 }
 
@@ -163,40 +163,50 @@
 .pagination-nav__link {
   border: 1px solid rgba(30, 71, 117, 0.2);
   transition: all 0.2s ease;
-  color: #1E4775;
+  color: #1e4775;
 }
 
 .pagination-nav__link:hover {
-  border-color: #1E4775;
+  border-color: #1e4775;
   background-color: rgba(30, 71, 117, 0.05);
 }
 
 .pagination-nav__label {
-  color: #1E4775;
+  color: #1e4775;
 }
 
 .pagination-nav__sublabel {
-  color: #1E4775;
+  color: #1e4775;
   opacity: 0.7;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #1E4775;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1e4775;
 }
 
 /* Body text - charcoal for readability */
-p, li, td, th, div, span {
+p,
+li,
+td,
+th,
+div,
+span {
   color: #333333;
 }
 
 /* Links */
 a {
-  color: #1E4775;
+  color: #1e4775;
 }
 
 a:hover {
-  color: #FF8A7A;
+  color: #ff8a7a;
 }
 
 /* Code blocks */
@@ -217,13 +227,41 @@ a:hover {
 
 .navbar__search-input:focus {
   background-color: rgba(255, 255, 255, 0.3);
-  border-color: #B8EBD5;
+  border-color: #b8ebd5;
+}
+
+/* Mobile Menu (Navbar Sidebar) */
+.navbar-sidebar {
+  background-color: #1e4775;
+}
+
+.navbar-sidebar .menu__link {
+  color: #ffffff !important;
+}
+
+.navbar-sidebar .menu__link:hover {
+  color: #b8ebd5 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-sidebar .menu__link--active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+
+.navbar-sidebar .menu__caret::before {
+  background-color: #ffffff;
+}
+
+.navbar-sidebar .menu__list-item-collapsible .menu__link {
+  color: #ffffff !important;
 }
 
 /* Buttons */
 .button--primary {
-  background-color: #1E4775;
-  border-color: #1E4775;
+  background-color: #1e4775;
+  border-color: #1e4775;
   color: #ffffff;
 }
 
@@ -233,8 +271,8 @@ a:hover {
 }
 
 .button--secondary {
-  background-color: #FF8A7A;
-  border-color: #FF8A7A;
+  background-color: #ff8a7a;
+  border-color: #ff8a7a;
   color: #ffffff;
 }
 
