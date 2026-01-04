@@ -205,4 +205,4 @@ Updates are available on:
 - Official blog
 - [Twitter/X](https://x.com/0xHarborFi)
 - [Discord](https://discord.com/invite/BW3P62vJXT)
-- [GitHub](https://github.com/harbor-protocol)
+- [GitHub](https://github.com/baofinance/)

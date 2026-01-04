@@ -39,7 +39,7 @@ const config: Config = {
           routeBasePath: "/",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/harbor-protocol/docs/tree/main/",
+          editUrl: "https://github.com/baofinance/harbor/tree/main/",
         },
         blog: false,
         theme: {
@@ -74,7 +74,7 @@ const config: Config = {
           label: "Documentation",
         },
         {
-          href: "https://github.com/harbor-protocol",
+          href: "https://github.com/baofinance/",
           label: "GitHub",
           position: "right",
         },
@@ -122,7 +122,7 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/harbor-protocol",
+              href: "https://github.com/baofinance/",
             },
           ],
         },
@@ -131,7 +131,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/harbor-protocol",
+              href: "https://github.com/baofinance/",
             },
           ],
         },
