@@ -49,6 +49,23 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "tech-docs",
+        path: "tech-docs",
+        routeBasePath: "tech-docs",
+        sidebarPath: "./sidebars-tech.ts",
+        editUrl: "https://github.com/baofinance/harbor/tree/main/",
+        remarkPlugins: [],
+        rehypePlugins: [],
+      },
+    ],
+  ],
+
+  themes: ["@docusaurus/theme-mermaid"],
+
   // Add port configuration
   customFields: {
     port: 3001,
@@ -72,6 +89,13 @@ const config: Config = {
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Documentation",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "techDocsSidebar",
+          docsPluginId: "tech-docs",
+          position: "left",
+          label: "Tech Documentation",
         },
         {
           href: "https://github.com/baofinance/",
@@ -141,6 +165,15 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    mermaid: {
+      theme: { light: "default", dark: "dark" },
+      options: {
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+        },
+      },
     },
   } satisfies Preset.ThemeConfig,
 };
