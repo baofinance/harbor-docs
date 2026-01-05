@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-tech-docs docs-version-current docs-doc-page docs-doc-id-contracts/reward-system" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Reward System Contracts | Harbor</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.harborfinance.io/./img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.harborfinance.io/./img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.harborfinance.io/tech-docs/contracts/reward-system"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-tech-docs-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-tech-docs-current"><meta data-rh="true" property="og:title" content="Reward System Contracts | Harbor"><meta data-rh="true" name="description" content="The Harbor Protocol reward system consists of multiple contracts working together to distribute rewards efficiently and fairly, even when staking balances decrease unexpectedly."><meta data-rh="true" property="og:description" content="The Harbor Protocol reward system consists of multiple contracts working together to distribute rewards efficiently and fairly, even when staking balances decrease unexpectedly."><link data-rh="true" rel="icon" href="/img/logowhitenobg.png"><link data-rh="true" rel="canonical" href="https://docs.harborfinance.io/tech-docs/contracts/reward-system"><link data-rh="true" rel="alternate" href="https://docs.harborfinance.io/tech-docs/contracts/reward-system" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.harborfinance.io/tech-docs/contracts/reward-system" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.16999d40.css">
+<script src="/assets/js/runtime~main.8767b190.js" defer="defer"></script>
+<script src="/assets/js/main.5174d79e.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/Logowhitenobg.svg" alt="Harbor Logo" class="themedComponent_mlkZ themedComponent--light_NVdE" height="40" width="120"><img src="/img/Logowhitenobg.svg" alt="Harbor Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU" height="40" width="120"></div></a><a class="navbar__item navbar__link" href="/">Documentation</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tech-docs/">Tech Documentation</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/baofinance/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://discord.com/invite/BW3P62vJXT" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbarSearchContainer_Bca1"></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tech-docs/">Overview</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tech-docs/contracts/minter">Contracts</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/minter">Minter Contract</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/stability-pool-manager">Stability Pool Manager Contract</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/stability-pool">Stability Pool Contract</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/genesis">Genesis Contract</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/reserve-pool">Reserve Pool Contract</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/price-oracle">Price Oracle Contracts (Harbor Aggregators)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tech-docs/contracts/fee-receiver">Fee Receiver Contract (TokenDistributor)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tech-docs/contracts/reward-system">Reward System Contracts</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tech-docs/markets/eth-fxsave">Markets</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tech-docs/process-flows/contract-architecture">Process Flows</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Contracts</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Reward System Contracts</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Reward System Contracts</h1></header>
+<p>The Harbor Protocol reward system consists of multiple contracts working together to distribute rewards efficiently and fairly, even when staking balances decrease unexpectedly.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>The reward system is built on two main components:</p>
+<ol>
+<li><strong>LinearMultipleRewardDistributor</strong>: Handles linear distribution of rewards over time periods</li>
+<li><strong>MultipleRewardCompoundingAccumulator</strong>: Tracks and compounds rewards based on user shares</li>
+</ol>
+<p>StabilityPool contracts inherit from <code>MultipleRewardCompoundingAccumulator</code>, which inherits from <code>LinearMultipleRewardDistributor</code>, combining both functionalities.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="architecture">Architecture<a href="#architecture" class="hash-link" aria-label="Direct link to Architecture" title="Direct link to Architecture">​</a></h2>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">StabilityPool_v1</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓ inherits</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">MultipleRewardCompoundingAccumulator</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ↓ inherits</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">LinearMultipleRewardDistributor</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="linearmultiplerewarddistributor">LinearMultipleRewardDistributor<a href="#linearmultiplerewarddistributor" class="hash-link" aria-label="Direct link to LinearMultipleRewardDistributor" title="Direct link to LinearMultipleRewardDistributor">​</a></h2>
+<p>The base contract that manages linear reward distribution over configurable time periods.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-features">Key Features<a href="#key-features" class="hash-link" aria-label="Direct link to Key Features" title="Direct link to Key Features">​</a></h3>
+<ul>
+<li><strong>Multiple Reward Tokens</strong>: Supports multiple reward token types simultaneously</li>
+<li><strong>Linear Distribution</strong>: Distributes rewards linearly over a period (or immediately if period is 0)</li>
+<li><strong>Period Management</strong>: Configurable period length (0 = immediate, 1-28 days = linear)</li>
+<li><strong>Token Registration</strong>: Active and historical reward token tracking</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="immutable-configuration">Immutable Configuration<a href="#immutable-configuration" class="hash-link" aria-label="Direct link to Immutable Configuration" title="Direct link to Immutable Configuration">​</a></h3>
+<ul>
+<li><strong>REWARD_MANAGER_ROLE</strong>: Role for managing reward tokens (register/unregister)</li>
+<li><strong>REWARD_DEPOSITOR_ROLE</strong>: Role for depositing rewards</li>
+<li><strong>REWARD_PERIOD_LENGTH</strong>: Length of reward distribution period in seconds<!-- -->
+<ul>
+<li><code>0</code>: Immediate distribution (no linear ramp)</li>
+<li><code>1 day</code> to <code>28 days</code>: Linear distribution over period</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-functions">Key Functions<a href="#key-functions" class="hash-link" aria-label="Direct link to Key Functions" title="Direct link to Key Functions">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reward-token-management">Reward Token Management<a href="#reward-token-management" class="hash-link" aria-label="Direct link to Reward Token Management" title="Direct link to Reward Token Management">​</a></h4>
+<ul>
+<li><code>registerRewardToken(address token)</code> - Registers a new reward token (REWARD_MANAGER_ROLE)</li>
+<li><code>unregisterRewardToken(address token)</code> - Unregisters a reward token (moves to historical)</li>
+<li><code>activeRewardTokens() returns (address[])</code> - Returns list of active reward tokens</li>
+<li><code>historicalRewardTokens() returns (address[])</code> - Returns list of historical reward tokens</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reward-distribution">Reward Distribution<a href="#reward-distribution" class="hash-link" aria-label="Direct link to Reward Distribution" title="Direct link to Reward Distribution">​</a></h4>
+<ul>
+<li><code>depositReward(address token, uint256 amount)</code> - Deposits rewards for distribution (REWARD_DEPOSITOR_ROLE)<!-- -->
+<ul>
+<li>Transfers tokens from caller to contract</li>
+<li>Distributes pending rewards from previous period</li>
+<li>Notifies new rewards (immediate or linear based on period length)</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="view-functions">View Functions<a href="#view-functions" class="hash-link" aria-label="Direct link to View Functions" title="Direct link to View Functions">​</a></h4>
+<ul>
+<li><code>rewardData(address token) returns (uint256 lastUpdate, uint256 finishAt, uint256 rate, uint256 queued)</code> - Returns reward distribution data</li>
+<li><code>pendingRewards(address token) returns (uint256 distributable, uint256 undistributed)</code> - Returns pending reward amounts</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="linear-distribution-mechanism">Linear Distribution Mechanism<a href="#linear-distribution-mechanism" class="hash-link" aria-label="Direct link to Linear Distribution Mechanism" title="Direct link to Linear Distribution Mechanism">​</a></h3>
+<p>When <code>REWARD_PERIOD_LENGTH &gt; 0</code>, rewards are distributed linearly:</p>
+<ol>
+<li><strong>Reward Rate</strong>: <code>rate = totalRewards / periodLength</code> (rewards per second)</li>
+<li><strong>Distribution</strong>: Rewards accumulate at constant rate over the period</li>
+<li><strong>Period Management</strong>:<!-- -->
+<ul>
+<li>If new rewards ≥ 90% of current period&#x27;s distributed amount → Start new period</li>
+<li>If new rewards &lt; 90% → Queue for next period</li>
+</ul>
+</li>
+<li><strong>Queued Rewards</strong>: Rounding errors and small amounts are queued for next period</li>
+</ol>
+<p>When <code>REWARD_PERIOD_LENGTH == 0</code>, rewards are distributed immediately.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="multiplerewardcompoundingaccumulator">MultipleRewardCompoundingAccumulator<a href="#multiplerewardcompoundingaccumulator" class="hash-link" aria-label="Direct link to MultipleRewardCompoundingAccumulator" title="Direct link to MultipleRewardCompoundingAccumulator">​</a></h2>
+<p>Extends the linear distributor with compounding reward tracking that handles stake decreases.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-features-1">Key Features<a href="#key-features-1" class="hash-link" aria-label="Direct link to Key Features" title="Direct link to Key Features">​</a></h3>
+<ul>
+<li><strong>O(1) Complexity</strong>: Reward calculations are constant time regardless of time elapsed</li>
+<li><strong>Stake Decrease Handling</strong>: Correctly handles proportional stake decreases (e.g., from rebalancing)</li>
+<li><strong>Multiple Reward Tokens</strong>: Supports multiple reward tokens simultaneously</li>
+<li><strong>Precision Preservation</strong>: Uses floating-point representation to prevent precision loss</li>
+<li><strong>Epoch System</strong>: Handles cases where total supply reduces to zero</li>
+<li><strong>Custom Receivers</strong>: Users can set custom reward receiver addresses</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mathematical-model">Mathematical Model<a href="#mathematical-model" class="hash-link" aria-label="Direct link to Mathematical Model" title="Direct link to Mathematical Model">​</a></h3>
+<p>The accumulator uses a sophisticated mathematical model based on Liquity&#x27;s StabilityPool paper:</p>
+<p><strong>Key Variables:</strong></p>
+<ul>
+<li><code>s[i]</code>: Total pool stakes after event i</li>
+<li><code>u[i]</code>: User&#x27;s personal stakes after event i</li>
+<li><code>d[i]</code>: Amount of total stake decrease in event i</li>
+<li><code>r[i]</code>: Amount of rewards distributed in event i</li>
+<li><code>p[i]</code>: Product factor tracking stake decreases</li>
+</ul>
+<p><strong>Stake Decrease Formula:</strong></p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">u[n] = u[0] * (1 - d[1]/s[0]) * (1 - d[2]/s[1]) * ... * (1 - d[n]/s[n-1])</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><strong>Reward Accumulation:</strong></p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">g[n] = u[0] * (r[1] * p[0]/s[0] + r[2] * p[1]/s[1] + ... + r[n] * p[n-1]/s[n-1])</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="storage-structures">Storage Structures<a href="#storage-structures" class="hash-link" aria-label="Direct link to Storage Structures" title="Direct link to Storage Structures">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="rewardsnapshot">RewardSnapshot<a href="#rewardsnapshot" class="hash-link" aria-label="Direct link to RewardSnapshot" title="Direct link to RewardSnapshot">​</a></h4>
+<ul>
+<li><code>timestamp</code>: When snapshot was taken</li>
+<li><code>integral</code>: Accumulated reward integral value</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="claimdata">ClaimData<a href="#claimdata" class="hash-link" aria-label="Direct link to ClaimData" title="Direct link to ClaimData">​</a></h4>
+<ul>
+<li><code>pending</code>: Pending rewards not yet claimed</li>
+<li><code>claimed</code>: Total rewards claimed by user</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="userrewardsnapshot">UserRewardSnapshot<a href="#userrewardsnapshot" class="hash-link" aria-label="Direct link to UserRewardSnapshot" title="Direct link to UserRewardSnapshot">​</a></h4>
+<ul>
+<li><code>rewards</code>: ClaimData for the user</li>
+<li><code>checkpoint</code>: RewardSnapshot for the user</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-functions-1">Key Functions<a href="#key-functions-1" class="hash-link" aria-label="Direct link to Key Functions" title="Direct link to Key Functions">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="checkpointing">Checkpointing<a href="#checkpointing" class="hash-link" aria-label="Direct link to Checkpointing" title="Direct link to Checkpointing">​</a></h4>
+<ul>
+<li><code>checkpoint(address account)</code> - Updates global and user reward snapshots<!-- -->
+<ul>
+<li>Distributes pending linear rewards</li>
+<li>Updates user&#x27;s reward integrals</li>
+<li>Calculates pending rewards for user</li>
+<li>Called automatically on deposit/withdraw/claim</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="claiming-rewards">Claiming Rewards<a href="#claiming-rewards" class="hash-link" aria-label="Direct link to Claiming Rewards" title="Direct link to Claiming Rewards">​</a></h4>
+<ul>
+<li><code>claim()</code> - Claims all active reward tokens for msg.sender</li>
+<li><code>claim(address account)</code> - Claims all active reward tokens for account</li>
+<li><code>claim(address account, address receiver)</code> - Claims and sends to receiver</li>
+<li><code>claimHistorical(address[] tokens)</code> - Claims specific historical tokens</li>
+<li><code>claimHistorical(address account, address[] tokens)</code> - Claims historical tokens for account</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="reward-receiver">Reward Receiver<a href="#reward-receiver" class="hash-link" aria-label="Direct link to Reward Receiver" title="Direct link to Reward Receiver">​</a></h4>
+<ul>
+<li><code>setRewardReceiver(address newReceiver)</code> - Sets custom receiver for rewards</li>
+<li><code>rewardReceiver(address account) returns (address)</code> - Returns receiver address (or account if not set)</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="view-functions-1">View Functions<a href="#view-functions-1" class="hash-link" aria-label="Direct link to View Functions" title="Direct link to View Functions">​</a></h4>
+<ul>
+<li><code>claimable(address account, address token) returns (uint256)</code> - Returns claimable reward amount</li>
+<li><code>claimed(address account, address token) returns (uint256)</code> - Returns total claimed amount</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="precision-handling">Precision Handling<a href="#precision-handling" class="hash-link" aria-label="Direct link to Precision Handling" title="Direct link to Precision Handling">​</a></h3>
+<p>The system uses <strong>DecrementalFloatingPoint</strong> to handle precision:</p>
+<ul>
+<li><strong>Magnitude</strong>: The significant digits (stored as uint128)</li>
+<li><strong>Exponent</strong>: The scale factor (stored as uint8)</li>
+<li><strong>Format</strong>: <code>value = magnitude × 10^(-18 - 9×exponent)</code></li>
+<li><strong>Scaling</strong>: When magnitude &lt; 10^9, multiply by 1e9 and increment exponent</li>
+</ul>
+<p>This prevents precision loss when stakes decrease significantly over time.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="epoch-system">Epoch System<a href="#epoch-system" class="hash-link" aria-label="Direct link to Epoch System" title="Direct link to Epoch System">​</a></h3>
+<p>When total supply reduces to zero, a new epoch starts:</p>
+<ul>
+<li>Previous epoch&#x27;s integrals are preserved</li>
+<li>New epoch begins with fresh calculations</li>
+<li>Users can claim rewards from previous epochs</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="integration-with-stabilitypool">Integration with StabilityPool<a href="#integration-with-stabilitypool" class="hash-link" aria-label="Direct link to Integration with StabilityPool" title="Direct link to Integration with StabilityPool">​</a></h2>
+<p>StabilityPool inherits from MultipleRewardCompoundingAccumulator, providing:</p>
+<ol>
+<li><strong>Automatic Checkpointing</strong>: Called on deposit/withdraw operations</li>
+<li><strong>Reward Accumulation</strong>: Rebalance proceeds accumulate as rewards via <code>_accumulateReward()</code></li>
+<li><strong>Balance Compounding</strong>: User balances compound based on product factors</li>
+<li><strong>Reward Distribution</strong>: Harvested yield distributed via <code>depositReward()</code></li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reward-flow">Reward Flow<a href="#reward-flow" class="hash-link" aria-label="Direct link to Reward Flow" title="Direct link to Reward Flow">​</a></h3>
+<ol>
+<li><strong>Reward Deposit</strong>: StabilityPoolManager calls <code>depositReward(token, amount)</code> on StabilityPool</li>
+<li><strong>Linear Distribution</strong>: If period &gt; 0, rewards distribute linearly over time</li>
+<li><strong>Accumulation</strong>: Rewards accumulate into global integrals based on current product</li>
+<li><strong>User Checkpoint</strong>: When user deposits/withdraws/claims, checkpoint updates their rewards</li>
+<li><strong>Claiming</strong>: Users claim rewards, which are transferred to their receiver address</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="roles">Roles<a href="#roles" class="hash-link" aria-label="Direct link to Roles" title="Direct link to Roles">​</a></h2>
+<ul>
+<li><strong>REWARD_MANAGER_ROLE</strong>: Can register/unregister reward tokens</li>
+<li><strong>REWARD_DEPOSITOR_ROLE</strong>: Can deposit rewards (typically StabilityPoolManager)</li>
+<li><strong>Users</strong>: Can claim rewards and set custom receivers</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases">Use Cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use Cases" title="Direct link to Use Cases">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="immediate-distribution-period--0">Immediate Distribution (Period = 0)<a href="#immediate-distribution-period--0" class="hash-link" aria-label="Direct link to Immediate Distribution (Period = 0)" title="Direct link to Immediate Distribution (Period = 0)">​</a></h3>
+<ul>
+<li>Rewards distributed instantly when deposited</li>
+<li>Useful for rebalance rewards</li>
+<li>No queuing or linear ramp</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="linear-distribution-period--0">Linear Distribution (Period &gt; 0)<a href="#linear-distribution-period--0" class="hash-link" aria-label="Direct link to Linear Distribution (Period &gt; 0)" title="Direct link to Linear Distribution (Period &gt; 0)">​</a></h3>
+<ul>
+<li>Rewards distributed over time period</li>
+<li>Smooths out reward rates</li>
+<li>Prevents sudden APR changes</li>
+<li>Useful for TIDE token incentives</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stake-decreases">Stake Decreases<a href="#stake-decreases" class="hash-link" aria-label="Direct link to Stake Decreases" title="Direct link to Stake Decreases">​</a></h3>
+<ul>
+<li>Handles rebalancing correctly</li>
+<li>User stakes decrease proportionally</li>
+<li>Rewards calculated fairly despite decreases</li>
+<li>No need to update all users individually</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="security-considerations">Security Considerations<a href="#security-considerations" class="hash-link" aria-label="Direct link to Security Considerations" title="Direct link to Security Considerations">​</a></h2>
+<ul>
+<li>Reentrancy protection on all mutating functions</li>
+<li>Precision-preserving calculations prevent rounding errors</li>
+<li>Epoch system handles edge cases (zero supply)</li>
+<li>Custom receivers allow delegation</li>
+<li>Historical token tracking for auditing</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="events">Events<a href="#events" class="hash-link" aria-label="Direct link to Events" title="Direct link to Events">​</a></h2>
+<ul>
+<li><code>DepositReward(address indexed token, uint256 amount)</code> - Rewards deposited</li>
+<li><code>RegisterRewardToken(address indexed token)</code> - Token registered</li>
+<li><code>UnregisterRewardToken(address indexed token)</code> - Token unregistered</li>
+<li><code>Claim(address indexed account, address indexed token, address indexed receiver, uint256 amount)</code> - Rewards claimed</li>
+<li><code>UpdateRewardReceiver(address indexed account, address indexed oldReceiver, address indexed newReceiver)</code> - Receiver updated</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/baofinance/harbor/tree/main/tech-docs/contracts/reward-system.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/tech-docs/contracts/fee-receiver"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Fee Receiver Contract (TokenDistributor)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tech-docs/markets/eth-fxsave"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ETH/fxUSD Market</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#architecture" class="table-of-contents__link toc-highlight">Architecture</a></li><li><a href="#linearmultiplerewarddistributor" class="table-of-contents__link toc-highlight">LinearMultipleRewardDistributor</a><ul><li><a href="#key-features" class="table-of-contents__link toc-highlight">Key Features</a></li><li><a href="#immutable-configuration" class="table-of-contents__link toc-highlight">Immutable Configuration</a></li><li><a href="#key-functions" class="table-of-contents__link toc-highlight">Key Functions</a></li><li><a href="#linear-distribution-mechanism" class="table-of-contents__link toc-highlight">Linear Distribution Mechanism</a></li></ul></li><li><a href="#multiplerewardcompoundingaccumulator" class="table-of-contents__link toc-highlight">MultipleRewardCompoundingAccumulator</a><ul><li><a href="#key-features-1" class="table-of-contents__link toc-highlight">Key Features</a></li><li><a href="#mathematical-model" class="table-of-contents__link toc-highlight">Mathematical Model</a></li><li><a href="#storage-structures" class="table-of-contents__link toc-highlight">Storage Structures</a></li><li><a href="#key-functions-1" class="table-of-contents__link toc-highlight">Key Functions</a></li><li><a href="#precision-handling" class="table-of-contents__link toc-highlight">Precision Handling</a></li><li><a href="#epoch-system" class="table-of-contents__link toc-highlight">Epoch System</a></li></ul></li><li><a href="#integration-with-stabilitypool" class="table-of-contents__link toc-highlight">Integration with StabilityPool</a><ul><li><a href="#reward-flow" class="table-of-contents__link toc-highlight">Reward Flow</a></li></ul></li><li><a href="#roles" class="table-of-contents__link toc-highlight">Roles</a></li><li><a href="#use-cases" class="table-of-contents__link toc-highlight">Use Cases</a><ul><li><a href="#immediate-distribution-period--0" class="table-of-contents__link toc-highlight">Immediate Distribution (Period = 0)</a></li><li><a href="#linear-distribution-period--0" class="table-of-contents__link toc-highlight">Linear Distribution (Period &gt; 0)</a></li><li><a href="#stake-decreases" class="table-of-contents__link toc-highlight">Stake Decreases</a></li></ul></li><li><a href="#security-considerations" class="table-of-contents__link toc-highlight">Security Considerations</a></li><li><a href="#events" class="table-of-contents__link toc-highlight">Events</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/technical-overview">Technical Overview</a></li><li class="footer__item"><a class="footer__link-item" href="/faq">FAQ</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.com/invite/BW3P62vJXT" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://x.com/0xHarborFi" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter/X<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/baofinance/" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/baofinance/" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Harbor. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
