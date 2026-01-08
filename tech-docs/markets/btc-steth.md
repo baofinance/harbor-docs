@@ -77,5 +77,4 @@ See [Price Oracle Contracts](../contracts/price-oracle.md) for detailed informat
 
 - **Start Date**: December 19, 2025
 - **End Date**: January 4, 2026
-- **Rewards**: 1,000,000 haBTC + 1,000,000 hsSTETH-BTC
 - **Genesis Zap**: `0x8Ee0D6AD1d15b3515Ba81CCE16Bba344Deea6781` (GenesisETHZap_v3)
