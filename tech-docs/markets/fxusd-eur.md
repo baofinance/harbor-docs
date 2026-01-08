@@ -64,4 +64,3 @@ See [Price Oracle Contracts](../contracts/price-oracle.md) for detailed informat
 
 - **Start Date**: February 1, 2026 (planned)
 - **End Date**: February 8, 2026 (planned)
-- **Rewards**: 1,000,000 haEUR + 1,000,000 hsFXUSD-EUR (planned)
