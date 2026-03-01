@@ -1,45 +1,54 @@
 # Price Oracle Contracts (Harbor Aggregators)
 
-The Harbor Price Aggregator system provides validated price feeds for wrapped collateral tokens and their underlying assets, combining Chainlink price feeds with rate providers to deliver accurate pricing data.
+The Harbor Price Aggregator system provides validated price feeds for wrapped collateral tokens and their underlying assets, combining Chainlink price feeds with rate providers to deliver accurate pricing data across multiple chains.
+
+**Repository**: [harbor-price-aggregators](https://github.com/baofinance/harbor-price-aggregators)
 
 ## Overview
 
-Harbor uses a system of price aggregators (`HarborAggregator_v3` and specific implementations) that combine:
-- **Chainlink Price Feeds**: For underlying asset prices (ETH/USD, BTC/USD, EUR/USD, etc.)
-- **Rate Providers**: For wrapped token exchange rates (fxSAVE, wstETH)
-- **Price Validation**: Staleness checks, heartbeat validation, and price bounds
+Harbor uses a system of price aggregators (`HarborAggregator_v3` and `HarborAggregator_v4`) that combine:
+- **Chainlink Price Feeds**: For underlying asset prices (ETH/USD, BTC/USD, EUR/USD, stock prices, etc.)
+- **Rate Providers**: For wrapped token exchange rates (fxSAVE, wstETH, sUSDe)
+- **Price Validation**: Staleness checks, heartbeat validation (42-second tolerance), and price bounds
+- **Multi-Chain Support**: Deployed on Ethereum Mainnet, Arbitrum, Base, and MegaETH
 
 ## Contract Architecture
 
-### Base Contract: HarborAggregator_v3
+### Base Contracts
 
-- **Upgradeable**: Uses UUPS (Universal Upgradeable Proxy Standard) pattern
+**HarborAggregator_v3**:
+- **Immutable Configuration**: Feed addresses, heartbeats, and rate sources are constructor parameters
+- **Upgradeable**: Uses UUPS (Universal Upgradeable Proxy Standard) pattern via BaoFactory
 - **Ownership**: Fixed owner address (immutable)
-- **Version**: Version 3 oracle system
 - **Identity**: Provides `baseName()`, `quoteName()`, and `oracleName()` for identification
 
-### Specific Aggregators
+**HarborAggregator_v4**:
+- **Direct Deployments**: Immutable contracts (no proxy pattern)
+- **Same Core Logic**: Uses same price calculation libraries as v3
+- **Optimized**: For simpler oracle pairs (direct feeds)
 
-Each market pair has its own aggregator contract:
+### Oracle Types by Chain
 
-**fxUSD Pairs** (Single Feed):
-- `Aggregator_fxUSD_ETH` - fxUSD/ETH oracle
-- `Aggregator_fxUSD_BTC` - fxUSD/BTC oracle
-- `Aggregator_fxUSD_EUR` - fxUSD/EUR oracle
-- `Aggregator_fxUSD_XAU` - fxUSD/GOLD oracle
-- `Aggregator_fxUSD_XAG` - fxUSD/SILVER oracle
-- `Aggregator_fxUSD_MCAP` - fxUSD/MCAP oracle
+Harbor price oracles are deployed across multiple chains with different configurations:
 
-**stETH Pairs** (Double Feed):
-- `Aggregator_stETH_BTC` - stETH/BTC oracle
-- `Aggregator_stETH_EUR` - stETH/EUR oracle
-- `Aggregator_stETH_XAU` - stETH/GOLD oracle
-- `Aggregator_stETH_XAG` - stETH/SILVER oracle
-- `Aggregator_stETH_MCAP` - stETH/MCAP oracle
+**Mainnet (36 oracles)**:
+- **fxUSD Pairs**: Single-feed oracles (fxUSD/ETH, fxUSD/BTC, fxUSD/EUR, fxUSD/GOLD, fxUSD/SILVER, fxUSD/MCAP)
+- **stETH Pairs**: Double-feed oracles (stETH/BTC, stETH/EUR, stETH/GOLD, stETH/SILVER, stETH/MCAP)
+- **Leveraged Token Oracles**: USD-denominated prices for leveraged tokens (hsfxUSD-*, hsstETH-*)
+- **sUSDe Pairs**: v4 oracles for sUSDe collateral (sUSDe/BTC, sUSDe/ETH, sUSDe/EUR, etc.)
+- **Direct Feeds**: wstETH/USD, wBTC/USD, tBTC/USD, PAXG/USD
 
-**Arbitrum Pairs** (Stock indices):
-- `Aggregator_stETH_AAPL`, `Aggregator_stETH_AMZN`, etc.
-- `Aggregator_USDE_AAPL`, `Aggregator_USDE_AMZN`, etc.
+**Arbitrum (20 oracles)**:
+- **USDE Stock Indices**: USDE/AAPL, USDE/AMZN, USDE/GOOGL, USDE/META, USDE/MSFT, USDE/NVDA, USDE/SPY, USDE/TSLA, USDE/MAG7, USDE/MAG7.i26
+- **stETH Stock Indices**: stETH/AAPL, stETH/AMZN, stETH/GOOGL, stETH/META, stETH/MSFT, stETH/NVDA, stETH/SPY, stETH/TSLA, stETH/MAG7, stETH/MAG7.i26
+
+**Base (1 oracle)**:
+- **stETH/BOM5**: Bag of Memes index (DOGE, SHIB, PEPE, TRUMP, WIF with supply normalization)
+
+**MegaETH (6 oracles)**:
+- **Direct Feeds**: BTC/USD, wstETH/USD, USDMY pairs
+
+For detailed oracle listings, addresses, and configurations per chain, see the [chain-specific pages](#chain-specific-deployments).
 
 ## Key Functions
 
@@ -273,36 +282,57 @@ All prices are validated for:
 4. **Feed Health**: Chainlink feed status checked
 5. **Rate Bounds**: Rates validated against min/max bounds (via `ChainlinkRateLib`)
 
-## Deployment
+## Chain-Specific Deployments
 
-Harbor price oracles are deployed across multiple chains. Each chain has its own set of deployed oracles with specific configurations.
+Harbor price oracles are deployed across multiple chains. Each chain has its own set of deployed oracles with specific configurations. Click on each chain to view detailed oracle listings, addresses, and configurations:
 
-### Chain-Specific Deployments
+### [Mainnet (Ethereum)](price-oracles/mainnet.md) - 36 Oracles
 
-- **[Mainnet (Ethereum)](price-oracles/mainnet.md)** - 36 oracles (Chain ID: 1)
-  - fxUSD pairs, stETH pairs, leveraged token oracles, sUSDe pairs
-  - Mix of v3 (proxy) and v4 (direct) contracts
-  
-- **[Arbitrum](price-oracles/arbitrum.md)** - 20 oracles (Chain ID: 42161)
-  - USDE and stETH stock index pairs
-  - v3 contracts with proxy pattern
-  
-- **[Base](price-oracles/base.md)** - 1 oracle (Chain ID: 8453)
-  - stETH/BOM5 index oracle
-  - v3 contract with proxy pattern
-  
-- **[MegaETH](price-oracles/megaeth.md)** - 6 oracles (Chain ID: 4326)
-  - BTC/USD, USDMY pairs, wstETH/USD
-  - v4 contracts (no proxy)
+**Chain ID**: 1  
+**Contract Versions**: Mix of v3 (proxy) and v4 (direct) contracts
 
-### Contract Addresses (Mainnet Markets)
+**Oracle Categories**:
+- **fxUSD Pairs** (6): fxUSD/ETH, fxUSD/BTC, fxUSD/EUR, fxUSD/GOLD, fxUSD/SILVER, fxUSD/MCAP
+- **stETH Pairs** (5): stETH/BTC, stETH/EUR, stETH/GOLD, stETH/SILVER, stETH/MCAP
+- **Leveraged Token Oracles** (12): USD-denominated prices for hsfxUSD-* and hsstETH-* tokens
+- **sUSDe Pairs** (6): sUSDe/BTC, sUSDe/ETH, sUSDe/EUR, sUSDe/MCAP, sUSDe/GOLD, sUSDe/SILVER
+- **Direct Feeds** (7): wstETH/USD, wBTC/USD, tBTC/USD, PAXG/USD, and others
 
-See market configurations for deployed oracle addresses:
+**Example Market Oracle Addresses**:
 - **ETH/fxUSD Market**: `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097`
 - **BTC/fxUSD Market**: `0x8F76a260c5D21586aFfF18f880FFC808D0524A73`
 - **BTC/stETH Market**: `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB`
 
-For complete oracle listings and configurations per chain, see the [chain-specific pages](price-oracles/mainnet.md).
+### [Arbitrum](price-oracles/arbitrum.md) - 20 Oracles
+
+**Chain ID**: 42161  
+**Contract Version**: v3 (proxy pattern)
+
+**Oracle Categories**:
+- **USDE Stock Indices** (10): USDE/AAPL, USDE/AMZN, USDE/GOOGL, USDE/META, USDE/MSFT, USDE/NVDA, USDE/SPY, USDE/TSLA, USDE/MAG7, USDE/MAG7.i26
+- **stETH Stock Indices** (10): stETH/AAPL, stETH/AMZN, stETH/GOOGL, stETH/META, stETH/MSFT, stETH/NVDA, stETH/SPY, stETH/TSLA, stETH/MAG7, stETH/MAG7.i26
+
+**Rate Providers**: sUSDe/USDE (Chainlink) for USDE pairs, wstETH/stETH (Chainlink) for stETH pairs
+
+### [Base](price-oracles/base.md) - 1 Oracle
+
+**Chain ID**: 8453  
+**Contract Version**: v3 (proxy pattern)
+
+**Oracle**:
+- **stETH/BOM5**: Bag of Memes index with supply normalization (DOGE, SHIB, PEPE, TRUMP, WIF)
+
+**Rate Provider**: wstETH/stETH (Chainlink)
+
+### [MegaETH](price-oracles/megaeth.md) - 6 Oracles
+
+**Chain ID**: 4326  
+**Contract Version**: v4 (direct deployments, no proxy)
+
+**Oracle Categories**:
+- **Direct Feeds**: BTC/USD, wstETH/USD, USDMY pairs
+
+For complete oracle listings, addresses, status, and detailed configurations per chain, see the chain-specific pages linked above.
 
 ## Price Usage in Protocol
 
@@ -344,27 +374,75 @@ The Minter uses price oracles for:
 
 ## Oracle Pair Examples
 
-### fxUSD/ETH
-- **Rate**: fxSAVE exchange rate
-- **Price**: Inverted ETH/USD Chainlink feed
+### Mainnet Examples
+
+**fxUSD/ETH** (Single Feed):
+- **Rate Provider**: fxSAVE exchange rate
+- **Price Feed**: ETH/USD Chainlink feed (inverted)
+- **Calculation**: `price = fxSAVE_rate × (1 / ETH_USD_price)`
 - **Result**: Price of fxUSD in ETH terms
+- **Address**: See [Mainnet oracles](price-oracles/mainnet.md)
 
-### stETH/BTC
-- **Rate**: wstETH exchange rate
-- **Price**: (ETH/USD) / (BTC/USD)
+**stETH/BTC** (Double Feed):
+- **Rate Provider**: wstETH exchange rate
+- **Price Feeds**: ETH/USD and BTC/USD Chainlink feeds
+- **Calculation**: `price = wstETH_rate × (ETH_USD_price / BTC_USD_price)`
 - **Result**: Price of stETH in BTC terms
+- **Address**: See [Mainnet oracles](price-oracles/mainnet.md)
 
-### fxUSD/GOLD (XAU)
-- **Rate**: fxSAVE exchange rate
-- **Price**: Inverted XAU/USD Chainlink feed
-- **Result**: Price of fxUSD in gold terms
+**fxUSD/GOLD** (Single Feed):
+- **Rate Provider**: fxSAVE exchange rate
+- **Price Feed**: XAU/USD Chainlink feed (inverted)
+- **Calculation**: `price = fxSAVE_rate × (1 / XAU_USD_price)`
+- **Result**: Price of fxUSD in gold (XAU) terms
+- **Address**: See [Mainnet oracles](price-oracles/mainnet.md)
+
+### Arbitrum Examples
+
+**USDE/MAG7** (Multi-Feed Index):
+- **Rate Provider**: sUSDe/USDE rate (Chainlink)
+- **Price Feeds**: USDE/USD, AAPL/USD, MSFT/USD, TSLA/USD, GOOGL/USD, META/USD, AMZN/USD, NVDA/USD
+- **Calculation**: `price = sUSDe_rate × (sum(stock_prices) / 7)`
+- **Result**: Price of USDE in MAG7 index terms
+- **Address**: See [Arbitrum oracles](price-oracles/arbitrum.md)
+
+**stETH/AAPL** (Double Feed):
+- **Rate Provider**: wstETH/stETH rate (Chainlink)
+- **Price Feeds**: stETH/USD, AAPL/USD
+- **Calculation**: `price = wstETH_rate × (AAPL_USD_price / stETH_USD_price)`
+- **Result**: Price of stETH in AAPL terms
+- **Address**: See [Arbitrum oracles](price-oracles/arbitrum.md)
+
+### Base Examples
+
+**stETH/BOM5** (Multi-Feed Normalized):
+- **Rate Provider**: wstETH/stETH rate (Chainlink)
+- **Price Feeds**: stETH/USD, DOGE/USD, SHIB/USD, PEPE/USD, TRUMP/USD, WIF/USD
+- **Calculation**: Normalized average with supply factors: `price = wstETH_rate × normalized_avg(meme_prices)`
+- **Result**: Price of stETH in BOM5 index terms
+- **Address**: See [Base oracles](price-oracles/base.md)
 
 ## Integration
 
 Price oracles are integrated with:
-- **Minter**: Primary consumer of price data
+- **Minter**: Primary consumer of price data for minting and redemption calculations
 - **StabilityPoolManager**: Uses prices for rebalancing decisions
 - **Frontend**: Displays current prices and rates
+
+## Development and Deployment
+
+The Harbor price aggregator contracts are developed and maintained in the [harbor-price-aggregators repository](https://github.com/baofinance/harbor-price-aggregators).
+
+### Architecture Highlights
+
+- **Immutable Configuration**: v3 aggregators have configuration baked in at construction time (no `initialize()` or storage slots)
+- **Network-Specific Wiring**: Chain-specific files (`src/Aggregator_*_mainnet.sol`) extend formula contracts and pass feed addresses and heartbeats to constructors
+- **Heartbeat Validation**: `ChainlinkFeedLib` validates feed freshness with a 42-second tolerance to account for block timing variance
+- **UUPS Upgradeable**: Proxy pattern via BaoFactory with fixed owner (v3 contracts)
+
+### Adding New Aggregators
+
+To add a new aggregator, see the [v3 aggregator authoring guide](https://github.com/baofinance/harbor-price-aggregators/blob/main/doc/v3-aggregator-authoring-guide.md) in the repository.
 
 ## Events
 
