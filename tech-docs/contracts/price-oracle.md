@@ -275,22 +275,34 @@ All prices are validated for:
 
 ## Deployment
 
-### Mainnet Deployments
+Harbor price oracles are deployed across multiple chains. Each chain has its own set of deployed oracles with specific configurations.
 
-Each aggregator has a mainnet-specific deployment:
-- `Aggregator_fxUSD_ETH_mainnet`
-- `Aggregator_fxUSD_BTC_mainnet`
-- `Aggregator_stETH_BTC_mainnet`
-- etc.
+### Chain-Specific Deployments
 
-These contracts hard-code mainnet addresses in their constructors.
+- **[Mainnet (Ethereum)](price-oracles/mainnet.md)** - 36 oracles (Chain ID: 1)
+  - fxUSD pairs, stETH pairs, leveraged token oracles, sUSDe pairs
+  - Mix of v3 (proxy) and v4 (direct) contracts
+  
+- **[Arbitrum](price-oracles/arbitrum.md)** - 20 oracles (Chain ID: 42161)
+  - USDE and stETH stock index pairs
+  - v3 contracts with proxy pattern
+  
+- **[Base](price-oracles/base.md)** - 1 oracle (Chain ID: 8453)
+  - stETH/BOM5 index oracle
+  - v3 contract with proxy pattern
+  
+- **[MegaETH](price-oracles/megaeth.md)** - 6 oracles (Chain ID: 4326)
+  - BTC/USD, USDMY pairs, wstETH/USD
+  - v4 contracts (no proxy)
 
-### Contract Addresses
+### Contract Addresses (Mainnet Markets)
 
 See market configurations for deployed oracle addresses:
 - **ETH/fxUSD Market**: `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097`
 - **BTC/fxUSD Market**: `0x8F76a260c5D21586aFfF18f880FFC808D0524A73`
 - **BTC/stETH Market**: `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB`
+
+For complete oracle listings and configurations per chain, see the [chain-specific pages](price-oracles/mainnet.md).
 
 ## Price Usage in Protocol
 

@@ -16,7 +16,17 @@ const sidebars: SidebarsConfig = {
         "contracts/stability-pool",
         "contracts/genesis",
         "contracts/reserve-pool",
-        "contracts/price-oracle",
+        {
+          type: "category",
+          label: "Price Oracles",
+          items: [
+            "contracts/price-oracle",
+            "contracts/price-oracles/mainnet",
+            "contracts/price-oracles/arbitrum",
+            "contracts/price-oracles/base",
+            "contracts/price-oracles/megaeth",
+          ],
+        },
         "contracts/fee-receiver",
         "contracts/reward-system",
       ],
