@@ -52,6 +52,11 @@ const sidebars: SidebarsConfig = {
         "process-flows/stability-pools",
       ],
     },
+    {
+      type: "category",
+      label: "Remediation",
+      items: ["remediation/fxusd-eth-sail-rebalance"],
+    },
   ],
 };
 

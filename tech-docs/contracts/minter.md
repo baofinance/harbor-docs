@@ -4,7 +4,15 @@ The Minter contract is responsible for minting and redeeming leveraged tokens (h
 
 ## Overview
 
-The Minter contract (`Minter_v1`) is a UUPS upgradeable contract that handles the core minting and redemption operations for Harbor Protocol markets. It implements a sophisticated fee/discount system based on collateral ratios and provides price stability through stability pools.
+The Minter is a UUPS upgradeable contract that handles the core minting and redemption operations for Harbor Protocol markets. It implements a sophisticated fee/discount system based on collateral ratios and provides price stability through stability pools.
+
+The Solidity implementation in the Harbor repository is organized around `Minter_v1.sol`; production minters were **upgraded to `Minter_v2` in March 2026** to fix an incorrect Sail (leveraged-token) minting path in `freeRedeemPeggedToken` during rebalances. The fix is a minimal change (two lines) to the Sail minting calculation; all markets received the upgrade. For the incident timeline, pool remediation, and verification, see [fxUSD–ETH Sail stability pool rebalance remediation](../remediation/fxusd-eth-sail-rebalance).
+
+## March 2026 upgrade (Sail minting fix)
+
+A bug in `Minter_v1` caused Sail rewards minted to the Sail stability pool during protocol rebalances to be overstated (approximately 23×) when pegged tokens were redeemed via the fee-free path used by the stability pool manager. Collateral ratio restoration per rebalance was correct; only the Sail reward leg was wrong.
+
+**Remediation:** Upgrade to `Minter_v2` with the corrected `freeRedeemPeggedToken` logic, expanded automated tests, and a one-time on-chain remediation for the affected fxUSD–ETH Sail pool (integral rescale, excess Sail burn, treasury coverage of a small fxSAVE gap where tokens had already left the pool). Full narrative and links to the fix, deployment, and remediation commits: [fxUSD–ETH Sail stability pool rebalance remediation](../remediation/fxusd-eth-sail-rebalance).
 
 ## Contract Architecture
 
