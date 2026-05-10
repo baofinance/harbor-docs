@@ -15,6 +15,7 @@ const sidebars: SidebarsConfig = {
         "contracts/stability-pool-manager",
         "contracts/stability-pool",
         "contracts/genesis",
+        "contracts/bao-factory",
         "contracts/reserve-pool",
         {
           type: "category",
@@ -51,6 +52,11 @@ const sidebars: SidebarsConfig = {
         "process-flows/rebalance",
         "process-flows/stability-pools",
       ],
+    },
+    {
+      type: "category",
+      label: "Reference",
+      items: ["reference/mainnet-harbor-proxies"],
     },
     {
       type: "category",

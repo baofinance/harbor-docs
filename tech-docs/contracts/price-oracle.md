@@ -18,7 +18,7 @@ Harbor uses a system of price aggregators (`HarborAggregator_v3` and `HarborAggr
 
 **HarborAggregator_v3**:
 - **Immutable Configuration**: Feed addresses, heartbeats, and rate sources are constructor parameters
-- **Upgradeable**: Uses UUPS (Universal Upgradeable Proxy Standard) pattern via BaoFactory
+- **Upgradeable**: Uses UUPS (Universal Upgradeable Proxy Standard) pattern via [BaoFactory](bao-factory.md)
 - **Ownership**: Fixed owner address (immutable)
 - **Identity**: Provides `baseName()`, `quoteName()`, and `oracleName()` for identification
 
@@ -438,7 +438,7 @@ The Harbor price aggregator contracts are developed and maintained in the [harbo
 - **Immutable Configuration**: v3 aggregators have configuration baked in at construction time (no `initialize()` or storage slots)
 - **Network-Specific Wiring**: Chain-specific files (`src/Aggregator_*_mainnet.sol`) extend formula contracts and pass feed addresses and heartbeats to constructors
 - **Heartbeat Validation**: `ChainlinkFeedLib` validates feed freshness with a 42-second tolerance to account for block timing variance
-- **UUPS Upgradeable**: Proxy pattern via BaoFactory with fixed owner (v3 contracts)
+- **UUPS Upgradeable**: Proxy pattern via [BaoFactory](bao-factory.md) with fixed owner (v3 contracts)
 
 ### Adding New Aggregators
 
