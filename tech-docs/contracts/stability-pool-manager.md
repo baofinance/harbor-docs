@@ -145,6 +145,19 @@ Harvesting extracts yield accrued from wrapped collateral:
    - Remainder to pools (proportional to holdings)
 4. **Rewards**: Pools distribute harvested yield to depositors
 
+Example harvest splits (configured amounts come from `harvestBountyRatio` and `harvestCutRatio`):
+
+| Harvest Method | Manual example | Fixed example |
+| -------------- | -------------- | ------------- |
+| Bounty | 1% | 1% |
+| Cut | 99% | 24% |
+| Stability pools | 0% | 75% |
+
+**Notes:**
+
+1. Stability pool distribution is split over the linked stability pools.
+2. Bounty and cut cannot exceed 100% together.
+
 The harvest bounty incentivizes keepers to call this function regularly.
 
 ## Dependencies
