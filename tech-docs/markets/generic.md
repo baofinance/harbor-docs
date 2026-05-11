@@ -1,4 +1,14 @@
-# Mainnet Harbor deployment proxies
+# Generic market deployments
+
+This page collects **cross-market deployment metadata**: canonical proxy registries for [Ethereum mainnet](#mainnet-harbor-deployment-proxies) and [MegaETH](#megaeth-harbor-deployment-proxies), CREATE3 salt strings, and links to the [Bao Factory](../contracts/bao-factory.md). Per-market write-ups (tokens, parameters, oracles) follow in the sidebar under **Markets**.
+
+## Generic information
+
+- **BaoFactory proxy** used for these CREATE3 deployments: `0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`
+- **Source of truth**: JSON manifests under [`baofinance/harbor` → `deployments`](https://github.com/baofinance/harbor/tree/main/deployments) (sync this page when `harbor_v1.state.json` or MegaETH manifests change).
+- **Oracle / aggregator proxies** are *not* listed here; see [Mainnet price oracles](../contracts/price-oracles/mainnet.md) and [MegaETH price oracles](../contracts/price-oracles/megaeth.md).
+
+## Mainnet Harbor deployment proxies
 
 This table lists **Harbor protocol** proxies (minters, pools, pegged/leveraged tokens, genesis, fee receivers, etc.) from the canonical deployment state file. It does not include [HarborAggregator v3 oracle proxies](../contracts/price-oracles/mainnet.md) (those live under the price-oracle documentation and separate deployment metadata).
 
@@ -10,7 +20,7 @@ This table lists **Harbor protocol** proxies (minters, pools, pegged/leveraged t
 - **BaoFactory proxy (`baoFactory`):** `0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`
 - **`lastUpdated` (manifest):** `2026-03-24T16:44:59Z`
 
-## Proxies
+### Mainnet proxy table
 
 | Proxy key | Proxy address | Implementation | Salt |
 | --------- | ------------- | -------------- | ---- |
@@ -107,3 +117,40 @@ This table lists **Harbor protocol** proxies (minters, pools, pegged/leveraged t
 | `SILVER::stETH::stabilityPoolCollateral` | `0x1C9c1cF9aa9fc86dF980086CbC5a5607522cFc3E` | `0x15cfE62D2C50Ea94a38dDd93D4a79C626d391638` | `harbor_v1::SILVER::stETH::stabilityPoolCollateral` |
 | `SILVER::stETH::stabilityPoolLeveraged` | `0x4C0F988b3c0C58F5ea323238E9d62B79582738e6` | `0x882698a4F0284e1DfBc2Ef7C55297bDd48a12eeb` | `harbor_v1::SILVER::stETH::stabilityPoolLeveraged` |
 | `SILVER::stETH::stabilityPoolManager` | `0xbA6b54ED8D76bD4f6B4efD4f1f2344B2Ec386c3E` | `0x13D7Bb5D7f48a7E49082203566a8bC1ba44dCA0a` | `harbor_v1::SILVER::stETH::stabilityPoolManager` |
+
+## MegaETH Harbor deployment proxies
+
+The following **MegaETH** (`chainId` 4326) registry matches the Harbor deployment manifest structure (`schemaVersion` 1, `version` v1, `saltPrefix` `harbor_megaeth_v1`). Add a committed `harbor_v1.state.json` (or equivalent) under [`deployments`](https://github.com/baofinance/harbor/tree/main/deployments) for MegaETH when available; until then treat this excerpt as the documented snapshot.
+
+- **`schemaVersion`:** `1`
+- **Manifest `version`:** `v1`
+- **`saltPrefix`:** `harbor_megaeth_v1`
+- **Network:** `megaeth` (`chainId` **4326**)
+- **BaoFactory proxy (`baoFactory`):** `0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`
+- **`lastUpdated`:** `2026-04-29T21:50:12Z`
+
+### Implementations (implementation address metadata)
+
+| Implementation | Proxy key | `contractSource` | `contractType` | `deploymentTime` |
+| ---------------- | --------- | ---------------- | -------------- | ---------------- |
+| `0x50eA38B09612B508ECBeb432cb9Bf9ae91362908` | `USD::pegged` | `@bao/MintableBurnableERC20_v1.sol` | `MintableBurnableERC20_v1` | `2026-04-29T21:50:12Z` |
+| `0x6774745AfC1574Cda36D7cc2D53Df0028480790e` | `USD::stETH::genesis` | `@harbor/minter/Genesis_v1.sol` | `Genesis_v1` | `2026-04-29T21:50:12Z` |
+| `0x2fa33C10A5833c1a983d6a373128C736d5eE9a11` | `USD::stETH::leveraged` | `@bao/MintableBurnableERC20_v1.sol` | `MintableBurnableERC20_v1` | `2026-04-29T21:50:12Z` |
+| `0x2A9bd9829B690Ee36B79f735412E0959F7813534` | `USD::stETH::minter` | `@harbor/minter/Minter_v2.sol` | `Minter_v2` | `2026-04-29T21:50:12Z` |
+| `0xa3287C1A9A777426bC3022d2a94AfDA9561bda3a` | `USD::stETH::reservePool` | `@harbor/minter/ReservePool_v1.sol` | `ReservePool_v1` | `2026-04-29T21:50:12Z` |
+| `0x1b46529C3b3E708215C5C7D3BCf5d70443f98588` | `USD::stETH::stabilityPoolCollateral` | `@harbor/minter/StabilityPool_v2.sol` | `StabilityPool_v2` | `2026-04-29T21:50:12Z` |
+| `0xaa47742C019357c7DD85917A4126676265D12EBE` | `USD::stETH::stabilityPoolLeveraged` | `@harbor/minter/StabilityPool_v2.sol` | `StabilityPool_v2` | `2026-04-29T21:50:12Z` |
+| `0xCE23e54B1b47277f2B5F1deff06908e95E0Bf38C` | `USD::stETH::stabilityPoolManager` | `@harbor/minter/StabilityPoolManager_v1.sol` | `StabilityPoolManager_v1` | `2026-04-29T21:50:12Z` |
+
+### Proxies
+
+| Proxy key | Proxy address | Implementation | Salt | `deploymentTime` |
+| --------- | ------------- | -------------- | ---- | ---------------- |
+| `USD::pegged` | `0xbEd2c24Cf10d7aC58350364aF8d3AbC0ce0D626f` | `0x50eA38B09612B508ECBeb432cb9Bf9ae91362908` | `harbor_megaeth_v1::USD::pegged` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::genesis` | `0x004C7091051bBD43dd1C26e3E37C85F869a987e7` | `0x6774745AfC1574Cda36D7cc2D53Df0028480790e` | `harbor_megaeth_v1::USD::stETH::genesis` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::leveraged` | `0x6c8Bf305a6F8C4613265DB876c8A1c3fCdd0d1F1` | `0x2fa33C10A5833c1a983d6a373128C736d5eE9a11` | `harbor_megaeth_v1::USD::stETH::leveraged` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::minter` | `0x77aD4a052812f1EeD89Fb4ED309e81c815D8d755` | `0x2A9bd9829B690Ee36B79f735412E0959F7813534` | `harbor_megaeth_v1::USD::stETH::minter` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::reservePool` | `0x0d60a96678066f3f9dCD1227481E7c1B5e2cbD96` | `0xa3287C1A9A777426bC3022d2a94AfDA9561bda3a` | `harbor_megaeth_v1::USD::stETH::reservePool` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::stabilityPoolCollateral` | `0xe4C4C226A2a267172C09efD43f9Db92B875FdA72` | `0x1b46529C3b3E708215C5C7D3BCf5d70443f98588` | `harbor_megaeth_v1::USD::stETH::stabilityPoolCollateral` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::stabilityPoolLeveraged` | `0x981D002e7A14E9f37f5feC17caa0B69f7A722132` | `0xaa47742C019357c7DD85917A4126676265D12EBE` | `harbor_megaeth_v1::USD::stETH::stabilityPoolLeveraged` | `2026-04-29T21:49:49Z` |
+| `USD::stETH::stabilityPoolManager` | `0xfc45f502B0C04fF8dE7cca1703440D87De4B5dE7` | `0xCE23e54B1b47277f2B5F1deff06908e95E0Bf38C` | `harbor_megaeth_v1::USD::stETH::stabilityPoolManager` | `2026-04-29T21:49:49Z` |

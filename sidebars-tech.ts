@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Markets",
       items: [
+        { type: "doc", id: "markets/generic", label: "Generic" },
         "markets/eth-fxsave",
         "markets/btc-fxusd",
         "markets/btc-steth",
@@ -52,11 +53,6 @@ const sidebars: SidebarsConfig = {
         "process-flows/rebalance",
         "process-flows/stability-pools",
       ],
-    },
-    {
-      type: "category",
-      label: "Reference",
-      items: ["reference/mainnet-harbor-proxies"],
     },
     {
       type: "category",

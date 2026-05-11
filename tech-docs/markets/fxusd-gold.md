@@ -12,6 +12,8 @@ This market uses fxUSD (via fxSAVE vault) as collateral to mint:
 
 ## Contract Addresses (Planned)
 
+When deployed, protocol contract addresses and **proxy keys** will appear in [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) under keys such as `GOLD::fxUSD::*` and `GOLD::pegged`. See [Generic market deployments](./generic.md).
+
 - **minter**: TBD
 - **peggedToken**: TBD (haGOLD)
 - **leveragedToken**: TBD (hsFXUSD-GOLD)

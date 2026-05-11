@@ -12,16 +12,18 @@ This market uses stETH (via wrapped stETH) as collateral to mint:
 
 ## Contract Addresses (Mainnet)
 
-- **minter**: `0xF42516EB885E737780EB864dd07cEc8628000919`
-- **peggedToken**: `0x25bA4A826E1A1346dcA2Ab530831dbFF9C08bEA7` (haBTC)
-- **leveragedToken**: `0x817ADaE288eD46B8618AAEffE75ACD26A0a1b0FD` (hsSTETH-BTC)
-- **reservePool**: `0x515ECa19Ac381b0f37D616F99628136906fC5355`
-- **stabilityPoolManager**: Not deployed (uses shared manager)
-- **genesis**: `0xc64Fc46eED431e92C1b5e24DC296b5985CE6Cc00`
+Proxy keys match [`harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json); see [Generic market deployments](./generic.md).
+
+- **minter** (`BTC::stETH::minter`): `0xF42516EB885E737780EB864dd07cEc8628000919`
+- **peggedToken** (`BTC::pegged`): `0x25bA4A826E1A1346dcA2Ab530831dbFF9C08bEA7` (haBTC)
+- **leveragedToken** (`BTC::stETH::leveraged`): `0x817ADaE288eD46B8618AAEffE75ACD26A0a1b0FD` (hsSTETH-BTC)
+- **reservePool** (`BTC::stETH::reservePool`): `0x515ECa19Ac381b0f37D616F99628136906fC5355`
+- **stabilityPoolManager**: Not deployed on this market (`ETH::fxUSD::stabilityPoolManager` shared): `0xE39165aDE355988EFb24dA4f2403971101134CAB`
+- **genesis** (`BTC::stETH::genesis`): `0xc64Fc46eED431e92C1b5e24DC296b5985CE6Cc00`
 - **priceOracle**: `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB` (stETH/BTC aggregator)
-- **feeReceiver**: `0xc3a97138a5aDCC7d28A1375E28EC3440aeaeDF3e` (TokenDistributor)
-- **stabilityPoolCollateral**: `0x667Ceb303193996697A5938cD6e17255EeAcef51`
-- **stabilityPoolLeveraged**: `0xCB4F3e21DE158bf858Aa03E63e4cEc7342177013`
+- **feeReceiver** (`BTC::stETH::minterFeeReceiver`): `0xc3a97138a5aDCC7d28A1375E28EC3440aeaeDF3e` (TokenDistributor)
+- **stabilityPoolCollateral** (`BTC::stETH::stabilityPoolCollateral`): `0x667Ceb303193996697A5938cD6e17255EeAcef51`
+- **stabilityPoolLeveraged** (`BTC::stETH::stabilityPoolLeveraged`): `0xCB4F3e21DE158bf858Aa03E63e4cEc7342177013`
 - **collateralToken**: `0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0` (wstETH)
 - **wrappedCollateralToken**: `0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84` (stETH)
 
@@ -47,11 +49,13 @@ This market uses stETH (via wrapped stETH) as collateral to mint:
 ## Stability Pools
 
 ### Collateral Stability Pool
+- **Proxy key**: `BTC::stETH::stabilityPoolCollateral`
 - **Address**: `0x667Ceb303193996697A5938cD6e17255EeAcef51`
 - **Rebalance Token**: wstETH (collateral)
 - **Purpose**: Liquidates positions using collateral
 
 ### Leveraged Stability Pool (Sail Pool)
+- **Proxy key**: `BTC::stETH::stabilityPoolLeveraged`
 - **Address**: `0xCB4F3e21DE158bf858Aa03E63e4cEc7342177013`
 - **Rebalance Token**: hsSTETH-BTC (leveraged token)
 - **Purpose**: Liquidates positions using leveraged tokens

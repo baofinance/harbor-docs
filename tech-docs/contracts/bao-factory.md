@@ -48,7 +48,7 @@ Always confirm salt and factory address against the environment you target (main
 
 ## Salt naming and deployment manifests
 
-Canonical deployment metadata (proxy address, implementation, salt string, timestamps) lives in the [`deployments`](https://github.com/baofinance/harbor/tree/main/deployments) directory of the [`baofinance/harbor`](https://github.com/baofinance/harbor) repo. Manifests are versioned JSON (`schemaVersion`, per-network `chainId`, aggregator `version`, and so on). For Ethereum mainnet, the full **protocol** proxy table from [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) is maintained as [Mainnet Harbor deployment proxies](../reference/mainnet-harbor-proxies.md).
+Canonical deployment metadata (proxy address, implementation, salt string, timestamps) lives in the [`deployments`](https://github.com/baofinance/harbor/tree/main/deployments) directory of the [`baofinance/harbor`](https://github.com/baofinance/harbor) repo. Manifests are versioned JSON (`schemaVersion`, per-network `chainId`, aggregator `version`, and so on). For Ethereum mainnet and MegaETH protocol proxies, see [Generic market deployments](../markets/generic.md).
 
 Salts are recorded there as **human-readable strings**. Deploy tooling converts each string to the `bytes32` value passed to `deploy` / `predictAddress` (see the harbor deploy scripts for the exact encoding). With a fixed **BaoFactory proxy** and salt, the proxy address is reproducible independent of implementation bytecode (CREATE3).
 
