@@ -1,68 +1,54 @@
 # fxUSD/GOLD Market
 
-The fxUSD/GOLD market allows users to mint pegged tokens (haGOLD) and leveraged tokens (hsFXUSD-GOLD) using fxUSD (via fxSAVE) as collateral.
+> **Status**: Coming soon — planned mainnet deployment; Harbor protocol contracts not live yet. The **fxUSD/GOLD price oracle** (aggregator) is already deployed and documented below.
 
-## Market Overview
+Mint **haGOLD** (gold / XAU peg) and **hsFXUSD-GOLD** (leveraged gold exposure) using **fxUSD** via the **fxSAVE** vault as collateral — same mechanical pattern as [fxUSD/ETH](./eth-fxsave.md) when launched.
 
-This market uses fxUSD (via fxSAVE vault) as collateral to mint:
-- **haGOLD**: Pegged token representing gold (XAU) exposure
-- **hsFXUSD-GOLD**: Leveraged token with variable exposure to gold
+## Market overview
 
-> **Status**: Coming Soon - This market is planned for deployment but contracts are not yet deployed.
+| Token | Role |
+| ----- | ---- |
+| **haGOLD** | Pegged token — gold (XAU) exposure |
+| **hsFXUSD-GOLD** | Leveraged token — variable gold exposure |
 
-## Contract Addresses (Planned)
+Collateral: **fxUSD** via **fxSAVE** (addresses match live mainnet markets).
 
-When deployed, protocol contract addresses and **proxy keys** will appear in [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) under keys such as `GOLD::fxUSD::*` and `GOLD::pegged`. See [Generic market deployments](./generic.md).
+## Contract addresses (planned)
 
-- **minter**: TBD
-- **peggedToken**: TBD (haGOLD)
-- **leveragedToken**: TBD (hsFXUSD-GOLD)
-- **reservePool**: TBD
-- **stabilityPoolManager**: TBD
-- **genesis**: TBD
-- **priceOracle**: `0x4be4501336130E61e5872cB953e886a3a84D34Cc` (fxUSD/GOLD aggregator - available)
-- **feeReceiver**: TBD
-- **stabilityPoolCollateral**: TBD
-- **stabilityPoolLeveraged**: TBD
-- **collateralToken**: `0x085780639CC2cACd35E474e71f4d000e2405d8f6` (fxUSD)
-- **wrappedCollateralToken**: `0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39` (fxSAVE)
+When deployed, proxies and **CREATE3 salt strings** will land in [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) and the [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Expected proxy key shapes: `GOLD::fxUSD::*`, pegged `GOLD::pegged`.
 
-## Token Details
+| Component | Value |
+| --------- | ----- |
+| **minter** | TBD (`GOLD::fxUSD::minter`) |
+| **peggedToken** | TBD — haGOLD (`GOLD::pegged`) |
+| **leveragedToken** | TBD — hsFXUSD-GOLD (`GOLD::fxUSD::leveraged`) |
+| **reservePool** | TBD |
+| **stabilityPoolManager** | TBD |
+| **genesis** | TBD |
+| **priceOracle** | `0x4be4501336130E61e5872cB953e886a3a84D34Cc` (fxUSD/GOLD aggregator — **available**) |
+| **feeReceiver** | TBD |
+| **stabilityPoolCollateral** | TBD |
+| **stabilityPoolLeveraged** | TBD |
+| **collateralToken** | `0x085780639CC2cACd35E474e71f4d000e2405d8f6` (fxUSD) |
+| **wrappedCollateralToken** | `0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39` (fxSAVE) |
 
-### Pegged Token (haGOLD)
-- **Symbol**: haGOLD
-- **Description**: Pegged token representing gold (XAU) exposure
-- **Use Case**: Stable exposure to gold price movements
-- **Status**: Not yet deployed
+## Price oracle
 
-### Leveraged Token (hsFXUSD-GOLD)
-- **Symbol**: hsFXUSD-GOLD
-- **Description**: Leveraged token with variable exposure to gold
-- **Use Case**: Leveraged exposure to gold with yield generation
-- **Status**: Not yet deployed
+The fxUSD/GOLD aggregator (`0x4be4501336130E61e5872cB953e886a3a84D34Cc`) uses the fxSAVE rate provider and XAU/USD Chainlink data (composed for fxUSD/GOLD). See [Price oracle contracts](../contracts/price-oracle.md).
 
-### Collateral Token
-- **fxUSD**: fxUSD stablecoin (`0x085780639CC2cACd35E474e71f4d000e2405d8f6`)
-- **fxSAVE**: fxSAVE vault (wrapped fxUSD with yield) (`0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39`)
+## Market parameters (planned)
 
-## Price Oracle
+| | |
+| --- | --- |
+| **Collateral** | fxUSD (via fxSAVE vault) |
+| **Leverage** | Variable, collateral-ratio bands |
+| **Yield** | fxSAVE vault |
+| **Rebalancing** | Stability pools |
+| **Deployment** | Planned February 2026 |
 
-The fxUSD/GOLD price oracle (`0x4be4501336130E61e5872cB953e886a3a84D34Cc`) is available and provides:
-- **Rate Provider**: fxSAVE vault (for fxUSD exchange rate)
-- **Price Feed**: XAU/USD Chainlink feed (inverted to get fxUSD/GOLD)
-- **Status**: Oracle deployed and available
+## Genesis (Maiden Voyage, planned)
 
-See [Price Oracle Contracts](../contracts/price-oracle.md) for detailed information.
-
-## Market Parameters (Planned)
-
-- **Collateral Type**: fxUSD (via fxSAVE vault)
-- **Leverage Mechanism**: Variable leverage based on collateral ratio
-- **Yield Source**: Yield from fxSAVE vault
-- **Rebalancing**: Via stability pools
-- **Deployment**: Planned for February 2026
-
-## Genesis (Maiden Voyage) - Planned
-
-- **Start Date**: February 1, 2026 (planned)
-- **End Date**: February 8, 2026 (planned)
+| | |
+| --- | --- |
+| **Start** | February 1, 2026 (planned) |
+| **End** | February 8, 2026 (planned) |

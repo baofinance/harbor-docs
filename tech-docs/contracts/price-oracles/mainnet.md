@@ -94,9 +94,9 @@ Mainnet hosts the largest number of Harbor price oracles, including v3, v4, and 
 
 These oracles are used by Harbor Protocol markets:
 
-- **ETH/fxUSD Market**: Uses `fxUSD/ETH` oracle (`0xea5292c58288DcE24C52C1dB13ca048275665EbC`)
-- **BTC/fxUSD Market**: Uses `fxUSD/BTC` oracle (`0xF7657CD7890904d108384E289997c993e2e2bBc0`)
-- **BTC/stETH Market**: Uses `stETH/BTC` oracle (`0x42018953e5174dC07058BeEE0618aa569fbFBE90`)
+- **fxUSD/ETH Market**: Uses `fxUSD/ETH` oracle (`0xea5292c58288DcE24C52C1dB13ca048275665EbC`)
+- **fxUSD/BTC Market**: Uses `fxUSD/BTC` oracle (`0xF7657CD7890904d108384E289997c993e2e2bBc0`)
+- **stETH/BTC Market**: Uses `stETH/BTC` oracle (`0x42018953e5174dC07058BeEE0618aa569fbFBE90`)
 
 ## Version Information
 

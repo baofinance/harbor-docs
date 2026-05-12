@@ -1,11 +1,12 @@
 # MegaETH Price Oracles
 
 **Chain ID**: 4326  
-**Total Oracles**: 6
+**Active oracles**: 3 (BTC/USD, wstETH/USD, Harbor stETH/USD)  
+**Deprecated (legacy)**: 4 USDMY/\* feeds — the **USDMY protocol ceased deployment and operations on MegaETH**. Contract addresses below are kept for reference only.
 
 ## Overview
 
-MegaETH hosts a small set of oracles including BTC/USD, USDMY pairs, and wstETH/USD. These use v4 oracle contracts.
+MegaETH lists **direct** BTC/USD and wstETH/USD feeds, a **Harbor** stETH/USD wrapped aggregator for markets, and **legacy** USDMY pair contracts. USDMY is **deprecated** on this chain; do not use USDMY feeds for new integrations.
 
 ## Deployed Oracles
 
@@ -21,27 +22,38 @@ MegaETH hosts a small set of oracles including BTC/USD, USDMY pairs, and wstETH/
 - No rate provider needed (direct USD pricing)
 - Version 4 contracts (no proxy pattern)
 
-### USDMY Pairs
+### Harbor market aggregators (wrapped price)
+
+| Oracle pair | Address | Status | Version | Notes |
+|-------------|---------|--------|---------|-------|
+| stETH/USD | `0xEDd3dC3E699360846c87CB69052EcbC900201854` | Active | v4 | Used by [stETH/USD Market (MegaETH)](../../markets/steth-usd-megaeth.md); salt `harbor_megaeth_v1::stETH::USD::wrappedPriceAggregator` |
+
+### USDMY pairs (deprecated)
+
+The **USDMY protocol is no longer deployed or operated on MegaETH**. The following contracts were part of that stack and are documented only for historical reference.
 
 | Oracle Pair | Address | Status | Version | Rate Provider | Price Feed |
 |-------------|---------|--------|---------|---------------|------------|
-| USDMY/BTC | `0xf9cB23E2E882C67A899C448CBe2542df9eebC615` | Active | v4 | USDMY | BTC/USD (inverted) |
-| USDMY/ETH | `0x756B95D0bB61c195d1196EB2143D8D88570036AC` | Active | v4 | USDMY | ETH/USD (inverted) |
-| USDMY/HYPE | `0x830AB2B3A936F727ee2FF67E9C073380B6f166D8` | Active | v4 | USDMY | HYPE/USD (inverted) |
-| USDMY/SOL | `0xE2962ab29C723415F023451E9F166122d8b4a980` | Active | v4 | USDMY | SOL/USD (inverted) |
+| USDMY/BTC | `0xf9cB23E2E882C67A899C448CBe2542df9eebC615` | Deprecated | v4 | USDMY | BTC/USD (inverted) |
+| USDMY/ETH | `0x756B95D0bB61c195d1196EB2143D8D88570036AC` | Deprecated | v4 | USDMY | ETH/USD (inverted) |
+| USDMY/HYPE | `0x830AB2B3A936F727ee2FF67E9C073380B6f166D8` | Deprecated | v4 | USDMY | HYPE/USD (inverted) |
+| USDMY/SOL | `0xE2962ab29C723415F023451E9F166122d8b4a980` | Deprecated | v4 | USDMY | SOL/USD (inverted) |
 
-**Configuration Notes:**
-- USDMY pairs use USDMY token as rate provider
-- Price feeds are inverted to get USDMY/quote asset
-- Version 4 contracts (no proxy pattern)
+**Note:** When USDMY was active, pairs used the USDMY token as rate provider and inverted price feeds to quote USDMY against each asset. These deployments are **immutable** v4 contracts; they remain on-chain but **must not** be treated as supported protocol infrastructure.
+
+## Market integration
+
+- **stETH/USD Market (MegaETH)**: Uses Harbor `stETH/USD` aggregator (`0xEDd3dC3E699360846c87CB69052EcbC900201854`)
 
 ## Version Information
 
-- All MegaETH oracles use **v4** contracts
-- Direct implementation (no proxy pattern)
+- All listed contracts use **v4** bytecode; **active** Harbor and direct-feed paths remain the integration surface for MegaETH today
+- **USDMY** oracle rows are **deprecated** alongside cessation of USDMY deployment and operations on MegaETH
+- Direct-feed and deprecated USDMY oracles are **immutable** (no proxy)
+- Harbor **wrapped** aggregators used by markets may use **UUPS proxies** (see deployment manifests)
 
 ## Notes
 
 - Smaller oracle deployment compared to other chains
-- Focus on BTC, ETH, SOL, and HYPE pairs
-- All contracts are v4 (no upgradeability via proxy)
+- **USDMY** coverage (BTC, ETH, HYPE, SOL) is **deprecated** on MegaETH; rely on **active** direct feeds and Harbor market oracles
+- All contracts are v4 (Harbor market aggregators such as stETH/USD may use upgradeable proxies per deployment manifests; direct-feed oracles are immutable)

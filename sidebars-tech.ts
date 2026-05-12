@@ -37,11 +37,12 @@ const sidebars: SidebarsConfig = {
       label: "Markets",
       items: [
         { type: "doc", id: "markets/generic", label: "Generic" },
-        "markets/eth-fxsave",
-        "markets/btc-fxusd",
-        "markets/btc-steth",
-        "markets/fxusd-eur",
-        "markets/fxusd-gold",
+        { type: "doc", id: "markets/eth-fxsave", label: "fxUSD/ETH Market" },
+        { type: "doc", id: "markets/btc-fxusd", label: "fxUSD/BTC Market" },
+        { type: "doc", id: "markets/btc-steth", label: "stETH/BTC Market" },
+        { type: "doc", id: "markets/fxusd-eur", label: "fxUSD/EUR Market" },
+        { type: "doc", id: "markets/fxusd-gold", label: "fxUSD/GOLD Market" },
+        { type: "doc", id: "markets/steth-usd-megaeth", label: "stETH/USD Market (MegaETH)" },
       ],
     },
     {

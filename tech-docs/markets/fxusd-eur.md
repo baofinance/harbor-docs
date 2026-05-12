@@ -1,68 +1,54 @@
 # fxUSD/EUR Market
 
-The fxUSD/EUR market allows users to mint pegged tokens (haEUR) and leveraged tokens (hsFXUSD-EUR) using fxUSD (via fxSAVE) as collateral.
+> **Status**: Coming soon — planned mainnet deployment; Harbor protocol contracts not live yet. The **fxUSD/EUR price oracle** (aggregator) is already deployed and documented below.
 
-## Market Overview
+Mint **haEUR** (EUR peg) and **hsFXUSD-EUR** (leveraged EUR exposure) using **fxUSD** via the **fxSAVE** vault as collateral — same mechanical pattern as [fxUSD/ETH](./eth-fxsave.md) when launched.
 
-This market uses fxUSD (via fxSAVE vault) as collateral to mint:
-- **haEUR**: Pegged token representing EUR exposure
-- **hsFXUSD-EUR**: Leveraged token with variable exposure to EUR
+## Market overview
 
-> **Status**: Coming Soon - This market is planned for deployment but contracts are not yet deployed.
+| Token | Role |
+| ----- | ---- |
+| **haEUR** | Pegged token — EUR exposure |
+| **hsFXUSD-EUR** | Leveraged token — variable EUR exposure |
 
-## Contract Addresses (Planned)
+Collateral: **fxUSD** via **fxSAVE** (addresses match live mainnet markets).
 
-When deployed, protocol contract addresses and **proxy keys** will appear in [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) under keys such as `EUR::fxUSD::*` and `EUR::pegged`. See [Generic market deployments](./generic.md).
+## Contract addresses (planned)
 
-- **minter**: TBD
-- **peggedToken**: TBD (haEUR)
-- **leveragedToken**: TBD (hsFXUSD-EUR)
-- **reservePool**: TBD
-- **stabilityPoolManager**: TBD
-- **genesis**: TBD
-- **priceOracle**: `0x8f6F9C8af44f5f15a18d0fa93B5814a623Fa6353` (fxUSD/EUR aggregator - available)
-- **feeReceiver**: TBD
-- **stabilityPoolCollateral**: TBD
-- **stabilityPoolLeveraged**: TBD
-- **collateralToken**: `0x085780639CC2cACd35E474e71f4d000e2405d8f6` (fxUSD)
-- **wrappedCollateralToken**: `0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39` (fxSAVE)
+When deployed, proxies and **CREATE3 salt strings** will land in [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) and the [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Expected proxy key shapes: `EUR::fxUSD::*`, pegged `EUR::pegged`.
 
-## Token Details
+| Component | Value |
+| --------- | ----- |
+| **minter** | TBD (`EUR::fxUSD::minter`) |
+| **peggedToken** | TBD — haEUR (`EUR::pegged`) |
+| **leveragedToken** | TBD — hsFXUSD-EUR (`EUR::fxUSD::leveraged`) |
+| **reservePool** | TBD |
+| **stabilityPoolManager** | TBD |
+| **genesis** | TBD |
+| **priceOracle** | `0x8f6F9C8af44f5f15a18d0fa93B5814a623Fa6353` (fxUSD/EUR aggregator — **available**) |
+| **feeReceiver** | TBD |
+| **stabilityPoolCollateral** | TBD |
+| **stabilityPoolLeveraged** | TBD |
+| **collateralToken** | `0x085780639CC2cACd35E474e71f4d000e2405d8f6` (fxUSD) |
+| **wrappedCollateralToken** | `0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39` (fxSAVE) |
 
-### Pegged Token (haEUR)
-- **Symbol**: haEUR
-- **Description**: Pegged token representing EUR exposure
-- **Use Case**: Stable exposure to EUR price movements
-- **Status**: Not yet deployed
+## Price oracle
 
-### Leveraged Token (hsFXUSD-EUR)
-- **Symbol**: hsFXUSD-EUR
-- **Description**: Leveraged token with variable exposure to EUR
-- **Use Case**: Leveraged exposure to EUR with yield generation
-- **Status**: Not yet deployed
+The fxUSD/EUR aggregator (`0x8f6F9C8af44f5f15a18d0fa93B5814a623Fa6353`) uses the fxSAVE rate provider and EUR/USD Chainlink data (composed for fxUSD/EUR). See [Price oracle contracts](../contracts/price-oracle.md).
 
-### Collateral Token
-- **fxUSD**: fxUSD stablecoin (`0x085780639CC2cACd35E474e71f4d000e2405d8f6`)
-- **fxSAVE**: fxSAVE vault (wrapped fxUSD with yield) (`0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39`)
+## Market parameters (planned)
 
-## Price Oracle
+| | |
+| --- | --- |
+| **Collateral** | fxUSD (via fxSAVE vault) |
+| **Leverage** | Variable, collateral-ratio bands |
+| **Yield** | fxSAVE vault |
+| **Rebalancing** | Stability pools |
+| **Deployment** | Planned February 2026 |
 
-The fxUSD/EUR price oracle (`0x8f6F9C8af44f5f15a18d0fa93B5814a623Fa6353`) is available and provides:
-- **Rate Provider**: fxSAVE vault (for fxUSD exchange rate)
-- **Price Feed**: EUR/USD Chainlink feed (inverted to get fxUSD/EUR)
-- **Status**: Oracle deployed and available
+## Genesis (Maiden Voyage, planned)
 
-See [Price Oracle Contracts](../contracts/price-oracle.md) for detailed information.
-
-## Market Parameters (Planned)
-
-- **Collateral Type**: fxUSD (via fxSAVE vault)
-- **Leverage Mechanism**: Variable leverage based on collateral ratio
-- **Yield Source**: Yield from fxSAVE vault
-- **Rebalancing**: Via stability pools
-- **Deployment**: Planned for February 2026
-
-## Genesis (Maiden Voyage) - Planned
-
-- **Start Date**: February 1, 2026 (planned)
-- **End Date**: February 8, 2026 (planned)
+| | |
+| --- | --- |
+| **Start** | February 1, 2026 (planned) |
+| **End** | February 8, 2026 (planned) |

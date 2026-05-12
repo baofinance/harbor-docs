@@ -1,18 +1,21 @@
-# BTC/stETH Market
+# stETH/BTC Market
 
 > **Status**: ✅ Deployed - Production v1 deployment on Ethereum mainnet
 
-The BTC/stETH market allows users to mint pegged tokens (haBTC) and leveraged tokens (hsSTETH-BTC) using stETH (via wstETH) as collateral.
+The stETH/BTC market allows users to mint pegged tokens (haBTC) and leveraged tokens (hsSTETH-BTC) using stETH (via wstETH) as collateral.
 
-## Market Overview
+## Market overview
 
-This market uses stETH (via wrapped stETH) as collateral to mint:
-- **haBTC**: Pegged token representing BTC exposure (shared with BTC/fxUSD market)
-- **hsSTETH-BTC**: Leveraged token with variable exposure to BTC
+| Token | Role |
+| ----- | ---- |
+| **haBTC** | Pegged token — BTC exposure (shared with [fxUSD/BTC](./btc-fxusd.md)) |
+| **hsSTETH-BTC** | Leveraged token — variable BTC exposure |
 
-## Contract Addresses (Mainnet)
+Collateral: **stETH** / **wstETH** (Lido).
 
-Proxy keys match [`harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json); see [Generic market deployments](./generic.md).
+## Contract addresses (Mainnet)
+
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). State file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 - **minter** (`BTC::stETH::minter`): `0xF42516EB885E737780EB864dd07cEc8628000919`
 - **peggedToken** (`BTC::pegged`): `0x25bA4A826E1A1346dcA2Ab530831dbFF9C08bEA7` (haBTC)
@@ -27,40 +30,36 @@ Proxy keys match [`harbor_v1.state.json`](https://github.com/baofinance/harbor/b
 - **collateralToken**: `0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0` (wstETH)
 - **wrappedCollateralToken**: `0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84` (stETH)
 
-## Token Details
+## Token details
 
-### Pegged Token (haBTC)
-- **Symbol**: haBTC
-- **Description**: Pegged token representing BTC exposure
-- **Use Case**: Stable exposure to BTC price movements
-- **Address**: `0x25bA4A826E1A1346dcA2Ab530831dbFF9C08bEA7`
-- **Note**: Shared with BTC/fxUSD market
+### Pegged token (haBTC)
 
-### Leveraged Token (hsSTETH-BTC)
-- **Symbol**: hsSTETH-BTC
-- **Description**: Leveraged token with variable exposure to BTC
-- **Use Case**: Leveraged exposure to BTC with staking yield
-- **Address**: `0x817ADaE288eD46B8618AAEffE75ACD26A0a1b0FD`
+Shared with [fxUSD/BTC](./btc-fxusd.md). **Address:** `0x25bA4A826E1A1346dcA2Ab530831dbFF9C08bEA7`
 
-### Collateral Token
-- **stETH**: Lido Staked ETH (`0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84`)
-- **wstETH**: Wrapped Staked ETH (`0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0`)
+### Leveraged token (hsSTETH-BTC)
 
-## Stability Pools
+**Address:** `0x817ADaE288eD46B8618AAEffE75ACD26A0a1b0FD` — variable BTC exposure with Lido staking yield.
 
-### Collateral Stability Pool
+### Collateral
+
+- **stETH:** `0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84`
+- **wstETH:** `0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0`
+
+## Stability pools
+
+### Collateral stability pool
 - **Proxy key**: `BTC::stETH::stabilityPoolCollateral`
 - **Address**: `0x667Ceb303193996697A5938cD6e17255EeAcef51`
 - **Rebalance Token**: wstETH (collateral)
 - **Purpose**: Liquidates positions using collateral
 
-### Leveraged Stability Pool (Sail Pool)
+### Leveraged stability pool (Sail pool)
 - **Proxy key**: `BTC::stETH::stabilityPoolLeveraged`
 - **Address**: `0xCB4F3e21DE158bf858Aa03E63e4cEc7342177013`
 - **Rebalance Token**: hsSTETH-BTC (leveraged token)
 - **Purpose**: Liquidates positions using leveraged tokens
 
-## Price Oracle
+## Price oracle
 
 The stETH/BTC price oracle (`0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB`) provides:
 - **Rate Provider**: wstETH (for stETH exchange rate)
@@ -69,16 +68,20 @@ The stETH/BTC price oracle (`0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB`) provid
 
 See [Price Oracle Contracts](../contracts/price-oracle.md) for detailed information.
 
-## Market Parameters
+## Market parameters
 
-- **Collateral Type**: stETH (via wstETH)
-- **Leverage Mechanism**: Variable leverage based on collateral ratio
-- **Yield Source**: Staking rewards from stETH
-- **Rebalancing**: Via stability pools
-- **Deployment**: Mainnet deployment December 2025 (startBlock: 24049273)
+| | |
+| --- | --- |
+| **Collateral** | stETH (via wstETH) |
+| **Leverage** | Variable, collateral-ratio bands |
+| **Yield** | Lido staking (stETH) |
+| **Rebalancing** | Stability pools |
+| **Deployment** | Mainnet, December 2025 (`startBlock`: 24049273) |
 
 ## Genesis (Maiden Voyage)
 
-- **Start Date**: December 19, 2025
-- **End Date**: January 4, 2026
-- **Genesis Zap**: `0x8Ee0D6AD1d15b3515Ba81CCE16Bba344Deea6781` (GenesisETHZap_v3)
+| | |
+| --- | --- |
+| **Start** | December 19, 2025 |
+| **End** | January 4, 2026 |
+| **Genesis zap** | `0x8Ee0D6AD1d15b3515Ba81CCE16Bba344Deea6781` (GenesisETHZap_v3) |
