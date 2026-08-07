@@ -1,4 +1,4 @@
-# fxUSD/EUR Market
+# fxUSD collateral (haEUR)
 
 > **Status**: ✅ Deployed  
 > **Chain**: Ethereum mainnet (1)  
@@ -20,7 +20,7 @@ Mint **haEUR** and **hsFXUSD-EUR** using **fxUSD** via **fxSAVE** as collateral.
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `EUR::fxUSD::reservePool` | `0x27cA37538358F90d45cAA886fB58CC08ffe2dD2f` |
 | **stabilityPoolManager** | `EUR::fxUSD::stabilityPoolManager` | `0x756766756880ceA06270Fd507b09Ef32714Ec7C2` |
 | **genesis** | `EUR::fxUSD::genesis` | `0xa9EB43Ed6Ba3B953a82741F3e226C1d6B029699b` |
-| **priceOracle** | — | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` (fxUSD/EUR — [detail](../contracts/price-oracles/mainnet/fxusd-eur.md)) |
+| **priceOracle** | — | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` (fxUSD/EUR — [detail](fxusd.md)) |
 | **feeReceiver** | `EUR::fxUSD::minterFeeReceiver` | `0x43dfDB5059777A8B8819d8D8ff2c9ACCFEb766CB` |
 | **stabilityPoolCollateral** | `EUR::fxUSD::stabilityPoolCollateral` | `0xe60054E6b518f67411834282cE1557381f050B13` |
 | **stabilityPoolLeveraged** | `EUR::fxUSD::stabilityPoolLeveraged` | `0xc5e0dA7e0a178850438E5E97ed59b6eb2562e88E` |
@@ -69,11 +69,11 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | fxUSD/EUR |
 | **Address** | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` |
 | **Rate provider** | fxSAVE |
-| **Detail page** | [fxUSD/EUR](../contracts/price-oracles/mainnet/fxusd-eur.md) |
+| **Detail page** | [fxUSD/EUR](fxusd.md) |
 
 ## Zaps
 
-Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../contracts/zap.md).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../../contracts/zap.md).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
@@ -100,4 +100,5 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Related markets
 
-- [steth-eur](./steth-eur.md)
+- [stETH](steth.md)
+

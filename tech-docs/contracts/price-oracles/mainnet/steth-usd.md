@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/USD Market (Mainnet)](../../../markets/steth-usd.md) | Minter price oracle for `steth-usd` |
+| [stETH/USD Market (Mainnet)](../../../markets/hausd/steth.md) | Minter price oracle for `steth-usd` |
 
 ## Addresses / aliases
 

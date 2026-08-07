@@ -1,4 +1,4 @@
-# fxUSD/SILVER Market
+# fxUSD collateral (haSILVER)
 
 > **Status**: ✅ Deployed  
 > **Chain**: Ethereum mainnet (1)  
@@ -20,7 +20,7 @@ Mint **haSILVER** and **hsFXUSD-SILVER** using **fxUSD** via **fxSAVE** as colla
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `SILVER::fxUSD::reservePool` | `0xDBF9F31795DAEa636e3e1305f897BFa8D2aA017d` |
 | **stabilityPoolManager** | `SILVER::fxUSD::stabilityPoolManager` | `0x1EF76C3f4B426dFeC271a8a3904035dE0A6E6d75` |
 | **genesis** | `SILVER::fxUSD::genesis` | `0x66d18B9Dd5d1cd51957DFea0e0373b54E06118C8` |
-| **priceOracle** | — | `0x14816ff286f2eA46AB48c3275401Fd4b1ef817B5` (fxUSD/SILVER — [detail](../contracts/price-oracles/mainnet/fxusd-silver.md)) |
+| **priceOracle** | — | `0x14816ff286f2eA46AB48c3275401Fd4b1ef817B5` (fxUSD/SILVER — [detail](fxusd.md)) |
 | **feeReceiver** | `SILVER::fxUSD::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `SILVER::fxUSD::stabilityPoolCollateral` | `0x7619664fe05c9cbDA5B622455856D7CA11Cb8800` |
 | **stabilityPoolLeveraged** | `SILVER::fxUSD::stabilityPoolLeveraged` | `0x24AEf2d27146497B18df180791424b1010bf1889` |
@@ -69,11 +69,11 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | fxUSD/SILVER |
 | **Address** | `0x14816ff286f2eA46AB48c3275401Fd4b1ef817B5` |
 | **Rate provider** | fxSAVE |
-| **Detail page** | [fxUSD/SILVER](../contracts/price-oracles/mainnet/fxusd-silver.md) |
+| **Detail page** | [fxUSD/SILVER](fxusd.md) |
 
 ## Zaps
 
-Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../contracts/zap.md).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../../contracts/zap.md).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
@@ -100,4 +100,5 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Related markets
 
-- [steth-silver](./steth-silver.md)
+- [stETH](steth.md)
+

@@ -1,10 +1,10 @@
-# PAXG/USD Market
+# PAXG collateral (haUSD)
 
 > **Status**: ✅ Deployed (mainnet USD stack, May 2026)  
 > **Chain**: Ethereum mainnet (1)  
 > **App `marketId`**: `paxg-usd`
 
-Mint **haUSD** and **hsPAXG-USD** using **PAXG** as collateral (wrapped = PAXG). Shares **haUSD** with [stETH/USD](./steth-usd.md) and the other mainnet USD stacks.
+Mint **haUSD** and **hsPAXG-USD** using **PAXG** as collateral (wrapped = PAXG). Shares **haUSD** with [stETH](./steth.md), [wBTC](./wbtc.md), and [tBTC](./tbtc.md).
 
 App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app/blob/main/src/config/contracts.mainnetUsd.ts).
 
@@ -22,7 +22,7 @@ App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `USD::PAXG::reservePool` | `0x4C60a87BC13Aa44Fa16b657868FA8a0cDA5DCC52` |
 | **stabilityPoolManager** | `USD::PAXG::stabilityPoolManager` | `0xf0ab0C95E5cb0C36780D09d4DED29AF869E65f86` |
 | **genesis** | `USD::PAXG::genesis` | `0x68edA29187587DEf950d566f862FFA85FdA594cf` |
-| **priceOracle** | — | `0x647633122f9d9ba87210210d5A3ded365911BF9b` (PAXG/USD — [detail](../contracts/price-oracles/mainnet/paxg-usd.md)) |
+| **priceOracle** | — | `0x647633122f9d9ba87210210d5A3ded365911BF9b` (PAXG/USD — [detail](paxg.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::PAXG::stabilityPoolCollateral` | `0xAf7B276dF93F74AE7780E1D5f550bEaf4Ff26415` |
 | **stabilityPoolLeveraged** | `USD::PAXG::stabilityPoolLeveraged` | `0x45B3e0dC9DdaDE6D5e2D45AD08c28B794Bdbf985` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | PAXG/USD |
 | **Address** | `0x647633122f9d9ba87210210d5A3ded365911BF9b` |
 | **Rate provider** | — (direct / market-wired) |
-| **Detail page** | [PAXG/USD](../contracts/price-oracles/mainnet/paxg-usd.md) |
+| **Detail page** | [PAXG/USD](paxg.md) |
 
 ## Zaps
 
@@ -102,6 +102,7 @@ No genesis/minter zaps in app config for mainnet USD stacks — deposit **PAXG**
 
 ## Related markets
 
-- [stETH/USD (Mainnet)](./steth-usd.md)
-- [wBTC/USD](./wbtc-usd.md)
-- [tBTC/USD](./tbtc-usd.md)
+- [stETH](steth.md)
+- [wBTC](wbtc.md)
+- [tBTC](tbtc.md)
+

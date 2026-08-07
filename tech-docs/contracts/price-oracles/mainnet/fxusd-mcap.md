@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/MCAP Market](../../../markets/fxusd-mcap.md) | Minter price oracle for `fxusd-mcap` |
+| [fxUSD/MCAP Market](../../../markets/hamcap/fxusd.md) | Minter price oracle for `fxusd-mcap` |
 
 ## See also
 

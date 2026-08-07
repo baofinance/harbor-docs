@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [PAXG/USD Market](../../../markets/paxg-usd.md) | Minter price oracle for `paxg-usd` |
+| [PAXG/USD Market](../../../markets/hausd/paxg.md) | Minter price oracle for `paxg-usd` |
 
 ## Addresses / aliases
 

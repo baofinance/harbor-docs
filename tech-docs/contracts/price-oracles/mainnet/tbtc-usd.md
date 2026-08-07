@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [tBTC/USD Market](../../../markets/tbtc-usd.md) | Minter price oracle for `tbtc-usd` |
+| [tBTC/USD Market](../../../markets/hausd/tbtc.md) | Minter price oracle for `tbtc-usd` |
 
 ## Addresses / aliases
 

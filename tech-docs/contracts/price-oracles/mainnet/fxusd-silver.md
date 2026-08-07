@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/SILVER Market](../../../markets/fxusd-silver.md) | Minter price oracle for `fxusd-silver` |
+| [fxUSD/SILVER Market](../../../markets/hasilver/fxusd.md) | Minter price oracle for `fxusd-silver` |
 
 ## See also
 

@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/USD Market (MegaETH)](../../../markets/steth-usd-megaeth.md) | Minter price oracle for MegaETH `steth-usd` |
+| [stETH/USD Market (MegaETH)](../../../markets/hausd-megaeth/steth.md) | Minter price oracle for MegaETH `steth-usd` |
 
 ## See also
 

@@ -1,4 +1,4 @@
-# fxUSD/MCAP Market
+# fxUSD collateral (haMCAP)
 
 > **Status**: ✅ Deployed  
 > **Chain**: Ethereum mainnet (1)  
@@ -20,7 +20,7 @@ Mint **haMCAP** and **hsFXUSD-MCAP** using **fxUSD** via **fxSAVE** as collatera
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `MCAP::fxUSD::reservePool` | `0xBC645796937B0883dAE66CE3f8211891Cbc0324C` |
 | **stabilityPoolManager** | `MCAP::fxUSD::stabilityPoolManager` | `0x52DC69cbdC6Ef508b7419A456dD36967DAEfD538` |
 | **genesis** | `MCAP::fxUSD::genesis` | `0x7Bfb831E6360D4600C7b9b200F8AcA6f89CecdA4` |
-| **priceOracle** | — | `0x88430c0F09A6D603c43E2816F2EA9Ab45dB7e1a8` (fxUSD/MCAP — [detail](../contracts/price-oracles/mainnet/fxusd-mcap.md)) |
+| **priceOracle** | — | `0x88430c0F09A6D603c43E2816F2EA9Ab45dB7e1a8` (fxUSD/MCAP — [detail](fxusd.md)) |
 | **feeReceiver** | `MCAP::fxUSD::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `MCAP::fxUSD::stabilityPoolCollateral` | `0x7928a145Eed1374f5594c799290419B80fCd03f0` |
 | **stabilityPoolLeveraged** | `MCAP::fxUSD::stabilityPoolLeveraged` | `0x8CF0C5F1394E137389D6dbfE91c56D00dEcdDAD8` |
@@ -69,11 +69,11 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | fxUSD/MCAP |
 | **Address** | `0x88430c0F09A6D603c43E2816F2EA9Ab45dB7e1a8` |
 | **Rate provider** | fxSAVE |
-| **Detail page** | [fxUSD/MCAP](../contracts/price-oracles/mainnet/fxusd-mcap.md) |
+| **Detail page** | [fxUSD/MCAP](fxusd.md) |
 
 ## Zaps
 
-Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../contracts/zap.md).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../../contracts/zap.md).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
@@ -100,4 +100,5 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Related markets
 
-- [steth-mcap](./steth-mcap.md)
+- [stETH](steth.md)
+

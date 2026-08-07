@@ -1,10 +1,10 @@
-# wBTC/USD Market
+# wBTC collateral (haUSD)
 
 > **Status**: ✅ Deployed (mainnet USD stack, May 2026)  
 > **Chain**: Ethereum mainnet (1)  
 > **App `marketId`**: `wbtc-usd`
 
-Mint **haUSD** and **hsWBTC-USD** using **WBTC** as collateral. Shares **haUSD** with [stETH/USD](./steth-usd.md) and the other mainnet USD stacks.
+Mint **haUSD** and **hsWBTC-USD** using **WBTC** as collateral. Shares **haUSD** with [stETH](./steth.md), [PAXG](./paxg.md), and [tBTC](./tbtc.md).
 
 App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app/blob/main/src/config/contracts.mainnetUsd.ts).
 
@@ -22,7 +22,7 @@ App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `USD::wBTC::reservePool` | `0x81f15ff2deAd8F3D97e84849072b8550facCd5ee` |
 | **stabilityPoolManager** | `USD::wBTC::stabilityPoolManager` | `0x2506223d01072f795487Ff1f67aD40E1D3B15De0` |
 | **genesis** | `USD::wBTC::genesis` | `0xbaE2Cab2Ed87D488CF264bA9411A3fDDAB43ec22` |
-| **priceOracle** | — | `0x189d6CA0271F06c222873b4C09A26C83AdCCF73d` (wBTC/USD — [detail](../contracts/price-oracles/mainnet/wbtc-usd.md)) |
+| **priceOracle** | — | `0x189d6CA0271F06c222873b4C09A26C83AdCCF73d` (wBTC/USD — [detail](wbtc.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::wBTC::stabilityPoolCollateral` | `0xa1959F3dae8C3e7c8825dD7902D30569aF092Ed8` |
 | **stabilityPoolLeveraged** | `USD::wBTC::stabilityPoolLeveraged` | `0xd16C291456060bF36023D9a935719380a14dE3AD` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | wBTC/USD |
 | **Address** | `0x189d6CA0271F06c222873b4C09A26C83AdCCF73d` |
 | **Rate provider** | — (direct / market-wired) |
-| **Detail page** | [wBTC/USD](../contracts/price-oracles/mainnet/wbtc-usd.md) |
+| **Detail page** | [wBTC/USD](wbtc.md) |
 
 ## Zaps
 
@@ -102,6 +102,7 @@ No genesis/minter zaps in app config for mainnet USD stacks — deposit **WBTC**
 
 ## Related markets
 
-- [stETH/USD (Mainnet)](./steth-usd.md)
-- [PAXG/USD](./paxg-usd.md)
-- [tBTC/USD](./tbtc-usd.md)
+- [stETH](steth.md)
+- [PAXG](paxg.md)
+- [tBTC](tbtc.md)
+

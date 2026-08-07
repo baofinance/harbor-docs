@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/EUR Market](../../../markets/fxusd-eur.md) | Minter price oracle for `fxusd-eur` |
+| [fxUSD/EUR Market](../../../markets/haeur/fxusd.md) | Minter price oracle for `fxusd-eur` |
 
 ## See also
 

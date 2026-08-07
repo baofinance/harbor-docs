@@ -28,7 +28,7 @@ Each deployed aggregator has a detail page with the same layout (summary, feeds,
 
 | Oracle pair | Address | Status | Version | Notes |
 |-------------|---------|--------|---------|-------|
-| [stETH/USD](./megaeth/steth-usd.md) | `0xEDd3dC3E699360846c87CB69052EcbC900201854` | Active | v4 | Used by [stETH/USD Market (MegaETH)](../../markets/steth-usd-megaeth.md); salt `harbor_megaeth_v1::stETH::USD::wrappedPriceAggregator` |
+| [stETH/USD](./megaeth/steth-usd.md) | `0xEDd3dC3E699360846c87CB69052EcbC900201854` | Active | v4 | Used by [stETH/USD Market (MegaETH)](../../markets/hausd-megaeth/steth.md); salt `harbor_megaeth_v1::stETH::USD::wrappedPriceAggregator` |
 
 ### USDMY pairs (deprecated)
 

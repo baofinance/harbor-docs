@@ -101,21 +101,21 @@ Prefer the inventory address on each pair page. Where the live app still wires a
 
 | Oracle pair | Market doc(s) |
 | ----------- | ------------- |
-| fxUSD/ETH | [fxUSD/ETH](../../markets/eth-fxsave.md) |
-| fxUSD/BTC | [fxUSD/BTC](../../markets/btc-fxusd.md) |
-| stETH/BTC | [stETH/BTC](../../markets/btc-steth.md) |
-| fxUSD/EUR | [fxUSD/EUR](../../markets/fxusd-eur.md) |
-| stETH/EUR | [stETH/EUR](../../markets/steth-eur.md) |
-| fxUSD/GOLD | [fxUSD/GOLD](../../markets/fxusd-gold.md) |
-| stETH/GOLD | [stETH/GOLD](../../markets/steth-gold.md) |
-| fxUSD/SILVER | [fxUSD/SILVER](../../markets/fxusd-silver.md) |
-| stETH/SILVER | [stETH/SILVER](../../markets/steth-silver.md) |
-| fxUSD/MCAP | [fxUSD/MCAP](../../markets/fxusd-mcap.md) |
-| stETH/MCAP | [stETH/MCAP](../../markets/steth-mcap.md) |
-| stETH/USD | [stETH/USD (Mainnet)](../../markets/steth-usd.md) |
-| PAXG/USD | [PAXG/USD](../../markets/paxg-usd.md) |
-| wBTC/USD | [wBTC/USD](../../markets/wbtc-usd.md) |
-| tBTC/USD | [tBTC/USD](../../markets/tbtc-usd.md) |
+| fxUSD/ETH | [fxUSD/ETH](../../markets/haeth/fxusd.md) |
+| fxUSD/BTC | [fxUSD/BTC](../../markets/habtc/fxusd.md) |
+| stETH/BTC | [stETH/BTC](../../markets/habtc/steth.md) |
+| fxUSD/EUR | [fxUSD/EUR](../../markets/haeur/fxusd.md) |
+| stETH/EUR | [stETH/EUR](../../markets/haeur/steth.md) |
+| fxUSD/GOLD | [fxUSD/GOLD](../../markets/hagold/fxusd.md) |
+| stETH/GOLD | [stETH/GOLD](../../markets/hagold/steth.md) |
+| fxUSD/SILVER | [fxUSD/SILVER](../../markets/hasilver/fxusd.md) |
+| stETH/SILVER | [stETH/SILVER](../../markets/hasilver/steth.md) |
+| fxUSD/MCAP | [fxUSD/MCAP](../../markets/hamcap/fxusd.md) |
+| stETH/MCAP | [stETH/MCAP](../../markets/hamcap/steth.md) |
+| stETH/USD | [stETH/USD (Mainnet)](../../markets/hausd/steth.md) |
+| PAXG/USD | [PAXG/USD](../../markets/hausd/paxg.md) |
+| wBTC/USD | [wBTC/USD](../../markets/hausd/wbtc.md) |
+| tBTC/USD | [tBTC/USD](../../markets/hausd/tbtc.md) |
 
 
 ## Version Information

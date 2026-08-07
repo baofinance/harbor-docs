@@ -4,7 +4,7 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 **How to add new deployments**
 
-1. Markets → copy any existing `markets/*.md` page (same sections including zap rows) → `markets/<marketId>.md` → add to [`sidebars-tech.ts`](../sidebars-tech.ts)
+1. Markets → group by haToken under `markets/<hatoken>/` (e.g. `hausd/`), add a collateral page (`steth.md`, `fxusd.md`, …) using the shared layout (incl. zap rows), update the haToken `index.md`, and wire the sidebar category in [`sidebars-tech.ts`](../sidebars-tech.ts)
 2. Oracles → copy any pair page under `contracts/price-oracles/<chain>/` → fill → add a row on the chain inventory page linking to it
 3. Zaps → wire addresses on the market page + row on [Zap contracts](./contracts/zap.md)
 4. Proxy keys → keep [markets/generic.md](./markets/generic.md) in sync with `harbor_v1.state.json`
@@ -15,22 +15,22 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 | App / proxy family | Doc page | Status in docs |
 | ------------------ | -------- | -------------- |
-| `eth-fxusd` / `ETH::fxUSD` | [eth-fxsave](./markets/eth-fxsave.md) | ✅ |
-| `btc-fxusd` / `BTC::fxUSD` | [btc-fxusd](./markets/btc-fxusd.md) | ✅ |
-| `btc-steth` / `BTC::stETH` | [btc-steth](./markets/btc-steth.md) | ✅ |
-| `fxusd-eur` / `EUR::fxUSD` | [fxusd-eur](./markets/fxusd-eur.md) | ✅ (was “coming soon”) |
-| `steth-eur` / `EUR::stETH` | [steth-eur](./markets/steth-eur.md) | ✅ added |
-| `fxusd-gold` / `GOLD::fxUSD` | [fxusd-gold](./markets/fxusd-gold.md) | ✅ (was “coming soon”) |
-| `steth-gold` / `GOLD::stETH` | [steth-gold](./markets/steth-gold.md) | ✅ added |
-| `fxusd-silver` / `SILVER::fxUSD` | [fxusd-silver](./markets/fxusd-silver.md) | ✅ added |
-| `steth-silver` / `SILVER::stETH` | [steth-silver](./markets/steth-silver.md) | ✅ added |
-| `fxusd-mcap` / `MCAP::fxUSD` | [fxusd-mcap](./markets/fxusd-mcap.md) | ✅ added |
-| `steth-mcap` / `MCAP::stETH` | [steth-mcap](./markets/steth-mcap.md) | ✅ added |
-| `steth-usd` / `USD::stETH` | [steth-usd](./markets/steth-usd.md) | ✅ mainnet USD stack |
-| `paxg-usd` / `USD::PAXG` | [paxg-usd](./markets/paxg-usd.md) | ✅ shared haUSD |
-| `wbtc-usd` / `USD::wBTC` | [wbtc-usd](./markets/wbtc-usd.md) | ✅ shared haUSD |
-| `tbtc-usd` / `USD::tBTC` | [tbtc-usd](./markets/tbtc-usd.md) | ✅ shared haUSD |
-| MegaETH `steth-usd` | [steth-usd-megaeth](./markets/steth-usd-megaeth.md) | ✅ (not mainnet) |
+| `eth-fxusd` / `ETH::fxUSD` | [haETH / fxUSD](./markets/haeth/fxusd.md) | ✅ |
+| `btc-fxusd` / `BTC::fxUSD` | [haBTC / fxUSD](./markets/habtc/fxusd.md) | ✅ |
+| `btc-steth` / `BTC::stETH` | [haBTC / stETH](./markets/habtc/steth.md) | ✅ |
+| `fxusd-eur` / `EUR::fxUSD` | [haEUR / fxUSD](./markets/haeur/fxusd.md) | ✅ (was “coming soon”) |
+| `steth-eur` / `EUR::stETH` | [haEUR / stETH](./markets/haeur/steth.md) | ✅ added |
+| `fxusd-gold` / `GOLD::fxUSD` | [haGOLD / fxUSD](./markets/hagold/fxusd.md) | ✅ (was “coming soon”) |
+| `steth-gold` / `GOLD::stETH` | [haGOLD / stETH](./markets/hagold/steth.md) | ✅ added |
+| `fxusd-silver` / `SILVER::fxUSD` | [haSILVER / fxUSD](./markets/hasilver/fxusd.md) | ✅ added |
+| `steth-silver` / `SILVER::stETH` | [haSILVER / stETH](./markets/hasilver/steth.md) | ✅ added |
+| `fxusd-mcap` / `MCAP::fxUSD` | [haMCAP / fxUSD](./markets/hamcap/fxusd.md) | ✅ added |
+| `steth-mcap` / `MCAP::stETH` | [haMCAP / stETH](./markets/hamcap/steth.md) | ✅ added |
+| `steth-usd` / `USD::stETH` | [haUSD / stETH](./markets/hausd/steth.md) | ✅ mainnet USD stack |
+| `paxg-usd` / `USD::PAXG` | [haUSD / PAXG](./markets/hausd/paxg.md) | ✅ shared haUSD |
+| `wbtc-usd` / `USD::wBTC` | [haUSD / wBTC](./markets/hausd/wbtc.md) | ✅ shared haUSD |
+| `tbtc-usd` / `USD::tBTC` | [haUSD / tBTC](./markets/hausd/tbtc.md) | ✅ shared haUSD |
+| MegaETH `steth-usd` | [haUSD MegaETH / stETH](./markets/hausd-megaeth/steth.md) | ✅ (not mainnet) |
 | Generic CREATE3 registry | [generic](./markets/generic.md) | ✅ incl. `USD::*` |
 
 **Still thin on market pages:** some `minterFeeReceiver` rows (stETH / SILVER / MCAP / USD families missing from generic table), app flags (`anchorActive` / `sailActive`). Genesis windows + `startBlock` filled from `harbor-app` (`contracts.mainnetUsd.ts` for USD; placeholders noted where app still has `startBlock: 0`).
@@ -86,6 +86,6 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 | Kind | How to extend |
 | ---- | ------------- |
-| Market | Match sections on [fxUSD/ETH](./markets/eth-fxsave.md) (includes zaps) |
+| Market | Match sections on [haETH / fxUSD](./markets/haeth/fxusd.md) (includes zaps) |
 | Price aggregator | Match sections on any `contracts/price-oracles/<chain>/*.md` page |
 | Zap overview | [contracts/zap.md](./contracts/zap.md) |

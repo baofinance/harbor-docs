@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/BTC Market](../../../markets/btc-steth.md) | Minter price oracle for `btc-steth` |
+| [stETH/BTC Market](../../../markets/habtc/steth.md) | Minter price oracle for `btc-steth` |
 
 ## Addresses / aliases
 

@@ -1,8 +1,8 @@
-# stETH/USD Market (MegaETH)
+# stETH collateral (haUSD · MegaETH)
 
 > **Status**: ✅ Deployed on MegaETH (`chainId` **4326**)
 
-Harbor market with **stETH** collateral and a **USD** peg. This deployment uses the MegaETH manifest family (`harbor_megaeth_v1`, proxy keys like `USD::stETH::*`); it is **not** the same deployment as [mainnet stETH/USD](./steth-usd.md) (`harbor_v1`, shared haUSD with PAXG/wBTC/tBTC) or other [Ethereum mainnet markets](./eth-fxsave.md). Scope and comparison: [Generic market deployments](./generic.md#megaeth-harbor-deployment-proxies).
+Harbor market with **stETH** collateral and a **USD** peg. This deployment uses the MegaETH manifest family (`harbor_megaeth_v1`, proxy keys like `USD::stETH::*`); it is **not** the same deployment as [mainnet stETH/USD](../hausd/steth.md) (`harbor_v1`, shared haUSD with PAXG/wBTC/tBTC) or other [Ethereum mainnet markets](../haeth/fxusd.md). Scope and comparison: [Generic market deployments](../generic.md#megaeth-harbor-deployment-proxies).
 
 ## Market overview
 
@@ -11,7 +11,7 @@ Harbor market with **stETH** collateral and a **USD** peg. This deployment uses 
 | **Collateral** | Lido stETH (wrapped for the minter per chain configuration) |
 | **Peg** | USD — haToken proxy `USD::pegged` |
 | **Leveraged token** | Proxy `USD::stETH::leveraged` (Sail-style exposure for this market) |
-| **Mechanics** | Wrapped collateral in, pegged + leveraged tokens out; rebalances via stability pools ([Minter](../contracts/minter.md), [Stability pool](../contracts/stability-pool.md)) |
+| **Mechanics** | Wrapped collateral in, pegged + leveraged tokens out; rebalances via stability pools ([Minter](../../contracts/minter.md), [Stability pool](../../contracts/stability-pool.md)) |
 
 ## Context (read once)
 
@@ -19,13 +19,13 @@ Harbor market with **stETH** collateral and a **USD** peg. This deployment uses 
 | --- | --- |
 | **Token symbols / collateral ERC-20** | Confirm on-chain via the minter’s immutable token addresses or a block explorer — not duplicated here to avoid drift from the registry table. |
 | **Stability pools** | Collateral pool liquidates against the stETH/wrapped collateral leg; Sail pool liquidates against `USD::stETH::leveraged`. Manager: proxy `USD::stETH::stabilityPoolManager`. |
-| **Price oracle** | Minter uses the Harbor **stETH/USD** wrapped aggregator (row below), not the chain’s standalone [wstETH/USD feed](../contracts/price-oracles/megaeth.md). |
+| **Price oracle** | Minter uses the Harbor **stETH/USD** wrapped aggregator (row below), not the chain’s standalone [wstETH/USD feed](../../contracts/price-oracles/megaeth.md). |
 | **Genesis** | Proxy `USD::stETH::genesis` is in the registry; maiden-voyage calendar dates are TBD. |
-| **Zaps** | none published — see [Zap contracts](../contracts/zap.md) when MegaETH zaps ship |
+| **Zaps** | none published — see [Zap contracts](../../contracts/zap.md) when MegaETH zaps ship |
 
 ## Deployment registry (proxies, implementations, CREATE3 salts)
 
-Single source for this market: all **proxy** and **implementation** addresses and **CREATE3 salt (string)** values. Deploy tooling maps each salt string to `bytes32` for [Bao Factory](../contracts/bao-factory.md) (`0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`). Manifest snapshot **`lastUpdated`:** `2026-04-29T21:50:12Z` (per-proxy times may be a few seconds earlier).
+Single source for this market: all **proxy** and **implementation** addresses and **CREATE3 salt (string)** values. Deploy tooling maps each salt string to `bytes32` for [Bao Factory](../../contracts/bao-factory.md) (`0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`). Manifest snapshot **`lastUpdated`:** `2026-04-29T21:50:12Z` (per-proxy times may be a few seconds earlier).
 
 | Component | Proxy key | Proxy address | Implementation | CREATE3 salt (string) | Proxy `deploymentTime` |
 | --------- | --------- | ------------- | -------------- | --------------------- | ---------------------- |
@@ -39,13 +39,13 @@ Single source for this market: all **proxy** and **implementation** addresses an
 | Leveraged stability pool | `USD::stETH::stabilityPoolLeveraged` | `0x981D002e7A14E9f37f5feC17caa0B69f7A722132` | `0xaa47742C019357c7DD85917A4126676265D12EBE` | `harbor_megaeth_v1::USD::stETH::stabilityPoolLeveraged` | `2026-04-29T21:49:49Z` |
 | Price oracle (Harbor stETH/USD) | — | `0xEDd3dC3E699360846c87CB69052EcbC900201854` | `0xDe10BEd5236B786cAA18Ca39FFa5de1b904a8a94` | `harbor_megaeth_v1::stETH::USD::wrappedPriceAggregator` | `2026-04-27T21:50:24Z` |
 
-Duplicate listing (implementations + MegaETH-wide notes): [Generic](./generic.md#megaeth-harbor-deployment-proxies).
+Duplicate listing (implementations + MegaETH-wide notes): [Generic](../generic.md#megaeth-harbor-deployment-proxies).
 
 ## See also
 
 | Resource | Use for |
 | -------- | ------- |
-| [Generic market deployments](./generic.md) | Full mainnet + MegaETH proxy registries, manifest fields, mainnet vs MegaETH comparison |
-| [stETH/USD (Mainnet)](./steth-usd.md) | Mainnet USD stack (`harbor_v1`) — different addresses |
-| [MegaETH price oracles](../contracts/price-oracles/megaeth.md) | Chain oracle inventory (direct feeds, deprecated USDMY, Harbor aggregator cross-link) |
-| [Bao Factory](../contracts/bao-factory.md) | CREATE3 / salt naming conventions |
+| [Generic market deployments](../generic.md) | Full mainnet + MegaETH proxy registries, manifest fields, mainnet vs MegaETH comparison |
+| [stETH/USD (Mainnet)](../hausd/steth.md) | Mainnet USD stack (`harbor_v1`) — different addresses |
+| [MegaETH price oracles](../../contracts/price-oracles/megaeth.md) | Chain oracle inventory (direct feeds, deprecated USDMY, Harbor aggregator cross-link) |
+| [Bao Factory](../../contracts/bao-factory.md) | CREATE3 / salt naming conventions |

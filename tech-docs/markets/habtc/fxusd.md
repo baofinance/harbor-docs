@@ -1,4 +1,4 @@
-# fxUSD/BTC Market
+# fxUSD collateral (haBTC)
 
 > **Status**: ✅ Deployed  
 > **Chain**: Ethereum mainnet (1)  
@@ -20,7 +20,7 @@ Mint **haBTC** and **hsFXUSD-BTC** using **fxUSD** via **fxSAVE** as collateral.
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `BTC::fxUSD::reservePool` | `0xfDE46D4425138aA01319bB8587Cb935a0393DfE3` |
 | **stabilityPoolManager** | `BTC::fxUSD::stabilityPoolManager` | `0x768E0a386e1972eB5995429Fe21E7aC0f22F516e` |
 | **genesis** | `BTC::fxUSD::genesis` | `0x42cc9a19b358a2A918f891D8a6199d8b05F0BC1C` |
-| **priceOracle** | — | `0x8F76a260c5D21586aFfF18f880FFC808D0524A73` (fxUSD/BTC — [detail](../contracts/price-oracles/mainnet/fxusd-btc.md)) |
+| **priceOracle** | — | `0x8F76a260c5D21586aFfF18f880FFC808D0524A73` (fxUSD/BTC — [detail](../../contracts/price-oracles/mainnet/fxusd-btc.md)) |
 | **feeReceiver** | `BTC::fxUSD::minterFeeReceiver` | `0x70DdA12032335656b63435840Cd55ff7A19dDAb7` |
 | **stabilityPoolCollateral** | `BTC::fxUSD::stabilityPoolCollateral` | `0x86561cdB34ebe8B9abAbb0DD7bEA299fA8532a49` |
 | **stabilityPoolLeveraged** | `BTC::fxUSD::stabilityPoolLeveraged` | `0x9e56F1E1E80EBf165A1dAa99F9787B41cD5bFE40` |
@@ -69,11 +69,11 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | fxUSD/BTC |
 | **Address** | `0x8F76a260c5D21586aFfF18f880FFC808D0524A73` |
 | **Rate provider** | fxSAVE |
-| **Detail page** | [fxUSD/BTC](../contracts/price-oracles/mainnet/fxusd-btc.md) |
+| **Detail page** | [fxUSD/BTC](../../contracts/price-oracles/mainnet/fxusd-btc.md) |
 
 ## Zaps
 
-Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../contracts/zap.md).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **fxSAVE** / **fxUSD** directly — see [Zap contracts](../../contracts/zap.md).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
@@ -100,5 +100,6 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Related markets
 
-- [btc-steth](./btc-steth.md)
-- [eth-fxsave](./eth-fxsave.md)
+- [stETH](steth.md)
+- [fxUSD (haETH)](../haeth/fxusd.md)
+

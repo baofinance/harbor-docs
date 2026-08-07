@@ -32,7 +32,7 @@
 
 | Address | Notes |
 | ------- | ----- |
-| `0xcE8633B7198d02860873689Bb2566BD2efD11F52` | App-wired stETH/USD for [stETH/USD Market (Mainnet)](../../../markets/steth-usd.md) |
+| `0xcE8633B7198d02860873689Bb2566BD2efD11F52` | App-wired stETH/USD for [stETH/USD Market (Mainnet)](../../../markets/hausd/steth.md) |
 
 ## See also
 

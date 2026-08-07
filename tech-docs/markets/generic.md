@@ -152,7 +152,7 @@ This table lists **Harbor protocol** proxies (minters, pools, pegged/leveraged t
 | `USD::wBTC::stabilityPoolLeveraged` | `0xd16C291456060bF36023D9a935719380a14dE3AD` | `0x547d8F6B4F85555B50f8Fa7f00Fa65dc67997a2a` | `harbor_v1::USD::wBTC::stabilityPoolLeveraged` |
 | `USD::wBTC::stabilityPoolManager` | `0x2506223d01072f795487Ff1f67aD40E1D3B15De0` | `0xE296C401C9522f7a194fb66a4DFb499Fc0d629d9` | `harbor_v1::USD::wBTC::stabilityPoolManager` |
 
-Mainnet USD stacks (shared `USD::pegged` / haUSD): [stETH/USD](./steth-usd.md), [PAXG/USD](./paxg-usd.md), [wBTC/USD](./wbtc-usd.md), [tBTC/USD](./tbtc-usd.md).
+Mainnet USD stacks (shared `USD::pegged` / haUSD): [stETH/USD](./hausd/steth.md), [PAXG/USD](./hausd/paxg.md), [wBTC/USD](./hausd/wbtc.md), [tBTC/USD](./hausd/tbtc.md).
 
 ## MegaETH Harbor deployment proxies
 
@@ -204,4 +204,4 @@ The following registry matches the Harbor deployment manifest structure (`schema
 | `USD::stETH::stabilityPoolManager` | `0xfc45f502B0C04fF8dE7cca1703440D87De4B5dE7` | `0xCE23e54B1b47277f2B5F1deff06908e95E0Bf38C` | `harbor_megaeth_v1::USD::stETH::stabilityPoolManager` | `2026-04-29T21:49:49Z` |
 | `stETH::USD::wrappedPriceAggregator` | `0xEDd3dC3E699360846c87CB69052EcbC900201854` | `0xDe10BEd5236B786cAA18Ca39FFa5de1b904a8a94` | `harbor_megaeth_v1::stETH::USD::wrappedPriceAggregator` | `2026-04-27T21:50:24Z` |
 
-Per-market narrative and context: [stETH/USD (MegaETH)](./steth-usd-megaeth.md). Other MegaETH feeds and deprecated pairs: [MegaETH price oracles](../contracts/price-oracles/megaeth.md).
+Per-market narrative and context: [stETH/USD (MegaETH)](./hausd-megaeth/steth.md). Other MegaETH feeds and deprecated pairs: [MegaETH price oracles](../contracts/price-oracles/megaeth.md).

@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/ETH Market](../../../markets/eth-fxsave.md) | Minter price oracle for `eth-fxusd` |
+| [fxUSD/ETH Market](../../../markets/haeth/fxusd.md) | Minter price oracle for `eth-fxusd` |
 
 ## Addresses / aliases
 

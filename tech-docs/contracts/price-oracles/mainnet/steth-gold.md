@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/GOLD Market](../../../markets/steth-gold.md) | Minter price oracle for `steth-gold` |
+| [stETH/GOLD Market](../../../markets/hagold/steth.md) | Minter price oracle for `steth-gold` |
 
 ## See also
 

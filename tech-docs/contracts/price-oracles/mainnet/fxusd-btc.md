@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/BTC Market](../../../markets/btc-fxusd.md) | Minter price oracle for `btc-fxusd` |
+| [fxUSD/BTC Market](../../../markets/habtc/fxusd.md) | Minter price oracle for `btc-fxusd` |
 
 ## Addresses / aliases
 

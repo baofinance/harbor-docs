@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [wBTC/USD Market](../../../markets/wbtc-usd.md) | Minter price oracle for `wbtc-usd` |
+| [wBTC/USD Market](../../../markets/hausd/wbtc.md) | Minter price oracle for `wbtc-usd` |
 
 ## Addresses / aliases
 

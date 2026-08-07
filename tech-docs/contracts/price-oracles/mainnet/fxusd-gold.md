@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/GOLD Market](../../../markets/fxusd-gold.md) | Minter price oracle for `fxusd-gold` |
+| [fxUSD/GOLD Market](../../../markets/hagold/fxusd.md) | Minter price oracle for `fxusd-gold` |
 
 ## Addresses / aliases
 

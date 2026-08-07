@@ -1,4 +1,4 @@
-# stETH/SILVER Market
+# stETH collateral (haSILVER)
 
 > **Status**: ✅ Deployed  
 > **Chain**: Ethereum mainnet (1)  
@@ -20,7 +20,7 @@ Mint **haSILVER** and **hsSTETH-SILVER** using **stETH** via **wstETH** as colla
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `SILVER::stETH::reservePool` | `0x77AC9343621402B938d5A39727Da76891aFFA419` |
 | **stabilityPoolManager** | `SILVER::stETH::stabilityPoolManager` | `0xbA6b54ED8D76bD4f6B4efD4f1f2344B2Ec386c3E` |
 | **genesis** | `SILVER::stETH::genesis` | `0x8f655Ca32A1Fa8032955989c19e91886F26439dc` |
-| **priceOracle** | — | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` (stETH/SILVER — [detail](../contracts/price-oracles/mainnet/steth-silver.md)) |
+| **priceOracle** | — | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` (stETH/SILVER — [detail](steth.md)) |
 | **feeReceiver** | `SILVER::stETH::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `SILVER::stETH::stabilityPoolCollateral` | `0x1C9c1cF9aa9fc86dF980086CbC5a5607522cFc3E` |
 | **stabilityPoolLeveraged** | `SILVER::stETH::stabilityPoolLeveraged` | `0x4C0F988b3c0C58F5ea323238E9d62B79582738e6` |
@@ -69,11 +69,11 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | stETH/SILVER |
 | **Address** | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/SILVER](../contracts/price-oracles/mainnet/steth-silver.md) |
+| **Detail page** | [stETH/SILVER](steth.md) |
 
 ## Zaps
 
-Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **wstETH** / **stETH** directly — see [Zap contracts](../contracts/zap.md).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **wstETH** / **stETH** directly — see [Zap contracts](../../contracts/zap.md).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
@@ -100,4 +100,5 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Related markets
 
-- [fxusd-silver](./fxusd-silver.md)
+- [fxUSD](fxusd.md)
+

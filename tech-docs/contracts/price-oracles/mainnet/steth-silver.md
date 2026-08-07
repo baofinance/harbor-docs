@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/SILVER Market](../../../markets/steth-silver.md) | Minter price oracle for `steth-silver` |
+| [stETH/SILVER Market](../../../markets/hasilver/steth.md) | Minter price oracle for `steth-silver` |
 
 ## See also
 

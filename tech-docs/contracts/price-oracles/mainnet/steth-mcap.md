@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/MCAP Market](../../../markets/steth-mcap.md) | Minter price oracle for `steth-mcap` |
+| [stETH/MCAP Market](../../../markets/hamcap/steth.md) | Minter price oracle for `steth-mcap` |
 
 ## See also
 

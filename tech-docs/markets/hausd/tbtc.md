@@ -1,10 +1,10 @@
-# tBTC/USD Market
+# tBTC collateral (haUSD)
 
 > **Status**: ✅ Deployed (mainnet USD stack, May 2026)  
 > **Chain**: Ethereum mainnet (1)  
 > **App `marketId`**: `tbtc-usd`
 
-Mint **haUSD** and **hsTBTC-USD** using **tBTC** as collateral. Shares **haUSD** with [stETH/USD](./steth-usd.md) and the other mainnet USD stacks.
+Mint **haUSD** and **hsTBTC-USD** using **tBTC** as collateral. Shares **haUSD** with [stETH](./steth.md), [PAXG](./paxg.md), and [wBTC](./wbtc.md).
 
 App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app/blob/main/src/config/contracts.mainnetUsd.ts).
 
@@ -22,7 +22,7 @@ App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `USD::tBTC::reservePool` | `0xaF52B331D523dc7eF0A1145638048D218456EBd1` |
 | **stabilityPoolManager** | `USD::tBTC::stabilityPoolManager` | `0xD9Bc7F5B90BBf7fCCeC24c67905A6205627D8674` |
 | **genesis** | `USD::tBTC::genesis` | `0x64E72Cbb24D1f80A0f66778dA0b95A46ead30539` |
-| **priceOracle** | — | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` (tBTC/USD — [detail](../contracts/price-oracles/mainnet/tbtc-usd.md)) |
+| **priceOracle** | — | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` (tBTC/USD — [detail](tbtc.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::tBTC::stabilityPoolCollateral` | `0x9a229b4ec6A0D2154689De8EDa9d14C884DE707b` |
 | **stabilityPoolLeveraged** | `USD::tBTC::stabilityPoolLeveraged` | `0x6a059A79bD261e2bFD160CAc4733108a8BDa2BD6` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | tBTC/USD |
 | **Address** | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` |
 | **Rate provider** | — (direct / market-wired) |
-| **Detail page** | [tBTC/USD](../contracts/price-oracles/mainnet/tbtc-usd.md) |
+| **Detail page** | [tBTC/USD](tbtc.md) |
 
 ## Zaps
 
@@ -102,6 +102,7 @@ No genesis/minter zaps in app config for mainnet USD stacks — deposit **tBTC**
 
 ## Related markets
 
-- [stETH/USD (Mainnet)](./steth-usd.md)
-- [PAXG/USD](./paxg-usd.md)
-- [wBTC/USD](./wbtc-usd.md)
+- [stETH](steth.md)
+- [PAXG](paxg.md)
+- [wBTC](wbtc.md)
+

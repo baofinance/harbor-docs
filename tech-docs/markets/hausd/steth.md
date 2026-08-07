@@ -1,10 +1,10 @@
-# stETH/USD Market (Mainnet)
+# stETH collateral (haUSD)
 
 > **Status**: ✅ Deployed (mainnet USD stack, May 2026)  
 > **Chain**: Ethereum mainnet (1)  
 > **App `marketId`**: `steth-usd`
 
-Mint **haUSD** and **hsSTETH-USD** using **stETH** via **wstETH** as collateral on Ethereum mainnet. Shares the **haUSD** pegged token with [PAXG/USD](./paxg-usd.md), [wBTC/USD](./wbtc-usd.md), and [tBTC/USD](./tbtc-usd.md). Not the same deployment as [MegaETH stETH/USD](./steth-usd-megaeth.md).
+Mint **haUSD** and **hsSTETH-USD** using **stETH** via **wstETH** as collateral on Ethereum mainnet. Shares the **haUSD** pegged token with [PAXG](./paxg.md), [wBTC](./wbtc.md), and [tBTC](./tbtc.md). Not the same deployment as [MegaETH stETH](../hausd-megaeth/steth.md).
 
 App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app/blob/main/src/config/contracts.mainnetUsd.ts).
 
@@ -22,7 +22,7 @@ App source: [`contracts.mainnetUsd.ts`](https://github.com/baofinance/harbor-app
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `USD::stETH::reservePool` | `0x8EBcE958BAAa46163D32b57b07a36DaA1E36CA8d` |
 | **stabilityPoolManager** | `USD::stETH::stabilityPoolManager` | `0x377a4A6BEC4C75F2B7054B67Df03ce9A7497c33d` |
 | **genesis** | `USD::stETH::genesis` | `0x40ff767FF4055D53b1BC1B0141221a37B25905fD` |
-| **priceOracle** | — | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` (stETH/USD — [detail](../contracts/price-oracles/mainnet/steth-usd.md)) |
+| **priceOracle** | — | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` (stETH/USD — [detail](steth.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::stETH::stabilityPoolCollateral` | `0xD21613339E8A6adba7a084f67802731e6045d801` |
 | **stabilityPoolLeveraged** | `USD::stETH::stabilityPoolLeveraged` | `0x6E7b445e4dac4787445f31382f4E3dCAd510c238` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | stETH/USD |
 | **Address** | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/USD](../contracts/price-oracles/mainnet/steth-usd.md) |
+| **Detail page** | [stETH/USD](steth.md) |
 
 ## Zaps
 
@@ -102,7 +102,8 @@ No genesis/minter zaps in app config for mainnet USD stacks — deposit **wstETH
 
 ## Related markets
 
-- [PAXG/USD](./paxg-usd.md)
-- [wBTC/USD](./wbtc-usd.md)
-- [tBTC/USD](./tbtc-usd.md)
-- [stETH/USD (MegaETH)](./steth-usd-megaeth.md)
+- [PAXG](paxg.md)
+- [wBTC](wbtc.md)
+- [tBTC](tbtc.md)
+- [stETH (MegaETH haUSD)](../hausd-megaeth/steth.md)
+

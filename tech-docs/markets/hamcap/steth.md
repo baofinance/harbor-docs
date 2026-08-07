@@ -1,4 +1,4 @@
-# stETH/MCAP Market
+# stETH collateral (haMCAP)
 
 > **Status**: ✅ Deployed  
 > **Chain**: Ethereum mainnet (1)  
@@ -20,7 +20,7 @@ Mint **haMCAP** and **hsSTETH-MCAP** using **stETH** via **wstETH** as collatera
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **reservePool** | `MCAP::stETH::reservePool` | `0x9B7fFA713d504F4DdC4f54c6dF6b1a9971d8B728` |
 | **stabilityPoolManager** | `MCAP::stETH::stabilityPoolManager` | `0x1298ab1957ee023E228d57bE2db73494b649E52F` |
 | **genesis** | `MCAP::stETH::genesis` | `0xa6c02dE8E3150C6ffA9C80F98185d42653CB438d` |
-| **priceOracle** | — | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` (stETH/MCAP — [detail](../contracts/price-oracles/mainnet/steth-mcap.md)) |
+| **priceOracle** | — | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` (stETH/MCAP — [detail](steth.md)) |
 | **feeReceiver** | `MCAP::stETH::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `MCAP::stETH::stabilityPoolCollateral` | `0x4cFf4948A0EA73Ee109327b56da0bead8c323189` |
 | **stabilityPoolLeveraged** | `MCAP::stETH::stabilityPoolLeveraged` | `0x505bfC99D2FB1A1424b2A4AA81303346df4f27E9` |
@@ -69,11 +69,11 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 | **Pair** | stETH/MCAP |
 | **Address** | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/MCAP](../contracts/price-oracles/mainnet/steth-mcap.md) |
+| **Detail page** | [stETH/MCAP](steth.md) |
 
 ## Zaps
 
-Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **wstETH** / **stETH** directly — see [Zap contracts](../contracts/zap.md).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts). Prefer depositing **wstETH** / **stETH** directly — see [Zap contracts](../../contracts/zap.md).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
@@ -100,4 +100,5 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Related markets
 
-- [fxusd-mcap](./fxusd-mcap.md)
+- [fxUSD](fxusd.md)
+

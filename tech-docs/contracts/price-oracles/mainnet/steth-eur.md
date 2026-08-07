@@ -26,7 +26,7 @@
 
 | Market | Role |
 | ------ | ---- |
-| [stETH/EUR Market](../../../markets/steth-eur.md) | Minter price oracle for `steth-eur` |
+| [stETH/EUR Market](../../../markets/haeur/steth.md) | Minter price oracle for `steth-eur` |
 
 ## See also
 
