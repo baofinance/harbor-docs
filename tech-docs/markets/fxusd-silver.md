@@ -8,8 +8,8 @@ Mint **haSILVER** and **hsFXUSD-SILVER** using **fxUSD** via **fxSAVE** as colla
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | SILVER |
 | **Pegged token (ha)** | haSILVER |
 | **Leveraged token (hs)** | hsFXUSD-SILVER |
@@ -64,8 +64,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/SILVER |
 | **Address** | `0x14816ff286f2eA46AB48c3275401Fd4b1ef817B5` |
 | **Rate provider** | fxSAVE |
@@ -82,8 +82,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | fxSAVE |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -92,8 +92,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | February 1, 2026 (`2026-02-01T00:00:00Z`, app note: placeholder) |
 | **End** | February 23, 2026 (`2026-02-23T17:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |

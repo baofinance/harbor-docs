@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/TSLA |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ TSLA/USD |
 | **Type** | double |
+| **Contract address** | `0xDA6097f2b8805a01FcBE8BA8Fc2c45FCb7D3e206` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ TSLA/USD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ TSLA/USD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

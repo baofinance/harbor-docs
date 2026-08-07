@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | sUSDe/MCAP |
 | **Rate provider** | sUSDe |
 | **Formula / feeds** | Multiple feeds (sum) |
 | **Type** | multi |
+| **Contract address** | `0xf2ac2880E1569D2CaB50be41F6bfA92e5e6e03C9` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Multiple feeds (sum) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Multiple feeds (sum) |
+| **Rate provider** | sUSDe |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

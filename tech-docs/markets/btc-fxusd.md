@@ -8,8 +8,8 @@ Mint **haBTC** and **hsFXUSD-BTC** using **fxUSD** via **fxSAVE** as collateral.
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | BTC |
 | **Pegged token (ha)** | haBTC |
 | **Leveraged token (hs)** | hsFXUSD-BTC |
@@ -64,8 +64,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/BTC |
 | **Address** | `0x8F76a260c5D21586aFfF18f880FFC808D0524A73` |
 | **Rate provider** | fxSAVE |
@@ -82,8 +82,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | fxSAVE |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -92,8 +92,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | December 19, 2025 (`2025-12-19T21:38:23Z`) |
 | **End** | January 4, 2026 (`2026-01-04T20:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |

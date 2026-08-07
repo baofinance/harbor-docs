@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | sUSDe/ETH |
 | **Rate provider** | sUSDe |
 | **Formula / feeds** | ETH/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x969Fb67331d6Fa3E729292FAa5752BBA759f2b7F` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD (inverted) |
+| **Rate provider** | sUSDe |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | hsfxUSD-SILVER/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 | **Formula / feeds** | Leverage NAV |
 | **Type** | leverage |
+| **Contract address** | `0x70387587a0d3A01a2C75904Dd8CA355a921cd1F3` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Leverage NAV |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Leverage NAV |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

@@ -8,8 +8,8 @@ Mint **haGOLD** and **hsSTETH-GOLD** using **stETH** via **wstETH** as collatera
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | GOLD |
 | **Pegged token (ha)** | haGOLD |
 | **Leveraged token (hs)** | hsSTETH-GOLD |
@@ -64,8 +64,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/GOLD |
 | **Address** | `0x4ebde6143C5E366264ba7416FdEa18BC27C04A31` |
 | **Rate provider** | wstETH |
@@ -82,8 +82,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | wstETH |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -92,8 +92,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | January 21, 2026 (`2026-01-21T00:00:00Z`) |
 | **End** | February 23, 2026 (`2026-02-23T17:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |

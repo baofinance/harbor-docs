@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/MAG7 |
 | **Rate provider** | USDE |
 | **Formula / feeds** | Multi-feed (normalized) |
 | **Type** | multi |
+| **Contract address** | `0xFf37Db6dea33228A5D84546250a5D0D0da942fd7` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Multi-feed (normalized) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Multi-feed (normalized) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

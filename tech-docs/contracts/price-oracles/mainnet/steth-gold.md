@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/GOLD |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ XAU/USD |
 | **Type** | double |
+| **Contract address** | `0x4ebde6143C5E366264ba7416FdEa18BC27C04A31` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ XAU/USD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ XAU/USD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [steth-gold](../../../markets/steth-gold.md) | |
+| Market | Role |
+| ------ | ---- |
+| [stETH/GOLD Market](../../../markets/steth-gold.md) | Minter price oracle for `steth-gold` |
 
 ## See also
 

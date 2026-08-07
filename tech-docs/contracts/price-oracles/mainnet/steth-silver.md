@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/SILVER |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ XAG/USD |
 | **Type** | double |
+| **Contract address** | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ XAG/USD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ XAG/USD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [steth-silver](../../../markets/steth-silver.md) | |
+| Market | Role |
+| ------ | ---- |
+| [stETH/SILVER Market](../../../markets/steth-silver.md) | Minter price oracle for `steth-silver` |
 
 ## See also
 

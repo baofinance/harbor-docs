@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/MCAP |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | Multiple feeds (normalized) |
 | **Type** | multi |
+| **Contract address** | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Multiple feeds (normalized) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Multiple feeds (normalized) |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [steth-mcap](../../../markets/steth-mcap.md) | |
+| Market | Role |
+| ------ | ---- |
+| [stETH/MCAP Market](../../../markets/steth-mcap.md) | Minter price oracle for `steth-mcap` |
 
 ## See also
 

@@ -7,26 +7,35 @@
 
 ## Summary
 
-| | |
-| --- | --- |
-| **oracleName / pair** | |
+| Field | Value |
+| ----- | ----- |
+| **Pair** | |
 | **Rate provider** | |
 | **Formula / feeds** | |
 | **Type** | single / double / multi / leverage / direct |
+| **Contract address** | `0x…` |
 
 ## Feeds
 
-| Feed | Role |
-| ---- | ---- |
-| | |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | |
+| **Rate provider** | |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| | none / market page link |
+| Market | Role |
+| ------ | ---- |
+| [market-id](../../../markets/….md) | Minter / market price feed |
+| — | No Harbor market page yet (predeploy / inventory only) |
+
+## Addresses / aliases
+
+| Address | Notes |
+| ------- | ----- |
+| `0x…` | App / market-wired address (if different from inventory) |
 
 ## See also
 
-- Chain index: [Mainnet](./mainnet.md) / [Arbitrum](./arbitrum.md) / [Base](./base.md) / [MegaETH](./megaeth.md)
-- Overview: [Price oracle contracts](../price-oracle.md)
+- Chain index: [Mainnet](../mainnet.md) / [Arbitrum](../arbitrum.md) / [Base](../base.md) / [MegaETH](../megaeth.md)
+- Overview: [Price oracle contracts](../../price-oracle.md)

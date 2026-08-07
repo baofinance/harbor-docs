@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/META |
 | **Rate provider** | USDE |
 | **Formula / feeds** | META/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x9DadfFe3Fd7c14BF1c023fd736510464ea3E8234` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | META/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | META/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

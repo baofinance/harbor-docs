@@ -7,30 +7,32 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/GOLD |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | XAU/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x1f7F62889E599E51b9e21B27d589Fa521516D147` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | XAU/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | XAU/USD (inverted) |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [fxusd-gold](../../../markets/fxusd-gold.md) | |
+| Market | Role |
+| ------ | ---- |
+| [fxUSD/GOLD Market](../../../markets/fxusd-gold.md) | Minter price oracle for `fxusd-gold` |
 
 ## Addresses / aliases
 
 | Address | Notes |
 | ------- | ----- |
-| `0x4be4501336130E61e5872cB953e886a3a84D34Cc` | App collateralPrice / wrappedRate alias |
+| `0x4be4501336130E61e5872cB953e886a3a84D34Cc` | App `collateralPrice` / wrappedRate alias |
 
 ## See also
 

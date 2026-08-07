@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | tBTC/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — direct USD price feed |
 | **Formula / feeds** | Direct |
 | **Type** | direct |
+| **Contract address** | `0xd8DF89f1C15a26F8A6C119161812F199cdFe23Ee` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Direct |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Direct |
+| **Rate provider** | None — direct USD price feed |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

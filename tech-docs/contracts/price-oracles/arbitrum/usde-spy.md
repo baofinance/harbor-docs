@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/SPY |
 | **Rate provider** | USDE |
 | **Formula / feeds** | SPY/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x657bE7a2b91F95222D163Bee3B5F4C27bed598C5` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | SPY/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | SPY/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

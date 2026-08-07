@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/USD |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | Harbor wrapped aggregator |
 | **Type** | aggregator |
+| **Contract address** | `0xEDd3dC3E699360846c87CB69052EcbC900201854` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Harbor wrapped aggregator |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Harbor wrapped aggregator |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [steth-usd-megaeth](../../../markets/steth-usd-megaeth.md) | |
+| Market | Role |
+| ------ | ---- |
+| [stETH/USD Market (MegaETH)](../../../markets/steth-usd-megaeth.md) | Minter price oracle for MegaETH `steth-usd` |
 
 ## See also
 

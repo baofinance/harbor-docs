@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/GOOGL |
 | **Rate provider** | USDE |
 | **Formula / feeds** | GOOGL/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xc351A54B3ED4a930d8B30958A112a1e6Dcd3eFc0` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | GOOGL/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | GOOGL/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

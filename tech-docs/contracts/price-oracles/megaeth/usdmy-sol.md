@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDMY/SOL |
 | **Rate provider** | USDMY |
 | **Formula / feeds** | SOL/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xE2962ab29C723415F023451E9F166122d8b4a980` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | SOL/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | SOL/USD (inverted) |
+| **Rate provider** | USDMY |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

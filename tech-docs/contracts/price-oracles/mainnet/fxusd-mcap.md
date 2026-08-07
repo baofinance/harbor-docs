@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/MCAP |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | Multiple feeds (sum) |
 | **Type** | multi |
+| **Contract address** | `0x88430c0F09A6D603c43E2816F2EA9Ab45dB7e1a8` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Multiple feeds (sum) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Multiple feeds (sum) |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [fxusd-mcap](../../../markets/fxusd-mcap.md) | |
+| Market | Role |
+| ------ | ---- |
+| [fxUSD/MCAP Market](../../../markets/fxusd-mcap.md) | Minter price oracle for `fxusd-mcap` |
 
 ## See also
 

@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | sUSDe/XAG |
 | **Rate provider** | sUSDe |
 | **Formula / feeds** | XAG/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x436C33222136554192733C6771669c4B51B7fE3D` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | XAG/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | XAG/USD (inverted) |
+| **Rate provider** | sUSDe |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

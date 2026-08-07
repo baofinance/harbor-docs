@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/XAG |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | XAG/USD (inverted) — prefer SILVER |
 | **Type** | single |
+| **Contract address** | `0xB4E46a2E299F28FFa86BaeE19201B1BB9cd4c153` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | XAG/USD (inverted) — prefer SILVER |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | XAG/USD (inverted) — prefer SILVER |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

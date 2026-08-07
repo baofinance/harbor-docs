@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/MSFT |
 | **Rate provider** | USDE |
 | **Formula / feeds** | MSFT/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x2b63607299E7645D883168906bEfb13cb7F59659` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | MSFT/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | MSFT/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

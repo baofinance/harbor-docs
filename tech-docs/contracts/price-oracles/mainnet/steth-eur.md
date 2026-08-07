@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/EUR |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ EUR/USD |
 | **Type** | double |
+| **Contract address** | `0x5e27965689B4B8B425d98fbc676fE22d74caf7C7` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ EUR/USD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ EUR/USD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [steth-eur](../../../markets/steth-eur.md) | |
+| Market | Role |
+| ------ | ---- |
+| [stETH/EUR Market](../../../markets/steth-eur.md) | Minter price oracle for `steth-eur` |
 
 ## See also
 

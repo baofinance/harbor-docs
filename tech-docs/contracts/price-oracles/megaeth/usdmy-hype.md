@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDMY/HYPE |
 | **Rate provider** | USDMY |
 | **Formula / feeds** | HYPE/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x830AB2B3A936F727ee2FF67E9C073380B6f166D8` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | HYPE/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | HYPE/USD (inverted) |
+| **Rate provider** | USDMY |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

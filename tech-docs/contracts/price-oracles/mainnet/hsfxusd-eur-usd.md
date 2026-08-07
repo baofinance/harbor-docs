@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | hsfxUSD-EUR/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 | **Formula / feeds** | Leverage NAV |
 | **Type** | leverage |
+| **Contract address** | `0x657bE7a2b91F95222D163Bee3B5F4C27bed598C5` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Leverage NAV |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Leverage NAV |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | hsstETH-BTC/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 | **Formula / feeds** | Leverage NAV |
 | **Type** | leverage |
+| **Contract address** | `0xFf37Db6dea33228A5D84546250a5D0D0da942fd7` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Leverage NAV |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Leverage NAV |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

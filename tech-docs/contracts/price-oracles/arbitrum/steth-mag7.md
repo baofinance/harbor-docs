@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/MAG7 |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | Multi-feed (normalized) |
 | **Type** | multi |
+| **Contract address** | `0xA8A130Bbf041962B60e81009F09C41bd930D1294` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Multi-feed (normalized) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Multi-feed (normalized) |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

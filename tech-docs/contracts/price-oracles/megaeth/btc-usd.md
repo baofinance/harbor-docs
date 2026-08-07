@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | BTC/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — direct USD price feed |
 | **Formula / feeds** | Direct |
 | **Type** | direct |
+| **Contract address** | `0xD3902Ac4c84FE62f831f38385e67E3d1BA27c75F` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Direct |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Direct |
+| **Rate provider** | None — direct USD price feed |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

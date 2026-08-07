@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/XAU |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ XAU/USD — prefer GOLD |
 | **Type** | double |
+| **Contract address** | `0x2962ECcF1B9cc46FE1aFf7bfc0f7179Fc87939ee` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ XAU/USD — prefer GOLD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ XAU/USD — prefer GOLD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

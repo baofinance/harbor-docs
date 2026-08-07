@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | hsfxUSD-ETH/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 | **Formula / feeds** | Leverage NAV |
 | **Type** | leverage |
+| **Contract address** | `0xA8643E35Ef119F983B09C322039e8AA49A3e3372` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Leverage NAV |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Leverage NAV |
+| **Rate provider** | None — leverage NAV oracle (no collateral rate provider) |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/ETH |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | ETH/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xea5292c58288DcE24C52C1dB13ca048275665EbC` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD (inverted) |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [eth-fxsave](../../../markets/eth-fxsave.md) | |
+| Market | Role |
+| ------ | ---- |
+| [fxUSD/ETH Market](../../../markets/eth-fxsave.md) | Minter price oracle for `eth-fxusd` |
 
 ## Addresses / aliases
 

@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/AAPL |
 | **Rate provider** | USDE |
 | **Formula / feeds** | AAPL/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x91F5C981C3676af8eE40003c79E96582Fdb12621` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | AAPL/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | AAPL/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

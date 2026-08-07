@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/AAPL |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ AAPL/USD |
 | **Type** | double |
+| **Contract address** | `0xA8643E35Ef119F983B09C322039e8AA49A3e3372` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ AAPL/USD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ AAPL/USD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

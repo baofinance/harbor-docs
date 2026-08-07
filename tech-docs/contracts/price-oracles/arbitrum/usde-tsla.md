@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/TSLA |
 | **Rate provider** | USDE |
 | **Formula / feeds** | TSLA/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x777BD12e1f61B8cac19Cbd30c0233C46B4683C00` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | TSLA/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | TSLA/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

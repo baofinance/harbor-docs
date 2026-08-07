@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/XAU |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | XAU/USD (inverted) — prefer GOLD |
 | **Type** | single |
+| **Contract address** | `0xd71538769Af1c8f4D663BD0a5eA667D67E1623e2` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | XAU/USD (inverted) — prefer GOLD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | XAU/USD (inverted) — prefer GOLD |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

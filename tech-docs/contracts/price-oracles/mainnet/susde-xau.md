@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | sUSDe/XAU |
 | **Rate provider** | sUSDe |
 | **Formula / feeds** | XAU/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xA8A130Bbf041962B60e81009F09C41bd930D1294` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | XAU/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | XAU/USD (inverted) |
+| **Rate provider** | sUSDe |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

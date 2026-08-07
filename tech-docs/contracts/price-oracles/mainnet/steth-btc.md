@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/BTC |
 | **Rate provider** | wstETH |
 | **Formula / feeds** | ETH/USD ÷ BTC/USD |
 | **Type** | double |
+| **Contract address** | `0x42018953e5174dC07058BeEE0618aa569fbFBE90` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | ETH/USD ÷ BTC/USD |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | ETH/USD ÷ BTC/USD |
+| **Rate provider** | wstETH |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [btc-steth](../../../markets/btc-steth.md) | |
+| Market | Role |
+| ------ | ---- |
+| [stETH/BTC Market](../../../markets/btc-steth.md) | Minter price oracle for `btc-steth` |
 
 ## Addresses / aliases
 

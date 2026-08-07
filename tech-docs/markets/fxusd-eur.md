@@ -8,8 +8,8 @@ Mint **haEUR** and **hsFXUSD-EUR** using **fxUSD** via **fxSAVE** as collateral.
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | EUR |
 | **Pegged token (ha)** | haEUR |
 | **Leveraged token (hs)** | hsFXUSD-EUR |
@@ -64,8 +64,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/EUR |
 | **Address** | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` |
 | **Rate provider** | fxSAVE |
@@ -82,8 +82,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | fxSAVE |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -92,8 +92,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | January 19, 2026 (`2026-01-19T15:21:11Z`) |
 | **End** | February 2, 2026 (`2026-02-02T17:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |

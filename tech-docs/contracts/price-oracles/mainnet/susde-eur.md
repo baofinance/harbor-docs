@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | sUSDe/EUR |
 | **Rate provider** | sUSDe |
 | **Formula / feeds** | EUR/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xDA6097f2b8805a01FcBE8BA8Fc2c45FCb7D3e206` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | EUR/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | EUR/USD (inverted) |
+| **Rate provider** | sUSDe |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | wstETH/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — direct USD price feed |
 | **Formula / feeds** | Direct |
 | **Type** | direct |
+| **Contract address** | `0x28bBAaf05dEE8A06d4206089bCd17c1129e6Edca` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Direct |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Direct |
+| **Rate provider** | None — direct USD price feed |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

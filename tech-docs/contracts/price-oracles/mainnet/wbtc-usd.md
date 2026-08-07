@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | wBTC/USD |
-| **Rate provider** | — |
+| **Rate provider** | None — direct USD price feed |
 | **Formula / feeds** | Direct |
 | **Type** | direct |
+| **Contract address** | `0x87292E650040B2D284983c0E0814344506948080` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | Direct |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | Direct |
+| **Rate provider** | None — direct USD price feed |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

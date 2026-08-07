@@ -8,8 +8,8 @@ Mint **haMCAP** and **hsSTETH-MCAP** using **stETH** via **wstETH** as collatera
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | MCAP |
 | **Pegged token (ha)** | haMCAP |
 | **Leveraged token (hs)** | hsSTETH-MCAP |
@@ -64,8 +64,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/MCAP |
 | **Address** | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` |
 | **Rate provider** | wstETH |
@@ -82,8 +82,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | wstETH |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -92,8 +92,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | February 1, 2026 (`2026-02-01T00:00:00Z`, app note: Coming Soon placeholder) |
 | **End** | February 23, 2026 (`2026-02-23T17:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |

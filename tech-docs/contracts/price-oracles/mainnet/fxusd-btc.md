@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/BTC |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | BTC/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xF7657CD7890904d108384E289997c993e2e2bBc0` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | BTC/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | BTC/USD (inverted) |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [btc-fxusd](../../../markets/btc-fxusd.md) | |
+| Market | Role |
+| ------ | ---- |
+| [fxUSD/BTC Market](../../../markets/btc-fxusd.md) | Minter price oracle for `btc-fxusd` |
 
 ## Addresses / aliases
 

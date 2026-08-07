@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | sUSDe/BTC |
 | **Rate provider** | sUSDe |
 | **Formula / feeds** | BTC/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x0D0fDBb10B9EAf18A1034e9942F95af0147CC310` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | BTC/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | BTC/USD (inverted) |
+| **Rate provider** | sUSDe |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

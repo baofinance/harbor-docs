@@ -280,3 +280,19 @@ a:hover {
   background-color: #ff7563;
   border-color: #ff7563;
 }
+
+/* Full-width markdown tables in docs content */
+.markdown table,
+.theme-doc-markdown table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  table-layout: auto;
+}
+
+.markdown table th,
+.markdown table td,
+.theme-doc-markdown table th,
+.theme-doc-markdown table td {
+  word-break: break-word;
+}

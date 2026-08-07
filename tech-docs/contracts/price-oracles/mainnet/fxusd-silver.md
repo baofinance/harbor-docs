@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | fxUSD/SILVER |
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | XAG/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0x14816ff286f2eA46AB48c3275401Fd4b1ef817B5` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | XAG/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | XAG/USD (inverted) |
+| **Rate provider** | fxSAVE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| [fxusd-silver](../../../markets/fxusd-silver.md) | |
+| Market | Role |
+| ------ | ---- |
+| [fxUSD/SILVER Market](../../../markets/fxusd-silver.md) | Minter price oracle for `fxusd-silver` |
 
 ## See also
 

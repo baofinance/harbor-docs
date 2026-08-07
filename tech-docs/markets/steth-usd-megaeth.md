@@ -6,8 +6,8 @@ Harbor market with **stETH** collateral and a **USD** peg. This deployment uses 
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Collateral** | Lido stETH (wrapped for the minter per chain configuration) |
 | **Peg** | USD — haToken proxy `USD::pegged` |
 | **Leveraged token** | Proxy `USD::stETH::leveraged` (Sail-style exposure for this market) |

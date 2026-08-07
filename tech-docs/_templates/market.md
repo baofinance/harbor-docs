@@ -8,8 +8,8 @@
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | |
 | **Pegged token (ha)** | |
 | **Leveraged token (hs)** | |
@@ -55,8 +55,8 @@ Proxy keys / CREATE3: [Generic](../markets/generic.md). Source: Harbor `deployme
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | |
 | **Address** | `0x…` |
 | **Rate provider** | |
@@ -73,8 +73,8 @@ Convenience only — prefer depositing main collateral ([Zap contracts](../contr
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -83,8 +83,8 @@ Convenience only — prefer depositing main collateral ([Zap contracts](../contr
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | |
 | **End** | |
 | **Distribution** | typically 50% ha / 50% hs |

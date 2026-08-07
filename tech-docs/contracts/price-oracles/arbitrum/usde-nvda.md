@@ -7,24 +7,26 @@
 
 ## Summary
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | USDE/NVDA |
 | **Rate provider** | USDE |
 | **Formula / feeds** | NVDA/USD (inverted) |
 | **Type** | single |
+| **Contract address** | `0xb772b800982127A3e1489DAacBE214b3C8575dd6` |
 
 ## Feeds
 
-| Detail | |
-| ------ | --- |
-| Configuration | NVDA/USD (inverted) |
+| Field | Value |
+| ----- | ----- |
+| **Primary configuration** | NVDA/USD (inverted) |
+| **Rate provider** | USDE |
 
 ## Consumers
 
-| Market | Notes |
-| ------ | ----- |
-| — | none |
+| Market | Role |
+| ------ | ---- |
+| — | No Harbor market page yet (inventory / predeploy only) |
 
 ## See also
 

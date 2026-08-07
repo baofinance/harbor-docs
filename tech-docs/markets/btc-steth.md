@@ -8,8 +8,8 @@ Mint **haBTC** and **hsSTETH-BTC** using **stETH** via **wstETH** as collateral.
 
 ## Market overview
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Peg family** | BTC |
 | **Pegged token (ha)** | haBTC |
 | **Leveraged token (hs)** | hsSTETH-BTC |
@@ -64,8 +64,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 
 ## Price oracle
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Pair** | stETH/BTC |
 | **Address** | `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB` |
 | **Rate provider** | wstETH |
@@ -82,8 +82,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Market parameters
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Yield source** | wstETH |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
@@ -92,8 +92,8 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 ## Genesis (Maiden Voyage)
 
-| | |
-| --- | --- |
+| Field | Value |
+| ----- | ----- |
 | **Start** | December 19, 2025 (`2025-12-19T21:17:47Z`) |
 | **End** | January 4, 2026 (`2026-01-04T20:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |
