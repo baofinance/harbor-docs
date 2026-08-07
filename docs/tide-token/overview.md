@@ -6,7 +6,7 @@ sidebar_position: 1
 
 **TIDE** is the native governance and utility token of the Harbor ecosystem. It plays a central role in coordinating the protocol's growth, securing market health, and rewarding community participation.
 
-**Status:** TIDE is live. Check allocation, claim eligibility, and BAO swap balance on the [Tide dashboard](https://app.harborfinance.io/tide).
+**Status:** TIDE launch and BAO → TIDE migration claims are rolling out via the [Tide dashboard](https://app.harborfinance.io/tide). BAO is being retired in favor of TIDE as the primary ecosystem token.
 
 ## Overview
 

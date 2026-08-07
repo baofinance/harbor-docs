@@ -29,37 +29,71 @@ Protocol revenue is **collateral yield + mint/redeem fees**. It is allocated as 
 
 Landing (“75% grow markets / 25% strengthen TIDE”) and the Tide app (treasury → POL → burn) describe the **same** flow at different zoom levels.
 
+The long-term goal is simple: **let the protocol itself become the long-term buyer of TIDE**. Lower prices do not increase emissions — they increase how much TIDE protocol revenue can buy back over time.
+
 ### Maiden Voyage Yield Share (per market)
 
 Separately from the global 75/25 split, **Maiden Voyage 2.0** initiators can earn up to **~5% of that market’s revenue** (Yield Share), subject to voyage eligibility rules. See [Maiden Voyage](/maiden-voyage).
 
 ---
 
-## Token Allocation
+## BAO → Harbor Migration
 
-| Category                | Allocation | Details                                                                                         |
-| ----------------------- | ---------- | ----------------------------------------------------------------------------------------------- |
-| Bao Treasury            | 25%        | Long-term stake in Harbor's success. Capped at 25%; surplus above cap rewards BAO holders.      |
-| Harbor Treasury         | 40.5%      | Operating reserve for incentives, growth, and partnerships. Includes airdrop allocation.        |
-| Booster Program         | 3%         | Distributed over 3 years (1% per year) to community contributors and developers.                |
-| Founders & Core Team    | 22%        | Vesting linearly over 5 years for long-term alignment.                                          |
-| veBAO Holders           | 5%         | Fully liquid at TGE, recognizing Bao's earliest supporters.                                     |
-| veFXN Holders           | 3%         | Fully liquid at TGE, strategic partnership allocation.                                          |
-| Community Sale          | 1.5%       | Initial funding participants who supported audits and development.                              |
+The former **25% BAO treasury** allocation is **distributed directly to BAO holders** through a migration airdrop (liquid BAO and veBAO).
+
+As part of this process, **BAO is effectively retired**, with **TIDE** becoming the primary ecosystem token. This is cleaner than parking a large share of supply in a BAO treasury indefinitely and removes long-term overhang uncertainty.
+
+There is a **claim window** (timing TBA) for BAO and veBAO holders. **Unclaimed tokens after the deadline return to the Harbor Treasury.**
 
 ---
 
-## Launch Structure
+## Token Allocation
 
-### Low Initial Float Design
+### Community & Ecosystem
 
-While a large share of TIDE may be liquid at TGE from a transferability perspective, the vast majority is held by Harbor and Bao treasuries — strategic long-term reserves, not free-float circulating supply.
+| Category | Allocation | Details |
+| -------- | ---------- | ------- |
+| BAO migration airdrop | 25% | All liquid BAO and veBAO — former Bao treasury allocation, distributed to holders |
+| veBAO holders | 5% | **Additional** 5% for veBAO only |
+| Community sale | 5% | Increased from the prior 1.5% |
+| Aladdin DAO | 3% | Strategic partnership allocation |
+| Booster rewards | 1% | Liquid at launch |
+| Future booster incentives | 2% | Reserved for later booster programs |
+| Maiden Voyage participants | 1.5% | 1% launch Maiden Voyage; 0.4% EUR voyages; 0.1% metals |
+| Harbor Marks | 1% | Marks from activity **other than** Maiden Voyage |
 
-**Initial circulating float** consists primarily of:
+### Founders
 
-- Community sale participants
-- Booster rewards
-- Early airdrop / claim distributions
+| Category | Allocation | Details |
+| -------- | ---------- | ------- |
+| Founders | 22% | ~2% initially liquid; remaining ~20% tied to protocol KPIs / milestones |
+
+### Treasury
+
+| Category | Allocation | Details |
+| -------- | ---------- | ------- |
+| Harbor Treasury | 34.5% | Operating reserve for growth, incentives, and long-term stewardship |
+
+**Total:** 100%.
+
+---
+
+## Launch Circulating Supply
+
+Expected circulating supply at launch is approximately **43.5%**.
+
+The remaining **~56.5%** is primarily:
+
+- Harbor Treasury reserves
+- Founder KPI-locked allocations
+- Future booster reserves
+
+Initial liquidity may be relatively limited, and early price discovery may be volatile — that is expected. Harbor focuses on sustainable ownership and protocol-driven buybacks rather than engineering short-term token price action.
+
+### Claim windows
+
+- BAO / veBAO migration and related claims use a yet-to-be-finalized claim window; unclaimed amounts return to Harbor Treasury
+- Check the [Tide dashboard](https://app.harborfinance.io/tide) for live eligibility and claim status
 
 ### Treasury Governance
 
@@ -74,10 +108,11 @@ All treasury token usage should follow:
 
 ## Key Tokenomic Features
 
-### 1. Marks and Airdrop / Claim
+### 1. Marks, Maiden Voyage, and Claims
 
-- Ledger Marks track early Maiden Voyage and Anchor participation
-- TIDE claim / airdrop flows are live in the [Tide app](https://app.harborfinance.io/tide)
+- **Harbor Marks** (1% allocation) reward non–Maiden Voyage activity
+- Maiden Voyage participants have a dedicated **1.5%** allocation slice (plus ongoing Yield Share on markets they help launch)
+- Migration, airdrop, and claim flows are surfaced in the [Tide app](https://app.harborfinance.io/tide)
 
 ### 2. Protocol-Owned Liquidity Strategy
 
@@ -91,7 +126,7 @@ Harbor prioritizes **permanent liquidity** over rented liquidity:
 
 - **25%** of (post–TVL-take) revenue buys TIDE on the open market
 - Bought TIDE first fills treasury (to 30%), then POL (to 15%), then burns
-- Scales with protocol revenue
+- Scales with protocol revenue — the protocol is designed as the long-term buyer of TIDE
 
 ### 4. Team-Directed Incentives
 
@@ -103,29 +138,44 @@ Harbor uses **team-controlled emissions** rather than gauge voting in the early 
 
 ### 5. Treasury Sustainability
 
-- Harbor Treasury target ownership: **≥30% of total TIDE supply**
+- Harbor Treasury holds **34.5%** at allocation, with a long-term ownership goal of **≥30% of total TIDE supply** via buybacks when needed
 - Provides warchest for incentives and growth
-- Until that target is met, bought TIDE is retained rather than burned
+- Until buyback ownership targets are met, purchased TIDE is retained rather than burned
 
 ---
 
 ## Vesting Overview
 
-### Liquid at TGE
+### Expected liquid / circulating at launch (~43.5%)
 
-- veBAO airdrop: 5% (fully liquid)
-- veFXN airdrop: 3% (fully liquid)
-- Community sale: 1.5% (fully liquid)
-- Harbor Treasury: 40.5% (strategic reserve)
-- Bao Treasury: 25% (strategic reserve)
+Primarily community & ecosystem distributions, including:
 
-### Vesting Schedules
+- BAO migration airdrop (25%)
+- Additional veBAO allocation (5%)
+- Community sale (5%)
+- Aladdin DAO (3%)
+- Booster rewards liquid at launch (1%)
+- Maiden Voyage participants (1.5%)
+- Harbor Marks (1%)
+- Plus ~2% initially liquid founder tokens (founder total remains 22%)
 
-- **Founders & Core Team**: 22% vested linearly over 5 years
-- **Booster Program**: 3% distributed over 3 years (1% per year)
+Exact circulating mix at TGE depends on claim timing and unlock schedules — use the app for live figures.
+
+### Locked / reserved at launch (~56.5%)
+
+- Harbor Treasury (34.5%)
+- Founder KPI / milestone locks (~20% of the 22% founder allocation)
+- Future booster reserves (2%)
 
 ---
 
-## Long-Term Vision
+## Launch Philosophy
 
-Revenue continually strengthens the protocol: stability pools grow TVL, TIDE buybacks secure treasury ownership and POL, and eventually reduce supply through burns — while Maiden Voyage participants share in the markets they help launch.
+Harbor is designed around:
+
+- Protocol revenue
+- TIDE buybacks
+- Treasury accumulation
+- Long-term sustainability
+
+Lower prices do not increase emissions. They increase how much TIDE the protocol can accumulate from revenue over time.

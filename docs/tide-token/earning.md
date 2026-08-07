@@ -19,9 +19,11 @@ Users can earn or receive TIDE (and related eligibility) through protocol activi
    - Become eligible for **Yield Share** — up to **~5% of that market’s revenue** (separate from the global 75/25 protocol split)
    - TIDE claim eligibility depends on campaign / snapshot rules in the app
 
-3. **Airdrop / Claim / BAO Swap**
+3. **Airdrop / Claim / BAO Migration**
 
-   - Use the [Tide dashboard](https://app.harborfinance.io/tide) to preview snapshot allocation, claim eligibility, and BAO swap balance
+   - Use the [Tide dashboard](https://app.harborfinance.io/tide) for BAO → TIDE migration, snapshot allocation, and claim eligibility
+   - The former 25% Bao treasury allocation is distributed to BAO / veBAO holders; unclaimed tokens after the claim window return to Harbor Treasury
+   - See [Tokenomics](/tide-token/tokenomics) for the full allocation table
 
 4. **Protocol Participation**
    - Provide liquidity for protocol tokens where programs exist
