@@ -20,22 +20,17 @@ Harbor Yield automates that loop behind **hyTOKENS**. Supporting infrastructure 
 
 ## How it fits together
 
-![Harbor Yield layers: stability pools and Harbor Swap feed auto-compounders and hyTOKENS](/img/harbor-yield-layers.svg)
-
-<details>
-<summary>View Mermaid source code</summary>
+![Harbor Yield layers](/img/harbor-yield-layers.svg)
 
 ```mermaid
 flowchart TD
   L0["Stability Pools live<br/>haTOKENS deposited"]
-  AC["Auto-Compounders support<br/>hc shares · ERC-4626<br/>compound one pool"]
+  AC["Auto-Compounders support<br/>hc shares / ERC-4626<br/>compound one pool"]
   Swap["Harbor Swap support<br/>direct DEX + 1inch routes"]
-  HY["Harbor Yield product<br/>hyTOKENS · one per peg"]
+  HY["Harbor Yield product<br/>hyTOKENS / one per peg"]
   L0 --> AC --> HY
   Swap --> HY
 ```
-
-</details>
 
 | Layer | Role |
 | ----- | ---- |
