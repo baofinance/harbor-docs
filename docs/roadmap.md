@@ -50,13 +50,13 @@ Ongoing capacity-capped voyages with **Yield Share** (ongoing share of market re
 
 ## 3. Harbor Yield & Autocompounding (Mid Term)
 
-Harbor Yield (`hyTOKENS`) is the planned autocompounding and pooled-yield layer on top of stability pools:
+Harbor Yield (`hyTOKENS`) is the planned pooled-yield product on top of stability pools, with supporting infrastructure:
 
-- **Level 1 — Auto-Compounders:** per-pool ERC-4626 vaults that claim rewards and redeposit haTOKENS automatically
-- **Level 2 — Harbor Yield:** one **hyTOKEN** vault per peg (e.g. hyUSD) that baskets multiple autocompounders and peg-equivalent yield sources into a single share
-- **Harbor Swap:** route registry + direct DEX executors (UniV3 / Curve / Balancer / composites) and a 1inch adapter for keeper rebalances — plumbing used by Harbor Yield, not a separate user product
+- **hyTOKENS (product):** one share token per peg (e.g. hyUSD) over a basket of strategies
+- **Auto-compounders (support):** per-pool ERC-4626 vaults that claim rewards and redeposit haTOKENS — held inside hyTOKEN baskets
+- **Harbor Swap (support):** route registry + direct DEX executors (UniV3 / Curve / Balancer / composites) and a 1inch adapter for keeper rebalances
 
-Users who want convenience can hold hyTOKENS instead of manually managing stability pool claims. Users who want control can stay on raw stability pools. Details: [Harbor Yield](/harbor-yield).
+Users who want convenience hold **hyTOKENS**; auto-compounders and swap run underneath. Users who want control can stay on raw stability pools. Details: [Harbor Yield](/harbor-yield).
 
 ## 4. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
 
