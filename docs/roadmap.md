@@ -6,86 +6,87 @@ sidebar_position: 8
 
 Harbor: A Safer Harbor for Leverage, Uncharted Waters for Yield.
 
-Harbor is a modular synthetic asset protocol with long-term ambitions to become the **default infrastructure for tokenizing and trading any market data**. The roadmap below outlines the key phases of protocol development, expansion, and innovation.
+Harbor is a modular synthetic asset protocol with long-term ambitions to become the **default infrastructure for tokenizing and trading any market data**. The roadmap below outlines what is already live and what comes next.
 
-> **Note on Adaptability**: The crypto industry moves rapidly, with new technologies, market conditions, and opportunities emerging constantly. While this roadmap represents our current vision and strategic direction, we are committed to adapting and evolving our plans as the landscape changes.
+> **Note on Adaptability**: The crypto industry moves rapidly. While this roadmap represents our current vision and strategic direction, we adapt as the landscape changes.
 
-## 1. Mainnet Launch of Core Infrastructure (Short Term)
+## 1. Live on Ethereum (Completed)
 
-Harbor will launch on Ethereum mainnet as a **friendly fork of fx protocol**, leveraging their high-yield **fxSAVE** collateral.
+Harbor launched on Ethereum mainnet as a **friendly fork of fx protocol**, leveraging high-yield **fxSAVE** collateral alongside wstETH markets.
 
-- Deployment of core contracts (minter, stability pools, rebalance logic)
-- Maiden Voyage for **haBTC** and **haETH** using **fxSAVE** and wstETH as collateral
-- Deployment of initial AMM liquidity pools
-- Points system for early participants (12-week pre-launch period)
-- Security audit publication and protocol UI live
+**Delivered:**
 
-This lays the foundation for rapid synthetic asset creation and incentive-driven usage, with an initial focus on high-yield BTC/ETH exposure and complimentary leveraged tokens.
+- Core contracts (minter, stability pools, rebalance logic) on mainnet
+- Maiden Voyages and live markets for **haETH** and **haBTC** (fxSAVE / fxUSD collateral), plus **stETH–BTC** and **EUR** markets
+- Protocol UI live at [app.harborfinance.io](https://app.harborfinance.io)
+- Security audit by [Sherlock](https://sherlock.xyz/)
+- **Ledger Marks** for early participants (Maiden Voyage / Anchor activity)
+- **TIDE** token live with airdrop / claim flows in the app ([Tide](https://app.harborfinance.io/tide))
 
-### Token Launch
+This foundation supports rapid synthetic asset creation and incentive-driven usage, with high-yield BTC/ETH/FX exposure and complementary Sail (leveraged) tokens.
 
-- 12-week points accumulation phase before token launch to build genuine community
-- Points system conversion to TIDE tokens
-- Distribute TIDE tokens according to allocation
-- Seed initial liquidity pools with Protocol-Owned Liquidity
-- Begin team-directed incentive programs
+## 2. Market Expansion (In Progress)
 
-## 2. Rapid Market Expansion (Short Term)
-
-Immediately after launch, Harbor will focus on deploying multiple new markets quickly, based on:
+Harbor continues deploying markets based on:
 
 - **Oracle availability**
 - **Collateral compatibility**
 - **Community and protocol demand**
 
-### Target Asset Types
+### Live / launched market families (examples)
 
-- **Crypto synths**: haSOL, haBTC-HASH, haUSDCBORROWRATE etc.
-- **Real-world assets**: haTSLA, haXAU (gold), haSPX
-- **Stablecoins and FX**: haEUR, haGBP, etc
-- **Custom markets**: External protocol defined markets.
+- **fxSAVE / fxUSD** collateral: haETH, haBTC, haEUR (+ Sail tokens such as hsFXUSD-ETH)
+- **wstETH** collateral: haBTC, haEUR (+ Sail tokens such as hsSTETH-BTC)
+
+### Upcoming / configured asset types
+
+- **Commodities**: haGOLD, haSILVER (and related Sail tokens)
+- **Indexes / other**: e.g. MCAP-style markets as oracles and product readiness allow
+- **Custom markets**: External protocol-defined markets over time
 
 ### Autocompounding Vaults
 
-Harbor will deploy **autocompounding vaults** for haTOKENS that automatically compound stability pool rewards, making it easy for users to maximize their yields without active management.
+Harbor plans **autocompounding vaults** for haTOKENS that automatically compound stability pool rewards, making it easier to maximize yields without active management.
+
+### Maiden Voyage 2.0
+
+Ongoing capacity-capped voyages with **Yield Share** (ongoing share of market revenue for eligible participants). See [Maiden Voyage](/maiden-voyage).
 
 ## 3. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
 
-To support broader adoption and DeFi integration, Harbor will expand across chains:
-
 ### Native Deployments
 
-- Smart contracts deployed on Arbitrum, Base, Optimism, Plasma, and other EVM-compatible chains with local minting
+- Additional EVM deployments with local minting as product and oracle readiness allow (test / non-primary deployments may exist; Ethereum remains the primary user-facing network)
 
-### Omnichain Synth Transfer
+### Omnichain TIDE
 
-- Synthetic assets bridged via LayerZero for seamless movement between chains
-- Cross-chain stability pools
+- **TIDE** is designed for omnichain movement via **Chainlink CCIP** (same CREATE3 address pattern across chains), rather than LayerZero
+- Cross-chain market and stability pool designs may follow after TIDE and core product maturity
 
 ## 4. Permissionless Market Factory (Mid to Long Term)
 
-Harbor will evolve into a **market creation platform** — a place where anyone can launch synthetic markets with:
+Harbor will evolve into a **market creation platform** — where anyone can launch synthetic markets with:
 
 - A collateral token
 - A trusted price feed (Chainlink, Redstone, or custom TWAP)
 - A Stability Pool configuration
 
-This transforms Harbor from a protocol into infrastructure — empowering protocols and DAOs to create their own data-driven assets. Like a Uniswap for yield bearing and leveraged synthetic markets.
+This transforms Harbor from a protocol into infrastructure — empowering protocols and DAOs to create their own data-driven assets.
 
 ## Governance-Led Innovation (Ongoing)
 
-While the roadmap above focuses on core protocol development, **future upgrades may be proposed and governed by TIDE holders**.
+While the roadmap above focuses on core protocol development, **future upgrades may be proposed and discussed with TIDE holders**. Early growth uses **team-directed incentives** with community oversight; longer-term governance evolves toward a committee model. See [Governance & TIDE](/tide-token/governance).
 
-The long-term vision remains consistent even as implementation details may evolve:
+The long-term vision remains:
 
 > A universal synthetic asset platform where
 > _anyone can create or access any market_
 
-We recognize that the path to achieving this vision may change as the crypto landscape evolves. Our community governance structure ensures that Harbor can pivot when necessary while maintaining focus on its core mission.
-
 ## Get Involved
 
-### Development - Coming soon!
+### App
+
+- [app.harborfinance.io](https://app.harborfinance.io)
 
 ### Community
 
@@ -94,3 +95,4 @@ We recognize that the path to achieving this vision may change as the crypto lan
 ### Resources
 
 - [Documentation](/)
+- [GitHub](https://github.com/baofinance/)

@@ -44,7 +44,12 @@ TIDE holders can:
 
 ## Alignment Incentives
 
-- TIDE holders benefit from protocol growth through buyback & burn mechanism
+- TIDE holders benefit from protocol growth through buyback / POL / burn mechanisms (exact sequencing pending product-unified copy)
 - Long-term holders accumulate value as protocol revenue increases
-- Treasury maintains ≥30% TIDE holdings for sustainability
+- Treasury ownership targets (commonly ≥30% TIDE) support sustainability
 - Team interests aligned with token holders through founder allocations
+
+:::note
+For live claim, airdrop, and BAO swap status, use [app.harborfinance.io/tide](https://app.harborfinance.io/tide) rather than assuming a future token launch.
+:::
+

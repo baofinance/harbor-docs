@@ -8,14 +8,16 @@ Let's be real: synthetic assets sound powerful. But most of them? Clunky, brittl
 
 **Harbor changes that.**
 
-We're bringing groundbreaking yields to places they've never reached: BTC, ETH, and soon... anything with a price feed.
+We're bringing groundbreaking yields to places they've never reached: BTC, ETH, FX, commodities — and anything else with a reliable price feed.
+
+Harbor is **live on Ethereum**, audited by [Sherlock](https://sherlock.xyz/), with the app at [app.harborfinance.io](https://app.harborfinance.io).
 
 ## What Is Harbor?
 
-Harbor is a synthetic asset protocol that transforms your favorite yield-bearing collateral — like fxSAVE or wstETH — into two powerful asset types:
+Harbor is a synthetic asset protocol that transforms yield-bearing collateral — like fxSAVE or wstETH — into two powerful asset types:
 
-- **haTOKENS (Harbor Anchored Tokens):** Pegged tokens (e.g., haETH, haBTC) that track a price feed and can earn very high yields, due to the protocol design, which concentrates yield from collateral and trading fees into stability pools for haTOKENS
-- **hsTOKENS (Harbor Sail Tokens):** Rebalancing variable leverage tokens for directional plays, with no funding fees, no margin calls, and automatic risk rebalancing.
+- **haTOKENS (Harbor Anchored Tokens):** Pegged tokens (e.g., haETH, haBTC, haEUR) that track a price feed and can earn high yields, because the protocol concentrates collateral yield and fees into stability pools for haTOKENS
+- **hsTOKENS (Harbor Sail Tokens):** Rebalancing variable leverage tokens for directional plays, with no funding fees, no margin calls, and automatic risk rebalancing (e.g., hsFXUSD-ETH, hsSTETH-BTC)
 
 **Anywhere with a price feed, yield is coming.**
 
@@ -32,15 +34,16 @@ For detailed information, explore the sections below or start with our [Technica
 ### haTOKENS (Harbor Anchored Tokens - Pegged Assets)
 
 - Synthetic assets pegged 1:1 to reference prices via reliable oracle feeds
-- Examples: haUSD (USD), haBTC (Bitcoin), haTSLA (Tesla stock)
+- Live examples: haETH (ETH), haBTC (Bitcoin), haEUR (Euro); other pegs (e.g. gold) as markets launch
 - Fully collateralized and redeemable
 - Freely usable across DeFi platforms
 - Designed to maintain tight pegs through arbitrage and protocol rebalancing
-- **Earn amplified yield by concentrating all protocol collateral yield into active stakers**
+- **Earn amplified yield by concentrating protocol collateral yield into active stability pool depositors**
 
 ### hsTOKENS (Harbor Sail Tokens - Rebalancing Leverage Tokens)
 
 - Variable leverage tokens representing residual claims on collateral
+- Naming reflects collateral and peg (e.g., hsFXUSD-ETH, hsSTETH-BTC)
 - Similar to holding liquidation-protected leveraged positions
 - Absorb volatility between collateral and haTOKENS
 - Protected from liquidation by protocol rebalances
@@ -50,17 +53,16 @@ For detailed information, explore the sections below or start with our [Technica
 
 - Two types: Collateral Pools and Sail Pools
 - Maintain system solvency through automated rebalancing
-- Earn yield from yield bearing collateral (e.g. stETH)
-- Earn TIDE incentives
-- Transform market downturns, or pegged token price spikes into opportunities for participants
+- Earn yield from yield-bearing collateral (e.g. fxSAVE, wstETH)
+- Earn Marks and, where allocated, TIDE incentives
+- Transform market downturns, or pegged token price spikes, into opportunities for participants
 
-### Maiden Voyage
+### Maiden Voyage 2.0
 
-- Bootstrap new markets
-- Minimal risk
-- Provide immediate liquidity and collateral backing
-- Distribute both haTokens and hsTokens to participants
-- TIDE (or other) incentives for participants
+- Bootstrap new markets with capacity-capped deposits
+- Participants receive Anchor (ha) and Sail (hs) tokens at launch
+- Eligible for ongoing **Yield Share** of market revenue
+- Earn **Ledger Marks** during the voyage; completed voyages remain claimable/withdrawable as shown in the app
 
 ---
 
@@ -70,11 +72,12 @@ For detailed information, explore the sections below or start with our [Technica
 - [Stability Pools](/stability-pools) - Learn about system security and yield
 - [How Yield is Generated](/yield) - Understand the yield concentration mechanism
 - [Maiden Voyage](/maiden-voyage) - How new markets are launched
-- [TIDE Token](/steam-token/overview) - Governance, incentives and claim on revenue
+- [TIDE Token](/tide-token/overview) - Governance, incentives and claim on revenue
 - [Roadmap](/roadmap) - Protocol development plans
 - [FAQ](/faq) - Common questions and answers
 
 ## Need Help?
 
+- Launch the [app](https://app.harborfinance.io)
 - Join our [Discord](https://discord.com/invite/BW3P62vJXT)
 - Follow us on [Twitter/X](https://x.com/0xHarborFi)

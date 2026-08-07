@@ -6,203 +6,160 @@ sidebar_position: 7
 
 Harbor: Supercharged Yield. Smarter Leverage. Set Sail.
 
-# Frequently Asked Questions
-
 Find answers to common questions about the Harbor Protocol.
 
 ## General Questions
 
 ### What is Harbor?
 
-Harbor is a decentralized platform for creating and trading synthetic assets – tokens that mirror the value of real-world or digital assets without requiring direct custody of those assets.
+Harbor is a decentralized protocol for creating and using synthetic assets — tokens that track a price feed — backed by yield-bearing collateral. It is live on Ethereum at [app.harborfinance.io](https://app.harborfinance.io).
 
 ### What are HA Tokens (Harbor Anchored)?
 
-HA tokens are pegged tokens that track real-world assets with 1:1 price matching. They are:
+HA tokens are pegged tokens that track a reference price 1:1 via oracles. They are:
 
-- Fully collateralized
-- Redeemable for underlying assets
-- Available for trading 24/7
-- Zero slippage on minting and redemption
+- Fully collateralized within healthy markets
+- Redeemable against collateral through the protocol
+- Mintable and redeemable with dynamic fees (see [Protocol Fees](/fees))
+- Usable across DeFi like other ERC-20s
+
+Examples: haETH, haBTC, haEUR.
 
 ### What are HS Tokens (Harbor Sail)?
 
 HS tokens provide:
 
-- Variable leverage exposure
-- Liquidation protection
-- Automated rebalancing
-- No funding fees
+- Variable leverage exposure (residual claim on collateral vs the peg)
+- Liquidation protection via protocol rebalancing
+- No funding fees and no margin calls
+
+You do **not** pick a leverage multiple or set a stop-loss. Leverage is an outcome of the market’s collateral ratio and token supply. Examples: hsFXUSD-ETH, hsSTETH-BTC.
 
 ## Stability Pools
 
 ### What are Stability Pools?
 
-Stability pools are liquidity pools that:
+Stability pools:
 
-- Maintain protocol stability
-- Generate yield for participants
+- Help maintain protocol solvency
+- Generate yield for participants from productive collateral
 - Enable automated rebalancing
-- Distribute TIDE rewards
+- May distribute Marks and/or TIDE incentives where allocated
 
 ### How do I participate in Stability Pools?
 
-1. Connect your wallet
-2. Choose a pool (Collateral or Leveraged)
-3. Deposit your tokens
+1. Connect your wallet on [app.harborfinance.io](https://app.harborfinance.io/anchor)
+2. Choose a market and pool (Collateral or Sail)
+3. Deposit haTokens
 4. Start earning yield
 
 ### What are the risks of Stability Pools?
 
 Risks include:
 
-- Market volatility
+- Market volatility and rebalancing into collateral or Sail tokens
 - Smart contract risks
 - Oracle risks
-- Liquidation risks
+- Pool depletion in extreme scenarios (see [Risk Considerations](/risk-considerations))
 
 ### How is yield calculated?
 
 Yield comes from:
 
-- Collateral token rewards
-- Trading fees
-- TIDE rewards
-- Boost multipliers
+- Collateral token yield (e.g., fxSAVE, wstETH)
+- Protocol fees / revenue sharing (exact split pending product confirmation across surfaces)
+- Marks / TIDE incentives where allocated
 
-## Trading
+## Using the Protocol
 
-### How do I trade HA tokens?
+### How do I get HA tokens?
 
-1. Connect your wallet
-2. Choose a trading pair
-3. Enter amount
-4. Confirm transaction
+1. Connect your wallet in the app
+2. Open the relevant market (Earn / mint flows)
+3. Deposit accepted collateral (or use a zap where available)
+4. Mint haTokens and confirm the transaction
 
-### How do I trade HS tokens?
+You can also receive haTokens from a [Maiden Voyage](/maiden-voyage) at market launch.
 
-1. Select an HS token
-2. Choose leverage level
-3. Set stop-loss
-4. Execute trade
+### How do I get HS tokens?
 
-### What are the trading fees?
+1. Mint hsTokens against collateral in the Leverage / Sail flows, or
+2. Receive them from Maiden Voyage distribution, or
+3. Acquire them via secondary markets / swaps where liquidity exists
 
-Fees include:
+There is no “set leverage / stop-loss” trade ticket — Sail is a token, not a perpetual position UI.
 
-- Maker/taker fees
+### What fees should I expect?
+
+- **Dynamic mint/redeem fees** based on system stress (see [Protocol Fees](/fees))
 - Network gas fees
-- Slippage costs
-- Wallet fees
+- Possible early-withdrawal fees on Stability Pools outside the request window
+- Swap / zap routing fees when using helpers
 
 ## Technical Questions
 
 ### What wallets are supported?
 
-We support:
-
-- MetaMask
-- WalletConnect
-- Coinbase Wallet
-- Other Web3 wallets
+Typical Web3 wallets via the app connectors (e.g. MetaMask, WalletConnect, Coinbase Wallet, and other RainbowKit / WalletConnect-compatible wallets).
 
 ### What networks are supported?
 
-Currently supported:
+- **Ethereum mainnet** — primary user-facing network for [app.harborfinance.io](https://app.harborfinance.io)
 
-- Ethereum mainnet
-- Local testnet (Anvil)
+Other deployments may exist for testing or expansion; treat the app’s network selector as source of truth.
 
 ### How do I integrate with the protocol?
 
-Integration options:
+- Interact with published smart contracts (see [Tech Documentation](/tech-docs))
+- Use the open-source app and contract repos under [github.com/baofinance](https://github.com/baofinance/)
 
-- Smart contract interfaces
-- REST API
-- WebSocket feeds
-- SDK
+There is no public REST/WebSocket SDK promised in these docs.
 
 ## Security
 
 ### Is the protocol audited?
 
-Yes, the protocol has undergone:
-
-- Multiple security audits
-- Bug bounty program
-- Continuous monitoring
-- Regular updates
+Yes. Harbor promotes a [Sherlock](https://sherlock.xyz/) audit (linked from the app and landing page). Always review current audit materials before depositing large amounts.
 
 ### What security measures are in place?
 
-Security features include:
-
-- Multiple price feeds
-- Circuit breakers
-- Emergency pause
-- Access controls
+- Market-specific price oracles / aggregators
+- Stability pool rebalancing
+- Upgradeable contracts with ownership controls and pause-via-upgrade patterns
+- Ongoing operational monitoring
 
 ### How are funds protected?
 
-Protection mechanisms:
-
-- Collateral requirements
-- Liquidation protection
-- Automated rebalancing
-- Insurance options
+- Collateralization requirements and rebalancing
+- Liquidation protection for Sail holders (value can still go to zero in extreme undercollateralization — see risks)
+- No separate insurance product is documented here
 
 ## Governance
 
 ### What is TIDE token?
 
-TIDE is the governance token that:
-
-- Controls protocol parameters
-- Receives protocol fees
-- Enables voting rights
-- Provides boost multipliers
+TIDE is Harbor’s governance and value-accrual token (1B hard cap). Use the [Tide dashboard](https://app.harborfinance.io/tide) for airdrop / claim / BAO swap views. See [TIDE overview](/tide-token/overview).
 
 ### How do I participate in governance?
 
-1. Hold TIDE tokens
-2. Create proposals
-3. Vote on proposals
-4. Discuss in forums
-
-### What can be governed?
-
-Governable parameters:
-
-- Fee rates
-- Collateral ratios
-- Reward rates
-- Emergency controls
+Early growth uses **team-directed incentives** with community discussion (Discord, forums). Holders can discuss and propose; full on-chain gauge voting is not the current model. See [Governance & TIDE](/tide-token/governance).
 
 ## Support
 
 ### Where can I get help?
 
-Support channels:
-
-- Discord community
-- Documentation
-- Email support
-- Social media
+- [Discord](https://discord.com/invite/BW3P62vJXT)
+- This documentation
+- [Twitter/X](https://x.com/0xHarborFi)
 
 ### How do I report issues?
 
-Report through:
-
-- GitHub issues
-- Bug bounty program
-- Support email
-- Community channels
+- GitHub issues on relevant [baofinance](https://github.com/baofinance/) repos
+- Community channels (Discord)
 
 ### Where can I find updates?
 
-Updates are available on:
-
-- Official blog
 - [Twitter/X](https://x.com/0xHarborFi)
 - [Discord](https://discord.com/invite/BW3P62vJXT)
 - [GitHub](https://github.com/baofinance/)
+- App announcements / Tide and Maiden Voyage pages

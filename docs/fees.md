@@ -6,9 +6,9 @@ sidebar_position: 6
 
 ## Dynamic Fees: Built-In Market Regulation
 
-Harbor uses a real-time, responsive fee system for all mints and redemptions. It works like a pressure valve:
+Harbor uses a real-time, responsive fee system for **mints and redemptions** of haTOKENS and hsTOKENS (not order-book maker/taker trading fees). It works like a pressure valve:
 
-- **Under normal conditions**, fees are low - maybe 0.25% for minting haTOKENS and 1% for minting hsTOKENS.
+- **Under normal conditions**, fees are low — illustrative examples might be ~0.25% for minting haTOKENS and ~1% for minting hsTOKENS (actual tiers are set per market; check the app dry-run / quote before confirming).
 - **If the system is at risk** (e.g., someone tries to mint a large amount of haTOKENS), fees scale up in proportion to how much stress the action would cause.
 - **If the system needs help** - for example, to improve its collateral ratio - it can offer zero or even negative fees, essentially paying users to take helpful actions like minting hsTOKENS.
 

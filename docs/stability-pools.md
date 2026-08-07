@@ -8,7 +8,7 @@ Stability Pools are a core mechanism in Harbor that provides security, yield gen
 
 ## What are Stability Pools?
 
-In Harbor, system solvency is maintained through an elegant and powerful mechanism: **Stability Pools**. These pools not only secure the protocol but also offer yield opportunities and strategic flexibility to participants.
+In Harbor, system solvency is maintained through **Stability Pools**. These pools secure the protocol and offer yield and strategic flexibility to participants.
 
 Harbor features **two types of Stability Pools**, each with different redemption outcomes:
 
@@ -16,150 +16,119 @@ Harbor features **two types of Stability Pools**, each with different redemption
 
 1. **Collateral Stability Pools**
 
-   - Pegged tokens (e.g., haUSD) deposited here are used to **redeem real collateral assets** (e.g., ETH, stETH) when needed
+   - Pegged tokens (e.g., haETH, haBTC) deposited here are used to **redeem real collateral assets** (e.g., fxSAVE, wstETH) when needed
    - Depositors effectively exchange their pegged tokens for the underlying collateral at **1:1 value** based on the oracle price at the time of redemption
-   - Perfect for accumulating collateral assets during market downturns
+   - Useful for accumulating collateral assets during market downturns
 
 2. **Sail Stability Pools**
    - Pegged tokens deposited here are swapped for **hsTokens** (variable leveraged exposure tokens) during rebalancing
-   - Depositors accumulate leveraged exposure to the collateral asset's performance during market volatility
+   - Depositors accumulate leveraged exposure to the collateral asset’s performance during market volatility
    - Ideal for those seeking amplified returns if the market rebounds
 
-Both types of pools play critical roles in ensuring the system remains healthy, flexible, and rewarding for users.
+Both pool types help keep the system healthy, flexible, and rewarding for users.
 
 ## How Stability Pools Protect the System
 
-When the **global collateralization ratio** of the system falls below a predefined safety threshold (e.g., 130%):
+When the **global collateralization ratio** of a market falls below a predefined safety threshold (e.g., 130%):
 
-1. The protocol automatically triggers **redemptions**
+1. The protocol enters a state where rebalancing is allowed
 2. A rebalance transaction becomes executable by MEV searchers who are economically incentivized to execute it
-3. Pegged tokens deposited in Stability Pools are **burned** to cancel outstanding system debt
+3. Pegged tokens deposited in Stability Pools are **burned** to reduce outstanding pegged supply
 4. Depending on the pool type:
    - Depositors receive **collateral assets** (Collateral Pools), or
-   - **hsTokens** representing the leveraged remainder (Sail Pools)
+   - **hsTokens** representing leveraged exposure (Sail Pools)
 
-This **instant rebalancing** ensures the protocol stays solvent **without auctions or external liquidators**.
+This **instant rebalancing** helps the protocol stay solvent **without auctions or external liquidators**.
 
 ## Why Stability Pool Participation is Attractive
 
-- **1:1 Value Redemptions**:
-  Depositors swap their pegged tokens at fair market value for either collateral or leveraged exposure — not discounted, not auctioned, but at market price when the market is experiencing a downturn, or after a pegged token experiences a price spike.
-
-- **Yield Opportunities**:
-  Stability Pool depositors earn the yield from underlying collateral (e.g., stETH)
-
-- **TIDE Token Rewards**:
-  Participants in either type of pool can earn additional **TIDE incentives**, compounding their returns through team-directed incentive allocations
-
-- **DeFi Composability**:
-  Stability Pools can form the foundation for automated strategies: Vaults can deposit into Stability Pools, accumulate redeemed collateral or hsTokens, and optionally swap back into pegged tokens
-
-- **Protocol Revenue Support**:
-  Harbor's tokenomics direct 75% of protocol revenue to stability pool rewards (pre-$10M TVL), ensuring strong yields for participants who secure the protocol
+- **1:1 Value Redemptions**: Depositors swap pegged tokens at fair oracle value for collateral or Sail exposure when rebalances occur
+- **Yield Opportunities**: Depositors earn yield from underlying collateral (e.g., fxSAVE, wstETH)
+- **Marks / TIDE incentives**: Where allocated, participants may earn Ledger Marks and team-directed TIDE incentives
+- **DeFi Composability**: Vaults and strategies can build on Stability Pools
+- **Protocol revenue support**: A large share of protocol revenue is intended to support market growth and pool participants — see [Yield](/yield) and [TIDE Tokenomics](/tide-token/tokenomics) (revenue split wording is pending product confirmation across surfaces)
 
 ## Example: During a Market Downturn
 
 ### In a Collateral Pool
 
-- A user's haUSD is used to cancel system debt
-- They receive ETH or stETH worth exactly the value of the burned haUSD, based on current oracle prices
-- They now own real crypto assets, possibly at a market low, and benefit from any recovery
+- A user’s haETH is used in rebalancing
+- They receive collateral (e.g. fxSAVE) worth the burned haETH at oracle prices
+- They now hold real yield-bearing collateral, possibly near a market low
 
 ### In a Sail Pool
 
-- A user's haUSD is swapped into hsETH
-- If ETH rebounds strongly, their hsETH could increase in value more rapidly than regular ETH exposure
+- A user’s haETH is swapped into hsFXUSD-ETH (example Sail token)
+- If ETH rebounds strongly relative to collateral, Sail exposure can outperform spot
 
-Both options allow users to **benefit from system stress** rather than fear it.
+Both options allow users to **participate in system stress** rather than only fearing it.
 
 ## Participating in Stability Pools
+
+Use the **Earn / Anchor** flows in [app.harborfinance.io](https://app.harborfinance.io/anchor).
 
 ### Depositing
 
 1. Connect your wallet
-2. Choose a stability pool type (Collateral or Sail)
+2. Choose a market and pool type (Collateral or Sail)
 3. Enter deposit amount
-4. Approve transaction
+4. Approve and confirm the transaction
 5. Start earning yield
 
 ### Withdrawing
 
-1. Navigate to your position
-2. Enter withdrawal amount
-3. Approve transaction
-4. Receive funds
+Stability pools may use a **withdrawal request window**:
+
+- Request a withdrawal; after a delay, a fee-free window opens
+- Withdrawing outside that window can incur an **early-withdrawal fee**
+- Exact delay, window length, and fee are market/parameter-specific — check the app UI before withdrawing
 
 ### Claiming Rewards
 
-1. Check available rewards
-2. Click "Claim Rewards"
-3. Approve transaction
-4. Receive TIDE tokens
+1. Check available rewards on the Anchor / Rewards panel
+2. Claim through the app
+3. Confirm the transaction
 
 ## Yield Calculation
 
 Yield is generated from multiple sources:
 
-1. Collateral token yield (e.g., stETH staking rewards)
-2. TIDE rewards (75% of protocol revenue directed to stability pools)
-3. Protocol revenue sharing (post-$10M TVL milestone)
+1. Collateral token yield (e.g., fxSAVE, wstETH)
+2. Protocol fee / revenue sharing directed to participants (see yield & tokenomics docs)
+3. Marks / TIDE incentives where allocated
 4. Potential upside from rebalancing events (not included in displayed APR)
 
 ## Best Practices
 
-1. **Diversification**
+1. **Diversification** — consider both Collateral and Sail pools across markets
+2. **Regular monitoring** — watch collateralization ratios and market health in the app
+3. **Strategic positioning** — Collateral pools to accumulate backing assets; Sail pools for rebound exposure
+4. **Understand the risks** — see [Risk Considerations](/risk-considerations)
 
-   - Spread deposits across both Collateral and Sail pools
-   - Consider multiple collateral types when available
+## Summary
 
-2. **Regular Monitoring**
-
-   - Check global collateralization ratios
-   - Monitor protocol health metrics
-   - Stay informed about market conditions
-
-3. **Strategic Positioning**
-
-   - Use Collateral pools during expected downturns to accumulate assets
-   - Use Sail pools when you anticipate volatility with recovery
-
-4. **Understand the Risks**
-   - Be aware of potential pool depletion
-   - Understand the recovery mechanisms
-   - For a comprehensive view of protocol risks, see the [Risk Considerations](/risk-considerations) documentation
-
-## Summary: Why Harbor's Dual Stability Pool Design is Powerful
-
-✅ **Automatic System Protection:** Pegged token backing is constantly rebalanced without auctions
-
-✅ **Flexible Redemption Outcomes:** Users can choose between collateral accumulation or leveraged exposure
-
-✅ **Attractive Real Yields:** Participants earn from collateral performance and 75% of protocol revenue
-
-✅ **Building Block for Advanced DeFi:** Vaults and strategies can be created directly on top of Stability Pools
-
-✅ **Market Participation, Not Liquidation:** Users actively benefit from volatility instead of being exposed to liquidation risks
-
-Harbor's Stability Pools transform market downturns into opportunities — **rewarding users for securing the system** and offering the flexibility to **accumulate collateral** or **gain strategic leveraged exposure**, all fully on-chain and permissionless.
+- Automatic system protection without auctions
+- Flexible redemption into collateral or Sail tokens
+- Real yield from productive collateral
+- Building block for advanced DeFi strategies
 
 ## Technical Details
 
 ### Contract Addresses
 
-- Collateral Pool: `0x7c77704007C9996Ee591C516f7319828BA49d91E`
-- Leveraged Pool: `0x081F08945fd17C5470f7bCee23FB57aB1099428E`
+Stability pools are **deployed per market**. Do not use a single global pool address.
+
+- Browse pools in the [app](https://app.harborfinance.io/anchor)
+- For engineers: see [Tech Documentation — markets / generic deployments](/tech-docs/markets/generic)
 
 ### Key Parameters
 
-- Minimum deposit amounts
-- Withdrawal delays
+- Minimum deposits (if any)
+- Withdrawal request delay / window / early-withdrawal fee
 - Rebalancing thresholds
-- Yield distribution rates
+- Yield and incentive distribution settings
 
 ## Support
 
-Need help with stability pools?
-
 - Join our [Discord](https://discord.com/invite/BW3P62vJXT)
 - Check our [FAQ](/faq)
-- Contact support team
