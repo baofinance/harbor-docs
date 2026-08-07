@@ -60,8 +60,8 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | ---- | ---- | --- |
 | Minter, SPs, genesis, reserve, fee, rewards | [Contracts](./contracts/) | ✅ baseline |
 | BaoFactory / CREATE3 | [bao-factory](./contracts/bao-factory.md) + generic | ✅ |
-| Harbor Yield (SP v3 / hyTOKENS) | [harbor-yield](./contracts/harbor-yield.md) | ✅ tech page (tracks `#33`; vaults pre-prod) |
-| Harbor Swap | [harbor-swap](./contracts/harbor-swap.md) | ✅ tech page (tracks `#3` Velora + merged hardening) |
+| Harbor Yield (SP v3 / hyTOKENS) | [harbor-yield](/tech-docs/contracts/harbor-yield) | ✅ tech page (tracks `#33`; vaults pre-prod) |
+| Harbor Swap | [harbor-swap](/tech-docs/contracts/harbor-swap) | ✅ tech page (tracks `#3` Velora + merged hardening) |
 | Process flows | [process-flows](./process-flows/) | ✅ |
 
 ---
@@ -70,8 +70,8 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 | Repo | Open PR / branch (re-checked) | Docs coverage |
 | ---- | ------------------------------ | ------------- |
-| [harbor](https://github.com/baofinance/harbor) | [#33](https://github.com/baofinance/harbor/pull/33) `harbor-yield` | Core markets ✅; [Yield](./contracts/harbor-yield.md) ✅ |
-| [harbor-swap](https://github.com/baofinance/harbor-swap) | [#3](https://github.com/baofinance/harbor-swap/pull/3) `velora-swap` (open); `#2`/`#4` merged on `main` | [Swap](./contracts/harbor-swap.md) ✅ |
+| [harbor](https://github.com/baofinance/harbor) | [#33](https://github.com/baofinance/harbor/pull/33) `harbor-yield` | Core markets ✅; [Yield](/tech-docs/contracts/harbor-yield) ✅ |
+| [harbor-swap](https://github.com/baofinance/harbor-swap) | [#3](https://github.com/baofinance/harbor-swap/pull/3) `velora-swap` (open); `#2`/`#4` merged on `main` | [Swap](/tech-docs/contracts/harbor-swap) ✅ |
 | [harbor-zap-contracts](https://github.com/baofinance/harbor-zap-contracts) | — | ✅ [Zap contracts](./contracts/zap.md) |
 | [harbor-tide](https://github.com/baofinance/harbor-tide) | no open PRs | ❌ cross-chain / token tech TBD |
 | [harbor-price-aggregators](https://github.com/baofinance/harbor-price-aggregators) | [#4](https://github.com/baofinance/harbor-price-aggregators/pull/4) `harbor-yield` | Inventories ✅; Yield ETH-peg feeds pending merge → rows |

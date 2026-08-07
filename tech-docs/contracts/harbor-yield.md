@@ -58,7 +58,7 @@ Numerical envelope / no-silent-truncation guarantees: [`doc/DataEnvelope.md`](ht
 
 ## hyTOKEN / AC product contracts
 
-Higher-level **HarborYield_v1** peg vaults and autocompounder impls are designed in the autocompounding doc and consumed **with** [Harbor Swap](./harbor-swap.md). Deploy phase notes in swap’s `DEPLOY_SWAP.md` call this **Phase 2b** (consumer / yield vaults), after:
+Higher-level **HarborYield_v1** peg vaults and autocompounder impls are designed in the autocompounding doc and consumed **with** [Harbor Swap](/tech-docs/contracts/harbor-swap). Deploy phase notes in swap’s `DEPLOY_SWAP.md` call this **Phase 2b** (consumer / yield vaults), after:
 
 1. **Phase 1a** — Minter_v3 / StabilityPool_v3 / StabilityPoolManager_v2 (`harbor` `#33`)
 2. **Phase 1b** — Yield peg oracles (`harbor-price-aggregators` `#4`)
@@ -89,7 +89,7 @@ Add inventory rows under [Mainnet price oracles](./price-oracles/mainnet.md) whe
 | Resource | Use for |
 | -------- | ------- |
 | [Harbor Yield (product)](/harbor-yield) | User-facing hyTOKEN story |
-| [Harbor Swap](./harbor-swap.md) | Registry, DEX executors, Velora |
+| [Harbor Swap](/tech-docs/contracts/harbor-swap) | Registry, DEX executors, Velora |
 | [Stability pool](./stability-pool.md) | Live v1/v2 pool behaviour |
 | [Coverage audit](../coverage.md) | PR / branch checklist |
 | [Zap contracts](./zap.md) | Separate Maiden Voyage convenience (not HY) |

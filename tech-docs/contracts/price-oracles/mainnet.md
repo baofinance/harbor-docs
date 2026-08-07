@@ -128,7 +128,7 @@ Prefer the inventory address on each pair page. Where the live app still wires a
 | stETH/ETH | stETH/ETH + wstETH rate |
 | BTC/EUR/GOLD/MCAP/SILVER → ETH | Peg→ETH wrappers |
 
-See [Harbor Yield](../harbor-yield.md).
+See [Harbor Yield](/tech-docs/contracts/harbor-yield).
 
 ## Notes
 

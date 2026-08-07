@@ -2,7 +2,7 @@
 
 > **Status**: Library live on `main`; **Velora** primary aggregator on open PR [`velora-swap` (#3)](https://github.com/baofinance/harbor-swap/pull/3)  
 > **Repo**: [baofinance/harbor-swap](https://github.com/baofinance/harbor-swap)  
-> **Consumed by**: [Harbor Yield](./harbor-yield.md) (and future Harbor products)
+> **Consumed by**: [Harbor Yield](/tech-docs/contracts/harbor-yield) (and future Harbor products)
 
 Standalone **swap registry + executors**. Does not change yield economics — it moves tokens when Harbor Yield (or keepers) need direct DEX routes or aggregator calldata.
 
@@ -108,7 +108,7 @@ Harbor Yield passes `swapper = _predictAddress("swapper")` as an immutable at HY
 
 | Resource | Use for |
 | -------- | ------- |
-| [Harbor Yield](./harbor-yield.md) | Consumer stack / phases |
+| [Harbor Yield](/tech-docs/contracts/harbor-yield) | Consumer stack / phases |
 | [Harbor Yield (product)](/harbor-yield) | Velora vs 1inch in product language |
 | [Supporting Features](/supporting-features) | Oracles + zaps vs yield plumbing |
 | [Coverage audit](../coverage.md) | Open PR checklist |
