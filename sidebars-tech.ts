@@ -8,6 +8,23 @@ const sidebars: SidebarsConfig = {
       label: "Overview",
     },
     {
+      type: "doc",
+      id: "coverage",
+      label: "Coverage audit",
+    },
+    {
+      type: "category",
+      label: "Templates",
+      items: [
+        { type: "doc", id: "templates/market", label: "Market page" },
+        {
+          type: "doc",
+          id: "templates/price-aggregator",
+          label: "Price aggregator",
+        },
+      ],
+    },
+    {
       type: "category",
       label: "Contracts",
       items: [
@@ -41,8 +58,18 @@ const sidebars: SidebarsConfig = {
         { type: "doc", id: "markets/btc-fxusd", label: "fxUSD/BTC Market" },
         { type: "doc", id: "markets/btc-steth", label: "stETH/BTC Market" },
         { type: "doc", id: "markets/fxusd-eur", label: "fxUSD/EUR Market" },
+        { type: "doc", id: "markets/steth-eur", label: "stETH/EUR Market" },
         { type: "doc", id: "markets/fxusd-gold", label: "fxUSD/GOLD Market" },
-        { type: "doc", id: "markets/steth-usd-megaeth", label: "stETH/USD Market (MegaETH)" },
+        { type: "doc", id: "markets/steth-gold", label: "stETH/GOLD Market" },
+        { type: "doc", id: "markets/fxusd-silver", label: "fxUSD/SILVER Market" },
+        { type: "doc", id: "markets/steth-silver", label: "stETH/SILVER Market" },
+        { type: "doc", id: "markets/fxusd-mcap", label: "fxUSD/MCAP Market" },
+        { type: "doc", id: "markets/steth-mcap", label: "stETH/MCAP Market" },
+        {
+          type: "doc",
+          id: "markets/steth-usd-megaeth",
+          label: "stETH/USD Market (MegaETH)",
+        },
       ],
     },
     {

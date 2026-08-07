@@ -92,11 +92,23 @@ Mainnet hosts the largest number of Harbor price oracles, including v3, v4, and 
 
 ## Market Integration
 
-These oracles are used by Harbor Protocol markets:
+Market pages should use the addresses in the tables above (not historical aliases). Consumers:
 
-- **fxUSD/ETH Market**: Uses `fxUSD/ETH` oracle (`0xea5292c58288DcE24C52C1dB13ca048275665EbC`)
-- **fxUSD/BTC Market**: Uses `fxUSD/BTC` oracle (`0xF7657CD7890904d108384E289997c993e2e2bBc0`)
-- **stETH/BTC Market**: Uses `stETH/BTC` oracle (`0x42018953e5174dC07058BeEE0618aa569fbFBE90`)
+| Oracle pair | Market doc(s) |
+| ----------- | ------------- |
+| fxUSD/ETH | [fxUSD/ETH](../../markets/eth-fxsave.md) |
+| fxUSD/BTC | [fxUSD/BTC](../../markets/btc-fxusd.md) |
+| stETH/BTC | [stETH/BTC](../../markets/btc-steth.md) |
+| fxUSD/EUR | [fxUSD/EUR](../../markets/fxusd-eur.md) |
+| stETH/EUR | [stETH/EUR](../../markets/steth-eur.md) |
+| fxUSD/GOLD | [fxUSD/GOLD](../../markets/fxusd-gold.md) |
+| stETH/GOLD | [stETH/GOLD](../../markets/steth-gold.md) |
+| fxUSD/SILVER | [fxUSD/SILVER](../../markets/fxusd-silver.md) |
+| stETH/SILVER | [stETH/SILVER](../../markets/steth-silver.md) |
+| fxUSD/MCAP | [fxUSD/MCAP](../../markets/fxusd-mcap.md) |
+| stETH/MCAP | [stETH/MCAP](../../markets/steth-mcap.md) |
+
+New oracle rows: [price aggregator template](../../templates/price-aggregator.md). Full coverage checklist: [Coverage audit](../../coverage.md).
 
 ## Version Information
 

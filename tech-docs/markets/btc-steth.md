@@ -23,7 +23,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](./gen
 - **reservePool** (`BTC::stETH::reservePool`): `0x515ECa19Ac381b0f37D616F99628136906fC5355`
 - **stabilityPoolManager**: Not deployed on this market (`ETH::fxUSD::stabilityPoolManager` shared): `0xE39165aDE355988EFb24dA4f2403971101134CAB`
 - **genesis** (`BTC::stETH::genesis`): `0xc64Fc46eED431e92C1b5e24DC296b5985CE6Cc00`
-- **priceOracle**: `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB` (stETH/BTC aggregator)
+- **priceOracle**: `0x42018953e5174dC07058BeEE0618aa569fbFBE90` (stETH/BTC — [inventory](../contracts/price-oracles/mainnet.md))
 - **feeReceiver** (`BTC::stETH::minterFeeReceiver`): `0xc3a97138a5aDCC7d28A1375E28EC3440aeaeDF3e` (TokenDistributor)
 - **stabilityPoolCollateral** (`BTC::stETH::stabilityPoolCollateral`): `0x667Ceb303193996697A5938cD6e17255EeAcef51`
 - **stabilityPoolLeveraged** (`BTC::stETH::stabilityPoolLeveraged`): `0xCB4F3e21DE158bf858Aa03E63e4cEc7342177013`
@@ -61,7 +61,7 @@ Shared with [fxUSD/BTC](./btc-fxusd.md). **Address:** `0x25bA4A826E1A1346dcA2Ab5
 
 ## Price oracle
 
-The stETH/BTC price oracle (`0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB`) provides:
+The stETH/BTC price oracle (`0x42018953e5174dC07058BeEE0618aa569fbFBE90`) provides:
 - **Rate Provider**: wstETH (for stETH exchange rate)
 - **Price Feeds**: ETH/USD and BTC/USD Chainlink feeds (calculates stETH/BTC)
 - **Purpose**: Determines collateral value and minting/redemption rates
