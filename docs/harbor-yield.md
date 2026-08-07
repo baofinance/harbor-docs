@@ -6,7 +6,7 @@ sidebar_position: 5
 
 **Harbor Yield** is Harbor’s planned pooled-yield product for pegged tokens. Users hold a single **hyTOKEN** per peg (e.g. hyUSD) and earn concentrated stability-pool yield **without manually claiming and compounding** rewards.
 
-Work is in progress on the `harbor-yield` contracts branch. Treat this page as the product design for the **mid-term** roadmap item — not as live mainnet UX yet. See [Roadmap](/roadmap).
+Work is in progress on the `harbor-yield` contracts branch ([harbor PR #33](https://github.com/baofinance/harbor/pull/33)). Treat this page as the product design for the **mid-term** roadmap item — not as live mainnet UX yet. See [Roadmap](/roadmap). Contract layers, upgrade versions, and deploy phases: [Tech docs — Harbor Yield](/tech-docs/contracts/harbor-yield). Swap plumbing: [Tech docs — Harbor Swap](/tech-docs/contracts/harbor-swap).
 
 ## Why it exists
 

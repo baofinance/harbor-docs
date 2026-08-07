@@ -117,6 +117,19 @@ Prefer the inventory address on each pair page. Where the live app still wires a
 - **v4 Contracts**: Direct implementation (no proxy)
 - **v4 Leverage Contracts**: Specialized for leveraged token pricing
 
+## Pending: Harbor Yield ETH-peg oracles
+
+[harbor-price-aggregators PR #4](https://github.com/baofinance/harbor-price-aggregators/pull/4) (`harbor-yield`) adds CREATE3-wired mainnet helpers for Harbor Yield valuation — **not yet** in the inventory tables above until merge + deploy:
+
+| Pair | Role |
+| ---- | ---- |
+| ETH/ETH | Constant 1e18 peg |
+| Peg/ETH | `peg_USD / ETH_USD` |
+| stETH/ETH | stETH/ETH + wstETH rate |
+| BTC/EUR/GOLD/MCAP/SILVER → ETH | Peg→ETH wrappers |
+
+See [Harbor Yield](../harbor-yield.md).
+
 ## Notes
 
 - Deprecated oracles (XAU/XAG) have been replaced with GOLD/SILVER naming

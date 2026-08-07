@@ -23,6 +23,8 @@ const sidebars: SidebarsConfig = {
         "contracts/bao-factory",
         "contracts/reserve-pool",
         "contracts/zap",
+        "contracts/harbor-yield",
+        "contracts/harbor-swap",
         {
           type: "category",
           label: "Price Oracles",

@@ -37,6 +37,7 @@ Zap routes may involve wrapping (and, depending on the path, intermediary conver
 For the mid-term **hyTOKEN** stack, see also:
 
 - Auto-compounders and [Harbor Swap](https://github.com/baofinance/harbor-swap) — [Harbor Yield](/harbor-yield)
+- Tech: [Harbor Yield contracts](/tech-docs/contracts/harbor-yield), [Harbor Swap contracts](/tech-docs/contracts/harbor-swap)
 - Aggregator rebalances via **Velora** (primary) / **1inch** (optional)
 
 Those are yield-product infrastructure, separate from the live mint / Maiden Voyage zaps above.
