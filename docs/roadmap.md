@@ -44,15 +44,20 @@ Harbor continues deploying markets based on:
 - **Indexes / other**: e.g. MCAP-style markets as oracles and product readiness allow
 - **Custom markets**: External protocol-defined markets over time
 
-### Autocompounding Vaults
-
-Harbor plans **autocompounding vaults** for haTOKENS that automatically compound stability pool rewards, making it easier to maximize yields without active management.
-
 ### Maiden Voyage 2.0
 
 Ongoing capacity-capped voyages with **Yield Share** (ongoing share of market revenue for eligible participants). See [Maiden Voyage](/maiden-voyage).
 
-## 3. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
+## 3. Harbor Yield & Autocompounding (Mid Term)
+
+Harbor Yield (`hyTOKENS`) is the planned autocompounding and pooled-yield layer on top of stability pools:
+
+- **Level 1 — Auto-Compounders:** per-pool ERC-4626 vaults that claim rewards and redeposit haTOKENS automatically
+- **Level 2 — Harbor Yield:** one **hyTOKEN** vault per peg (e.g. hyUSD) that baskets multiple autocompounders and peg-equivalent yield sources into a single share
+
+Users who want convenience can hold hyTOKENS instead of manually managing stability pool claims. Users who want control can stay on raw stability pools. Details: [Harbor Yield](/harbor-yield).
+
+## 4. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
 
 ### Native Deployments
 
@@ -63,7 +68,7 @@ Ongoing capacity-capped voyages with **Yield Share** (ongoing share of market re
 - **TIDE** is designed for omnichain movement via **Chainlink CCIP** (same CREATE3 address pattern across chains), rather than LayerZero
 - Cross-chain market and stability pool designs may follow after TIDE and core product maturity
 
-## 4. Permissionless Market Factory (Mid to Long Term)
+## 5. Permissionless Market Factory (Mid to Long Term)
 
 Harbor will evolve into a **market creation platform** — where anyone can launch synthetic markets with:
 

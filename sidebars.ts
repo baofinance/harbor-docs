@@ -15,7 +15,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Core Features",
-      items: ["stability-pools", "yield", "maiden-voyage", "fees"],
+      items: ["stability-pools", "yield", "maiden-voyage", "harbor-yield", "fees"],
     },
     {
       type: "category",
