@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `EUR::fxUSD::reservePool` | `0x27cA37538358F90d45cAA886fB58CC08ffe2dD2f` |
 | **stabilityPoolManager** | `EUR::fxUSD::stabilityPoolManager` | `0x756766756880ceA06270Fd507b09Ef32714Ec7C2` |
 | **genesis** | `EUR::fxUSD::genesis` | `0xa9EB43Ed6Ba3B953a82741F3e226C1d6B029699b` |
-| **priceOracle** | — | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` (fxUSD/EUR — [detail](fxusd.md)) |
+| **priceOracle** | — | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` (fxUSD/EUR — [detail](../../contracts/price-oracles/mainnet/haeur/fxusd.md)) |
 | **feeReceiver** | `EUR::fxUSD::minterFeeReceiver` | `0x43dfDB5059777A8B8819d8D8ff2c9ACCFEb766CB` |
 | **stabilityPoolCollateral** | `EUR::fxUSD::stabilityPoolCollateral` | `0xe60054E6b518f67411834282cE1557381f050B13` |
 | **stabilityPoolLeveraged** | `EUR::fxUSD::stabilityPoolLeveraged` | `0xc5e0dA7e0a178850438E5E97ed59b6eb2562e88E` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | fxUSD/EUR |
 | **Address** | `0x305454F8B46Aa3485D8B350D8E832459974F5e9F` |
 | **Rate provider** | fxSAVE |
-| **Detail page** | [fxUSD/EUR](fxusd.md) |
+| **Detail page** | [fxUSD/EUR](../../contracts/price-oracles/mainnet/haeur/fxusd.md) |
 
 ## Zaps
 

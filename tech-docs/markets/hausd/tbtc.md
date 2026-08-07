@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `USD::tBTC::reservePool` | `0xaF52B331D523dc7eF0A1145638048D218456EBd1` |
 | **stabilityPoolManager** | `USD::tBTC::stabilityPoolManager` | `0xD9Bc7F5B90BBf7fCCeC24c67905A6205627D8674` |
 | **genesis** | `USD::tBTC::genesis` | `0x64E72Cbb24D1f80A0f66778dA0b95A46ead30539` |
-| **priceOracle** | — | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` (tBTC/USD — [detail](tbtc.md)) |
+| **priceOracle** | — | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` (tBTC/USD — [detail](../../contracts/price-oracles/mainnet/hausd/tbtc.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::tBTC::stabilityPoolCollateral` | `0x9a229b4ec6A0D2154689De8EDa9d14C884DE707b` |
 | **stabilityPoolLeveraged** | `USD::tBTC::stabilityPoolLeveraged` | `0x6a059A79bD261e2bFD160CAc4733108a8BDa2BD6` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | tBTC/USD |
 | **Address** | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` |
 | **Rate provider** | — (direct / market-wired) |
-| **Detail page** | [tBTC/USD](tbtc.md) |
+| **Detail page** | [tBTC/USD](../../contracts/price-oracles/mainnet/hausd/tbtc.md) |
 
 ## Zaps
 

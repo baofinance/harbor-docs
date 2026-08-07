@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `MCAP::stETH::reservePool` | `0x9B7fFA713d504F4DdC4f54c6dF6b1a9971d8B728` |
 | **stabilityPoolManager** | `MCAP::stETH::stabilityPoolManager` | `0x1298ab1957ee023E228d57bE2db73494b649E52F` |
 | **genesis** | `MCAP::stETH::genesis` | `0xa6c02dE8E3150C6ffA9C80F98185d42653CB438d` |
-| **priceOracle** | — | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` (stETH/MCAP — [detail](steth.md)) |
+| **priceOracle** | — | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` (stETH/MCAP — [detail](../../contracts/price-oracles/mainnet/hamcap/steth.md)) |
 | **feeReceiver** | `MCAP::stETH::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `MCAP::stETH::stabilityPoolCollateral` | `0x4cFf4948A0EA73Ee109327b56da0bead8c323189` |
 | **stabilityPoolLeveraged** | `MCAP::stETH::stabilityPoolLeveraged` | `0x505bfC99D2FB1A1424b2A4AA81303346df4f27E9` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | stETH/MCAP |
 | **Address** | `0x4fe6fa14db0D3C8a4709A4F3e37C1c862381859F` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/MCAP](steth.md) |
+| **Detail page** | [stETH/MCAP](../../contracts/price-oracles/mainnet/hamcap/steth.md) |
 
 ## Zaps
 

@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `GOLD::stETH::reservePool` | `0x8224E5264FdD99547a21fFf34bDB60e78faB1609` |
 | **stabilityPoolManager** | `GOLD::stETH::stabilityPoolManager` | `0x322b19DFBeF5F41d1FA6436886349EEE02408867` |
 | **genesis** | `GOLD::stETH::genesis` | `0x8Ad6b177137A6c33070c27d98355717849Ce526c` |
-| **priceOracle** | — | `0x4ebde6143C5E366264ba7416FdEa18BC27C04A31` (stETH/GOLD — [detail](steth.md)) |
+| **priceOracle** | — | `0x4ebde6143C5E366264ba7416FdEa18BC27C04A31` (stETH/GOLD — [detail](../../contracts/price-oracles/mainnet/hagold/steth.md)) |
 | **feeReceiver** | `GOLD::stETH::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `GOLD::stETH::stabilityPoolCollateral` | `0x215C28DcCe0041eF9a17277CA271F100d9F345CF` |
 | **stabilityPoolLeveraged** | `GOLD::stETH::stabilityPoolLeveraged` | `0x2af96e906D568c92E53e96bB2878ce35E05dE69a` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | stETH/GOLD |
 | **Address** | `0x4ebde6143C5E366264ba7416FdEa18BC27C04A31` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/GOLD](steth.md) |
+| **Detail page** | [stETH/GOLD](../../contracts/price-oracles/mainnet/hagold/steth.md) |
 
 ## Zaps
 

@@ -5,7 +5,7 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 **How to add new deployments**
 
 1. Markets → group by haToken under `markets/<hatoken>/` (e.g. `hausd/`), add a collateral page (`steth.md`, `fxusd.md`, …) using the shared layout (incl. zap rows), update the haToken `index.md`, and wire the sidebar category in [`sidebars-tech.ts`](../sidebars-tech.ts)
-2. Oracles → copy any pair page under `contracts/price-oracles/<chain>/` → fill → add a row on the chain inventory page linking to it
+2. Oracles → add under `contracts/price-oracles/<chain>/<hatoken>/` (same haToken grouping as markets) → update haToken `index.md` + chain inventory → wire sidebar
 3. Zaps → wire addresses on the market page + row on [Zap contracts](./contracts/zap.md)
 4. Proxy keys → keep [markets/generic.md](./markets/generic.md) in sync with `harbor_v1.state.json`
 

@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `USD::stETH::reservePool` | `0x8EBcE958BAAa46163D32b57b07a36DaA1E36CA8d` |
 | **stabilityPoolManager** | `USD::stETH::stabilityPoolManager` | `0x377a4A6BEC4C75F2B7054B67Df03ce9A7497c33d` |
 | **genesis** | `USD::stETH::genesis` | `0x40ff767FF4055D53b1BC1B0141221a37B25905fD` |
-| **priceOracle** | — | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` (stETH/USD — [detail](steth.md)) |
+| **priceOracle** | — | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` (stETH/USD — [detail](../../contracts/price-oracles/mainnet/hausd/steth.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::stETH::stabilityPoolCollateral` | `0xD21613339E8A6adba7a084f67802731e6045d801` |
 | **stabilityPoolLeveraged** | `USD::stETH::stabilityPoolLeveraged` | `0x6E7b445e4dac4787445f31382f4E3dCAd510c238` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | stETH/USD |
 | **Address** | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/USD](steth.md) |
+| **Detail page** | [stETH/USD](../../contracts/price-oracles/mainnet/hausd/steth.md) |
 
 ## Zaps
 

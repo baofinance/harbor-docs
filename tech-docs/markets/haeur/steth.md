@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `EUR::stETH::reservePool` | `0xdfE995CdAa4D956C0673428cA999782239b0C03D` |
 | **stabilityPoolManager** | `EUR::stETH::stabilityPoolManager` | `0x29AAEe8b76A5970D7d5041F500512e2b9d70Aa94` |
 | **genesis** | `EUR::stETH::genesis` | `0xf4F97218a00213a57A32E4606aAecC99e1805A89` |
-| **priceOracle** | — | `0x5e27965689B4B8B425d98fbc676fE22d74caf7C7` (stETH/EUR — [detail](steth.md)) |
+| **priceOracle** | — | `0x5e27965689B4B8B425d98fbc676fE22d74caf7C7` (stETH/EUR — [detail](../../contracts/price-oracles/mainnet/haeur/steth.md)) |
 | **feeReceiver** | `EUR::stETH::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `EUR::stETH::stabilityPoolCollateral` | `0x000564B33FFde65E6c3b718166856654e039D69B` |
 | **stabilityPoolLeveraged** | `EUR::stETH::stabilityPoolLeveraged` | `0x7553fb328ef35aF1c2ac4E91e53d6a6B62DFDdEa` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | stETH/EUR |
 | **Address** | `0x5e27965689B4B8B425d98fbc676fE22d74caf7C7` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/EUR](steth.md) |
+| **Detail page** | [stETH/EUR](../../contracts/price-oracles/mainnet/haeur/steth.md) |
 
 ## Zaps
 

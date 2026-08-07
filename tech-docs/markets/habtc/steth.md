@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `BTC::stETH::reservePool` | `0x515ECa19Ac381b0f37D616F99628136906fC5355` |
 | **stabilityPoolManager** | `BTC::stETH::stabilityPoolManager` | `0x5e9Bcaa1EDfD665c09a9e6693B447581d61A85A1` |
 | **genesis** | `BTC::stETH::genesis` | `0xc64Fc46eED431e92C1b5e24DC296b5985CE6Cc00` |
-| **priceOracle** | — | `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB` (stETH/BTC — [detail](../../contracts/price-oracles/mainnet/steth-btc.md)) |
+| **priceOracle** | — | `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB` (stETH/BTC — [detail](../../contracts/price-oracles/mainnet/habtc/steth.md)) |
 | **feeReceiver** | `BTC::stETH::minterFeeReceiver` | `0xc3a97138a5aDCC7d28A1375E28EC3440aeaeDF3e` |
 | **stabilityPoolCollateral** | `BTC::stETH::stabilityPoolCollateral` | `0x667Ceb303193996697A5938cD6e17255EeAcef51` |
 | **stabilityPoolLeveraged** | `BTC::stETH::stabilityPoolLeveraged` | `0xCB4F3e21DE158bf858Aa03E63e4cEc7342177013` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | stETH/BTC |
 | **Address** | `0xE370289aF2145A5B2F0F7a4a900eBfD478A156dB` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/BTC](../../contracts/price-oracles/mainnet/steth-btc.md) |
+| **Detail page** | [stETH/BTC](../../contracts/price-oracles/mainnet/habtc/steth.md) |
 
 ## Zaps
 

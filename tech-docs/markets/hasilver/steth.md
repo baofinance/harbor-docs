@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `SILVER::stETH::reservePool` | `0x77AC9343621402B938d5A39727Da76891aFFA419` |
 | **stabilityPoolManager** | `SILVER::stETH::stabilityPoolManager` | `0xbA6b54ED8D76bD4f6B4efD4f1f2344B2Ec386c3E` |
 | **genesis** | `SILVER::stETH::genesis` | `0x8f655Ca32A1Fa8032955989c19e91886F26439dc` |
-| **priceOracle** | — | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` (stETH/SILVER — [detail](steth.md)) |
+| **priceOracle** | — | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` (stETH/SILVER — [detail](../../contracts/price-oracles/mainnet/hasilver/steth.md)) |
 | **feeReceiver** | `SILVER::stETH::minterFeeReceiver` | TBD |
 | **stabilityPoolCollateral** | `SILVER::stETH::stabilityPoolCollateral` | `0x1C9c1cF9aa9fc86dF980086CbC5a5607522cFc3E` |
 | **stabilityPoolLeveraged** | `SILVER::stETH::stabilityPoolLeveraged` | `0x4C0F988b3c0C58F5ea323238E9d62B79582738e6` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | stETH/SILVER |
 | **Address** | `0x7223E17bD4527AcbE44644300eA0F09A4AeBC995` |
 | **Rate provider** | wstETH |
-| **Detail page** | [stETH/SILVER](steth.md) |
+| **Detail page** | [stETH/SILVER](../../contracts/price-oracles/mainnet/hasilver/steth.md) |
 
 ## Zaps
 

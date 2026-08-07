@@ -30,7 +30,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `ETH::fxUSD::reservePool` | `0x7A5c4ca972CE2168d5215d252946dDbd1cAd2015` |
 | **stabilityPoolManager** | `ETH::fxUSD::stabilityPoolManager` | `0xE39165aDE355988EFb24dA4f2403971101134CAB` |
 | **genesis** | `ETH::fxUSD::genesis` | `0xC9df4f62474Cf6cdE6c064DB29416a9F4f27EBdC` |
-| **priceOracle** | — | `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` (fxUSD/ETH — [detail](../../contracts/price-oracles/mainnet/fxusd-eth.md)) |
+| **priceOracle** | — | `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` (fxUSD/ETH — [detail](../../contracts/price-oracles/mainnet/haeth/fxusd.md)) |
 | **feeReceiver** | `ETH::fxUSD::minterFeeReceiver` | `0xdC903fe5ebCE440f22578D701b95424363D20881` |
 | **stabilityPoolCollateral** | `ETH::fxUSD::stabilityPoolCollateral` | `0x1F985CF7C10A81DE1940da581208D2855D263D72` |
 | **stabilityPoolLeveraged** | `ETH::fxUSD::stabilityPoolLeveraged` | `0x438B29EC7a1770dDbA37D792F1A6e76231Ef8E06` |
@@ -69,7 +69,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | fxUSD/ETH |
 | **Address** | `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` |
 | **Rate provider** | fxSAVE |
-| **Detail page** | [fxUSD/ETH](../../contracts/price-oracles/mainnet/fxusd-eth.md) |
+| **Detail page** | [fxUSD/ETH](../../contracts/price-oracles/mainnet/haeth/fxusd.md) |
 
 ## Zaps
 

@@ -32,7 +32,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **reservePool** | `USD::PAXG::reservePool` | `0x4C60a87BC13Aa44Fa16b657868FA8a0cDA5DCC52` |
 | **stabilityPoolManager** | `USD::PAXG::stabilityPoolManager` | `0xf0ab0C95E5cb0C36780D09d4DED29AF869E65f86` |
 | **genesis** | `USD::PAXG::genesis` | `0x68edA29187587DEf950d566f862FFA85FdA594cf` |
-| **priceOracle** | — | `0x647633122f9d9ba87210210d5A3ded365911BF9b` (PAXG/USD — [detail](paxg.md)) |
+| **priceOracle** | — | `0x647633122f9d9ba87210210d5A3ded365911BF9b` (PAXG/USD — [detail](../../contracts/price-oracles/mainnet/hausd/paxg.md)) |
 | **feeReceiver** | — | `0xdC903fe5ebCE440f22578D701b95424363D20881` (shared TokenDistributor / app `FEE_RECEIVER`) |
 | **stabilityPoolCollateral** | `USD::PAXG::stabilityPoolCollateral` | `0xAf7B276dF93F74AE7780E1D5f550bEaf4Ff26415` |
 | **stabilityPoolLeveraged** | `USD::PAXG::stabilityPoolLeveraged` | `0x45B3e0dC9DdaDE6D5e2D45AD08c28B794Bdbf985` |
@@ -71,7 +71,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **Pair** | PAXG/USD |
 | **Address** | `0x647633122f9d9ba87210210d5A3ded365911BF9b` |
 | **Rate provider** | — (direct / market-wired) |
-| **Detail page** | [PAXG/USD](paxg.md) |
+| **Detail page** | [PAXG/USD](../../contracts/price-oracles/mainnet/hausd/paxg.md) |
 
 ## Zaps
 
