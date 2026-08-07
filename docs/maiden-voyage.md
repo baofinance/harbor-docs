@@ -83,7 +83,7 @@ Participants can:
 
 1. **Open the app** — [Maiden Voyage 2.0](https://app.harborfinance.io/genesis)
 2. **Review the active voyage** — collateral, capacity, stage, and Yield Share rules
-3. **Prepare approved collateral** and approve the voyage contracts if required
+3. Prepare approved **main collateral** when you can (fxSAVE or wstETH for the voyage), or use a **zap** only for convenience if you start from ETH/USDC — see [Supporting Features](/supporting-features)
 4. **Deposit while capacity is open**
 5. **After launch** — claim Anchor + Sail tokens and manage Yield Share / Marks from your dashboard
 

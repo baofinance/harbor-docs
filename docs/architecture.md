@@ -10,8 +10,9 @@ Harbor Protocol is built on a robust and secure architecture that enables the cr
 
 ### 1. Price Oracle for Pegged Tokens
 
-- Chainlink and Harbor aggregators for reliable market data
+- Chainlink feeds composed by [Harbor Price Aggregators](https://github.com/baofinance/harbor-price-aggregators)
 - Transparent display of the oracle on each market page in the app
+- See [Supporting Features](/supporting-features)
 
 ### 2. Token System
 
@@ -68,7 +69,8 @@ Harbor Protocol is built on a robust and secure architecture that enables the cr
 
 - **Smart Contracts**: Solidity (Foundry)
 - **Frontend**: Next.js, React ([app.harborfinance.io](https://app.harborfinance.io))
-- **Price Feeds**: Chainlink and Harbor aggregators
+- **Price Feeds**: Chainlink + [Harbor Price Aggregators](https://github.com/baofinance/harbor-price-aggregators)
+- **UX helpers**: [Harbor Zap Contracts](https://github.com/baofinance/harbor-zap-contracts) (convenience; prefer main collaterals)
 - **Testing**: Foundry
 - **Deployment**: Ethereum mainnet (primary product surface)
 

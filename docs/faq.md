@@ -76,8 +76,9 @@ Yield comes from:
 
 1. Connect your wallet in the app
 2. Open the relevant market (Earn / mint flows)
-3. Deposit accepted collateral (or use a zap where available)
-4. Mint haTokens and confirm the transaction
+3. Deposit the market’s **main collateral** when you can (**fxSAVE** or **wstETH**, depending on the market)
+4. Optionally use a **zap** for convenience if you hold ETH/USDC (or similar) — see [Supporting Features](/supporting-features); zaps are helpers, not the preferred long-term path
+5. Mint haTokens and confirm the transaction
 
 You can also receive haTokens from a [Maiden Voyage](/maiden-voyage) at market launch.
 
@@ -94,7 +95,7 @@ There is no “set leverage / stop-loss” trade ticket — Sail is a token, not
 - **Dynamic mint/redeem fees** based on system stress (see [Protocol Fees](/fees))
 - Network gas fees
 - Possible early-withdrawal fees on Stability Pools outside the request window
-- Swap / zap routing fees when using helpers
+- **Swap / zap routing fees** when using helpers — prefer depositing **main collateral** (fxSAVE / wstETH) directly; see [Supporting Features](/supporting-features)
 
 ## Technical Questions
 

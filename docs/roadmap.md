@@ -48,6 +48,13 @@ Harbor continues deploying markets based on:
 
 Ongoing capacity-capped voyages with **Yield Share** (ongoing share of market revenue for eligible participants). See [Maiden Voyage](/maiden-voyage).
 
+**Supporting infrastructure (live / ongoing):**
+
+- [Price aggregators](https://github.com/baofinance/harbor-price-aggregators) — Chainlink-composed oracles per market
+- [Zap contracts](https://github.com/baofinance/harbor-zap-contracts) — convenience wrap+deposit paths; **prefer main collaterals** (fxSAVE / wstETH) when possible
+
+See [Supporting Features](/supporting-features).
+
 ## 3. Harbor Yield & Autocompounding (Mid Term)
 
 Harbor Yield (`hyTOKENS`) is the planned pooled-yield product on top of stability pools, with supporting infrastructure:
