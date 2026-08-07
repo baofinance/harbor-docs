@@ -88,14 +88,14 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
 | **startBlock** | 24049488 |
-| **Deployment** | Mainnet, December 2025 |
+| **Deployment** | Mainnet, December 2025 (`startBlock`: 24049488) |
 
 ## Genesis (Maiden Voyage)
 
 | | |
 | --- | --- |
-| **Start** | December 19, 2025 |
-| **End** | January 4, 2026 |
+| **Start** | December 19, 2025 (`2025-12-19T22:00:59Z`) |
+| **End** | January 4, 2026 (`2026-01-04T20:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |
 
 ## Related markets

@@ -87,15 +87,15 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 | **Yield source** | wstETH |
 | **Leverage** | Variable (collateral-ratio bands) |
 | **Rebalancing** | Dual stability pools |
-| **startBlock** | TBD |
-| **Deployment** | Ethereum mainnet |
+| **startBlock** | 0 (app placeholder) |
+| **Deployment** | Mainnet (proxies live; app `startBlock` still 0) |
 
 ## Genesis (Maiden Voyage)
 
 | | |
 | --- | --- |
-| **Start** | TBD |
-| **End** | TBD |
+| **Start** | February 1, 2026 (`2026-02-01T00:00:00Z`, app note: placeholder) |
+| **End** | February 23, 2026 (`2026-02-23T17:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |
 
 ## Related markets

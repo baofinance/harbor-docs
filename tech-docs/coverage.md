@@ -1,6 +1,6 @@
 # Coverage audit (tech refresh)
 
-Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree covers. Re-run when new markets or oracles ship.
+Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree covers. Product docs on this branch include the merged `docs/nontech-refresh` updates. Re-run when new markets or oracles ship.
 
 **How to add new deployments**
 
@@ -29,9 +29,9 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | MegaETH `steth-usd` | [steth-usd-megaeth](./markets/steth-usd-megaeth.md) | ✅ |
 | Generic CREATE3 registry | [generic](./markets/generic.md) | ✅ |
 
-**Still thin / TBD on market pages:** genesis dates, `startBlock`, some `minterFeeReceiver` rows (stETH / SILVER / MCAP families missing from generic table), app flags (`anchorActive` / `sailActive`).
+**Still thin on market pages:** some `minterFeeReceiver` rows (stETH / SILVER / MCAP families missing from generic table), app flags (`anchorActive` / `sailActive`). Genesis windows + `startBlock` filled from `harbor-app` `contracts.ts` (placeholders noted where app still has `startBlock: 0`).
 
-**Not separate market pages (oracles only today):** PAXG/USD, tBTC/USD, wBTC/USD — listed under [mainnet oracles](./contracts/price-oracles/mainnet.md#other-oracles). Add a market page only if a Harbor minter ships for that pair.
+**Not separate market pages yet:** `USD::PAXG` (and related) proxies appear in `harbor_v1.state.json`; app also references `paxg-usd` / `wbtc-usd` / `tbtc-usd`. Oracles exist under [mainnet](./contracts/price-oracles/mainnet.md#other-oracles). Add market pages from the shared layout when those markets are product-ready.
 
 ---
 
