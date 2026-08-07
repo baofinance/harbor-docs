@@ -85,12 +85,15 @@ Each deployed aggregator has a detail page with the same layout (summary, feeds,
 
 ### Other Oracles
 
+App-wired addresses for the mainnet USD stack (`contracts.mainnetUsd.ts`). Earlier inventory addresses are listed as aliases on each detail page.
+
 | Oracle Pair | Address | Status | Version | Type |
 |-------------|---------|--------|---------|------|
-| [PAXG/USD](./mainnet/paxg-usd.md) | `0xf1867657Ef7F65b745E47B7F70D15DE50b66884D` | Active | v4 | Direct |
-| [tBTC/USD](./mainnet/tbtc-usd.md) | `0xd8DF89f1C15a26F8A6C119161812F199cdFe23Ee` | Active | v4 | Direct |
-| [wBTC/USD](./mainnet/wbtc-usd.md) | `0x87292E650040B2D284983c0E0814344506948080` | Active | v4 | Direct |
-| [wstETH/USD](./mainnet/wsteth-usd.md) | `0x28bBAaf05dEE8A06d4206089bCd17c1129e6Edca` | Active | v4 | Direct |
+| [stETH/USD](./mainnet/steth-usd.md) | `0xcE8633B7198d02860873689Bb2566BD2efD11F52` | Active | v4 | Aggregator (app USD stack) |
+| [PAXG/USD](./mainnet/paxg-usd.md) | `0x647633122f9d9ba87210210d5A3ded365911BF9b` | Active | v4 | Direct (app USD stack) |
+| [tBTC/USD](./mainnet/tbtc-usd.md) | `0x4D72FfE2499C4e66b2c6C11D7AfeA04001dB440C` | Active | v4 | Direct (app USD stack) |
+| [wBTC/USD](./mainnet/wbtc-usd.md) | `0x189d6CA0271F06c222873b4C09A26C83AdCCF73d` | Active | v4 | Direct (app USD stack) |
+| [wstETH/USD](./mainnet/wsteth-usd.md) | `0x28bBAaf05dEE8A06d4206089bCd17c1129e6Edca` | Active | v4 | Direct (inventory; see [stETH/USD](./mainnet/steth-usd.md) for app wiring) |
 
 ## Market Integration
 
@@ -109,6 +112,10 @@ Prefer the inventory address on each pair page. Where the live app still wires a
 | stETH/SILVER | [stETH/SILVER](../../markets/steth-silver.md) |
 | fxUSD/MCAP | [fxUSD/MCAP](../../markets/fxusd-mcap.md) |
 | stETH/MCAP | [stETH/MCAP](../../markets/steth-mcap.md) |
+| stETH/USD | [stETH/USD (Mainnet)](../../markets/steth-usd.md) |
+| PAXG/USD | [PAXG/USD](../../markets/paxg-usd.md) |
+| wBTC/USD | [wBTC/USD](../../markets/wbtc-usd.md) |
+| tBTC/USD | [tBTC/USD](../../markets/tbtc-usd.md) |
 
 
 ## Version Information

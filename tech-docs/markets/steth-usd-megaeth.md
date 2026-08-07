@@ -2,7 +2,7 @@
 
 > **Status**: ✅ Deployed on MegaETH (`chainId` **4326**)
 
-Harbor market with **stETH** collateral and a **USD** peg. This deployment uses the MegaETH manifest family (`harbor_megaeth_v1`, proxy keys like `USD::stETH::*`); it is **not** the same product stack as [Ethereum mainnet markets](./eth-fxsave.md) (`harbor_v1`, fxSAVE/fxUSD–centric). Scope and comparison: [Generic market deployments](./generic.md#megaeth-harbor-deployment-proxies).
+Harbor market with **stETH** collateral and a **USD** peg. This deployment uses the MegaETH manifest family (`harbor_megaeth_v1`, proxy keys like `USD::stETH::*`); it is **not** the same deployment as [mainnet stETH/USD](./steth-usd.md) (`harbor_v1`, shared haUSD with PAXG/wBTC/tBTC) or other [Ethereum mainnet markets](./eth-fxsave.md). Scope and comparison: [Generic market deployments](./generic.md#megaeth-harbor-deployment-proxies).
 
 ## Market overview
 
@@ -46,5 +46,6 @@ Duplicate listing (implementations + MegaETH-wide notes): [Generic](./generic.md
 | Resource | Use for |
 | -------- | ------- |
 | [Generic market deployments](./generic.md) | Full mainnet + MegaETH proxy registries, manifest fields, mainnet vs MegaETH comparison |
+| [stETH/USD (Mainnet)](./steth-usd.md) | Mainnet USD stack (`harbor_v1`) — different addresses |
 | [MegaETH price oracles](../contracts/price-oracles/megaeth.md) | Chain oracle inventory (direct feeds, deprecated USDMY, Harbor aggregator cross-link) |
 | [Bao Factory](../contracts/bao-factory.md) | CREATE3 / salt naming conventions |

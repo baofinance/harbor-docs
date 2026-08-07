@@ -98,6 +98,14 @@ const sidebars: SidebarsConfig = {
         { type: "doc", id: "markets/steth-mcap", label: "stETH/MCAP Market" },
         {
           type: "doc",
+          id: "markets/steth-usd",
+          label: "stETH/USD Market (Mainnet)",
+        },
+        { type: "doc", id: "markets/paxg-usd", label: "PAXG/USD Market" },
+        { type: "doc", id: "markets/wbtc-usd", label: "wBTC/USD Market" },
+        { type: "doc", id: "markets/tbtc-usd", label: "tBTC/USD Market" },
+        {
+          type: "doc",
           id: "markets/steth-usd-megaeth",
           label: "stETH/USD Market (MegaETH)",
         },

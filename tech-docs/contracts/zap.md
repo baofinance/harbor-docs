@@ -32,6 +32,7 @@ Each [market page](../markets/eth-fxsave.md) lists **genesisZap**, **peggedToken
 | [fxUSD/SILVER](../markets/fxusd-silver.md) | `0xd19d801a0427Dd91bcbAfB0FcA783a3231a749c8` (GenesisUSDCZap_v4) | `0xfbB196c2C053F8a9E9d3e611a40D12aE450A4baB` (MinterUSDCZap_v3) |
 | [stETH/SILVER](../markets/steth-silver.md) | `0xC128Cbf15920455569e1926C982567d2bE21AC50` (GenesisETHZap_v4) | `0x68fafa07471e02d33706681d9e3e2160c1901b4c` (MinterETHZap_v3) |
 | [fxUSD/MCAP](../markets/fxusd-mcap.md) / [stETH/MCAP](../markets/steth-mcap.md) | none in app config | none in app config |
+| [stETH/USD Mainnet](../markets/steth-usd.md) / [PAXG](../markets/paxg-usd.md) / [wBTC](../markets/wbtc-usd.md) / [tBTC](../markets/tbtc-usd.md) | none in app config | none in app config |
 | [stETH/USD MegaETH](../markets/steth-usd-megaeth.md) | none published | none published |
 
 App source of truth: [`harbor-app` `src/config/contracts.ts`](https://github.com/baofinance/harbor-app/blob/main/src/config/contracts.ts) (`genesisZap`, `peggedTokenZap`, `leveragedTokenZap`).

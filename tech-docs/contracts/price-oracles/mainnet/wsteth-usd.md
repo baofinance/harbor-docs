@@ -26,9 +26,16 @@
 
 | Market | Role |
 | ------ | ---- |
-| — | No Harbor market page yet (inventory / predeploy only) |
+| — | Inventory feed; live mainnet `steth-usd` uses [stETH/USD](./steth-usd.md) |
+
+## Addresses / aliases
+
+| Address | Notes |
+| ------- | ----- |
+| `0xcE8633B7198d02860873689Bb2566BD2efD11F52` | App-wired stETH/USD for [stETH/USD Market (Mainnet)](../../../markets/steth-usd.md) |
 
 ## See also
 
+- [stETH/USD](./steth-usd.md) (app USD stack)
 - Chain index: [Mainnet inventory](../mainnet.md)
 - Overview: [Price oracle contracts](../../price-oracle.md)

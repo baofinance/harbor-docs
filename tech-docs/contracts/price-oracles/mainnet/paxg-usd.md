@@ -3,30 +3,36 @@
 > **Status**: Active  
 > **Chain**: Ethereum mainnet (1)  
 > **Version**: v4  
-> **Address**: `0xf1867657Ef7F65b745E47B7F70D15DE50b66884D`
+> **Address**: `0x647633122f9d9ba87210210d5A3ded365911BF9b`
 
 ## Summary
 
 | Field | Value |
 | ----- | ----- |
 | **Pair** | PAXG/USD |
-| **Rate provider** | None — direct USD price feed |
-| **Formula / feeds** | Direct |
+| **Rate provider** | None — direct / market-wired USD feed |
+| **Formula / feeds** | Direct / market-wired PAXG→USD |
 | **Type** | direct |
-| **Contract address** | `0xf1867657Ef7F65b745E47B7F70D15DE50b66884D` |
+| **Contract address** | `0x647633122f9d9ba87210210d5A3ded365911BF9b` |
 
 ## Feeds
 
 | Field | Value |
 | ----- | ----- |
-| **Primary configuration** | Direct |
-| **Rate provider** | None — direct USD price feed |
+| **Primary configuration** | Direct / market-wired PAXG→USD |
+| **Rate provider** | None — direct / market-wired USD feed |
 
 ## Consumers
 
 | Market | Role |
 | ------ | ---- |
-| — | No Harbor market page yet (inventory / predeploy only) |
+| [PAXG/USD Market](../../../markets/paxg-usd.md) | Minter price oracle for `paxg-usd` |
+
+## Addresses / aliases
+
+| Address | Notes |
+| ------- | ----- |
+| `0xf1867657Ef7F65b745E47B7F70D15DE50b66884D` | Earlier inventory PAXG/USD address |
 
 ## See also
 

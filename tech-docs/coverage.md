@@ -26,12 +26,14 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | `steth-silver` / `SILVER::stETH` | [steth-silver](./markets/steth-silver.md) | ✅ added |
 | `fxusd-mcap` / `MCAP::fxUSD` | [fxusd-mcap](./markets/fxusd-mcap.md) | ✅ added |
 | `steth-mcap` / `MCAP::stETH` | [steth-mcap](./markets/steth-mcap.md) | ✅ added |
-| MegaETH `steth-usd` | [steth-usd-megaeth](./markets/steth-usd-megaeth.md) | ✅ |
-| Generic CREATE3 registry | [generic](./markets/generic.md) | ✅ |
+| `steth-usd` / `USD::stETH` | [steth-usd](./markets/steth-usd.md) | ✅ mainnet USD stack |
+| `paxg-usd` / `USD::PAXG` | [paxg-usd](./markets/paxg-usd.md) | ✅ shared haUSD |
+| `wbtc-usd` / `USD::wBTC` | [wbtc-usd](./markets/wbtc-usd.md) | ✅ shared haUSD |
+| `tbtc-usd` / `USD::tBTC` | [tbtc-usd](./markets/tbtc-usd.md) | ✅ shared haUSD |
+| MegaETH `steth-usd` | [steth-usd-megaeth](./markets/steth-usd-megaeth.md) | ✅ (not mainnet) |
+| Generic CREATE3 registry | [generic](./markets/generic.md) | ✅ incl. `USD::*` |
 
-**Still thin on market pages:** some `minterFeeReceiver` rows (stETH / SILVER / MCAP families missing from generic table), app flags (`anchorActive` / `sailActive`). Genesis windows + `startBlock` filled from `harbor-app` `contracts.ts` (placeholders noted where app still has `startBlock: 0`).
-
-**Not separate market pages yet:** `USD::PAXG` (and related) proxies appear in `harbor_v1.state.json`; app also references `paxg-usd` / `wbtc-usd` / `tbtc-usd`. Oracles exist under [mainnet](./contracts/price-oracles/mainnet.md#other-oracles). Add market pages from the shared layout when those markets are product-ready.
+**Still thin on market pages:** some `minterFeeReceiver` rows (stETH / SILVER / MCAP / USD families missing from generic table), app flags (`anchorActive` / `sailActive`). Genesis windows + `startBlock` filled from `harbor-app` (`contracts.mainnetUsd.ts` for USD; placeholders noted where app still has `startBlock: 0`).
 
 ---
 
