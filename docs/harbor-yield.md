@@ -20,6 +20,11 @@ Harbor Yield automates that loop behind **hyTOKENS**. Supporting infrastructure 
 
 ## How it fits together
 
+![Harbor Yield layers: stability pools and Harbor Swap feed auto-compounders and hyTOKENS](/img/harbor-yield-layers.svg)
+
+<details>
+<summary>View Mermaid source code</summary>
+
 ```mermaid
 flowchart TD
   L0["Stability Pools live<br/>haTOKENS deposited"]
@@ -29,6 +34,8 @@ flowchart TD
   L0 --> AC --> HY
   Swap --> HY
 ```
+
+</details>
 
 | Layer | Role |
 | ----- | ---- |
