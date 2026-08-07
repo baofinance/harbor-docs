@@ -24,7 +24,6 @@ const sidebars: SidebarsConfig = {
         "tide-token/overview",
         "tide-token/governance",
         "tide-token/tokenomics",
-        "tide-token/earning",
       ],
     },
     {
