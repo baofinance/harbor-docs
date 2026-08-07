@@ -16,6 +16,14 @@ Harbor Yield is the mid-term **pooled yield** stack on top of stability pools: a
 
 Design source: [`doc/autocompounding-vault-design.md`](https://github.com/baofinance/harbor/blob/harbor-yield/doc/autocompounding-vault-design.md) on `harbor-yield`.
 
+### Architecture diagram (SVG)
+
+![Harbor Yield layers](/img/harbor-yield-layers.svg)
+
+Stability pools → auto-compounders → **hyTOKENS**, with **Harbor Swap** as a support route into the vault basket (same diagram as the [product Harbor Yield](/harbor-yield) page).
+
+### Architecture diagram (Mermaid)
+
 ```mermaid
 flowchart TB
   SP["Level 0: Stability pools (hp)"]

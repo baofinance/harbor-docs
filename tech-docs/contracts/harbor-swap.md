@@ -28,6 +28,12 @@ Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinan
 | **Shared envelope** | `SwapExecutorBase` — same-token guard, exact pull, `amountOut == 0` reverts, authoritative `minAmountOut`, refund unspent |
 | **Deploy** | BaoFactory CREATE3 via Harbor deploy helpers |
 
+### Architecture diagram (SVG)
+
+![Harbor Swap architecture](/img/harbor-swap-architecture.svg)
+
+### Architecture diagram (Mermaid)
+
 ```mermaid
 flowchart LR
   HY["HarborYield / keepers"]

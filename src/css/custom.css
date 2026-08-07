@@ -296,3 +296,22 @@ a:hover {
 .theme-doc-markdown table td {
   word-break: break-word;
 }
+
+/* Diagrams: SVG + Mermaid full content width */
+.markdown img[src$=".svg"],
+.theme-doc-markdown img[src$=".svg"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown .docusaurus-mermaid-container,
+.theme-doc-markdown .docusaurus-mermaid-container,
+.markdown pre.mermaid,
+.theme-doc-markdown pre.mermaid {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}

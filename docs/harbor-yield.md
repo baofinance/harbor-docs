@@ -20,7 +20,23 @@ Harbor Yield automates that loop behind **hyTOKENS**. Supporting infrastructure 
 
 ## How it fits together
 
+### SVG
+
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
+
+### Mermaid
+
+```mermaid
+flowchart TB
+  SP["Stability Pools (live)"]
+  AC["Auto-Compounders (support)"]
+  HY["Harbor Yield / hyTOKENS (product)"]
+  Swap["Harbor Swap (support)"]
+
+  SP --> AC
+  AC --> HY
+  Swap --> HY
+```
 
 | Layer | Role |
 | ----- | ---- |
