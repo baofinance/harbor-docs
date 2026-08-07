@@ -63,7 +63,7 @@ Auto-compounders are the per-pool engines underneath hyTOKENS — not a separate
 | Mode | When | How |
 | ---- | ---- | --- |
 | **Direct executors** | Peg-critical / hot path (`distribute`) | On-chain route registry → UniV3, Curve, Balancer, or fixed composite routes (e.g. fxSAVE ↔ wstETH). Predictable gas; no off-chain calldata. |
-| **Aggregator** | Discretionary / long-tail (`redistribute`) | Keeper-built **1inch v6** routes, role-gated on Harbor Yield. Used when a pair is not registered as a direct route or for larger rebalances. |
+| **Aggregator** | Discretionary / long-tail (`redistribute`) | Keeper-built routes via **Velora** (Augustus v6.2, primary) or optionally **1inch v6**. Role-gated on Harbor Yield (`REDISTRIBUTOR_ROLE`). Used when a pair is not registered as a direct route or for larger rebalances. |
 
 Users holding hyTOKENS do not call Harbor Swap (or autocompounders) directly. Vault logic and keepers use them under the hood.
 
@@ -73,7 +73,7 @@ When a collateral autocompounder surfaces **fxSAVE** rewards into Harbor Yield:
 
 1. If minting haETH is cheap enough → compound into haETH and redeposit to the collateral stability pool (**no swap**)
 2. Otherwise → **direct swap** fxSAVE → wstETH via the registered composite executor and deposit into the wstETH equivalent vault
-3. Optional later **redistribute** moves between basket legs via direct routes or 1inch when keepers rebalance weights
+3. Optional later **redistribute** moves between basket legs via direct routes or aggregator adapters (Velora primary; 1inch optional) when keepers rebalance weights
 
 ## What users get
 
@@ -93,6 +93,6 @@ Harbor Yield is about **operational convenience and pooling** on top of stabilit
 ## Status
 
 - Designed and implemented in depth on the Harbor `harbor-yield` branch (AutoCompounder support layer, HarborYield / hyTOKEN core, related stability-pool / minter upgrades)
-- Swap routing via [baofinance/harbor-swap](https://github.com/baofinance/harbor-swap) (registry + DEX executors + 1inch adapter)
+- Swap routing via [baofinance/harbor-swap](https://github.com/baofinance/harbor-swap) (registry + DEX executors; Velora primary aggregator, 1inch optional — see open [PR #3](https://github.com/baofinance/harbor-swap/pull/3) / `velora-swap` branch)
 - **Mid-term** product rollout after core markets and Maiden Voyage 2.0 maturity
 - Watch [app.harborfinance.io](https://app.harborfinance.io) and this docs site for launch announcements

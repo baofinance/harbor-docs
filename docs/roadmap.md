@@ -54,7 +54,7 @@ Harbor Yield (`hyTOKENS`) is the planned pooled-yield product on top of stabilit
 
 - **hyTOKENS (product):** one share token per peg (e.g. hyUSD) over a basket of strategies
 - **Auto-compounders (support):** per-pool ERC-4626 vaults that claim rewards and redeposit haTOKENS — held inside hyTOKEN baskets
-- **Harbor Swap (support):** route registry + direct DEX executors (UniV3 / Curve / Balancer / composites) and a 1inch adapter for keeper rebalances
+- **Harbor Swap (support):** route registry + direct DEX executors (UniV3 / Curve / Balancer / composites) and aggregator adapters for keeper rebalances (**Velora** primary; **1inch** optional)
 
 Users who want convenience hold **hyTOKENS**; auto-compounders and swap run underneath. Users who want control can stay on raw stability pools. Details: [Harbor Yield](/harbor-yield).
 
