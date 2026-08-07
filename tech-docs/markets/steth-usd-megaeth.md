@@ -20,7 +20,8 @@ Harbor market with **stETH** collateral and a **USD** peg. This deployment uses 
 | **Token symbols / collateral ERC-20** | Confirm on-chain via the minter’s immutable token addresses or a block explorer — not duplicated here to avoid drift from the registry table. |
 | **Stability pools** | Collateral pool liquidates against the stETH/wrapped collateral leg; Sail pool liquidates against `USD::stETH::leveraged`. Manager: proxy `USD::stETH::stabilityPoolManager`. |
 | **Price oracle** | Minter uses the Harbor **stETH/USD** wrapped aggregator (row below), not the chain’s standalone [wstETH/USD feed](../contracts/price-oracles/megaeth.md). |
-| **Genesis** | Proxy `USD::stETH::genesis` is in the registry; maiden-voyage calendar dates / zap addresses are not in the excerpted manifest — add when published under `deployments` or product docs. |
+| **Genesis** | Proxy `USD::stETH::genesis` is in the registry; maiden-voyage calendar dates are TBD. |
+| **Zaps** | none published — see [Zap contracts](../contracts/zap.md) when MegaETH zaps ship |
 
 ## Deployment registry (proxies, implementations, CREATE3 salts)
 

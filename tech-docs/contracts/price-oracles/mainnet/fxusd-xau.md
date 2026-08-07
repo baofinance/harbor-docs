@@ -1,0 +1,32 @@
+# fxUSD/XAU Oracle
+
+> **Status**: Active  
+> **Chain**: Ethereum mainnet (1)  
+> **Version**: v3  
+> **Address**: `0xd71538769Af1c8f4D663BD0a5eA667D67E1623e2`
+
+## Summary
+
+| | |
+| --- | --- |
+| **Pair** | fxUSD/XAU |
+| **Rate provider** | fxSAVE |
+| **Formula / feeds** | XAU/USD (inverted) — prefer GOLD |
+| **Type** | single |
+
+## Feeds
+
+| Detail | |
+| ------ | --- |
+| Configuration | XAU/USD (inverted) — prefer GOLD |
+
+## Consumers
+
+| Market | Notes |
+| ------ | ----- |
+| — | none |
+
+## See also
+
+- Chain index: [Mainnet inventory](../mainnet.md)
+- Overview: [Price oracle contracts](../../price-oracle.md)

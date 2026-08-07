@@ -4,9 +4,10 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 **How to add new deployments**
 
-1. Markets → copy [templates/market.md](./templates/market.md) → `markets/<marketId>.md` → wire in [`sidebars-tech.ts`](../sidebars-tech.ts)
-2. Oracles → fill a row per [templates/price-aggregator.md](./templates/price-aggregator.md) on the chain inventory page (usually [mainnet](./contracts/price-oracles/mainnet.md))
-3. Proxy keys → keep [markets/generic.md](./markets/generic.md) in sync with `harbor_v1.state.json`
+1. Markets → copy any existing `markets/*.md` page (same sections including zap rows) → `markets/<marketId>.md` → add to [`sidebars-tech.ts`](../sidebars-tech.ts)
+2. Oracles → copy any pair page under `contracts/price-oracles/<chain>/` → fill → add a row on the chain inventory page linking to it
+3. Zaps → wire addresses on the market page + row on [Zap contracts](./contracts/zap.md)
+4. Proxy keys → keep [markets/generic.md](./markets/generic.md) in sync with `harbor_v1.state.json`
 
 ---
 
@@ -70,7 +71,7 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | ---- | ------------------------------ | ------------- |
 | [harbor](https://github.com/baofinance/harbor) | [#33](https://github.com/baofinance/harbor/pull/33) `harbor-yield` | Core markets ✅; Yield contract pages ❌ |
 | [harbor-swap](https://github.com/baofinance/harbor-swap) | [#3](https://github.com/baofinance/harbor-swap/pull/3) `velora-swap` | ❌ tech pages; product: Supporting Features / Velora |
-| harbor-zap (if published) | check org for zap / upgradeable PRs | ❌ (zaps are convenience — prefer main collaterals) |
+| [harbor-zap-contracts](https://github.com/baofinance/harbor-zap-contracts) | — | ✅ [Zap contracts](./contracts/zap.md) + per-market addresses |
 | [harbor-tide](https://github.com/baofinance/harbor-tide) | no open PRs at audit time | ❌ cross-chain / token tech TBD |
 | [harbor-price-aggregators](https://github.com/baofinance/harbor-price-aggregators) | [#4](https://github.com/baofinance/harbor-price-aggregators/pull/4) `harbor-yield` | ✅ inventories; Yield peg feeds pending merge |
 | [harbor-app](https://github.com/baofinance/harbor-app) | no open PRs at audit time | Use `markets.ts` for `marketId` / flags when filling templates |
@@ -78,9 +79,10 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 ---
 
-## Templates
+## Page layout (no separate Templates nav)
 
-| Template | Path |
-| -------- | ---- |
-| Market | [templates/market.md](./templates/market.md) |
-| Price aggregator | [templates/price-aggregator.md](./templates/price-aggregator.md) |
+| Kind | How to extend |
+| ---- | ------------- |
+| Market | Match sections on [fxUSD/ETH](./markets/eth-fxsave.md) (includes zaps) |
+| Price aggregator | Match sections on any `contracts/price-oracles/<chain>/*.md` page |
+| Zap overview | [contracts/zap.md](./contracts/zap.md) |
