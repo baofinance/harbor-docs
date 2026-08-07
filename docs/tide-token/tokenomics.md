@@ -8,14 +8,32 @@ Harbor is built to reward long-term participation, prioritize early growth, and 
 
 **Total Supply:** 1,000,000,000 TIDE (1 billion tokens) — hard-capped in the TIDE token contracts.
 
-:::caution Product confirmation needed
-The allocation table and phased revenue model below are the **existing docs copy**. They conflict in places with:
+## Protocol Revenue Flow
 
-- Landing: **75% grow markets / 25% strengthen TIDE**
-- Tide app: revenue purchases TIDE → **Treasury 30%** → **POL 15%** → **burn**
+Protocol revenue is **collateral yield + mint/redeem fees**. It is allocated as follows:
 
-**Product owner action:** pick one canonical revenue narrative and update this page, [overview](/tide-token/overview), [earning](/tide-token/earning), landing, and the Tide app together. Until then, treat percentage splits as provisional.
-:::
+![Harbor protocol revenue and TIDE flow](/img/tide-content-flow.png)
+
+### Top-level split
+
+1. **Above ~$10M TVL?** If yes, the treasury takes a cut (about **5%+** of revenue). Below that threshold, 100% of revenue continues into the split below.
+2. Of the remaining revenue:
+   - **75% → Stability pools** (“grow markets” / TVL grows)
+   - **25% → Buy TIDE** (“strengthen TIDE”)
+
+### What happens to bought TIDE (the 25%)
+
+1. If the Harbor treasury holds **less than 30%** of TIDE supply → **add to treasury**
+2. Else if protocol-owned liquidity (POL) is **below 15%** of TIDE supply → **add to POL**
+3. Else → **burn TIDE**
+
+Landing (“75% grow markets / 25% strengthen TIDE”) and the Tide app (treasury → POL → burn) describe the **same** flow at different zoom levels.
+
+### Maiden Voyage Yield Share (per market)
+
+Separately from the global 75/25 split, **Maiden Voyage 2.0** initiators can earn up to **~5% of that market’s revenue** (Yield Share), subject to voyage eligibility rules. See [Maiden Voyage](/maiden-voyage).
+
+---
 
 ## Token Allocation
 
@@ -54,69 +72,25 @@ All treasury token usage should follow:
 
 ---
 
-## Revenue Distribution Model (Docs Draft — Confirm)
-
-Harbor’s tokenomics docs historically described three phases based on protocol maturity.
-
-### Phase 1: Growth Phase (Pre-$10M TVL)
-
-**Goal:** Reach critical mass and establish protocol-market fit
-
-- **100% of protocol revenue** reinvested in ecosystem
-- **75%** directed to Stability Pool rewards / market growth
-- **25%** to Protocol-Owned Liquidity (POL) / TIDE strengthening
-  - Buy TIDE and/or pair liquidity as programs specify
-
-### Phase 2: Transition Phase ($10M+ TVL)
-
-**Goal:** Balance growth with operational sustainability
-
-Once Harbor reaches ~$10M TVL:
-
-- Treasury allocation may be introduced (declining over time to ≤5% in the historical model)
-- Remaining revenue maintains a growth / POL-style split
-- **Harbor Treasury maintains ≥30% of TIDE supply** in the historical model
-
-### Phase 3: Long-Term Value Accrual (Mature Protocol)
-
-**Goal:** Deflationary tokenomics and sustainable value capture
-
-Once POL reaches **15% of TIDE circulating supply** (historical target):
-
-- POL building pauses
-- Allocation switches toward **Buyback & Burn**
-- Stability / growth rewards continue as the majority share in the historical model
-
-**Buyback & Burn Mechanics (historical docs):**
-
-- Protocol uses revenue to buy TIDE on the open market
-- Bought tokens may be retained (treasury), locked as POL, or permanently burned depending on stage
-- Token holders benefit as supply and liquidity structure improve
-
-The Tide app’s staged journey (treasury → POL → burn) is the user-facing expression of this intent — unify wording with product.
-
----
-
 ## Key Tokenomic Features
 
 ### 1. Marks and Airdrop / Claim
 
 - Ledger Marks track early Maiden Voyage and Anchor participation
 - TIDE claim / airdrop flows are live in the [Tide app](https://app.harborfinance.io/tide)
-- Historical “12-week points before launch” language is obsolete for current status
 
 ### 2. Protocol-Owned Liquidity Strategy
 
 Harbor prioritizes **permanent liquidity** over rented liquidity:
 
-- Target historically: **15% of circulating supply** as protocol-owned
+- Target: **15% of circulating supply** as protocol-owned (after the treasury 30% ownership goal)
 - Provides stability through market cycles
-- Reduces long-term token dilution from mercenary LM
+- Reduces long-term token dilution from mercenary liquidity mining
 
 ### 3. Buyback & Burn Value Accrual
 
-- Systematic TIDE purchases from open market as revenue allows
-- Burns after treasury / POL targets (per product path)
+- **25%** of (post–TVL-take) revenue buys TIDE on the open market
+- Bought TIDE first fills treasury (to 30%), then POL (to 15%), then burns
 - Scales with protocol revenue
 
 ### 4. Team-Directed Incentives
@@ -129,15 +103,15 @@ Harbor uses **team-controlled emissions** rather than gauge voting in the early 
 
 ### 5. Treasury Sustainability
 
-- Harbor Treasury target ownership often cited at **≥30% of total TIDE supply**
+- Harbor Treasury target ownership: **≥30% of total TIDE supply**
 - Provides warchest for incentives and growth
-- If treasury dips below target, burn / POL paths may pause to rebuild (per historical docs / Tide UI)
+- Until that target is met, bought TIDE is retained rather than burned
 
 ---
 
 ## Vesting Overview
 
-### Liquid at TGE (historical allocation notes)
+### Liquid at TGE
 
 - veBAO airdrop: 5% (fully liquid)
 - veFXN airdrop: 3% (fully liquid)
@@ -154,4 +128,4 @@ Harbor uses **team-controlled emissions** rather than gauge voting in the early 
 
 ## Long-Term Vision
 
-Harbor’s tokenomics are designed to support the protocol through multiple phases — from bootstrap Marks and claims, through growth reinvestment, to mature buyback / burn value accrual — while keeping a large strategic treasury for long-term stewardship.
+Revenue continually strengthens the protocol: stability pools grow TVL, TIDE buybacks secure treasury ownership and POL, and eventually reduce supply through burns — while Maiden Voyage participants share in the markets they help launch.

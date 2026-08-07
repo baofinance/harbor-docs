@@ -27,10 +27,7 @@ This three-token model allows users to:
 - Collateral is collectively managed by the protocol, not tied to individual CDPs
 - The protocol maintains a global minimum collateralization ratio (e.g., 130%) to ensure system solvency
 - Yield-bearing collateral generates real returns distributed to Stability Pool participants
-
-:::caution Product confirmation needed
-Older docs stated “75% of protocol revenue to stability pools (pre-$10M TVL).” Landing and the Tide app describe related but different revenue journeys. See [How Yield is Generated](/yield) and [TIDE Tokenomics](/tide-token/tokenomics).
-:::
+- Protocol revenue (after any post–$10M TVL treasury take) sends **75% to stability pools** and **25% to buy TIDE** (then treasury → POL → burn). See [TIDE Tokenomics](/tide-token/tokenomics).
 
 ### 2. HA Tokens (Harbor Anchored - Pegged Assets)
 

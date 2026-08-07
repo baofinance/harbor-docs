@@ -29,28 +29,24 @@ TIDE holders gain the ability to:
 
 During the early growth phase, incentive allocation is **team-directed** for agility, with community oversight through transparency and proposals. Long-term, Harbor intends to transition toward a governance committee structure combining core contributors and elected community representatives.
 
-### 2. Stability Pool and Market Incentives
+### 2. Stability Pool and Market Growth
 
-- Stability Pool participants may earn targeted TIDE rewards where allocated
-- Team-directed incentive allocations aim for efficient capital deployment
+- **75%** of protocol revenue (after any post–$10M TVL treasury take) goes to **stability pools**, growing markets and TVL
+- Stability Pool participants may also earn targeted TIDE incentives where allocated
 - Yields scale with protocol usage and adoption
-
-:::caution Product confirmation needed
-Docs previously stated “~75% of protocol revenue goes to stability pools.” The marketing site describes **75% grow markets / 25% strengthen TIDE**, and the Tide app describes a **buyback journey** (treasury ownership → POL → burn). Do not treat any single percentage table as final until product unifies the copy.
-:::
 
 ### 3. Value Accrual (Buybacks, POL, Burns)
 
-Harbor’s long-term design aims to make TIDE accumulate value from protocol revenue:
+**25%** of remaining protocol revenue **buys TIDE**, then:
 
-- Treasury ownership targets (commonly cited: ≥30% of supply)
-- Protocol-owned liquidity targets (commonly cited: ~15% of circulating supply)
-- Eventual buyback & burn once earlier targets are met
+1. Fill treasury to **30%** of supply
+2. Build POL to **15%** of supply
+3. **Burn** further purchases
 
-See [Tokenomics](/tide-token/tokenomics) for the detailed (historical) phase model and the confirmation callout.
+Full diagram and detail: [TIDE Tokenomics](/tide-token/tokenomics).
 
 ### 4. Protocol-Owned Liquidity (POL)
 
-- Harbor builds permanent liquidity using protocol revenue where that path is active
+- Permanent liquidity funded from the TIDE buyback path once treasury ownership targets are met
 - Provides stability and reduces reliance on mercenary liquidity mining
 - Creates inherent buy pressure for TIDE from protocol operations

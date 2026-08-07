@@ -15,19 +15,20 @@ Harbor's high yields come from concentrating collateral yield into a smaller poo
 
 - **Protocol Revenue Enhancement:**
 
-  :::caution Product confirmation needed
-  Public surfaces currently describe revenue allocation differently (docs historically: ~75% to stability pools / ~25% to POL or TIDE strengthening; landing: 75% grow markets / 25% strengthen TIDE; Tide app: buyback path toward treasury ownership, POL, then burns). Treat percentage splits as **pending a single canonical product statement**. The concentration mechanic above does not depend on a specific split.
-  :::
+  Protocol revenue (collateral yield + mint/redeem fees) is split after any post–$10M TVL treasury take:
 
-  - Protocol revenue includes mint/redeem fees and, where applicable, routed collateral yield
-  - Stability pool depositors and market-growth programs are primary beneficiaries of that design intent
-  - Maiden Voyage participants may separately earn **Yield Share** on the markets they helped launch
+  - **75% → stability pools** (grows markets / TVL)
+  - **25% → buy TIDE** (treasury → POL → burn)
+
+  See the full diagram on [TIDE Tokenomics](/tide-token/tokenomics).
+
+  Maiden Voyage 2.0 participants may separately earn **Yield Share** — up to **~5% of that market’s revenue**.
 
 - **Result:**
 
-  - **haTOKENS** in the stability pool earn a much higher APR than the underlying collateral alone, plus any fee/incentive sharing
+  - **haTOKENS** in the stability pool earn a much higher APR than the underlying collateral alone, plus fee/revenue sharing to pools
   - **hsTOKENS** benefit from rebalancing and risk management, but do not earn the concentrated collateral yield directly
 
 - **Extra Boost:** Ledger Marks and team-directed **$TIDE** incentives can further increase effective returns for active participants where campaigns apply.
 
-> By concentrating collateral yield into the stability pool — and directing protocol revenue into growth and participant rewards — Harbor aims to deliver strong APRs to users who secure the protocol.
+> By concentrating collateral yield into the stability pool — and directing 75% of protocol revenue to those participants — Harbor aims to deliver strong APRs to users who secure the protocol.

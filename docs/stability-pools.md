@@ -46,7 +46,7 @@ This **instant rebalancing** helps the protocol stay solvent **without auctions 
 - **Yield Opportunities**: Depositors earn yield from underlying collateral (e.g., fxSAVE, wstETH)
 - **Marks / TIDE incentives**: Where allocated, participants may earn Ledger Marks and team-directed TIDE incentives
 - **DeFi Composability**: Vaults and strategies can build on Stability Pools
-- **Protocol revenue support**: A large share of protocol revenue is intended to support market growth and pool participants — see [Yield](/yield) and [TIDE Tokenomics](/tide-token/tokenomics) (revenue split wording is pending product confirmation across surfaces)
+- **Protocol revenue support**: After any post–$10M TVL treasury take, **75%** of protocol revenue goes to stability pools and **25%** buys TIDE (treasury → POL → burn). See [TIDE Tokenomics](/tide-token/tokenomics).
 
 ## Example: During a Market Downturn
 

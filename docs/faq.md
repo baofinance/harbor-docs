@@ -67,7 +67,7 @@ Risks include:
 Yield comes from:
 
 - Collateral token yield (e.g., fxSAVE, wstETH)
-- Protocol fees / revenue sharing (exact split pending product confirmation across surfaces)
+- Protocol fees / revenue sharing (**75%** to stability pools after any TVL-threshold treasury take; see [Tokenomics](/tide-token/tokenomics))
 - Marks / TIDE incentives where allocated
 
 ## Using the Protocol
