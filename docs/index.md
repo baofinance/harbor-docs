@@ -72,7 +72,7 @@ For detailed information, explore the sections below or start with our [Technica
 - [Stability Pools](/stability-pools) - Learn about system security and yield
 - [How Yield is Generated](/yield) - Understand the yield concentration mechanism
 - [Maiden Voyage](/maiden-voyage) - How new markets are launched
-- [Harbor Yield](/harbor-yield) - Autocompounding and hyTOKENS (mid-term)
+- [Harbor Yield](/harbor-yield) - Three levels: stability pool, auto-compounder, hyTOKEN (mid-term)
 - [Supporting Features](/supporting-features) - Price aggregators and zaps
 - [TIDE Token](/tide-token/overview) - Governance, incentives and claim on revenue
 - [Roadmap](/roadmap) - Protocol development plans

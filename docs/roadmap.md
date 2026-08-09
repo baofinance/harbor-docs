@@ -57,13 +57,13 @@ See [Supporting Features](/supporting-features).
 
 ## 3. Harbor Yield & Autocompounding (Mid Term)
 
-Harbor Yield (`hyTOKENS`) is the planned pooled-yield product on top of stability pools, with supporting infrastructure:
+Three participation levels on top of minting ha/hs:
 
-- **hyTOKENS (product):** one share token per peg (e.g. hyUSD) over a basket of strategies
-- **Auto-compounders (support):** per-pool ERC-4626 vaults that claim rewards and redeposit haTOKENS — held inside hyTOKEN baskets
-- **Harbor Swap (support):** route registry + direct DEX executors (UniV3 / Curve / Balancer / composites) and aggregator adapters for keeper rebalances (**Velora** primary; **1inch** optional)
+1. **Stability pool** — deposit ha/hs, claim rewards yourself (live today)
+2. **Auto-compounder** — deposit ha/hs into a per-pool **hc…** vault; compounding is automatic (usable on its own)
+3. **hyTOKEN** — one pooled **hy…** share per peg (ha-oriented basket of AC shares + equivalents)
 
-Users who want convenience hold **hyTOKENS**; auto-compounders and swap run underneath. Users who want control can stay on raw stability pools. Details: [Harbor Yield](/harbor-yield).
+**Auto-compounders sit next to hyTOKENS** — level 2 is a product path, not only plumbing under level 3. Harbor Swap remains routing support for hyTOKEN vaults (**Velora** primary; **1inch** optional). Details: [Harbor Yield](/harbor-yield).
 
 ## 4. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
 

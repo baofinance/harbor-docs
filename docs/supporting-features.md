@@ -32,12 +32,14 @@ Zaps are for **convenience only**. Harbor is designed around depositing the mark
 
 Zap routes may involve wrapping (and, depending on the path, intermediary conversions). Expect normal gas costs and any route-specific slippage or fees when not depositing the main collateral directly.
 
-## Related Harbor Yield support
+## Related Harbor Yield stack
 
-For the mid-term **hyTOKEN** stack, see also:
+Mid-term yield participation (see [Harbor Yield](/harbor-yield)):
 
-- Auto-compounders and [Harbor Swap](https://github.com/baofinance/harbor-swap) — [Harbor Yield](/harbor-yield)
-- Tech: [Harbor Yield contracts](/tech-docs/contracts/harbor-yield), [Harbor Swap contracts](/tech-docs/contracts/harbor-swap)
-- Aggregator rebalances via **Velora** (primary) / **1inch** (optional)
+1. Stability pool + claim rewards  
+2. **Auto-compounder** (usable on its own for ha/hs)  
+3. **hyTOKEN** peg vault (uses ACs in its basket)
 
-Those are yield-product infrastructure, separate from the live mint / Maiden Voyage zaps above.
+Also: [Harbor Swap](https://github.com/baofinance/harbor-swap) for hyTOKEN routing; tech: [Harbor Yield](/tech-docs/contracts/harbor-yield), [Harbor Swap](/tech-docs/contracts/harbor-swap). Aggregator rebalances via **Velora** (primary) / **1inch** (optional).
+
+Those are separate from the live mint / Maiden Voyage zaps above.

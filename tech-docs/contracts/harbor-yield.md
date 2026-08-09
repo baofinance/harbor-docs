@@ -4,37 +4,47 @@
 > **Repos**: [baofinance/harbor](https://github.com/baofinance/harbor) branch / PR [`harbor-yield` (#33)](https://github.com/baofinance/harbor/pull/33)  
 > **Product overview**: [Harbor Yield (hyTOKENS)](/harbor-yield)
 
-Harbor Yield is the mid-term **pooled yield** stack on top of stability pools: auto-compounders (**hc…**) and peg vaults (**hyTOKENS**). Tech docs here track the **contract surface and deploy phases**; product framing lives on the non-tech page.
+Harbor Yield is the mid-term yield stack on top of stability pools. Product framing uses **three participation levels**; this page tracks the **contract surface and deploy phases**.
 
-## Layer model
+## Three participation levels (product)
+
+| Level | User flow | Contracts / shares |
+| ----- | --------- | ------------------ |
+| **1** | Mint **ha** / **hs** → deposit **stability pool** → claim rewards | Stability pool (live; upgrading to v3) |
+| **2** | Mint **ha** / **hs** → deposit **auto-compounder** | ERC-4626 **hc…** per pool (ha or hs) |
+| **3** | Mint / deposit **hyTOKEN** (ha peg vault) | Custom multi-asset **hy…** vault |
+
+**Auto-compounders are a usable tier (level 2), not only infrastructure under hyTOKENS.** Level 3 vaults hold AC shares as basket components; users can stay on level 2 instead.
+
+Design source: [`doc/autocompounding-vault-design.md`](https://github.com/baofinance/harbor/blob/harbor-yield/doc/autocompounding-vault-design.md) on `harbor-yield`. Product page: [Harbor Yield](/harbor-yield).
+
+## Layer model (contracts)
 
 | Level | Component | Share token | Role |
 | ----- | --------- | ----------- | ---- |
-| **0** | Stability pools (live today; upgrading to v3) | rebasing **hp…** | Base yield / rebalance layer |
-| **1** | Auto-compounders (AC) | non-rebasing ERC-4626 **hc…** | Claim + compound rewards into the pool |
-| **2** | Harbor Yield peg vault | custom multi-asset **hy…** | Basket of AC shares + peg-equivalent vaults |
-
-Design source: [`doc/autocompounding-vault-design.md`](https://github.com/baofinance/harbor/blob/harbor-yield/doc/autocompounding-vault-design.md) on `harbor-yield`.
+| **1** | Stability pools (live today; upgrading to v3) | pool / rebasing receipts | Base yield / rebalance; manual claim |
+| **2** | Auto-compounders (AC) | non-rebasing ERC-4626 **hc…** | Usable per-pool compounding; also held by hy vaults |
+| **3** | Harbor Yield peg vault | custom multi-asset **hy…** | Basket of AC shares + peg-equivalent vaults |
 
 ### Architecture diagram (SVG)
 
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
 
-Stability pools → auto-compounders → **hyTOKENS**, with **Harbor Swap** as a support route into the vault basket (same diagram as the [product Harbor Yield](/harbor-yield) page).
+Stability pools → auto-compounders → **hyTOKENS**, with **Harbor Swap** as a support route into the vault basket. Users may stop at level 1 or 2.
 
 ### Architecture diagram (Mermaid)
 
 ```mermaid
 flowchart TB
-  SP["Level 0: Stability pools (hp)"]
-  AC["Level 1: Auto-compounders (hc)"]
-  HY["Level 2: Harbor Yield (hy)"]
+  SP["Level 1: Stability pools"]
+  AC["Level 2: Auto-compounders (hc)"]
+  HY["Level 3: hyTOKENS (hy)"]
   Swap["Harbor Swap"]
   Oracles["Yield peg oracles"]
 
-  User --> HY
-  User --> AC
   User --> SP
+  User --> AC
+  User --> HY
   AC --> SP
   HY --> AC
   HY --> Swap
@@ -74,10 +84,10 @@ Higher-level **HarborYield_v1** peg vaults and autocompounder impls are designed
 
 | Field | Value |
 | ----- | ----- |
-| **hyTOKEN** | One vault per peg; proportional multi-asset redeem (not single-asset ERC-4626 redeem) |
-| **Auto-compounder** | One per stability pool; `compound()` claims collateral rewards → mint ha when fees allow → redeposit |
-| **Sail ACs** | May exist standalone; **not** included in hyTOKEN baskets (Sail receipts less liquid) |
-| **Harbor Swap use** | Direct routes on hot path; Velora (primary) / 1inch (optional) on `redistribute` |
+| **Level 2 — Auto-compounder** | One per stability pool; users deposit ha/hs; `compound()` claims collateral rewards → mint ha when fees allow → redeposit |
+| **Level 3 — hyTOKEN** | One vault per peg (ha-oriented); proportional multi-asset redeem (not single-asset ERC-4626 redeem); basket includes AC shares |
+| **Sail ACs** | Available at level 2; **not** included in hyTOKEN baskets (Sail receipts less liquid) |
+| **Harbor Swap use** | Direct routes on hot path for level 3; Velora (primary) / 1inch (optional) on `redistribute` |
 
 ## Related oracles (pending)
 
@@ -96,8 +106,8 @@ Add inventory rows under [Mainnet price oracles](./price-oracles/mainnet.md) whe
 
 | Resource | Use for |
 | -------- | ------- |
-| [Harbor Yield (product)](/harbor-yield) | User-facing hyTOKEN story |
+| [Harbor Yield (product)](/harbor-yield) | Three levels, hyTOKEN + AC UX |
 | [Harbor Swap](/tech-docs/contracts/harbor-swap) | Registry, DEX executors, Velora |
-| [Stability pool](./stability-pool.md) | Live v1/v2 pool behaviour |
+| [Stability pool](./stability-pool.md) | Live v1/v2 pool behaviour (level 1) |
 | [Coverage audit](../coverage.md) | PR / branch checklist |
 | [Zap contracts](./zap.md) | Separate Maiden Voyage convenience (not HY) |
