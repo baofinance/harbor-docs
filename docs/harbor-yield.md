@@ -12,25 +12,36 @@ Work is in progress on the `harbor-yield` contracts branch ([harbor PR #33](http
 
 Every path starts by minting Harbor tokens. What you do next is the level:
 
-| Level | What you do | Tokens | Claiming |
-| ----- | ----------- | ------ | -------- |
-| **1** | Mint **ha** / **hs**, deposit into a **stability pool**, claim rewards yourself | ha / hs in the pool | Manual |
-| **2** | Mint **ha** / **hs**, deposit into an **auto-compounder** for that pool | **hc…** shares (ERC-4626) wrapping ha or hs pool deposits | Automatic (`compound()`) |
-| **3** | Mint / deposit into a **hyTOKEN** vault for that peg | **hy…** (e.g. hyUSD) — ha-side pooled product | Automatic (vault + keepers) |
-
-```mermaid
-flowchart TB
-  Mint["Mint ha / hs"]
-  L1["Level 1: Stability pool<br/>deposit ha/hs · claim rewards"]
-  L2["Level 2: Auto-compounder<br/>deposit ha/hs · hc shares"]
-  L3["Level 3: hyTOKEN<br/>mint/deposit hy · ha peg vault"]
-
-  Mint --> L1
-  Mint --> L2
-  Mint --> L3
-  L2 --> L1
-  L3 --> L2
-```
+<table>
+  <thead>
+    <tr>
+      <th style="width: 5.5rem; white-space: nowrap;">Level</th>
+      <th>What you do</th>
+      <th>Tokens</th>
+      <th>Claiming</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="white-space: nowrap;"><strong>1</strong></td>
+      <td>Mint <strong>ha</strong> / <strong>hs</strong>, deposit into a <strong>stability pool</strong>, claim rewards yourself</td>
+      <td>ha / hs in the pool</td>
+      <td>Manual</td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;"><strong>2</strong></td>
+      <td>Mint <strong>ha</strong> / <strong>hs</strong>, deposit into an <strong>auto-compounder</strong> for that pool</td>
+      <td><strong>hc…</strong> shares (ERC-4626) wrapping ha or hs pool deposits</td>
+      <td>Automatic (<code>compound()</code>)</td>
+    </tr>
+    <tr>
+      <td style="white-space: nowrap;"><strong>3</strong></td>
+      <td>Mint / deposit into a <strong>hyTOKEN</strong> vault for that peg</td>
+      <td><strong>hy…</strong> (e.g. hyUSD) — ha-side pooled product</td>
+      <td>Automatic (vault + keepers)</td>
+    </tr>
+  </tbody>
+</table>
 
 - **Level 1** is live today (stability pools). Levels **2** and **3** ship with Harbor Yield.
 - **Auto-compounders (level 2) are usable on their own** — not only as plumbing under hyTOKENS. Prefer a single pool and automatic compounding without entering the peg basket → use an AC.
