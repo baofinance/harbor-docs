@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Harbor's high yields come from concentrating collateral yield into a smaller pool of active users, plus protocol fee and incentive programs.
 
-- **Yield Concentration:** When you mint haTOKENS (pegged tokens) and hsTOKENS (leveraged tokens), your collateral is pooled. However, **only haTOKENS deposited in the stability pool earn that concentrated yield**.
+- **Yield Concentration:** When you mint haTOKENS (pegged tokens) and hsTOKENS (leveraged tokens), your collateral is pooled. However, **only haTOKENS deposited in a stability pool** (collateral **or** Sail) earn that concentrated yield. The two pool types share harvest / revenue allocated to pools; they differ mainly in **rebalance payout** (collateral vs hsTOKENS) — see [Stability Pools](/stability-pools).
 
 - **Example:**
   Suppose there is $100 of collateral backing $50 of haETH and $50 of hsFXUSD-ETH.  
@@ -15,14 +15,12 @@ Harbor's high yields come from concentrating collateral yield into a smaller poo
 
 - **Protocol Revenue Enhancement:**
 
-  Protocol revenue (collateral yield + mint/redeem fees) is split after any post–$10M TVL treasury take:
+  Protocol revenue (collateral yield + mint/redeem fees) is allocated as:
 
-  - **75% → stability pools** (grows markets / TVL)
-  - **25% → buy TIDE** (treasury → POL → burn)
+  1. Up to **~5%** of that market’s revenue → **Maiden Voyage Yield Share** (when eligible)
+  2. Of the remaining **~95%**: after any post–$10M TVL treasury take → **75%** stability pools / **25%** buy TIDE (treasury → POL → burn)
 
   See the full diagram on [TIDE Tokenomics](/tide-token/tokenomics).
-
-  Maiden Voyage 2.0 participants may separately earn **Yield Share** — up to **~5% of that market’s revenue**.
 
 - **Result:**
 

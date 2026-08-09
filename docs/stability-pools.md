@@ -21,11 +21,11 @@ Harbor features **two types of Stability Pools**, each with different redemption
    - Useful for accumulating collateral assets during market downturns
 
 2. **Sail Stability Pools**
-   - Pegged tokens deposited here are swapped for **hsTokens** (variable leveraged exposure tokens) during rebalancing
-   - Depositors accumulate leveraged exposure to the collateral asset’s performance during market volatility
-   - Ideal for those seeking amplified returns if the market rebounds
+   - Pegged tokens (**haTokens**) deposited here are swapped for **hsTokens** (variable leveraged exposure) during rebalancing
+   - Depositors still earn **concentrated collateral yield** / pool revenue on those haToken deposits — same yield path as the collateral pool
+   - Ideal for those seeking amplified returns if the market rebounds after a rebalance
 
-Both pool types help keep the system healthy, flexible, and rewarding for users.
+Both pool types help keep the system healthy, flexible, and rewarding for users. **hsTokens** themselves do not earn concentrated yield; **haTokens in either pool** do.
 
 ## How Stability Pools Protect the System
 
@@ -43,10 +43,11 @@ This **instant rebalancing** helps the protocol stay solvent **without auctions 
 ## Why Stability Pool Participation is Attractive
 
 - **1:1 Value Redemptions**: Depositors swap pegged tokens at fair oracle value for collateral or Sail exposure when rebalances occur
-- **Yield Opportunities**: Depositors earn yield from underlying collateral (e.g., fxSAVE, wstETH)
+- **Yield Opportunities**: Depositors earn concentrated yield from underlying collateral (e.g., fxSAVE, wstETH) on **haToken** deposits in **both** collateral and Sail pools
+- **Rebalance choice**: Collateral pool pays **collateral** on rebalance; Sail pool pays **hsTokens** — yield accrual on the haToken deposit is not exclusive to the collateral pool
 - **Marks / TIDE incentives**: Where allocated, participants may earn Ledger Marks and team-directed TIDE incentives
 - **DeFi Composability**: Vaults and strategies can build on Stability Pools
-- **Protocol revenue support**: After any post–$10M TVL treasury take, **75%** of protocol revenue goes to stability pools and **25%** buys TIDE (treasury → POL → burn). See [TIDE Tokenomics](/tide-token/tokenomics).
+- **Protocol revenue support**: After Maiden Voyage Yield Share (~5% of that market’s revenue when eligible) and any post–$10M TVL treasury take, **75%** of the remainder goes to stability pools and **25%** buys TIDE (treasury → POL → burn). See [TIDE Tokenomics](/tide-token/tokenomics).
 
 ## Example: During a Market Downturn
 

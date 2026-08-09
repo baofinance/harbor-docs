@@ -44,9 +44,9 @@ TIDE holders can:
 
 ## Alignment Incentives
 
-- TIDE holders benefit from protocol growth through the buyback path: treasury (to 30%) → POL (to 15%) → burn
+- TIDE holders benefit from protocol growth through the buyback path: treasury (to **30% of total supply**) → POL (to **15% of total supply**) → burn
 - Long-term holders accumulate value as protocol revenue increases
-- Treasury ownership target (≥30% TIDE) supports sustainability
+- Treasury ownership target (**≥30% of total TIDE supply**) supports sustainability
 - Team interests aligned with token holders through founder allocations
 
 :::note

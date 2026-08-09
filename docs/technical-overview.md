@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## Core Mechanics
 
-At its heart, Harbor operates as a **decentralized platform for creating and trading synthetic assets** — tokens that mirror the value of real-world or digital assets without needing direct custody of those assets. Each market functions as a shared collateralized debt position (CDP) with **100% collateral efficiency**:
+At its heart, Harbor operates as a **decentralized platform for creating and trading synthetic assets** — tokens that mirror the value of real-world or digital assets without needing direct custody of those assets. Each market functions as a shared collateralized debt position (CDP) with **100% collateral efficiency**: the combined NAV of **haTokens + hsTokens** equals the value of deposited collateral (subject to fees). That is **not** the same as minting haTokens 1:1 against collateral alone — hsTokens are the residual equity claim — and it is **not** the system **collateral ratio** (collateral value ÷ haToken value, e.g. **~130%**), which gates rebalancing.
 
 - **Collateral**: Users deposit assets (like fxSAVE or wstETH) into the market's collateral pool
 - **Debt (HA Tokens)**: Synthetic pegged tokens that track currencies, cryptocurrencies, commodities, or anything with a reliable price feed
@@ -25,9 +25,9 @@ This three-token model allows users to:
 
 - Users deposit approved yield-bearing collateral (e.g., fxSAVE, wstETH) into Harbor's shared collateral pool for that market
 - Collateral is collectively managed by the protocol, not tied to individual CDPs
-- The protocol maintains a global minimum collateralization ratio (e.g., 130%) to ensure system solvency
+- The protocol maintains a global minimum **collateralization ratio** (collateral ÷ haTokens, e.g. **130%**) to ensure system solvency — distinct from mint-time **100% collateral efficiency** (ha + hs NAV ≈ collateral)
 - Yield-bearing collateral generates real returns distributed to Stability Pool participants
-- Protocol revenue (after any post–$10M TVL treasury take) sends **75% to stability pools** and **25% to buy TIDE** (then treasury → POL → burn). See [TIDE Tokenomics](/tide-token/tokenomics).
+- Protocol revenue: Yield Share first (~5% per eligible market), then of the remainder any post–$10M TVL treasury take, then **75% to stability pools** / **25% to buy TIDE** (treasury → POL → burn). See [TIDE Tokenomics](/tide-token/tokenomics).
 
 ### 2. HA Tokens (Harbor Anchored - Pegged Assets)
 
@@ -77,7 +77,7 @@ Stability Pools support rebalances when the system-wide collateral ratio falls b
 1. **Minting Process**
 
    - User interacts with the market minter / zaps in the app
-   - Mints haTokens or hsTokens with 100% collateral efficiency (subject to dynamic fees)
+   - Mints haTokens and/or hsTokens with **100% collateral efficiency** (combined ha + hs NAV matches deposited collateral, subject to dynamic fees) — not 1:1 ha-only minting against collateral
 
 2. **Stability Pool Participation**
 

@@ -14,7 +14,8 @@ These rules apply at every level that touches a stability pool (or its auto-comp
 | ---- | ------ |
 | **Mint** | Users can mint **haTokens** and/or **hsTokens** |
 | **Pool / AC deposit** | **Only haTokens** can be deposited into the **collateral** or **Sail** stability pool (and into the AC that wraps that pool) |
-| **Rebalance payout** | Collateral pool → **collateral**; Sail pool → **hsTokens** (deposited haTokens are burned) |
+| **Pool yield** | **Both** pools accrue concentrated collateral yield / harvest + revenue share on haToken deposits (split across linked pools by holdings). Sail is not rebalance-only. |
+| **Rebalance payout** | Collateral pool → **collateral**; Sail pool → **hsTokens** (deposited haTokens are burned). **hsTokens** do not earn concentrated yield on their own. |
 
 Product UX: [Harbor Yield](/harbor-yield). Live pool behaviour: [Stability pool](./stability-pool.md).
 

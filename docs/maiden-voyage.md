@@ -27,7 +27,7 @@ The combined net asset value (NAV) of the issued tokens matches the value of the
 
 ### 3. Yield Share (Ongoing Market Revenue)
 
-Eligible Maiden Voyage participants can earn a lasting share of that market’s revenue — **up to ~5% of market revenue** under voyage rules (mint/redeem fees and collateral yield). Staying deposited in Harbor tokens after launch helps maximize eligibility; withdrawals reduce it. Details are shown per voyage in the app.
+Eligible Maiden Voyage participants can earn a lasting share of that market’s revenue — **up to ~5% of market revenue** under voyage rules (mint/redeem fees and collateral yield). That carve-out comes **first**: e.g. **$100** revenue → **~$5** to Yield Share → the other **~$95** follows the global protocol path (any post–$10M TVL treasury take, then **75%** stability pools / **25%** buy TIDE). See [TIDE Tokenomics](/tide-token/tokenomics). Staying deposited in Harbor tokens after launch helps maximize eligibility; withdrawals reduce it. Details are shown per voyage in the app.
 
 ### 4. Ledger Marks
 

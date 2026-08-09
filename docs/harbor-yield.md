@@ -10,7 +10,9 @@ Work is in progress on the `harbor-yield` contracts branch ([harbor PR #33](http
 
 ## Three participation levels
 
-Every path starts by minting Harbor tokens (**haTokens** and/or **hsTokens**). **Only haTokens** can be deposited into stability pools (collateral or Sail). On rebalance, pool depositors receive **collateral** or **hsTokens** depending on the pool — see [Stability Pools](/stability-pools).
+Every path starts by minting Harbor tokens (**haTokens** and/or **hsTokens**). **Only haTokens** can be deposited into stability pools (collateral or Sail).
+
+Both pool types earn **concentrated collateral yield** (and protocol revenue allocated to pools) on those haToken deposits — Sail is not rebalance-only. The pools differ on **rebalance payout**: collateral pool → **collateral**; Sail pool → **hsTokens**. See [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
 
 What you do next is the level:
 
@@ -18,7 +20,7 @@ What you do next is the level:
 
 | Level | What you do | Tokens | Claiming |
 | ----- | ----------- | ------ | -------- |
-| **1** | Mint **ha** / **hs**, deposit **haTokens** into a **stability pool** (collateral or Sail), claim rewards yourself | **haTokens** in the pool; rebalance pays **collateral** or **hsTokens** | Manual |
+| **1** | Mint **ha** / **hs**, deposit **haTokens** into a **stability pool** (collateral or Sail), claim rewards yourself | **haTokens** earning pool yield; rebalance pays **collateral** or **hsTokens** | Manual |
 | **2** | Mint **ha** / **hs**, deposit **haTokens** into an **auto-compounder** for that pool | **hc…** shares (ERC-4626) wrapping an haToken pool deposit | Automatic (`compound()`) |
 | **3** | Mint into a **hyTOKEN** vault for that peg | **hy…** (e.g. hyUSD) — ha-side pooled product | Automatic (vault + keepers) |
 
@@ -49,14 +51,19 @@ Harbor Yield adds:
 
 | Layer | Role |
 | ----- | ---- |
-| **Stability pools** | Live base yield / rebalance layer (collateral + Sail) |
+| **Stability pools** | Live base yield layer — **collateral** and **Sail** both take **haToken** deposits and earn concentrated yield / pool revenue; rebalance pays collateral vs **hsTokens** |
 | **Auto-compounders** | Usable per-pool product **and** building blocks inside hyTOKEN baskets |
 | **hyTOKENS** | Optional pooled product — one share per peg over a basket of strategies |
 | **Harbor Swap** | Moves rewards between basket legs when the hyTOKEN vault needs DEX routes |
 
 ## Level 1 — Stability pools (live)
 
-Mint **haTokens** and/or **hsTokens**. Deposit **only haTokens** into the **collateral** or **Sail** stability pool, then claim rewards when you want. On rebalance, the pool burns deposited haTokens and pays out **collateral** (collateral pool) or **hsTokens** (Sail pool). See [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
+Mint **haTokens** and/or **hsTokens**. Deposit **only haTokens** into the **collateral** or **Sail** stability pool, then claim rewards when you want.
+
+- **Yield:** haToken deposits in **either** pool earn concentrated collateral yield and their share of protocol revenue allocated to pools (see [How Yield is Generated](/yield)).
+- **Rebalance:** the pool burns deposited haTokens and pays **collateral** (collateral pool) or **hsTokens** (Sail pool). Sail depositors do **not** forfeit pool yield — they choose a different rebalance payoff.
+
+See [Stability Pools](/stability-pools).
 
 ## Level 2 — Auto-compounders (usable product)
 
@@ -103,8 +110,8 @@ When a collateral autocompounder surfaces **fxSAVE** rewards into Harbor Yield:
 ## Relationship to other yield
 
 - **Yield concentration** (haTOKENS in pools earning from full collateral) remains the base mechanic — see [How Yield is Generated](/yield)
-- **Protocol revenue** (75% to pools / 25% buy TIDE) is unchanged — see [TIDE Tokenomics](/tide-token/tokenomics)
-- **Maiden Voyage Yield Share** (~5% of a market’s revenue) is separate ownership upside for voyage participants — see [Maiden Voyage](/maiden-voyage)
+- **Protocol revenue** — Yield Share first (~5% per eligible market), then 75/25 on the remainder — see [TIDE Tokenomics](/tide-token/tokenomics)
+- **Maiden Voyage Yield Share** — ownership upside for voyage participants on that carve-out — see [Maiden Voyage](/maiden-voyage)
 
 Harbor Yield is about **operational convenience and pooling** on top of stability-pool yield, not a replacement for those economics.
 

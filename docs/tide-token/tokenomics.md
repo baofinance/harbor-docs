@@ -16,24 +16,26 @@ Protocol revenue is **collateral yield + mint/redeem fees**. It is allocated as 
 
 ### Top-level split
 
-1. **Above ~$10M TVL?** If yes, the treasury takes a cut (about **5%+** of revenue). Below that threshold, 100% of revenue continues into the split below.
-2. Of the remaining revenue:
-   - **75% → Stability pools** (“grow markets” / TVL grows)
-   - **25% → Buy TIDE** (“strengthen TIDE”)
+1. **Maiden Voyage Yield Share (per market, if eligible):** up to **~5%** of that market’s revenue goes to eligible voyage participants. See [Maiden Voyage](/maiden-voyage).
+2. **Of the remaining ~95%:**
+   - **Above ~$10M TVL?** If yes, the treasury takes a cut (about **5%+** of this remainder). Below that threshold, none of this step applies.
+   - Of what is left after any TVL treasury take:
+     - **75% → Stability pools** (“grow markets” / TVL grows)
+     - **25% → Buy TIDE** (“strengthen TIDE”)
+
+**Example:** $100 of market revenue → **~$5** Yield Share → **~$95** into the protocol path above → after any TVL take, that amount splits **75/25**.
 
 ### What happens to bought TIDE (the 25%)
 
-1. If the Harbor treasury holds **less than 30%** of TIDE supply → **add to treasury**
-2. Else if protocol-owned liquidity (POL) is **below 15%** of TIDE supply → **add to POL**
+1. If the Harbor treasury holds **less than 30%** of **total** TIDE supply → **add to treasury**
+2. Else if protocol-owned liquidity (POL) is **below 15%** of **total** TIDE supply → **add to POL**
 3. Else → **burn TIDE**
 
-Landing (“75% grow markets / 25% strengthen TIDE”) and the Tide app (treasury → POL → burn) describe the **same** flow at different zoom levels.
+Both ownership targets use the hard-capped **1B total supply** as denominator (not circulating supply).
+
+Landing (“75% grow markets / 25% strengthen TIDE”) and the Tide app (treasury → POL → burn) describe the **same** flow at different zoom levels (on revenue **after** Yield Share).
 
 The long-term goal is simple: **let the protocol itself become the long-term buyer of TIDE**. Lower prices do not increase emissions — they increase how much TIDE protocol revenue can buy back over time.
-
-### Maiden Voyage Yield Share (per market)
-
-Separately from the global 75/25 split, **Maiden Voyage 2.0** initiators can earn up to **~5% of that market’s revenue** (Yield Share), subject to voyage eligibility rules. See [Maiden Voyage](/maiden-voyage).
 
 ---
 
@@ -118,14 +120,14 @@ All treasury token usage should follow:
 
 Harbor prioritizes **permanent liquidity** over rented liquidity:
 
-- Target: **15% of circulating supply** as protocol-owned (after the treasury 30% ownership goal)
+- Target: **15% of total TIDE supply** (hard-capped **1B**) as protocol-owned liquidity — same denominator as the treasury goal (**30% of total supply**), not of circulating supply
 - Provides stability through market cycles
 - Reduces long-term token dilution from mercenary liquidity mining
 
 ### 3. Buyback & Burn Value Accrual
 
-- **25%** of (post–TVL-take) revenue buys TIDE on the open market
-- Bought TIDE first fills treasury (to 30%), then POL (to 15%), then burns
+- **25%** of (post–Yield Share and post–TVL-take) revenue buys TIDE on the open market
+- Bought TIDE first fills treasury (to **30% of total supply**), then POL (to **15% of total supply**), then burns
 - Scales with protocol revenue — the protocol is designed as the long-term buyer of TIDE
 
 ### 4. Team-Directed Incentives
