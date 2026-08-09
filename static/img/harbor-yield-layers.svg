@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-label="Harbor Yield layers">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect width="760" height="460" fill="#ffffff"/>
+
+  <!-- Main column aligned above hyTOKENS (x=400, w=320) -->
+  <rect x="400" y="24" width="320" height="72" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <text x="560" y="52" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Stability Pools (live)</text>
+  <text x="560" y="74" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">haTOKENS deposited | manual claims | full control</text>
+
+  <line x1="560" y1="96" x2="560" y2="128" stroke="#334155" stroke-width="1.75" marker-end="url(#arrow)"/>
+
+  <rect x="400" y="132" width="320" height="72" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="560" y="160" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1e3a8a">Auto-Compounders (support)</text>
+  <text x="560" y="182" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1e40af">hc shares | ERC-4626 | compound one pool</text>
+
+  <line x1="560" y1="204" x2="560" y2="248" stroke="#334155" stroke-width="1.75" marker-end="url(#arrow)"/>
+
+  <!-- Harbor Swap left, same width as other boxes -->
+  <rect x="40" y="252" width="320" height="72" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="1.5"/>
+  <text x="200" y="280" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#14532d">Harbor Swap (support)</text>
+  <text x="200" y="302" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#166534">direct DEX + Velora (+ 1inch)</text>
+
+  <line x1="360" y1="288" x2="396" y2="288" stroke="#334155" stroke-width="1.75" marker-end="url(#arrow)"/>
+
+  <!-- Harbor Yield product -->
+  <rect x="400" y="252" width="320" height="72" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="560" y="280" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#9a3412">Harbor Yield / hyTOKENS (product)</text>
+  <text x="560" y="302" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#c2410c">one share per peg | pooled basket</text>
+
+  <text x="380" y="380" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#64748b">Support layers feed the hyTOKEN product - users primarily hold hyTOKENS</text>
+</svg>
