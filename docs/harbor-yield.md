@@ -10,54 +10,35 @@ Work is in progress on the `harbor-yield` contracts branch ([harbor PR #33](http
 
 ## Three participation levels
 
-Every path starts by minting Harbor tokens. What you do next is the level:
+Every path starts by minting Harbor tokens (**haTokens** and/or **hsTokens**). **Only haTokens** can be deposited into stability pools (collateral or Sail). On rebalance, pool depositors receive **collateral** or **hsTokens** depending on the pool — see [Stability Pools](/stability-pools).
 
-<table>
-  <thead>
-    <tr>
-      <th style="width: 5.5rem; white-space: nowrap;">Level</th>
-      <th>What you do</th>
-      <th>Tokens</th>
-      <th>Claiming</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="white-space: nowrap;"><strong>1</strong></td>
-      <td>Mint <strong>ha</strong> / <strong>hs</strong>, deposit into a <strong>stability pool</strong>, claim rewards yourself</td>
-      <td>ha / hs in the pool</td>
-      <td>Manual</td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;"><strong>2</strong></td>
-      <td>Mint <strong>ha</strong> / <strong>hs</strong>, deposit into an <strong>auto-compounder</strong> for that pool</td>
-      <td><strong>hc…</strong> shares (ERC-4626) wrapping ha or hs pool deposits</td>
-      <td>Automatic (<code>compound()</code>)</td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;"><strong>3</strong></td>
-      <td>Mint / deposit into a <strong>hyTOKEN</strong> vault for that peg</td>
-      <td><strong>hy…</strong> (e.g. hyUSD) — ha-side pooled product</td>
-      <td>Automatic (vault + keepers)</td>
-    </tr>
-  </tbody>
-</table>
+What you do next is the level:
+
+<div className="table-col-level">
+
+| Level | What you do | Tokens | Claiming |
+| ----- | ----------- | ------ | -------- |
+| **1** | Mint **ha** / **hs**, deposit **haTokens** into a **stability pool** (collateral or Sail), claim rewards yourself | **haTokens** in the pool; rebalance pays **collateral** or **hsTokens** | Manual |
+| **2** | Mint **ha** / **hs**, deposit **haTokens** into an **auto-compounder** for that pool | **hc…** shares (ERC-4626) wrapping an haToken pool deposit | Automatic (`compound()`) |
+| **3** | Mint into a **hyTOKEN** vault for that peg | **hy…** (e.g. hyUSD) — ha-side pooled product | Automatic (vault + keepers) |
+
+</div>
 
 - **Level 1** is live today (stability pools). Levels **2** and **3** ship with Harbor Yield.
-- **Auto-compounders (level 2) are usable on their own** — not only as plumbing under hyTOKENS. Prefer a single pool and automatic compounding without entering the peg basket → use an AC.
+- **Auto-compounders (level 2) are usable on their own.** Prefer a single pool and automatic compounding without entering the peg basket → use an AC.
 - **hyTOKENS (level 3)** sit **next to** auto-compounders: the vault holds a basket of AC shares (and peg-equivalent legs). You can stay on level 2 or move up to level 3 for one share token per peg.
 
 ## Why it exists
 
 Today, amplified yield (level 1) means:
 
-1. Holding **haTOKENS** (and/or **hsTOKENS**)
-2. Depositing them into a stability pool
-3. Periodically claiming collateral rewards and deciding what to do with them
+1. Minting **haTokens** and/or **hsTokens**
+2. Depositing **haTokens** (only) into a collateral or Sail stability pool
+3. Periodically claiming collateral rewards and deciding what to do with them — and, on rebalance, receiving **collateral** or **hsTokens** back depending on the pool
 
 Harbor Yield adds:
 
-- **Level 2** — per-pool auto-compounders so ha/hs depositors do not claim manually  
+- **Level 2** — per-pool auto-compounders so **haToken** depositors do not claim manually  
 - **Level 3** — **hyTOKENS** so ha-side users can hold one pooled share per peg over several strategies  
 
 [Harbor Swap](/tech-docs/contracts/harbor-swap) is routing support used by hyTOKEN vaults (and keepers), not a separate yield tier.
@@ -75,17 +56,17 @@ Harbor Yield adds:
 
 ## Level 1 — Stability pools (live)
 
-Mint **ha** / **hs**, deposit into the collateral or Sail stability pool, claim rewards when you want. See [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
+Mint **haTokens** and/or **hsTokens**. Deposit **only haTokens** into the **collateral** or **Sail** stability pool, then claim rewards when you want. On rebalance, the pool burns deposited haTokens and pays out **collateral** (collateral pool) or **hsTokens** (Sail pool). See [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
 
 ## Level 2 — Auto-compounders (usable product)
 
-Auto-compounders wrap a single stability pool. You still mint **ha** or **hs** and deposit — but into the AC instead of (or on top of) interacting with the raw pool for compounding.
+Auto-compounders wrap a single stability pool. You still mint **haTokens** and/or **hsTokens**, but you deposit **haTokens** into the AC (for that collateral or Sail pool) instead of (or on top of) interacting with the raw pool for compounding.
 
 - One autocompounder per stability pool (share tokens often styled **hc…**)
 - Non-rebasing **ERC-4626** shares: fixed share count, rising share price as rewards compound
 - Anyone (or keepers) can trigger `compound()`: claim collateral rewards → mint haTOKENS when fees allow → redeposit into the pool
 - Losses and rewards stay within that single pool
-- Available for **ha** and **hs** (Sail) pools; Sail ACs may exist for single-pool compounding
+- Available for **collateral** and **Sail** pools (both take **haToken** deposits; rebalance outcomes differ as in level 1)
 
 **hyTOKEN vaults also hold these shares** as basket components (collateral-pool ACs and peg equivalents). Sail-pool ACs are **not** folded into hyTOKEN baskets (Sail rebalance receipts are less liquid) — but they remain available at level 2.
 
@@ -115,8 +96,8 @@ When a collateral autocompounder surfaces **fxSAVE** rewards into Harbor Yield:
 
 | Preference | Level | Use |
 | ---------- | ----- | --- |
-| Max control | **1** | Mint ha/hs → stability pool → claim rewards yourself |
-| Auto-compound one pool | **2** | Mint ha/hs → **auto-compounder** (ha or hs) |
+| Max control | **1** | Mint ha/hs → deposit **haTokens** in collateral or Sail pool → claim yourself |
+| Auto-compound one pool | **2** | Mint ha/hs → deposit **haTokens** in that pool’s **auto-compounder** |
 | Simple “earn on this peg” | **3** | Hold **hyTOKENS** (basket of ACs + equivalents underneath) |
 
 ## Relationship to other yield

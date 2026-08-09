@@ -340,6 +340,15 @@ a:hover {
   word-break: break-word;
 }
 
+/* Keep a narrow first column readable (e.g. Level) */
+.table-col-level table th:first-child,
+.table-col-level table td:first-child {
+  width: 5.5rem;
+  min-width: 5.5rem;
+  white-space: nowrap;
+  word-break: normal;
+}
+
 /* Diagrams: SVG + Mermaid full content width */
 .markdown img[src$=".svg"],
 .theme-doc-markdown img[src$=".svg"] {
