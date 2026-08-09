@@ -78,7 +78,7 @@ Harbor Protocol is built on a robust and secure architecture that enables the cr
 
 - Price feed design and market-specific oracles
 - Circuit-style operational controls (pause via upgrade pattern)
-- Security audit by [Sherlock](https://sherlock.xyz/)
+- Security: Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) for **bao-base** and **bao-minter** (now Harbor). Coverage of live mainnet deploys is **partial** (post-audit upgrades; zaps and some other packages out of scope)
 - Ongoing monitoring and contract upgrades when needed
 
 ## Future Enhancements

@@ -12,8 +12,10 @@ Harbor Protocol is built on a modular architecture with several core contracts t
 
 ## Documentation Structure
 
-- **Contracts**: Detailed documentation for each smart contract, including functions, parameters, and usage
-- **Markets**: Information about deployed markets and their configurations
+- **[Coverage audit](./coverage.md)**: Repo / PR checklist — what is documented vs still missing
+- **Contracts**: Core contracts including [Zap](./contracts/zap.md), [Harbor Yield](/tech-docs/contracts/harbor-yield), and [Harbor Swap](/tech-docs/contracts/harbor-swap)
+- **Markets**: Every deployed market uses the same page layout — copy an existing market page when adding a new one; [generic CREATE3 registry](./markets/generic.md)
+- **Price oracles**: Chain inventories plus one detail page per deployed aggregator (same layout everywhere)
 - **Process Flows**: Step-by-step explanations of key protocol processes
 
 ## Key Components

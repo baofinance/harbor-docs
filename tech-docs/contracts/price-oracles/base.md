@@ -7,13 +7,15 @@
 
 Base currently hosts a single oracle for the BOM5 index, which aggregates prices from multiple tokens.
 
+Each deployed aggregator has a detail page with the same layout (summary, feeds, consumers). To add a new one, copy any existing pair page under this chain folder and fill the same sections.
+
 ## Deployed Oracles
 
 ### stETH Pairs
 
 | Oracle Pair | Address | Status | Version | Rate Provider | Price Calculation |
 |-------------|---------|--------|---------|---------------|-------------------|
-| stETH/BOM5 | `0x2877330d6fbA9BC0299588BcBaf16bA42d12b05a` | Active | v3 | wstETH | Multi-feed (normalized) |
+| [stETH/BOM5](./base/steth-bom5.md) | `0x2877330d6fbA9BC0299588BcBaf16bA42d12b05a` | Active | v3 | wstETH | Multi-feed (normalized) |
 
 **Configuration Notes:**
 - Uses wstETH as rate provider

@@ -24,6 +24,15 @@ This fee system creates a self-correcting market:
 - **If everyone wants leverage**, the opposite happens - haTOKENS minting becomes cheaper, drawing users to the stable side.
 - **Arbitrageurs and advanced users** will step in to exploit these dynamics, ensuring no imbalance goes unchecked.
 
+## Where Fees Go
+
+Mint/redeem fees (with collateral yield) are **protocol revenue**. Per market:
+
+1. Up to **~5%** → [Maiden Voyage](./maiden-voyage) **Yield Share** (when eligible)
+2. Remaining **~95%** → any post–$10M TVL treasury take, then **75%** stability pools / **25%** buy TIDE
+
+Full waterfall: [TIDE Tokenomics](/tide-token/tokenomics).
+
 ## System Integration
 
 Together with [Stability Pools](./stability-pools) (which manage ongoing systemic risk), the dynamic fee system helps Harbor maintain both flexibility and robustness. User behavior is steered gently - but powerfully - through financial incentives at the entry and exit points.

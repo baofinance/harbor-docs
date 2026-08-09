@@ -4,10 +4,11 @@ This document provides an overview of the Harbor Protocol contract architecture 
 
 ## Architecture Diagram
 
+### SVG
+
 ![Contract Architecture Diagram](/img/contract-architecture-diagram.svg)
 
-<details>
-<summary>View Mermaid source code</summary>
+### Mermaid
 
 ```mermaid
 flowchart LR
@@ -48,8 +49,6 @@ flowchart LR
     StabilityPoolSail -->|LIQUIDATION_TOKEN| LeveragedToken
     StabilityPoolSail -->|notifyLiquidation| StabilityPoolManager
 ```
-
-</details>
 
 ## Core Contracts
 

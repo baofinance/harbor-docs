@@ -23,7 +23,7 @@ This table lists **Harbor protocol** proxies (minters, pools, pegged/leveraged t
 | **`schemaVersion`** | `1` |
 | **`saltPrefix`** | `harbor_v1` |
 | **`baoFactory`** | `0xD696E56b3A054734d4C6DCBD32E11a278b0EC458` |
-| **`lastUpdated`** | `2026-03-24T16:44:59Z` |
+| **`lastUpdated`** | `2026-05-17T22:51:35Z` |
 
 ### Mainnet proxy table
 
@@ -122,17 +122,48 @@ This table lists **Harbor protocol** proxies (minters, pools, pegged/leveraged t
 | `SILVER::stETH::stabilityPoolCollateral` | `0x1C9c1cF9aa9fc86dF980086CbC5a5607522cFc3E` | `0x15cfE62D2C50Ea94a38dDd93D4a79C626d391638` | `harbor_v1::SILVER::stETH::stabilityPoolCollateral` |
 | `SILVER::stETH::stabilityPoolLeveraged` | `0x4C0F988b3c0C58F5ea323238E9d62B79582738e6` | `0x882698a4F0284e1DfBc2Ef7C55297bDd48a12eeb` | `harbor_v1::SILVER::stETH::stabilityPoolLeveraged` |
 | `SILVER::stETH::stabilityPoolManager` | `0xbA6b54ED8D76bD4f6B4efD4f1f2344B2Ec386c3E` | `0x13D7Bb5D7f48a7E49082203566a8bC1ba44dCA0a` | `harbor_v1::SILVER::stETH::stabilityPoolManager` |
+| `USD::PAXG::genesis` | `0x68edA29187587DEf950d566f862FFA85FdA594cf` | `0x5baF5296A5D0D418619FdBb9b39feBa821E3dC60` | `harbor_v1::USD::PAXG::genesis` |
+| `USD::PAXG::leveraged` | `0xba7d5212B74CBB6A8EC3418a1F7C2B360f8aF144` | `0xA3E0f95f99825761c0a07084fBA99A257806579b` | `harbor_v1::USD::PAXG::leveraged` |
+| `USD::PAXG::minter` | `0x7E1D48774F6faD0Aa41cbb47A66BB8Ec3094e3c2` | `0x44bA8Ce0A747332dC53654E54a5F50B43A421364` | `harbor_v1::USD::PAXG::minter` |
+| `USD::PAXG::reservePool` | `0x4C60a87BC13Aa44Fa16b657868FA8a0cDA5DCC52` | `0x90C344BF356727bd0D545fD8343597f99199beAb` | `harbor_v1::USD::PAXG::reservePool` |
+| `USD::PAXG::stabilityPoolCollateral` | `0xAf7B276dF93F74AE7780E1D5f550bEaf4Ff26415` | `0x8499eefFcec687DA4121390b8e02700B5cE07a35` | `harbor_v1::USD::PAXG::stabilityPoolCollateral` |
+| `USD::PAXG::stabilityPoolLeveraged` | `0x45B3e0dC9DdaDE6D5e2D45AD08c28B794Bdbf985` | `0xF2747AC14713Ae33E555782E6Dd584541d73Cb3a` | `harbor_v1::USD::PAXG::stabilityPoolLeveraged` |
+| `USD::PAXG::stabilityPoolManager` | `0xf0ab0C95E5cb0C36780D09d4DED29AF869E65f86` | `0xc079856695816018ffeD3C22D7a8004C19c9b0E4` | `harbor_v1::USD::PAXG::stabilityPoolManager` |
+| `USD::pegged` | `0x2536A8636A99466173229AB15fdb37Fcaa05BA1A` | `0x8CEf5c15792f587d79aC07A720e2CDce9777391a` | `harbor_v1::USD::pegged` |
+| `USD::stETH::genesis` | `0x40ff767FF4055D53b1BC1B0141221a37B25905fD` | `0xDe80bbFa51f89740382E1ff95570c3d70A011d88` | `harbor_v1::USD::stETH::genesis` |
+| `USD::stETH::leveraged` | `0xf9B67dE4346458cD9cB18AfA884b25c869A9161B` | `0x536Dd90010160D0888368bbAFB17C4Af6c60E2F2` | `harbor_v1::USD::stETH::leveraged` |
+| `USD::stETH::minter` | `0xC14837C30BEdF3081cBa2cDeB067fA6F0381e69b` | `0x409cFFcFd766083DbACa9e51Dd51C57a9515c1C0` | `harbor_v1::USD::stETH::minter` |
+| `USD::stETH::reservePool` | `0x8EBcE958BAAa46163D32b57b07a36DaA1E36CA8d` | `0xcb744382e3EE81ea049901C57c3bEBE8a39af7Aa` | `harbor_v1::USD::stETH::reservePool` |
+| `USD::stETH::stabilityPoolCollateral` | `0xD21613339E8A6adba7a084f67802731e6045d801` | `0x39042dD72D717fbeFD10e55Bc9AB217f402dFB7f` | `harbor_v1::USD::stETH::stabilityPoolCollateral` |
+| `USD::stETH::stabilityPoolLeveraged` | `0x6E7b445e4dac4787445f31382f4E3dCAd510c238` | `0x13CE9b0132d2A1Ee50A2f6b17b375e113035272A` | `harbor_v1::USD::stETH::stabilityPoolLeveraged` |
+| `USD::stETH::stabilityPoolManager` | `0x377a4A6BEC4C75F2B7054B67Df03ce9A7497c33d` | `0x57D52A5EF544D51BfdDBcA6697697E03dAb40778` | `harbor_v1::USD::stETH::stabilityPoolManager` |
+| `USD::tBTC::genesis` | `0x64E72Cbb24D1f80A0f66778dA0b95A46ead30539` | `0x6E9F8D824FC639FE015A7E6A91ffa21b4Dbf4C9D` | `harbor_v1::USD::tBTC::genesis` |
+| `USD::tBTC::leveraged` | `0x0348b423C1Fd6d426609b7dCA560398CC3e4eA1B` | `0x344bFd4A5598b1CA88927164038619746af49714` | `harbor_v1::USD::tBTC::leveraged` |
+| `USD::tBTC::minter` | `0x1E326fFF476a5d107f1f6684380f677d2fd5E492` | `0xEdc14aBe1E482121547934933d25DeA8d9C52b8B` | `harbor_v1::USD::tBTC::minter` |
+| `USD::tBTC::reservePool` | `0xaF52B331D523dc7eF0A1145638048D218456EBd1` | `0x13d52Da73dd40E0A41A58822489BAD7D61CB25D6` | `harbor_v1::USD::tBTC::reservePool` |
+| `USD::tBTC::stabilityPoolCollateral` | `0x9a229b4ec6A0D2154689De8EDa9d14C884DE707b` | `0xcF51472fE4DC2d000b86EB70cfBFce2589c37106` | `harbor_v1::USD::tBTC::stabilityPoolCollateral` |
+| `USD::tBTC::stabilityPoolLeveraged` | `0x6a059A79bD261e2bFD160CAc4733108a8BDa2BD6` | `0x1996857Cf26d846a777Dc6244B2BE1907aF00068` | `harbor_v1::USD::tBTC::stabilityPoolLeveraged` |
+| `USD::tBTC::stabilityPoolManager` | `0xD9Bc7F5B90BBf7fCCeC24c67905A6205627D8674` | `0x6cB9212EAAf474aB099ba4A456D66adb7481B02d` | `harbor_v1::USD::tBTC::stabilityPoolManager` |
+| `USD::wBTC::genesis` | `0xbaE2Cab2Ed87D488CF264bA9411A3fDDAB43ec22` | `0x3BC2016150d1B0017f778cDB63280E9A3245Bd7E` | `harbor_v1::USD::wBTC::genesis` |
+| `USD::wBTC::leveraged` | `0xC5492515fAcfEe2d0C8B475FF3b57B3b79497456` | `0x40ad593f4F363D20d6697c30657f5895b76dcB73` | `harbor_v1::USD::wBTC::leveraged` |
+| `USD::wBTC::minter` | `0x0aA2b6Ee6D079f39A52725B33B15854505542B51` | `0x89426597AC36aBbaDa8eb8729262d4E03C0e2d3E` | `harbor_v1::USD::wBTC::minter` |
+| `USD::wBTC::reservePool` | `0x81f15ff2deAd8F3D97e84849072b8550facCd5ee` | `0xF5103951a567C2414E53B1E65775a2B5C260E014` | `harbor_v1::USD::wBTC::reservePool` |
+| `USD::wBTC::stabilityPoolCollateral` | `0xa1959F3dae8C3e7c8825dD7902D30569aF092Ed8` | `0x3F32085F619ea5817C4Cb864C44050108FAd37f9` | `harbor_v1::USD::wBTC::stabilityPoolCollateral` |
+| `USD::wBTC::stabilityPoolLeveraged` | `0xd16C291456060bF36023D9a935719380a14dE3AD` | `0x547d8F6B4F85555B50f8Fa7f00Fa65dc67997a2a` | `harbor_v1::USD::wBTC::stabilityPoolLeveraged` |
+| `USD::wBTC::stabilityPoolManager` | `0x2506223d01072f795487Ff1f67aD40E1D3B15De0` | `0xE296C401C9522f7a194fb66a4DFb499Fc0d629d9` | `harbor_v1::USD::wBTC::stabilityPoolManager` |
+
+Mainnet USD stacks (shared `USD::pegged` / haUSD): [stETH/USD](./hausd/steth.md), [PAXG/USD](./hausd/paxg.md), [wBTC/USD](./hausd/wbtc.md), [tBTC/USD](./hausd/tbtc.md).
 
 ## MegaETH Harbor deployment proxies
 
-**MegaETH markets are not the same deployment family as Ethereum mainnet Harbor v1 markets** documented above: different `chainId`, different `saltPrefix`, different tickers (e.g. USD-pegged haToken with stETH collateral vs mainnet `ETH::fxUSD::*` / `BTC::stETH::*` style keys). Human-readable market names still use **collateral first, then peg** (e.g. stETH/USD).
+**MegaETH markets are not the same deployment family as Ethereum mainnet Harbor v1 markets** documented above: different `chainId` and `saltPrefix`. Mainnet also has `USD::*` proxies (shared haUSD under `harbor_v1`); MegaETH `USD::stETH::*` uses `harbor_megaeth_v1` and different addresses. Human-readable market names still use **collateral first, then peg** (e.g. stETH/USD).
 
 | | Ethereum mainnet (above) | MegaETH (below) |
 | --- | --- | --- |
 | **`chainId`** | `1` | `4326` |
 | **`saltPrefix`** | `harbor_v1` | `harbor_megaeth_v1` |
-| **Example minter proxy key** | `ETH::fxUSD::minter` | `USD::stETH::minter` |
-| **Example CREATE3 salt** | `harbor_v1::ETH::fxUSD::minter` | `harbor_megaeth_v1::USD::stETH::minter` |
+| **Example minter proxy key** | `USD::stETH::minter` (also `ETH::fxUSD::minter`, …) | `USD::stETH::minter` |
+| **Example CREATE3 salt** | `harbor_v1::USD::stETH::minter` | `harbor_megaeth_v1::USD::stETH::minter` |
 | **Canonical state file** | [`…/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json) | Committed MegaETH manifest TBD under [`deployments`](https://github.com/baofinance/harbor/tree/main/deployments); table below is the documented snapshot |
 
 The following registry matches the Harbor deployment manifest structure (`schemaVersion` 1, `version` v1).
@@ -173,4 +204,4 @@ The following registry matches the Harbor deployment manifest structure (`schema
 | `USD::stETH::stabilityPoolManager` | `0xfc45f502B0C04fF8dE7cca1703440D87De4B5dE7` | `0xCE23e54B1b47277f2B5F1deff06908e95E0Bf38C` | `harbor_megaeth_v1::USD::stETH::stabilityPoolManager` | `2026-04-29T21:49:49Z` |
 | `stETH::USD::wrappedPriceAggregator` | `0xEDd3dC3E699360846c87CB69052EcbC900201854` | `0xDe10BEd5236B786cAA18Ca39FFa5de1b904a8a94` | `harbor_megaeth_v1::stETH::USD::wrappedPriceAggregator` | `2026-04-27T21:50:24Z` |
 
-Per-market narrative and context: [stETH/USD (MegaETH)](./steth-usd-megaeth.md). Other MegaETH feeds and deprecated pairs: [MegaETH price oracles](../contracts/price-oracles/megaeth.md).
+Per-market narrative and context: [stETH/USD (MegaETH)](./hausd-megaeth/steth.md). Other MegaETH feeds and deprecated pairs: [MegaETH price oracles](../contracts/price-oracles/megaeth.md).

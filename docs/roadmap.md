@@ -19,7 +19,7 @@ Harbor launched on Ethereum mainnet as a **friendly fork of fx protocol**, lever
 - Core contracts (minter, stability pools, rebalance logic) on mainnet
 - Maiden Voyages and live markets for **haETH** and **haBTC** (fxSAVE / fxUSD collateral), plus **stETH–BTC** and **EUR** markets
 - Protocol UI live at [app.harborfinance.io](https://app.harborfinance.io)
-- Security audit by [Sherlock](https://sherlock.xyz/)
+- Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) for **bao-base** / **bao-minter** (partial vs today’s mainnet surface — post-audit upgrades; zaps out of scope)
 - **Ledger Marks** for early participants (Maiden Voyage / Anchor activity)
 - **TIDE** token live with airdrop / claim flows in the app ([Tide](https://app.harborfinance.io/tide))
 
@@ -35,13 +35,18 @@ Harbor continues deploying markets based on:
 
 ### Live / launched market families (examples)
 
+Product surface for now: **ETH / BTC / EUR** (plus related Sail tokens).
+
 - **fxSAVE / fxUSD** collateral: haETH, haBTC, haEUR (+ Sail tokens such as hsFXUSD-ETH)
 - **wstETH** collateral: haBTC, haEUR (+ Sail tokens such as hsSTETH-BTC)
 
-### Upcoming / configured asset types
+### Coming next / to relaunch
 
-- **Commodities**: haGOLD, haSILVER (and related Sail tokens)
-- **Indexes / other**: e.g. MCAP-style markets as oracles and product readiness allow
+Contracts for additional pegs may already exist on-chain or in tech docs; product **relaunches** when ready:
+
+- **USD** markets (haUSD stacks) — soon
+- **Commodities**: haGOLD, haSILVER (and related Sail tokens) — to be relaunched
+- **Indexes / other**: e.g. haMCAP — to be relaunched
 - **Custom markets**: External protocol-defined markets over time
 
 ### Maiden Voyage 2.0
@@ -57,13 +62,13 @@ See [Supporting Features](/supporting-features).
 
 ## 3. Harbor Yield & Autocompounding (Mid Term)
 
-Harbor Yield (`hyTOKENS`) is the planned pooled-yield product on top of stability pools, with supporting infrastructure:
+Three participation levels on top of minting ha/hs (product **1–3** = design doc **0–2**):
 
-- **hyTOKENS (product):** one share token per peg (e.g. hyUSD) over a basket of strategies
-- **Auto-compounders (support):** per-pool ERC-4626 vaults that claim rewards and redeposit haTOKENS — held inside hyTOKEN baskets
-- **Harbor Swap (support):** route registry + direct DEX executors (UniV3 / Curve / Balancer / composites) and aggregator adapters for keeper rebalances (**Velora** primary; **1inch** optional)
+1. **Stability pool** — deposit haTokens, claim rewards yourself (live on **Ethereum mainnet**)
+2. **Auto-compounder** — deposit **hp…** or ha via AC entrypoints; compounding is automatic (usable on its own)
+3. **hyTOKEN** — deposit a registered AC/equivalent into the peg vault; one pooled **hy…** share (ha-oriented basket of AC shares + equivalents)
 
-Users who want convenience hold **hyTOKENS**; auto-compounders and swap run underneath. Users who want control can stay on raw stability pools. Details: [Harbor Yield](/harbor-yield).
+**Auto-compounders sit next to hyTOKENS** — level 2 is a product path, not only plumbing under level 3. Harbor Swap remains routing support for hyTOKEN vaults (**Velora** primary; **1inch** optional). Details: [Harbor Yield](/harbor-yield).
 
 ## 4. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
 

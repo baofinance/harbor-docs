@@ -334,7 +334,7 @@ Harbor price oracles are deployed across multiple chains. Each chain has its own
 **Oracle categories**:
 - **Direct feeds (active)**: BTC/USD, wstETH/USD
 - **USDMY pairs (deprecated)**: USDMY/BTC, USDMY/ETH, USDMY/HYPE, USDMY/SOL — **USDMY ceased deployment and operations on MegaETH**; contracts listed for reference only
-- **Harbor market aggregators (active)**: stETH/USD (MegaETH [stETH/USD market](../markets/steth-usd-megaeth.md))
+- **Harbor market aggregators (active)**: stETH/USD (MegaETH [stETH/USD market](../markets/hausd-megaeth/steth.md))
 
 For complete oracle listings, addresses, status, and detailed configurations per chain, see the chain-specific pages linked above.
 

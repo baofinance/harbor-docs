@@ -4,68 +4,95 @@ sidebar_position: 5
 
 # Harbor Yield (hyTOKENS)
 
-**Harbor Yield** is Harbor’s planned pooled-yield product for pegged tokens. Users hold a single **hyTOKEN** per peg (e.g. hyUSD) and earn concentrated stability-pool yield **without manually claiming and compounding** rewards.
+**Harbor Yield** is Harbor’s planned yield stack on top of stability pools. There are **three participation levels** — from full manual control up to a single pooled **hyTOKEN** per peg.
 
-Work is in progress on the `harbor-yield` contracts branch. Treat this page as the product design for the **mid-term** roadmap item — not as live mainnet UX yet. See [Roadmap](/roadmap).
+Work is in progress on the `harbor-yield` contracts branch ([harbor PR #33](https://github.com/baofinance/harbor/pull/33)). Treat this page as the product design for the **mid-term** roadmap item — not as live mainnet UX yet. See [Roadmap](/roadmap). Contract layers and deploy phases: [Tech docs — Harbor Yield](/tech-docs/contracts/harbor-yield). Swap plumbing: [Tech docs — Harbor Swap](/tech-docs/contracts/harbor-swap).
+
+## Three participation levels
+
+Every path starts by minting Harbor tokens (**haTokens** and/or **hsTokens**). **Only haTokens** can be deposited into stability pools (collateral or Sail).
+
+Both pool types earn **concentrated collateral yield** (and protocol revenue allocated to pools) on those haToken deposits — Sail is not rebalance-only. The pools differ on **rebalance payout**: collateral pool → **collateral**; Sail pool → **hsTokens**. See [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
+
+What you do next is the level (product **1–3**; design doc uses **0–2** for the same SP / AC / hyTOKEN stack):
+
+<div className="table-col-level">
+
+| Level | What you do | Tokens | Claiming |
+| ----- | ----------- | ------ | -------- |
+| **1** | Mint **ha** / **hs**, deposit **haTokens** into a **stability pool** (collateral or Sail), claim rewards yourself | **haTokens** earning pool yield; rebalance pays **collateral** or **hsTokens** | Manual |
+| **2** | Mint **ha** / **hs**, deposit into that pool’s **auto-compounder** (**hp…** via `deposit()`, or **haTokens** via `depositPeggedToken()`) | **hc…** shares (ERC-4626) wrapping the pool position | Automatic (`compound()`) |
+| **3** | Mint **ha** / **hs** as needed upstream, then deposit a registered **AC or equivalent** asset into the **hyTOKEN** vault (`deposit(asset, amount, receiver)`) → receive **hy…** | **hy…** (e.g. hyUSD) — ha-side pooled product | Automatic (vault + keepers) |
+
+</div>
+
+- **Level 1** (stability pools) is live on **Ethereum mainnet**. Levels **2** and **3** ship with Harbor Yield.
+- **Auto-compounders (level 2) are usable on their own.** Prefer a single pool and automatic compounding without entering the peg basket → use an AC.
+- **hyTOKENS (level 3)** sit **next to** auto-compounders: the vault holds a basket of AC shares (and peg-equivalent legs). You can stay on level 2 or move up to level 3 for one share token per peg.
 
 ## Why it exists
 
-Today, earning amplified yield means:
+Today, amplified yield (level 1) means:
 
-1. Holding **haTOKENS**
-2. Depositing them into a stability pool
-3. Periodically claiming collateral rewards and deciding what to do with them
+1. Minting **haTokens** and/or **hsTokens**
+2. Depositing **haTokens** (only) into a collateral or Sail stability pool
+3. Periodically claiming collateral rewards and deciding what to do with them — and, on rebalance, receiving **collateral** or **hsTokens** back depending on the pool
 
-Harbor Yield automates that loop behind **hyTOKENS**. Supporting infrastructure — **auto-compounders** and **Harbor Swap** — does the claiming, compounding, and routing so the hyTOKEN basket stays productive.
+Harbor Yield adds:
 
-## How it fits together
+- **Level 2** — per-pool auto-compounders so **haToken** depositors do not claim manually  
+- **Level 3** — **hyTOKENS** so ha-side users can hold one pooled share per peg over several strategies  
+
+[Harbor Swap](/tech-docs/contracts/harbor-swap) is routing support used by hyTOKEN vaults (and keepers), not a separate yield tier.
+
+## How the stack fits together
 
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
 
 | Layer | Role |
 | ----- | ---- |
-| **Stability pools** | Live base yield layer (collateral + Sail) |
-| **Auto-compounders** | Support for hyTOKENS — wrap a pool, auto-claim/compound rewards into haTOKENS |
-| **Harbor Swap** | Support for hyTOKENS — move rewards between basket legs and equivalents |
-| **hyTOKENS** | User-facing product — one share token per peg over a basket of strategies |
+| **Stability pools** | Live base yield layer — **collateral** and **Sail** both take **haToken** deposits and earn concentrated yield / pool revenue; rebalance pays collateral vs **hsTokens** |
+| **Auto-compounders** | Usable per-pool product **and** building blocks inside hyTOKEN baskets |
+| **hyTOKENS** | Optional pooled product — one share per peg over a basket of strategies |
+| **Harbor Swap** | Moves rewards between basket legs when the hyTOKEN vault needs DEX routes |
 
-Advanced users can still use raw stability pools (or, where exposed, a single autocompounder) directly. The primary mid-term product surface is **hyTOKENS**.
+## Level 1 — Stability pools (live)
 
-## hyTOKENS (user product)
+Mint **haTokens** and/or **hsTokens**. Deposit **only haTokens** into the **collateral** or **Sail** stability pool, then claim rewards when you want.
 
-- **One Harbor Yield vault per peg** (e.g. **hyUSD**, **hyEUR**)
+- **Yield:** haToken deposits in **either** pool earn concentrated collateral yield and their share of protocol revenue allocated to pools (see [How Yield is Generated](/yield)).
+- **Rebalance:** the pool burns deposited haTokens and pays **collateral** (collateral pool) or **hsTokens** (Sail pool). Sail depositors do **not** forfeit pool yield — they choose a different rebalance payoff.
+
+See [Stability Pools](/stability-pools).
+
+## Level 2 — Auto-compounders (usable product)
+
+Auto-compounders wrap a single stability pool. ERC-4626 `deposit()` takes **hp…** pool shares; **haTokens** use `depositPeggedToken()` (atomic pool deposit + AC mint).
+
+- One autocompounder per stability pool (share tokens often styled **hc…**)
+- Non-rebasing **ERC-4626** shares: fixed share count, rising share price as rewards compound
+- Anyone (or keepers) can trigger `compound()`:
+  - **Collateral AC:** claim **wCOL** rewards → mint ha when fees allow → redeposit
+  - **Sail AC:** compound **harvest wCOL only** — does not value or compound illiquid **hs** rebalance receipts
+- Losses and rewards stay within that single pool
+- Available for **collateral** and **Sail** pools (both are entered with **haTokens** / **hp…**; rebalance outcomes differ as in level 1)
+
+**hyTOKEN vaults also hold these shares** as basket components (collateral-pool ACs and peg equivalents). Sail-pool ACs are **not** folded into hyTOKEN baskets (Sail rebalance receipts are less liquid) — but they remain available at level 2.
+
+## Level 3 — hyTOKENS (pooled product)
+
+- **One Harbor Yield vault per peg** (e.g. **hyUSD**, **hyEUR**) — **ha**-oriented pooled share
 - Holds a basket of **auto-compounder** shares (and peg-equivalent yield wrappers such as fxSAVE-style adapters)
-- You deposit and receive **hyTOKENS** — a multi-asset share that socializes rewards and losses across managed strategies for that peg
+- Entry is `deposit(asset, amount, receiver)` of a **registered AC or equivalent** asset → **hyTOKEN** shares (not minting raw ha/hs directly into the vault)
+- Rewards and losses are socialized across managed strategies for that peg
 - Redeem returns a **proportional mix** of the basket (fairness-preserving; not a single-asset “pick the best leg” redeem)
 - ERC-4626-style **views** (priced in peg units) for integrations; deposit/redeem APIs are Harbor Yield–specific
 
-## Auto-compounders (support for hyTOKENS)
+Users holding hyTOKENS do not need to call Harbor Swap or autocompounders directly — vault logic and keepers use them under the hood — but **the same auto-compounders remain available** if you prefer level 2.
 
-Auto-compounders are the per-pool engines underneath hyTOKENS — not a separate headline product.
+### Harbor Swap (routing support for level 3)
 
-- One autocompounder vault per stability pool (share tokens often styled **hc…**)
-- Non-rebasing **ERC-4626** shares: fixed share count, rising share price as rewards compound
-- Anyone (or keepers) can trigger `compound()`: claim collateral rewards → mint haTOKENS when fees allow → redeposit into the pool
-- Losses and rewards stay within that single pool
-- **hyTOKEN vaults hold these shares** as basket components (collateral-pool autocompounders and equivalents)
-- Sail-pool autocompounders may exist for single-pool compounding but are **not** folded into hyTOKEN baskets (Sail rebalance receipts are less liquid)
-
-## Harbor Swap (support for hyTOKENS)
-
-[Harbor Swap](https://github.com/baofinance/harbor-swap) is a standalone swap registry and executor package consumed by Harbor Yield. It does **not** change the yield economics — it is the plumbing that moves tokens when the hyTOKEN vault needs to:
-
-- Prefer minting haTOKENS from collateral rewards when fees are acceptable (no swap)
-- Otherwise route residual rewards into **peg-equivalent** vault legs (e.g. fxSAVE ↔ wstETH on Ethereum)
-- Rebalance the hyTOKEN basket between managed strategies over time
-
-### Two execution modes
-
-| Mode | When | How |
-| ---- | ---- | --- |
-| **Direct executors** | Peg-critical / hot path (`distribute`) | On-chain route registry → UniV3, Curve, Balancer, or fixed composite routes (e.g. fxSAVE ↔ wstETH). Predictable gas; no off-chain calldata. |
-| **Aggregator** | Discretionary / long-tail (`redistribute`) | Keeper-built routes via **Velora** (Augustus v6.2, primary) or optionally **1inch v6**. Role-gated on Harbor Yield (`REDISTRIBUTOR_ROLE`). Used when a pair is not registered as a direct route or for larger rebalances. |
-
-Users holding hyTOKENS do not call Harbor Swap (or autocompounders) directly. Vault logic and keepers use them under the hood.
+[Harbor Swap](https://github.com/baofinance/harbor-swap) moves tokens when the hyTOKEN vault needs to mint ha from rewards, route residuals into peg-equivalent legs, or rebalance the basket. Direct DEX executors on the hot path; **Velora** (primary) / **1inch** (optional) on discretionary `redistribute`. Details: [Tech docs — Harbor Swap](/tech-docs/contracts/harbor-swap).
 
 ### Example (hyETH-style vault)
 
@@ -73,26 +100,27 @@ When a collateral autocompounder surfaces **fxSAVE** rewards into Harbor Yield:
 
 1. If minting haETH is cheap enough → compound into haETH and redeposit to the collateral stability pool (**no swap**)
 2. Otherwise → **direct swap** fxSAVE → wstETH via the registered composite executor and deposit into the wstETH equivalent vault
-3. Optional later **redistribute** moves between basket legs via direct routes or aggregator adapters (Velora primary; 1inch optional) when keepers rebalance weights
+3. Optional later **redistribute** moves between basket legs when keepers rebalance weights
 
 ## What users get
 
-| Preference | Use |
-| ---------- | --- |
-| Max control | Stay on stability pools |
-| Simple “earn on this peg” | Hold **hyTOKENS** (auto-compounders + swap run underneath) |
+| Preference | Level | Use |
+| ---------- | ----- | --- |
+| Max control | **1** | Mint ha/hs → deposit **haTokens** in collateral or Sail pool → claim yourself |
+| Auto-compound one pool | **2** | Mint ha/hs → deposit **hp…** / **haTokens** into that pool’s **auto-compounder** |
+| Simple “earn on this peg” | **3** | Deposit registered AC/equivalent → hold **hyTOKENS** (basket of ACs + equivalents underneath) |
 
 ## Relationship to other yield
 
 - **Yield concentration** (haTOKENS in pools earning from full collateral) remains the base mechanic — see [How Yield is Generated](/yield)
-- **Protocol revenue** (75% to pools / 25% buy TIDE) is unchanged — see [TIDE Tokenomics](/tide-token/tokenomics)
-- **Maiden Voyage Yield Share** (~5% of a market’s revenue) is separate ownership upside for voyage participants — see [Maiden Voyage](/maiden-voyage)
+- **Protocol revenue** — Yield Share first (~5% per eligible market), then of the remainder any post–$10M TVL treasury take, then **75%** to pools / **25%** buy TIDE — see [TIDE Tokenomics](/tide-token/tokenomics)
+- **Maiden Voyage Yield Share** — ownership upside for voyage participants on that carve-out — see [Maiden Voyage](/maiden-voyage)
 
 Harbor Yield is about **operational convenience and pooling** on top of stability-pool yield, not a replacement for those economics.
 
 ## Status
 
-- Designed and implemented in depth on the Harbor `harbor-yield` branch (AutoCompounder support layer, HarborYield / hyTOKEN core, related stability-pool / minter upgrades)
+- Designed and implemented in depth on the Harbor `harbor-yield` branch (AutoCompounder product layer, HarborYield / hyTOKEN core, related stability-pool / minter upgrades)
 - Swap routing via [baofinance/harbor-swap](https://github.com/baofinance/harbor-swap) (registry + DEX executors; Velora primary aggregator, 1inch optional — see open [PR #3](https://github.com/baofinance/harbor-swap/pull/3) / `velora-swap` branch)
 - **Mid-term** product rollout after core markets and Maiden Voyage 2.0 maturity
 - Watch [app.harborfinance.io](https://app.harborfinance.io) and this docs site for launch announcements

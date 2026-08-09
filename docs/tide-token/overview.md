@@ -10,7 +10,7 @@ sidebar_position: 1
 
 ## Overview
 
-TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and a claim on protocol revenue.
+TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and exposure to protocol value accrual through TIDE buybacks.
 
 ## Launch and Distribution
 
@@ -31,22 +31,24 @@ During the early growth phase, incentive allocation is **team-directed** for agi
 
 ### 2. Stability Pool and Market Growth
 
-- **75%** of protocol revenue (after any post–$10M TVL treasury take) goes to **stability pools**, growing markets and TVL
+- **~5%** of a market’s revenue may go to Maiden Voyage **Yield Share** first; of the remaining **~95%**, after any post–$10M TVL treasury take, **75%** goes to **stability pools**, growing markets and TVL
 - Stability Pool participants may also earn targeted TIDE incentives where allocated
 - Yields scale with protocol usage and adoption
 
 ### 3. Value Accrual (Buybacks, POL, Burns)
 
-**25%** of remaining protocol revenue **buys TIDE**, then:
+**25%** of that same remaining revenue (post–Yield Share and any TVL take) **buys TIDE**, then:
 
-1. Fill treasury to **30%** of supply
-2. Build POL to **15%** of supply
+1. Fill treasury to **30% of total TIDE supply**
+2. Build POL to **15% of total TIDE supply**
 3. **Burn** further purchases
+
+Both percentages are of the hard-capped **1B total supply**, not of circulating supply.
 
 Full diagram and detail: [TIDE Tokenomics](/tide-token/tokenomics).
 
 ### 4. Protocol-Owned Liquidity (POL)
 
-- Permanent liquidity funded from the TIDE buyback path once treasury ownership targets are met
+- Permanent liquidity funded from the TIDE buyback path once treasury ownership targets are met (**30%** then **15% POL**, both of **total** supply)
 - Provides stability and reduces reliance on mercenary liquidity mining
 - Creates inherent buy pressure for TIDE from protocol operations

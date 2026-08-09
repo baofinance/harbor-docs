@@ -135,8 +135,42 @@
   font-weight: 600;
 }
 
+/* Keep Infima’s chevron glyph — do not set background-color on ::before
+   (that replaces the icon with a solid square). */
+.menu__caret {
+  background: transparent;
+  border-radius: 0.25rem;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.menu__caret:hover {
+  opacity: 1;
+  background: rgba(30, 71, 117, 0.08);
+}
+
 .menu__caret::before {
-  background-color: #1e4775;
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+  filter: none;
+}
+
+/* Quieter nested category rows (haToken under Mainnet / Markets, etc.) */
+.theme-doc-sidebar-menu
+  .menu__list
+  .menu__list
+  .menu__list-item-collapsible
+  > .menu__link {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.theme-doc-sidebar-menu .menu__list .menu__list .menu__caret {
+  opacity: 0.4;
+  padding: 0.35rem;
+}
+
+.theme-doc-sidebar-menu .menu__list .menu__list .menu__list .menu__link {
+  font-size: 0.875rem;
 }
 
 /* Table of contents */
@@ -250,8 +284,17 @@ a:hover {
   font-weight: 600;
 }
 
+.navbar-sidebar .menu__caret {
+  opacity: 0.85;
+}
+
+.navbar-sidebar .menu__caret:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .navbar-sidebar .menu__caret::before {
-  background-color: #ffffff;
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+  filter: invert(1);
 }
 
 .navbar-sidebar .menu__list-item-collapsible .menu__link {
@@ -279,4 +322,48 @@ a:hover {
 .button--secondary:hover {
   background-color: #ff7563;
   border-color: #ff7563;
+}
+
+/* Full-width markdown tables in docs content */
+.markdown table,
+.theme-doc-markdown table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  table-layout: auto;
+}
+
+.markdown table th,
+.markdown table td,
+.theme-doc-markdown table th,
+.theme-doc-markdown table td {
+  overflow-wrap: anywhere;
+}
+
+/* Keep a narrow first column readable (e.g. Level) */
+.table-col-level table th:first-child,
+.table-col-level table td:first-child {
+  width: 5.5rem;
+  min-width: 5.5rem;
+  white-space: nowrap;
+  word-break: normal;
+}
+
+/* Diagrams: SVG + Mermaid full content width */
+.markdown img[src$=".svg"],
+.theme-doc-markdown img[src$=".svg"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown .docusaurus-mermaid-container,
+.theme-doc-markdown .docusaurus-mermaid-container,
+.markdown pre.mermaid,
+.theme-doc-markdown pre.mermaid {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
 }
