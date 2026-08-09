@@ -64,23 +64,7 @@ Harbor Yield adds:
 
 ## How the stack fits together
 
-### SVG
-
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
-
-### Mermaid (contracts)
-
-```mermaid
-flowchart TB
-  SP["Level 1: Stability pools"]
-  AC["Level 2: Auto-compounders (hc)"]
-  HY["Level 3: hyTOKENS (hy)"]
-  Swap["Harbor Swap (routing support)"]
-
-  SP --> AC
-  AC --> HY
-  Swap --> HY
-```
 
 | Layer | Role |
 | ----- | ---- |
