@@ -54,14 +54,13 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ### Collateral
 
-- **WBTC:** `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`
-- **WBTC:** `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`
+- **WBTC** (underlying and wrapped collateral): `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`
 
 ## Stability pools
 
 | Pool | Proxy key | Address | Rebalance asset |
 | ---- | --------- | ------- | --------------- |
-| Collateral | `USD::wBTC::stabilityPoolCollateral` | `0xa1959F3dae8C3e7c8825dD7902D30569aF092Ed8` | WBTC / WBTC |
+| Collateral | `USD::wBTC::stabilityPoolCollateral` | `0xa1959F3dae8C3e7c8825dD7902D30569aF092Ed8` | WBTC |
 | Sail (leveraged) | `USD::wBTC::stabilityPoolLeveraged` | `0xd16C291456060bF36023D9a935719380a14dE3AD` | hsWBTC-USD |
 
 ## Price oracle
@@ -75,7 +74,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ## Zaps
 
-No genesis/minter zaps in app config for mainnet USD stacks — deposit **WBTC** / **WBTC** directly. See [Zap contracts](/tech-docs/contracts/zap).
+No genesis/minter zaps in app config for mainnet USD stacks — deposit **WBTC** directly. See [Zap contracts](/tech-docs/contracts/zap).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |

@@ -20,7 +20,7 @@
 
 ## Contract addresses
 
-Proxy keys / CREATE3: [Generic](../markets/generic.md). Source: Harbor `deployments/…/*.state.json`.
+Proxy keys / CREATE3: [Generic](../generic.md). Source: Harbor `deployments/…/*.state.json`.
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |
@@ -30,7 +30,7 @@ Proxy keys / CREATE3: [Generic](../markets/generic.md). Source: Harbor `deployme
 | **reservePool** | | `0x…` |
 | **stabilityPoolManager** | | `0x…` |
 | **genesis** | | `0x…` |
-| **priceOracle** | — | `0x…` — [pair page](../contracts/price-oracles/…) |
+| **priceOracle** | — | `0x…` — [pair page](../../contracts/price-oracles/…) |
 | **feeReceiver** | | `0x…` / TBD |
 | **stabilityPoolCollateral** | | `0x…` |
 | **stabilityPoolLeveraged** | | `0x…` |
@@ -60,11 +60,11 @@ Proxy keys / CREATE3: [Generic](../markets/generic.md). Source: Harbor `deployme
 | **Pair** | |
 | **Address** | `0x…` |
 | **Rate provider** | |
-| **Detail page** | [link](../contracts/price-oracles/…) |
+| **Detail page** | [Oracle detail page](../../contracts/price-oracles/…) |
 
 ## Zaps
 
-Convenience only — prefer depositing main collateral ([Zap contracts](../contracts/zap.md)).
+Convenience only — prefer depositing main collateral ([Zap contracts](../../contracts/zap.md)).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |

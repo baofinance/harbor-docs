@@ -1,9 +1,10 @@
 # fxUSD/XAG (deprecated) oracle (haSILVER)
 
-> **Status**: Active  
+> **Status**: Deprecated  
 > **Chain**: Ethereum mainnet (1)  
 > **Version**: v3  
 > **Address**: `0xB4E46a2E299F28FFa86BaeE19201B1BB9cd4c153`
+> **Replaced by**: [fxUSD/SILVER](./fxusd.md)
 
 ## Summary
 

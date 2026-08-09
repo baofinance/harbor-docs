@@ -87,5 +87,5 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | Kind | How to extend |
 | ---- | ------------- |
 | Market | Match sections on [haETH / fxUSD](./markets/haeth/fxusd.md) (includes zaps) |
-| Price aggregator | Match sections on any `contracts/price-oracles/<chain>/*.md` page |
+| Price aggregator | Match sections on any pair page under `contracts/price-oracles/<chain>/<hatoken>/` (not chain index pages) |
 | Zap overview | [contracts/zap.md](./contracts/zap.md) |

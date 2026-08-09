@@ -10,7 +10,7 @@ Let's be real: synthetic assets sound powerful. But most of them? Clunky, brittl
 
 We're bringing groundbreaking yields to places they've never reached: BTC, ETH, FX, commodities — and anything else with a reliable price feed.
 
-Harbor is **live on Ethereum**, audited by [Sherlock](https://sherlock.xyz/), with the app at [app.harborfinance.io](https://app.harborfinance.io).
+Harbor is **live on Ethereum**, with a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of currently deployed mainnet contracts is **partial** — some post-audit upgrades shipped after the review, and packages such as zap contracts were out of scope. App: [app.harborfinance.io](https://app.harborfinance.io).
 
 ## What Is Harbor?
 
@@ -74,7 +74,7 @@ For detailed information, explore the sections below or start with our [Technica
 - [Maiden Voyage](/maiden-voyage) - How new markets are launched
 - [Harbor Yield](/harbor-yield) - Three levels: stability pool, auto-compounder, hyTOKEN (mid-term)
 - [Supporting Features](/supporting-features) - Price aggregators and zaps
-- [TIDE Token](/tide-token/overview) - Governance, incentives and claim on revenue
+- [TIDE Token](/tide-token/overview) - Governance, incentives and buyback-driven value accrual
 - [Roadmap](/roadmap) - Protocol development plans
 - [FAQ](/faq) - Common questions and answers
 

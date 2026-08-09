@@ -25,7 +25,7 @@ Harbor market with **stETH** collateral and a **USD** peg. This deployment uses 
 
 ## Deployment registry (proxies, implementations, CREATE3 salts)
 
-Single source for this market: all **proxy** and **implementation** addresses and **CREATE3 salt (string)** values. Deploy tooling maps each salt string to `bytes32` for [Bao Factory](../../contracts/bao-factory.md) (`0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`). Manifest snapshot **`lastUpdated`:** `2026-04-29T21:50:12Z` (per-proxy times may be a few seconds earlier).
+Single source for this market: all **proxy** and **implementation** addresses and **CREATE3 salt (string)** values. Deploy tooling maps each salt string to `bytes32` for [Bao Factory](../../contracts/bao-factory.md) (`0xD696E56b3A054734d4C6DCBD32E11a278b0EC458`). Manifest snapshot **`lastUpdated`:** `2026-04-29T21:50:12Z` (most proxy times are a few seconds earlier; the price-oracle row is ~2 days earlier).
 
 | Component | Proxy key | Proxy address | Implementation | CREATE3 salt (string) | Proxy `deploymentTime` |
 | --------- | --------- | ------------- | -------------- | --------------------- | ---------------------- |

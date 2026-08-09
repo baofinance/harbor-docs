@@ -54,14 +54,13 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ### Collateral
 
-- **tBTC:** `0x18084fbA666a33d37592fA2633fD49a74DD93a88`
-- **tBTC:** `0x18084fbA666a33d37592fA2633fD49a74DD93a88`
+- **tBTC** (underlying and wrapped collateral): `0x18084fbA666a33d37592fA2633fD49a74DD93a88`
 
 ## Stability pools
 
 | Pool | Proxy key | Address | Rebalance asset |
 | ---- | --------- | ------- | --------------- |
-| Collateral | `USD::tBTC::stabilityPoolCollateral` | `0x9a229b4ec6A0D2154689De8EDa9d14C884DE707b` | tBTC / tBTC |
+| Collateral | `USD::tBTC::stabilityPoolCollateral` | `0x9a229b4ec6A0D2154689De8EDa9d14C884DE707b` | tBTC |
 | Sail (leveraged) | `USD::tBTC::stabilityPoolLeveraged` | `0x6a059A79bD261e2bFD160CAc4733108a8BDa2BD6` | hsTBTC-USD |
 
 ## Price oracle
@@ -75,7 +74,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ## Zaps
 
-No genesis/minter zaps in app config for mainnet USD stacks — deposit **tBTC** / **tBTC** directly. See [Zap contracts](/tech-docs/contracts/zap).
+No genesis/minter zaps in app config for mainnet USD stacks — deposit **tBTC** directly. See [Zap contracts](/tech-docs/contracts/zap).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |

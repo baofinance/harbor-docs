@@ -10,7 +10,7 @@ sidebar_position: 1
 
 ## Overview
 
-TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and a claim on protocol revenue.
+TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and exposure to protocol value accrual through TIDE buybacks.
 
 ## Launch and Distribution
 

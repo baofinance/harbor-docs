@@ -120,7 +120,7 @@ There is no public REST/WebSocket SDK promised in these docs.
 
 ### Is the protocol audited?
 
-Yes. Harbor promotes a [Sherlock](https://sherlock.xyz/) audit (linked from the app and landing page). Always review current audit materials before depositing large amounts.
+Yes. Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) scoped to **bao-base** and **bao-minter** (now Harbor core). That report does **not** fully cover every currently deployed Ethereum contract — some post-audit upgrades have shipped, and packages such as **zap contracts** were out of scope. Always review current audit materials before depositing large amounts.
 
 ### What security measures are in place?
 

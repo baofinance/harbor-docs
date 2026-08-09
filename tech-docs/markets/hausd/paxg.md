@@ -54,14 +54,13 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ### Collateral
 
-- **PAXG:** `0x45804880De22913dAFE09f4980848ECE6EcbAf78`
-- **PAXG:** `0x45804880De22913dAFE09f4980848ECE6EcbAf78`
+- **PAXG** (underlying and wrapped collateral): `0x45804880De22913dAFE09f4980848ECE6EcbAf78`
 
 ## Stability pools
 
 | Pool | Proxy key | Address | Rebalance asset |
 | ---- | --------- | ------- | --------------- |
-| Collateral | `USD::PAXG::stabilityPoolCollateral` | `0xAf7B276dF93F74AE7780E1D5f550bEaf4Ff26415` | PAXG / PAXG |
+| Collateral | `USD::PAXG::stabilityPoolCollateral` | `0xAf7B276dF93F74AE7780E1D5f550bEaf4Ff26415` | PAXG |
 | Sail (leveraged) | `USD::PAXG::stabilityPoolLeveraged` | `0x45B3e0dC9DdaDE6D5e2D45AD08c28B794Bdbf985` | hsPAXG-USD |
 
 ## Price oracle
@@ -75,7 +74,7 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ## Zaps
 
-No genesis/minter zaps in app config for mainnet USD stacks — deposit **PAXG** / **PAXG** directly. See [Zap contracts](/tech-docs/contracts/zap).
+No genesis/minter zaps in app config for mainnet USD stacks — deposit **PAXG** directly. See [Zap contracts](/tech-docs/contracts/zap).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |

@@ -1,6 +1,6 @@
 # stETH/XAU (deprecated) oracle (haGOLD)
 
-> **Status**: Active  
+> **Status**: Deprecated  
 > **Chain**: Ethereum mainnet (1)  
 > **Version**: v3  
 > **Address**: `0x2962ECcF1B9cc46FE1aFf7bfc0f7179Fc87939ee`

@@ -13,7 +13,8 @@ These rules apply at every level that touches a stability pool (or its auto-comp
 | Rule | Detail |
 | ---- | ------ |
 | **Mint** | Users can mint **haTokens** and/or **hsTokens** |
-| **Pool / AC deposit** | **Only haTokens** can be deposited into the **collateral** or **Sail** stability pool (and into the AC that wraps that pool) |
+| **Pool deposit** | **Only haTokens** can be deposited into the **collateral** or **Sail** stability pool (receive rebasing **hp…** pool shares) |
+| **AC deposit** | ERC-4626 `deposit()` takes the pool-share token (**hpXXX.COLn** / Sail equivalent). **haTokens** enter the AC via `depositPeggedToken()` (atomic SP deposit + AC mint). |
 | **Pool yield** | **Both** pools accrue concentrated collateral yield / harvest + revenue share on haToken deposits (split across linked pools by holdings). Sail is not rebalance-only. |
 | **Rebalance payout** | Collateral pool → **collateral**; Sail pool → **hsTokens** (deposited haTokens are burned). **hsTokens** do not earn concentrated yield on their own. |
 
@@ -21,25 +22,33 @@ Product UX: [Harbor Yield](/harbor-yield). Live pool behaviour: [Stability pool]
 
 ## Three participation levels
 
+This docs site uses **product-facing Levels 1–3**. The design doc on `harbor-yield` numbers the same stack **0–2**. Mapping:
+
+| Product (this site) | Design doc | Component |
+| ------------------- | ---------- | --------- |
+| **Level 1** | **Level 0** | Raw stability pool |
+| **Level 2** | **Level 1** | Auto-compounder (AC) |
+| **Level 3** | **Level 2** | HarborYield / **hyTOKEN** peg vault |
+
 | Level | User flow | Contracts / shares |
 | ----- | --------- | ------------------ |
 | **1** | Mint ha/hs → deposit **haTokens** into collateral or Sail **stability pool** → claim rewards yourself | Stability pool (live; upgrading to **v3**) |
-| **2** | Mint ha/hs → deposit **haTokens** into that pool’s **auto-compounder** | ERC-4626 **hc…** per pool |
-| **3** | Mint into a **hyTOKEN** vault for that peg | Custom multi-asset **hy…** vault |
+| **2** | Mint ha/hs → deposit **hp…** via ERC-4626 `deposit()`, or **haTokens** via `depositPeggedToken()` → **hc…** AC shares | ERC-4626 **hc…** per pool |
+| **3** | Deposit a registered **AC or equivalent** asset via `deposit(asset, amount, receiver)` → receive **hyXXX** shares (mint ha/hs → SP → AC happens upstream, not on the hy vault) | Custom multi-asset **hy…** vault |
 
-- **Level 1** is live today. Levels **2** and **3** ship with Harbor Yield.
+- **Level 1** (stability pools) is live on **Ethereum mainnet**. Levels **2** and **3** ship with Harbor Yield.
 - **Auto-compounders (level 2) are a usable product** — not only plumbing under hyTOKENS. Users can stop at level 2.
 - **hyTOKENS (level 3)** sit **next to** ACs: the vault holds a basket of AC shares (and peg-equivalent legs). Sail-pool ACs stay available at level 2 but are **not** in hyTOKEN baskets.
 
-Design source: [`doc/autocompounding-vault-design.md`](https://github.com/baofinance/harbor/blob/harbor-yield/doc/autocompounding-vault-design.md) on `harbor-yield`.
+Design source: [`doc/autocompounding-vault-design.md`](https://github.com/baofinance/harbor/blob/harbor-yield/doc/autocompounding-vault-design.md) on `harbor-yield` (Levels **0–2** there).
 
 ## Layer model (contracts)
 
 | Level | Component | Share / asset | Role |
 | ----- | --------- | ------------- | ---- |
 | **1** | Stability pools (live; → v3) | Pool shares; deposits are **haTokens** | Base yield / rebalance; manual claim |
-| **2** | Auto-compounders (AC) | Non-rebasing ERC-4626 **hc…** | Usable per-pool compounding over an haToken pool deposit; also held by hy vaults |
-| **3** | Harbor Yield peg vault | Custom multi-asset **hy…** | Basket of (collateral) AC shares + peg-equivalent vaults |
+| **2** | Auto-compounders (AC) | Non-rebasing ERC-4626 **hc…** | Usable per-pool compounding; `deposit(hp…)` or `depositPeggedToken(ha…)`; also held by hy vaults (collateral ACs) |
+| **3** | Harbor Yield peg vault | Custom multi-asset **hy…** | Basket of (collateral) AC shares + peg-equivalent vaults; entry is `deposit(asset, …)` of a registered vault asset, not raw ha/hs mint |
 | — | Harbor Swap | — | Routing support for level 3 (`distribute` / `redistribute`), not a yield tier |
 
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
@@ -78,8 +87,10 @@ Higher-level **HarborYield_v1** peg vaults and autocompounder impls are designed
 
 | Field | Value |
 | ----- | ----- |
-| **Level 2 — Auto-compounder** | One per stability pool (collateral or Sail); users deposit **haTokens**; `compound()` claims collateral rewards → mint ha when fees allow → redeposit into the underlying pool |
-| **Level 3 — hyTOKEN** | One vault per peg (ha-oriented); proportional multi-asset redeem (not single-asset ERC-4626 redeem); basket includes **collateral-pool** AC shares + peg equivalents |
+| **Level 2 — Auto-compounder** | One per stability pool (collateral or Sail). `compound()` behaviour differs by pool type (below). |
+| **Level 2 — Collateral AC `compound()`** | Claims **wCOLn** rewards → mint ha when fees allow → redeposit into the underlying collateral pool |
+| **Level 2 — Sail AC `compound()`** | Compounds **harvest wCOLn only**. Does **not** value or compound illiquid **hsXXX.COLn** rebalance receipts (share price can drop on Sail rebalance until those are handled outside `compound()`) |
+| **Level 3 — hyTOKEN** | One vault per peg (ha-oriented); users `deposit(asset, amount, receiver)` a registered AC/equivalent asset and receive **hyXXX**; proportional multi-asset redeem (not single-asset ERC-4626 redeem); basket includes **collateral-pool** AC shares + peg equivalents |
 | **Sail ACs** | Usable at level 2; **not** included in hyTOKEN baskets (Sail rebalance receipts are less liquid) |
 | **Harbor Swap use** | Direct routes on hot path for level 3; Velora (primary) / 1inch (optional) on `redistribute` |
 

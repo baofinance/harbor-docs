@@ -1,6 +1,6 @@
 # fxUSD/XAU (deprecated) oracle (haGOLD)
 
-> **Status**: Active  
+> **Status**: Deprecated  
 > **Chain**: Ethereum mainnet (1)  
 > **Version**: v3  
 > **Address**: `0xd71538769Af1c8f4D663BD0a5eA667D67E1623e2`

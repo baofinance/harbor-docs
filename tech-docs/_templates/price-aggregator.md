@@ -37,5 +37,5 @@
 
 ## See also
 
-- Chain index: [Mainnet](../mainnet.md) / [Arbitrum](../arbitrum.md) / [Base](../base.md) / [MegaETH](../megaeth.md)
-- Overview: [Price oracle contracts](../../price-oracle.md)
+- Chain index: [Mainnet](../../mainnet.md) / [Arbitrum](../../arbitrum.md) / [Base](../../base.md) / [MegaETH](../../megaeth.md)
+- Overview: [Price oracle contracts](../../../price-oracle.md)

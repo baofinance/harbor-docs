@@ -1,7 +1,7 @@
 # Mainnet Price Oracles
 
 **Chain ID**: 1  
-**Total Oracles**: 36
+**Total Oracles**: 37
 
 ## Overview
 

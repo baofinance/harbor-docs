@@ -337,7 +337,7 @@ a:hover {
 .markdown table td,
 .theme-doc-markdown table th,
 .theme-doc-markdown table td {
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* Keep a narrow first column readable (e.g. Level) */

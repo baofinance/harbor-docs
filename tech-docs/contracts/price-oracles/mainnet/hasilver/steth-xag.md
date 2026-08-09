@@ -1,9 +1,10 @@
 # stETH/XAG (deprecated) oracle (haSILVER)
 
-> **Status**: Active  
+> **Status**: Deprecated  
 > **Chain**: Ethereum mainnet (1)  
 > **Version**: v3  
 > **Address**: `0x7FE8D4590A5aa0C8bdcA581BBc30d68aB59Dad78`
+> **Replaced by**: [stETH/SILVER](./steth.md)
 
 ## Summary
 

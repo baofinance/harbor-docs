@@ -94,7 +94,7 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 
 | Field | Value |
 | ----- | ----- |
-| **Start** | February 1, 2026 (`2026-02-01T00:00:00Z`, app note: Coming Soon placeholder) |
+| **Start** | February 1, 2026 (`2026-02-01T00:00:00Z`; prior voyage window; product surface paused — to relaunch) |
 | **End** | February 23, 2026 (`2026-02-23T17:00:00Z`) |
 | **Distribution** | typically 50% ha / 50% hs at launch |
 
