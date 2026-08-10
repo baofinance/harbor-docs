@@ -9,12 +9,12 @@ One-click helpers that wrap ETH/stETH → **wstETH** or USDC/fxUSD → **fxSAVE*
 
 | Family | Purpose | Typical versions in app |
 | ------ | ------- | ----------------------- |
-| **GenesisETHZap** | Zap ETH/stETH into Genesis | v3 / v4 |
-| **MinterETHZap** | Zap ETH/stETH to mint ha / hs (incl. stability-pool paths) | v3 |
+| **GenesisETHZap** | Zap ETH/stETH into Genesis | v1 / v3 / v4 |
+| **MinterETHZap** | Zap ETH/stETH to mint ha / hs (incl. stability-pool paths) | v1 / v3 |
 | **GenesisUSDCZap** | Zap USDC/fxUSD into Genesis | v2 / v4 |
 | **MinterUSDCZap** | Zap USDC/fxUSD to mint ha / hs (incl. stability-pool paths) | v3 |
 
-Source layout: `src/minter/` in the zap repo (`GenesisETHZap_v3.sol`, `GenesisUSDCZap_v2.sol`, …). Newer markets may use v4 genesis zaps while still sharing a v3 minter zap.
+Source layout: `src/minter/` / upgradeable zap packages in the zap repo (`GenesisETHZap_v1.sol`, `GenesisETHZap_v3.sol`, `GenesisUSDCZap_v2.sol`, …). Mainnet **haUSD / stETH** uses **v1** CREATE3 zaps (`harbor_zap_v1_USD`); older markets may use v3/v4.
 
 ## Per-market addresses
 
@@ -32,7 +32,8 @@ Each [market page](../markets/haeth/fxusd.md) lists **genesisZap**, **peggedToke
 | [fxUSD/SILVER](../markets/hasilver/fxusd.md) | `0xd19d801a0427Dd91bcbAfB0FcA783a3231a749c8` (GenesisUSDCZap_v4) | `0xfbB196c2C053F8a9E9d3e611a40D12aE450A4baB` (MinterUSDCZap_v3) |
 | [stETH/SILVER](../markets/hasilver/steth.md) | `0xC128Cbf15920455569e1926C982567d2bE21AC50` (GenesisETHZap_v4) | `0x68fafa07471e02d33706681d9e3e2160c1901b4c` (MinterETHZap_v3) |
 | [fxUSD/MCAP](../markets/hamcap/fxusd.md) / [stETH/MCAP](../markets/hamcap/steth.md) | none in app config | none in app config |
-| [stETH/USD Mainnet](../markets/hausd/steth.md) / [PAXG](../markets/hausd/paxg.md) / [wBTC](../markets/hausd/wbtc.md) / [tBTC](../markets/hausd/tbtc.md) | none in app config | none in app config |
+| [stETH/USD Mainnet](../markets/hausd/steth.md) | `0x2E70388011a20d8dd80637765F8FA53e01F611ef` (GenesisETHZap_v1) | `0x103EE4E35C2C1C96bF6C040fd0c0769F0d3f82Eb` (MinterETHZap_v1) |
+| [PAXG](../markets/hausd/paxg.md) / [wBTC](../markets/hausd/wbtc.md) / [tBTC](../markets/hausd/tbtc.md) | none in app config | none in app config |
 | [stETH/USD MegaETH](../markets/hausd-megaeth/steth.md) | none published | none published |
 
 App source of truth: [`harbor-app` `src/config/contracts.ts`](https://github.com/baofinance/harbor-app/blob/main/src/config/contracts.ts) (`genesisZap`, `peggedTokenZap`, `leveragedTokenZap`).

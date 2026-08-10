@@ -38,9 +38,9 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **stabilityPoolLeveraged** | `USD::stETH::stabilityPoolLeveraged` | `0x6E7b445e4dac4787445f31382f4E3dCAd510c238` |
 | **collateralToken** | — | `0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84` (stETH) |
 | **wrappedCollateralToken** | — | `0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0` (wstETH) |
-| **genesisZap** | — | none |
-| **peggedTokenZap** | — | none |
-| **leveragedTokenZap** | — | none |
+| **genesisZap** | — | `0x2E70388011a20d8dd80637765F8FA53e01F611ef` (GenesisETHZap_v1) |
+| **peggedTokenZap** | — | `0x103EE4E35C2C1C96bF6C040fd0c0769F0d3f82Eb` (MinterETHZap_v1) |
+| **leveragedTokenZap** | — | `0x103EE4E35C2C1C96bF6C040fd0c0769F0d3f82Eb` (MinterETHZap_v1) |
 
 ## Token details
 
@@ -75,12 +75,17 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 
 ## Zaps
 
-No genesis/minter zaps in app config for mainnet USD stacks — deposit **wstETH** / **stETH** directly. See [Zap contracts](/tech-docs/contracts/zap).
+Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/harbor-zap-contracts) (`saltPrefix`: `harbor_zap_v1_USD`, deployed **2026-08-10**). Prefer depositing **wstETH** / **stETH** directly when possible — see [Zap contracts](/tech-docs/contracts/zap).
 
 | Zap | Contract | Address |
 | --- | -------- | ------- |
-| Genesis | — | none |
-| Pegged / leveraged (minter) | — | none |
+| Genesis | GenesisETHZap_v1 | `0x2E70388011a20d8dd80637765F8FA53e01F611ef` |
+| Pegged / leveraged (minter) | MinterETHZap_v1 | `0x103EE4E35C2C1C96bF6C040fd0c0769F0d3f82Eb` |
+
+- **Entry points:** ETH / stETH / wstETH → Genesis (Maiden Voyage still open through **2027-01-01**)
+- **Supported:** `zapNativeAsset`, `zapCollateral`, `zapCollateralWithPermit` (stETH has EIP-2612)
+- **Owner (post-deploy):** Harbor multisig `0x9bABfC1A1952a6ed2caC1922BFfE80c0506364a2`
+- **Source of truth:** [`deployments/mainnet/zap-addresses.json`](https://github.com/baofinance/harbor-zap-contracts/blob/main/deployments/mainnet/zap-addresses.json) (`markets.USD`) and [`deployments/state-1-USD.json`](https://github.com/baofinance/harbor-zap-contracts/blob/main/deployments/state-1-USD.json)
 
 ## Market parameters
 
