@@ -37,8 +37,8 @@ Zap routes may involve wrapping (and, depending on the path, intermediary conver
 Mid-term yield participation (see [Harbor Yield](/harbor-yield)):
 
 1. Stability pool + claim rewards  
-2. **Auto-compounder** (usable on its own; `deposit(hp…)` / `depositPeggedToken(ha…)`)  
-3. **hyTOKEN** peg vault — deposit registered AC/equivalent assets into the basket
+2. **Compounder** (usable on its own; ERC-4626 over one pool, `asset` = ha)  
+3. **hyTOKEN** peg basket — enter via **ERC-7575** doors (wrapped collateral / peg equivalents)
 
 Also: [Harbor Swap](https://github.com/baofinance/harbor-swap) for hyTOKEN routing; tech: [Harbor Yield](/tech-docs/contracts/harbor-yield), [Harbor Swap](/tech-docs/contracts/harbor-swap). Aggregator rebalances via **Velora** (primary) / **1inch** (optional).
 

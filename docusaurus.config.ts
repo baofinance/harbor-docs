@@ -135,6 +135,10 @@ const config: Config = {
               label: "FAQ",
               to: "/faq",
             },
+            {
+              label: "Build on Harbor",
+              to: "/tech-docs/integrators",
+            },
           ],
         },
         {
@@ -167,8 +171,9 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Harbor. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneDark,
+      darkTheme: prismThemes.oneDark,
+      additionalLanguages: ["bash", "json"],
     },
     mermaid: {
       theme: { light: "default", dark: "dark" },

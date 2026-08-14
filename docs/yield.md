@@ -29,6 +29,6 @@ Harbor's high yields come from concentrating collateral yield into a smaller poo
 
 - **Extra Boost:** Ledger Marks and team-directed **$TIDE** incentives can further increase effective returns for active participants where campaigns apply.
 
-- **Coming mid-term — Harbor Yield:** three levels (product **1–3** = design **0–2**) — (1) stability pool + claim rewards, (2) **auto-compounder**, (3) **hyTOKEN** peg vault via `deposit(asset, …)` of registered AC/equivalents. Autocompounders are usable on their own, not only under hyTOKENS. See [Harbor Yield](/harbor-yield).
+- **Coming mid-term — Harbor Yield:** three levels (product **1–3** = design **0–2**) — (1) stability pool + claim rewards, (2) **Compounder** (ERC-4626 over one pool), (3) **hyTOKEN** peg basket via **ERC-7575** doors (siblings of Compounders, not wrappers of them). See [Harbor Yield](/harbor-yield).
 
 > By concentrating collateral yield into the stability pool — and directing 75% of (post–Yield Share / post–TVL-take) protocol revenue to stability pools to grow markets — Harbor aims to deliver strong APRs to users who secure the protocol.

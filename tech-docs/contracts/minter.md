@@ -2,6 +2,8 @@
 
 The Minter contract is responsible for minting and redeeming leveraged tokens (hsTokens) and pegged tokens (haTokens) in exchange for wrapped collateral.
 
+Integrator cookbook (approve → dry-run → tx): [Mint and redeem](../integrators/mint-redeem.md). Pricing views: [Pricing](../integrators/pricing.md).
+
 ## Overview
 
 The Minter is a UUPS upgradeable contract that handles the core minting and redemption operations for Harbor Protocol markets. It implements a sophisticated fee/discount system based on collateral ratios and provides price stability through stability pools.
@@ -125,12 +127,16 @@ These functions are available only to addresses with `ZERO_FEE_ROLE`:
 
 ### Dry Run Functions
 
-These view functions simulate minting/redemption operations without executing them:
+View quotes — decode **by position** (ABI names may differ slightly from Solidity natspec). `incentiveRatio == 1e18` means **disallowed** at the current CR; also treat `taken`/`out == 0` as no-op / revert path. Partial fills can leave `taken < in` with a ratio ≠ `1e18`.
 
-- `mintPeggedTokenDryRun(uint256 wrappedCollateralIn)` - Returns incentive ratio, fees, amounts, price, and rate
-- `redeemPeggedTokenDryRun(uint256 peggedIn)` - Returns incentive ratio, fees, discounts, amounts, price, and rate
-- `mintLeveragedTokenDryRun(uint256 wrappedCollateralIn)` - Returns incentive ratio, fees, discounts, amounts, price, and rate
-- `redeemLeveragedTokenDryRun(uint256 leveragedIn)` - Returns incentive ratio, fees, amounts, price, and rate
+| Function | Returns (ordered) |
+| -------- | ----------------- |
+| `mintPeggedTokenDryRun(wrappedCollateralIn)` | `incentiveRatio`, `wrappedFee`, `wrappedCollateralTaken`, `peggedMinted`, `price`, `rate` |
+| `mintLeveragedTokenDryRun(wrappedCollateralIn)` | `incentiveRatio`, `wrappedFee`, `wrappedDiscount`, `wrappedCollateralUsed`, `leveragedMinted`, `price`, `rate` |
+| `redeemPeggedTokenDryRun(peggedIn)` | `incentiveRatio`, `wrappedFee`, `wrappedDiscount`, `peggedRedeemed`, `wrappedCollateralReturned`, `price`, `rate` |
+| `redeemLeveragedTokenDryRun(leveragedIn)` | `incentiveRatio`, `wrappedFee`, `leveragedRedeemed`, `wrappedCollateralReturned`, `price`, `rate` |
+
+Cookbook: [Mint and redeem](../integrators/mint-redeem.md).
 
 ### View Functions
 

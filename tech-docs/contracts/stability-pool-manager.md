@@ -85,8 +85,8 @@ Harvests yield accrued from holding wrapped collateral (e.g., staking rewards) a
 
 **Effects:**
 - Transfers yield to stability pools as rewards
-- Rewards are distributed via `depositReward()` on each pool
-- Pools distribute rewards to depositors via their gauge systems
+- Rewards are deposited via `depositReward()` on each pool
+- Depositors claim via `claimable` / `claim` (not a gauge system)
 
 ### View Functions
 

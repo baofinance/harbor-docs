@@ -4,7 +4,7 @@ The Stability Pool contract allows users to deposit pegged tokens (haTokens) to 
 
 ## Overview
 
-The Stability Pool (`StabilityPool_v1`) is a UUPS upgradeable contract that holds pegged tokens deposited by users. It uses a compounding balance system to track deposits and automatically distributes rewards and rebalance proceeds. The pool participates in protocol rebalancing when the collateral ratio falls below the threshold.
+The Stability Pool (`StabilityPool_v1` / **v2** live) holds **ha (pegged)** deposited by users. It tracks deposits with a compounding-balance / loss-product system and accrues **claimable** reward tokens from harvest and rebalance. The pool participates in protocol rebalancing when the collateral ratio falls below the threshold.
 
 ## Contract Architecture
 
@@ -126,16 +126,17 @@ Called by StabilityPoolManager during rebalancing to notify the pool of rebalanc
 
 The contract inherits from `MultipleRewardCompoundingAccumulator`, providing:
 
-- **Automatic Compounding**: Rewards compound into user balances
-- **Multiple Reward Tokens**: Supports multiple reward token types
-- **Checkpoint System**: Balances and rewards update on deposit/withdraw/claim
+- **Claimable reward tokens** — harvest / rebalance payouts accrue per account; users call `claim()` / read `claimable`
+- **Multiple reward token types** supported
+- **Checkpointing** on deposit / withdraw / claim
+
+**ha balances** are adjusted by the **loss product** on rebalance — that is separate from reward-token claims. Rewards do **not** mint into the user’s ha ERC-20 balance.
 
 #### Reward Distribution
 
-Rewards are distributed via:
-- `depositReward(address token, uint256 amount)` - Called by reward distributors (e.g., StabilityPoolManager during harvest)
-- Rewards compound automatically into user balances
-- Users claim rewards by calling `claim()` or through withdrawals
+Rewards are deposited via:
+- `depositReward(address token, uint256 amount)` — called by distributors (e.g. StabilityPoolManager during harvest / rebalance)
+- Users claim with `claim()` (or claim helpers on the accumulator)
 
 **For detailed information about the reward system, see [Reward System Contracts](reward-system.md).**
 

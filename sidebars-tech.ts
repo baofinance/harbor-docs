@@ -14,6 +14,25 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Integrators",
+      collapsed: false,
+      items: [
+        { type: "doc", id: "integrators/index", label: "Build on Harbor" },
+        "integrators/token-taxonomy",
+        "integrators/addresses-and-abis",
+        "integrators/sdk",
+        "integrators/pricing",
+        "integrators/mint-redeem",
+        "integrators/zaps",
+        "integrators/market-state-and-fees",
+        "integrators/stability-pools",
+        "integrators/swap",
+        "integrators/oracle-adapters",
+        "integrators/hy-erc7575",
+      ],
+    },
+    {
+      type: "category",
       label: "Contracts",
       items: [
         "contracts/minter",

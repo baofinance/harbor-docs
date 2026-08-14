@@ -4,6 +4,8 @@ The Harbor Price Aggregator system provides validated price feeds for wrapped co
 
 **Repository**: [harbor-price-aggregators](https://github.com/baofinance/harbor-price-aggregators)
 
+Integrator pricing map and worked Chainlink-composed examples: [Pricing](../integrators/pricing.md). Chainlink-shaped wrappers are **not deployed** — [Oracle adapters](../integrators/oracle-adapters.md).
+
 ## Overview
 
 Harbor uses a system of price aggregators (`HarborAggregator_v3` and `HarborAggregator_v4`) that combine:

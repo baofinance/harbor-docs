@@ -65,10 +65,10 @@ See [Supporting Features](/supporting-features).
 Three participation levels on top of minting ha/hs (product **1–3** = design doc **0–2**):
 
 1. **Stability pool** — deposit haTokens, claim rewards yourself (live on **Ethereum mainnet**)
-2. **Auto-compounder** — deposit **hp…** or ha via AC entrypoints; compounding is automatic (usable on its own)
-3. **hyTOKEN** — deposit a registered AC/equivalent into the peg vault; one pooled **hy…** share (ha-oriented basket of AC shares + equivalents)
+2. **Compounder** — ERC-4626 over one pool (`asset` = ha); compounding is automatic (usable on its own)
+3. **hyTOKEN** — **ERC-7575** peg basket (doors in wrapped collateral / equivalents); holds pool positions directly + peg equivalents
 
-**Auto-compounders sit next to hyTOKENS** — level 2 is a product path, not only plumbing under level 3. Harbor Swap remains routing support for hyTOKEN vaults (**Velora** primary; **1inch** optional). Details: [Harbor Yield](/harbor-yield).
+**Compounders sit next to hyTOKENS** — siblings over the same pools, not a stack. Harbor Swap remains routing support for hyTOKEN vaults (**Velora** primary; **1inch** optional). Details: [Harbor Yield](/harbor-yield).
 
 ## 4. Cross-Chain Deployment & Omnichain Expansion (Mid Term)
 

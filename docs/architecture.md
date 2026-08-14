@@ -6,6 +6,8 @@ sidebar_position: 2
 
 Harbor Protocol is built on a robust and secure architecture that enables the creation and management of synthetic assets. This document provides a high-level overview of the protocol's architecture.
 
+Integrators: sequenced contract path in [Build on Harbor](/tech-docs/integrators).
+
 ## System Components
 
 ### 1. Price Oracle for Pegged Tokens

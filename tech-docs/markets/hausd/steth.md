@@ -2,7 +2,8 @@
 
 > **Status**: ✅ Deployed (mainnet USD stack, May 2026)  
 > **Chain**: Ethereum mainnet (1)  
-> **App `marketId`**: `steth-usd`
+> **App `marketId`**: `steth-usd`  
+> **Integrator / SDK key**: `usd-steth` (same market; see [Addresses and ABIs](../../integrators/addresses-and-abis.md))
 
 Mint **haUSD** and **hsSTETH-USD** using **stETH** via **wstETH** as collateral on Ethereum mainnet. Shares the **haUSD** pegged token with [PAXG](./paxg.md), [wBTC](./wbtc.md), and [tBTC](./tbtc.md). Not the same deployment as [MegaETH stETH](../hausd-megaeth/steth.md).
 

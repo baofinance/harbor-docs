@@ -4,13 +4,13 @@
 > **Repo**: [baofinance/harbor-swap](https://github.com/baofinance/harbor-swap)  
 > **Consumed by**: [Harbor Yield](/tech-docs/contracts/harbor-yield) (and future Harbor products)
 
-Standalone **swap registry + executors**. Does not change yield economics — it moves tokens when Harbor Yield (or keepers) need direct DEX routes or aggregator calldata.
+Integrator notes (not for mint/redeem): [Harbor Swap](../integrators/swap.md).
 
 ## Branch / PR snapshot (audit)
 
 | Ref | State | What it delivers |
 | --- | ----- | ---------------- |
-| `main` | default | Registry + UniV3 / Curve / Balancer / FxSave↔wstETH executors; `SwapExecutorBase` hardening; `minAmountOut` absolute-rate semantics ([#2](https://github.com/baofinance/harbor-swap/pull/2), [#4](https://github.com/baofinance/harbor-swap/pull/4) merged) |
+| `main` | default | Registry + UniV3 / Curve / Balancer / FxSave↔wstETH executors; `SwapExecutorBase` hardening; `minAmountOutPerUnitIn` **rate** floor ([#2](https://github.com/baofinance/harbor-swap/pull/2), [#4](https://github.com/baofinance/harbor-swap/pull/4) merged) |
 | `velora-swap` / [#3](https://github.com/baofinance/harbor-swap/pull/3) | **open** | **Velora Augustus v6.2** as primary aggregator adapter; 1inch remains optional |
 | `refund-handling` | merged → main | Refund / amount-spent pro-rating on executor envelope |
 | `swap-executor-hardening` | merged → main | Shared `SwapExecutorBase` (exact-pull, `ZeroAmountOut`, refunds) |
@@ -25,7 +25,7 @@ Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinan
 | **Registry** | `Swapper_v1` — `(from, to) → {executor, routeCostRatio}` |
 | **Direct executors** | UniV3, Curve, Balancer V2, `FxSaveWstEthSwapper_v1` (composite) |
 | **Aggregators** | `VeloraSwapper_v1` (primary, PR #3); `OneInchSwapper_v1` (optional) |
-| **Shared envelope** | `SwapExecutorBase` — same-token guard, exact pull, `amountOut == 0` reverts, authoritative `minAmountOut`, refund unspent |
+| **Shared envelope** | `SwapExecutorBase` — same-token guard, exact pull, `amountOut == 0` reverts, authoritative `minAmountOutPerUnitIn` (out per 1e18 in **spent**), refund unspent |
 | **Deploy** | BaoFactory CREATE3 via Harbor deploy helpers |
 
 ### Architecture diagram (SVG)
@@ -41,7 +41,7 @@ flowchart LR
   Dir["Direct executors"]
   Agg["Velora / 1inch adapters"]
 
-  HY -->|"getRoute / swap"| Reg
+  HY -->|"getRoute / swap (from compound)"| Reg
   Reg --> Dir
   HY -->|"redistribute + routerData"| Agg
   Dir --> DEX["UniV3 / Curve / Balancer / Curve composite"]
@@ -52,10 +52,10 @@ flowchart LR
 
 | Mode | Typical caller | How |
 | ---- | -------------- | --- |
-| **Direct** | Hot path (`distribute`) | On-chain route registry → executor `swap` (no off-chain calldata) |
+| **Direct** | Hot path (`HarborYield.compound`) | On-chain route registry → executor `swap` (no off-chain calldata) |
 | **Aggregator** | Discretionary (`redistribute`) | Keeper builds opaque `routerData`; role-gated on Harbor Yield (`REDISTRIBUTOR_ROLE`) |
 
-Authorization for aggregators lives on the **consumer** (Harbor Yield), not inside the open-access adapter. Selector allowlists do **not** validate swap parameters — treat calldata as untrusted and rely on the executor envelope + `minAmountOut`.
+Authorization for aggregators lives on the **consumer** (Harbor Yield), not inside the open-access adapter. Selector allowlists do **not** validate swap parameters — treat calldata as untrusted and rely on the executor envelope + `minAmountOutPerUnitIn`.
 
 ### Velora (primary)
 
@@ -98,7 +98,7 @@ Per-peg Harbor Yield salts (`{pegKey}::harborYield`, beacons, …) live in the y
 | **1a** | [harbor](https://github.com/baofinance/harbor) `#33` | Minter_v3, StabilityPool_v3, StabilityPoolManager_v2 |
 | **1b** | [harbor-price-aggregators](https://github.com/baofinance/harbor-price-aggregators) `#4` | Yield peg oracles (CREATE3) |
 | **2a** | **harbor-swap** | This package — registry + executors + aggregators |
-| **2b** | Harbor Yield consumer | `HarborYield_v1`, ACs, route wiring, `REDISTRIBUTOR_ROLE` |
+| **2b** | Harbor Yield consumer | `HarborYield_v1`, `Compounder_v1`, ERC-7575 doors, route wiring, `REDISTRIBUTOR_ROLE` |
 
 Harbor Yield passes `swapper = _predictAddress("swapper")` as an immutable at HY deploy time.
 

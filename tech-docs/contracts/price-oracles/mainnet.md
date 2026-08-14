@@ -27,7 +27,7 @@ To add a new aggregator: add `mainnet/<hatoken>/<collateral>.md`, update that ha
 
 | Oracle | Address | Status | Version |
 | ------ | ------- | ------ | ------- |
-| [fxUSD](./mainnet/haeth/fxusd.md) | `0xea5292c58288DcE24C52C1dB13ca048275665EbC` | Active | v3 |
+| [fxUSD](./mainnet/haeth/fxusd.md) | `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` (market-wired; inventory also `0xea5292…`) | Active | v3 |
 | [hs fxUSD](./mainnet/haeth/hs-fxusd.md) | `0xA8643E35Ef119F983B09C322039e8AA49A3e3372` | Active | v4 leverage |
 | [sUSDe](./mainnet/haeth/susde.md) | `0x969Fb67331d6Fa3E729292FAa5752BBA759f2b7F` | Active | v4 |
 
