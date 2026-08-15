@@ -13,9 +13,10 @@ These rules apply at every level that touches a stability pool (or its Compounde
 
 | Rule | Detail |
 | ---- | ------ |
-| **Mint** | Users can mint **haTokens** and/or **hsTokens** |
-| **Pool deposit** | **Only haTokens** can be deposited into the **collateral** or **Sail** stability pool (receive rebasing **hp…** pool shares) |
-| **Compounder deposit** | ERC-4626 `deposit()` takes **haXXX** (`asset()` = pegged token). Optional `depositStabilityPool` wraps an existing pool position |
+| **Mint / acquire** | Users can mint **haTokens** and/or **hsTokens**, or acquire them via a market |
+| **Pool deposit (live mainnet v1/v2)** | **Only haTokens** into the collateral or Sail pool → compounding **internal balance** (no ERC-20 pool share) |
+| **Pool deposit (SP_v3 / pre-prod)** | Same ha-only rule; receive rebasing **hp…** ERC-20 shares — **not** live UX yet |
+| **Compounder deposit** | ERC-4626 `deposit()` takes **haXXX** (`asset()` = pegged token). Optional `depositStabilityPool` wraps an existing pool position — **pre-prod** |
 | **Pool yield** | **Both** pools accrue concentrated collateral yield / harvest + revenue share on haToken deposits |
 | **Rebalance payout** | Collateral pool → **collateral**; Sail pool → **hsTokens** (deposited haTokens are burned). **hsTokens** do not earn concentrated yield on their own |
 
@@ -33,7 +34,7 @@ This docs site uses **product-facing Levels 1–3**. The design doc numbers the 
 
 | Level | User flow | Contracts / shares |
 | ----- | --------- | ------------------ |
-| **1** | Mint ha/hs → deposit **haTokens** into collateral or Sail **stability pool** → claim rewards yourself | Stability pool (live; upgrading to **v3**) |
+| **1** | Mint/buy ha/hs → deposit **haTokens** into collateral or Sail **stability pool** → claim rewards yourself | Live: SP **v1/v2** compounding balances. **SP_v3** `hp…` shares = yield branch only |
 | **2** | Deposit **haXXX** via ERC-4626 → **hc…** | `Compounder_v1` per pool |
 | **3** | Deposit via **ERC-7575 door** (wrappedCollateral or equivalent asset) → **hyXXX** | `HarborYield_v1` + `HarborYieldEntry_v1` |
 
@@ -45,7 +46,7 @@ This docs site uses **product-facing Levels 1–3**. The design doc numbers the 
 
 | Level | Component | Share / asset | Role |
 | ----- | --------- | ------------- | ---- |
-| **1** | Stability pools (live; → v3) | Pool shares; deposits are **haTokens** | Base yield / rebalance; manual claim |
+| **1** | Stability pools (live **v1/v2**; → **v3** on yield branch) | Live: compounding balances. **hp…** ERC-20 shares = **v3-only / pre-prod** | Base yield / rebalance; manual claim |
 | **2** | Compounder | Non-rebasing ERC-4626 **hc…**; `asset` = **haXXX** | Usable per-pool compounding |
 | **3** | HarborYield | **ERC-7575** share **hy…** + per-holding doors | Multi-holding basket; doors reuse ERC-4626 mutations without a separate door ERC-20 |
 | — | Harbor Swap | — | Routing support for level 3 (`compound` / `redistribute`), not a yield tier |

@@ -16,18 +16,18 @@ Placeholder: HY/keeper → Swapper_v1 → UniV3/Curve/Balancer or Velora. Design
 
 ## Two modes
 
-| Mode | Caller | How |
-| ---- | ------ | --- |
-| **Direct** | Hot path (`compound` on HarborYield) | On-chain `Swapper_v1` `(from, to) → executor`; no off-chain calldata |
-| **Aggregator** | Discretionary (`redistribute`) | Keeper supplies `routerData`; **role-gated on the consumer** (Harbor Yield `REDISTRIBUTOR_ROLE`), not on the adapter |
+| Mode | Caller | Slippage / floor |
+| ---- | ------ | ---------------- |
+| **Direct** | Hot path (`compound` on HarborYield) | Executor `minAmountOutPerUnitIn` (**rate** floor: out per 1e18 in spent) |
+| **Aggregator** | Discretionary (`redistribute`) | Consumer **absolute** `minAmountOut` (or equivalent); keeper supplies `routerData`; **role-gated on the consumer** |
 
-Adapters are callable; safety is **consumer role + `minAmountOut` + executor envelope**. Selector allowlists do not validate swap parameters.
+Adapters are callable; safety is **consumer role + the mode-appropriate minimum + executor envelope**. Do not assume the per-unit rate bound covers aggregator redistribute. Selector allowlists do not validate swap parameters.
 
 ## What to integrate (when addresses exist)
 
 1. Resolve `swapper` (CREATE3 key `swapper`) — do not hard-code; predict via Harbor deploy helpers.  
-2. Direct: `getRoute(from, to)` then executor `swap` with a real `minAmountOut`.  
-3. Aggregator: Velora Market API (`GET /prices`, `POST /transactions/:chainId`) with `userAddress` = adapter proxy; optional 1inch Pathfinder.  
+2. Direct: `getRoute(from, to)` then executor `swap` with a real `minAmountOutPerUnitIn`.  
+3. Aggregator: Velora Market API (`GET /prices`, `POST /transactions/:chainId`) with `userAddress` = adapter proxy; optional 1inch Pathfinder; set an absolute output floor on the Yield call.  
 4. Treat `routerData` as untrusted.
 
 CREATE3 keys and Velora/1inch notes: [Harbor Swap](../contracts/harbor-swap.md).

@@ -40,7 +40,7 @@ ETH-family entrypoints commonly include `zapNativeAsset`, `zapCollateral`, and `
 
 ## SDK helpers
 
-[`@harbor/sdk`](./sdk.md) `encodeZap.*` builds calldata for common genesis / minter paths once the market lists zap addresses. Prefer minter dry-runs for `minOut` when the zap has no dry-run.
+[`@harbor/sdk`](./sdk.md) `encodeZap.*` builds calldata for common genesis / minter paths once the market lists zap addresses. Do **not** treat a minter `*DryRun` alone as the zap’s end-to-end preview: prefer a zap-specific preview when the zap exposes one; otherwise set a **conservative** lower bound and separate minimums for the zap wrap leg and the minter leg (`minWrappedCollateralOut` / `minTokenOut`).
 
 ## Related
 

@@ -155,19 +155,6 @@
   },
   {
     "inputs": [],
-    "name": "leveragedToken",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "token",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "LEVERAGED_TOKEN",
     "outputs": [
       {

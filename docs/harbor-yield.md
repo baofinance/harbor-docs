@@ -10,7 +10,7 @@ Work lives in [`baofinance/harbor-yield`](https://github.com/baofinance/harbor-y
 
 ## Three participation levels
 
-Every path that uses a stability pool starts by minting Harbor tokens (**haTokens** and/or **hsTokens**). **Only haTokens** can be deposited into stability pools (collateral or Sail).
+Users must hold **haTokens** to use a stability pool. They may mint haTokens or acquire them through a market. **hsTokens** are not deposit assets.
 
 Both pool types earn **concentrated collateral yield** (and protocol revenue allocated to pools) on those haToken deposits — Sail is not rebalance-only. The pools differ on **rebalance payout**: collateral pool → **collateral**; Sail pool → **hsTokens**. See [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
 
@@ -33,7 +33,7 @@ What you do next is the level (product **1–3**; design doc uses **0–2** for 
 
 Today, amplified yield (level 1) means:
 
-1. Minting **haTokens** and/or **hsTokens**
+1. Holding **haTokens** (minted or bought) — and optionally **hsTokens**
 2. Depositing **haTokens** (only) into a collateral or Sail stability pool
 3. Periodically claiming collateral rewards and deciding what to do with them — and, on rebalance, receiving **collateral** or **hsTokens** back depending on the pool
 

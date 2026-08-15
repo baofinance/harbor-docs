@@ -49,7 +49,7 @@ Treat dry-run as the **quote API**. Decode returns **by position** (shapes diffe
 | **Taken / used / out** | Basis for `minOut`; near bands, `taken` may be less than `in` (partial). |
 | **Price / rate** | 18-decimal Harbor units — do not mix with 8-decimal Chainlink. |
 
-Re-quote in the same block as submission if CR is near a band edge (fees are path-dependent integrals).
+Re-quote **immediately before submission** if CR is near a band edge (fees are path-dependent integrals). A normal `eth_call` and the later mined transaction can land in different blocks — `minOut` remains the execution guard unless you use a transaction-bundled or on-chain quote.
 
 ## Approvals and tokens
 

@@ -16,22 +16,30 @@ export default function prismIncludeLanguages(
   } = siteConfig;
   const { additionalLanguages } = prism as { additionalLanguages?: string[] };
 
-  const PrismBefore = (globalThis as { Prism?: unknown }).Prism;
-  (globalThis as { Prism?: unknown }).Prism = PrismObject;
+  const globalWithPrism = globalThis as { Prism?: unknown };
+  const hadOwnPrism = Object.prototype.hasOwnProperty.call(
+    globalWithPrism,
+    "Prism"
+  );
+  const PrismBefore = globalWithPrism.Prism;
+  globalWithPrism.Prism = PrismObject;
 
-  additionalLanguages?.forEach((lang) => {
-    if (lang === "php") {
-      require("prismjs/components/prism-markup-templating.js");
+  try {
+    additionalLanguages?.forEach((lang) => {
+      if (lang === "php") {
+        require("prismjs/components/prism-markup-templating.js");
+      }
+      require(`prismjs/components/prism-${lang}`);
+    });
+
+    // Static requires so webpack bundles these (dynamic `prism-solidity` is not in the default context).
+    require("prismjs/components/prism-clike");
+    require("prismjs/components/prism-solidity");
+  } finally {
+    if (hadOwnPrism) {
+      globalWithPrism.Prism = PrismBefore;
+    } else {
+      delete globalWithPrism.Prism;
     }
-    require(`prismjs/components/prism-${lang}`);
-  });
-
-  // Static requires so webpack bundles these (dynamic `prism-solidity` is not in the default context).
-  require("prismjs/components/prism-clike");
-  require("prismjs/components/prism-solidity");
-
-  delete (globalThis as { Prism?: unknown }).Prism;
-  if (typeof PrismBefore !== "undefined") {
-    (globalThis as { Prism?: unknown }).Prism = PrismBefore;
   }
 }

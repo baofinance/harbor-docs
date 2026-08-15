@@ -2,6 +2,8 @@
 
 Machine-readable **address JSON** and **ABI JSON** ship under this docs site’s static integrator package. Market pages remain the human source of truth for proxies; bind to the **proxy**, not a historical implementation.
 
+**Availability:** `@harbor/sdk` **0.2.0** is installable from [GitHub](https://github.com/baofinance/harbor-sdk) (`npm install github:baofinance/harbor-sdk`). Address and ABI JSON below are **docs-hosted** from `static/integrators/`. npm registry publication of the SDK (and a future ABI npm package) is **pending**. There is **no** public REST/WebSocket API.
+
 ## Published package (mainnet v1)
 
 | Artifact | URL (docs host) |
@@ -14,16 +16,41 @@ Machine-readable **address JSON** and **ABI JSON** ship under this docs site’s
 | Stability pool manager ABI | [`/integrators/abis/StabilityPoolManager.json`](/integrators/abis/StabilityPoolManager.json) |
 | Genesis ABI | [`/integrators/abis/Genesis.json`](/integrators/abis/Genesis.json) |
 | Harbor price aggregator ABI | [`/integrators/abis/HarborPriceAggregator.json`](/integrators/abis/HarborPriceAggregator.json) |
+| Wrapped price oracle ABI | [`/integrators/abis/WrappedPriceOracle.json`](/integrators/abis/WrappedPriceOracle.json) |
 
 Local paths in this repo: `static/integrators/…`. The thin SDK ([`@harbor/sdk`](./sdk.md)) vendors the same address map and core ABIs.
+
+`HarborPriceAggregator.json` and `WrappedPriceOracle.json` currently publish the **same** Harbor view fragment (`latestAnswer` / `getPrice`). Use either name; prefer `HarborPriceAggregator` for aggregators and `WrappedPriceOracle` when matching minter `IWrappedPriceOracle` naming.
+
+`StabilityPoolManager.json` is intentionally **narrow**: `MINTER` + `Harvested` for harvest-event indexing. It does **not** expose the full pool registry or harvest entry points — use the market’s manager address with a full forge ABI (or expand this artifact later) if you need those calls.
 
 Each market entry includes `status`:
 
 | Status | Meaning |
 | ------ | ------- |
-| `live` | ETH / BTC / EUR families used in production UX |
-| `coming-soon` | USD (haUSD) — addresses on-chain; product surface soon |
+| `live` | Deployed mainnet markets (ETH / BTC / EUR / USD families with addresses published here) |
+| `coming-soon` | Reserved for stacks that are not yet address-complete in this package |
 | `relaunch-pending` | GOLD / SILVER / MCAP — do not treat as active product |
+
+## Address field notes
+
+| Field | Meaning |
+| ----- | ------- |
+| `wrappedCollateralToken` | Token the **minter** holds / pulls (e.g. fxSAVE, wstETH) |
+| `underlyingCollateralToken` | Unwrap / zap input when it differs from wrapped (e.g. stETH under wstETH) |
+| `collateralToken` | App/config alias for the collateral the UI labels — often equals wrapped **or** underlying depending on market; **prefer `wrappedCollateralToken` + `underlyingCollateralToken` for integrations** |
+| Zap / optional keys | `genesisZap`, `peggedTokenZap`, `leveragedTokenZap` may be omitted or empty when unused |
+| Zero address (`0x000…0`) | Historical placeholder (e.g. unused `rebalancePool*`) — **not** a deployed contract; treat as absent |
+
+Missing keys vs `0x000…0`: consumers should treat **absent keys** and **zero addresses** as “not deployed / not used” unless a market page says otherwise.
+
+## Market id key order
+
+Canonical integrator keys prefer **`<index>-<collateral>`** (e.g. `eth-fxusd`, `btc-steth`, `usd-steth`). Some live keys still use **`<collateral>-<index>`** (e.g. `steth-eur`, `steth-gold`) because they mirror [harbor-app](https://github.com/baofinance/harbor-app) today.
+
+**Follow-up for harbor-app:** normalize app `marketId`s to the same **index-collateral** order as this address book (or the reverse — one order everywhere), then publish aliases for every renamed former key. Until then, use `marketIdAliases` and the per-market page keys; do not invent a third spelling.
+
+**Market id aliases:** app `steth-usd` / `wbtc-usd` ↔ integrator JSON `usd-steth` / `usd-wbtc` (`marketIdAliases` in [`mainnet-v1.json`](/integrators/addresses/mainnet-v1.json)).
 
 ## Other address sources
 
@@ -35,8 +62,6 @@ Each market entry includes `status`:
 | [Zap contracts](../contracts/zap.md) | Genesis / minter zap addresses |
 | [Harbor Swap](../contracts/harbor-swap.md) | Routing registry (Yield / keepers) |
 | [Price oracle inventories](../contracts/price-oracles/mainnet.md) | Aggregator addresses (prefer **market-wired** on the pair page when inventory lists an alias) |
-
-**Market id aliases:** app `steth-usd` / `wbtc-usd` ↔ integrator JSON `usd-steth` / `usd-wbtc` (`marketIdAliases` in [`mainnet-v1.json`](/integrators/addresses/mainnet-v1.json)).
 
 ## ABI notes
 

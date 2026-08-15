@@ -51,7 +51,8 @@ const approve = harbor.encodeTx.approveWrappedCollateral({
 const mint = harbor.encodeTx.mintPeggedToken({
   marketId: "eth-fxusd",
   wrappedCollateralIn: quote.wrappedCollateralIn,
-  receiver: "0xYourReceiver",
+  // Placeholder checksum address — replace with the real receiver
+  receiver: "0x0000000000000000000000000000000000000001",
   minPeggedOut: quote.minOut,
 });
 ```
@@ -76,7 +77,7 @@ Default `minOut` uses **50 bps** slippage off the dry-run out amount; override p
 harbor.encodeZap.minterCollateralToToken({
   marketId: "eth-fxusd",
   side: "pegged",
-  receiver: "0x…",
+  receiver: "0x0000000000000000000000000000000000000001",
   collateralAmount: 1_000_000n,
   minWrappedCollateralOut: 0n,
   minTokenOut: quote.minOut,
@@ -88,16 +89,20 @@ Also: `genesisNativeAsset`, `genesisCollateral`, `minterNativeToToken` (ETH rail
 ### Harbor Swap (Yield / keepers)
 
 ```ts
+import type { HexAddress } from "@harbor/sdk";
+
 const harbor = createHarborClient({
   publicClient,
-  swapper: "0x…", // Swapper_v1 once published
+  swapper: "0x0000000000000000000000000000000000000001", // Swapper_v1 once published
 });
+const from = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" as HexAddress; // USDC
+const to = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" as HexAddress; // WETH
 const route = await harbor.swap!.getRoute(from, to);
 const tx = await harbor.swap!.encodeRouteSwap({
   fromToken: from,
   toToken: to,
   amountIn: 10n ** 18n,
-  minAmountOutPerUnitIn: 0n, // rate floor; see ISwapExecutor
+  minAmountOutPerUnitIn: 0n, // rate floor on direct executors; see ISwapExecutor
 });
 ```
 
@@ -110,6 +115,8 @@ Not shipped: Chainlink-shaped [oracle adapters](./oracle-adapters.md).
 Use the address-book keys (examples): `eth-fxusd`, `btc-fxusd`, `btc-steth`, `steth-eur`, `fxusd-eur`. Filter with `listMarkets("live")`. Check `market.status` before production use.
 
 **Alias:** the app `marketId` for haUSD/stETH is **`steth-usd`**. The integrator address book uses **`usd-steth`** for the same market. Treat them as the same stack; prefer the key your SoT publishes (`getMarket("usd-steth")` in `@harbor/sdk`, `steth-usd` in harbor-app).
+
+**Key-order follow-up:** some keys are `<index>-<collateral>` and others `<collateral>-<index>`. [harbor-app](https://github.com/baofinance/harbor-app) should normalize to one order (prefer index-collateral) and keep aliases for former keys — see [Addresses and ABIs](./addresses-and-abis.md#market-id-key-order).
 
 ## Related cookbooks
 

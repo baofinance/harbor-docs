@@ -14,7 +14,7 @@ Harbor Protocol is built on a modular architecture with several core contracts t
 
 ## Documentation Structure
 
-- **[Integrators](./integrators/index.md)**: Sequenced path for external protocols (no REST SDK yet — use on-chain dry-runs)
+- **[Integrators](./integrators/index.md)**: Sequenced path for external protocols — `@harbor/sdk` on GitHub (npm pending); docs-hosted address/ABI JSON; **no** public REST/WebSocket API
 - **[Coverage audit](./coverage.md)**: Repo / PR checklist — what is documented vs still missing
 - **Contracts**: Core contracts including [Zap](./contracts/zap.md), [Harbor Yield](/tech-docs/contracts/harbor-yield), and [Harbor Swap](/tech-docs/contracts/harbor-swap)
 - **Markets**: Every deployed market uses the same page layout — copy an existing market page when adding a new one; [generic CREATE3 registry](./markets/generic.md)

@@ -9,6 +9,8 @@ Mainnet hosts the largest number of Harbor price oracles, including v3, v4, and 
 
 Oracles are grouped the same way as [markets](/tech-docs/markets/generic): by **haToken**, then one page per collateral (plus related hs / sUSDe / deprecated feeds under that haToken).
 
+When a pair lists both a **market-wired** address (on the minter / market page) and an **inventory-only** alias, treat the **market-wired** address as primary for integrations. Keep inventory-only addresses as secondary references.
+
 To add a new aggregator: add `mainnet/<hatoken>/<collateral>.md`, update that haToken `index.md`, and add a sidebar entry.
 
 ## By haToken

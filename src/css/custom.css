@@ -224,12 +224,13 @@ h6 {
   color: #1e4775;
 }
 
-/* Body text - charcoal for readability */
+/* Body text - charcoal for readability (scoped; do not paint layout/code divs) */
 p,
 li,
 td,
 th,
-div {
+.markdown,
+.theme-doc-markdown {
   color: #333333;
 }
 
@@ -259,6 +260,7 @@ a:hover {
 /* Code blocks: One Dark, Harbor-navy adjacent */
 .theme-code-block {
   --prism-background-color: #282c34;
+
   box-shadow: none;
   border: 1px solid rgba(30, 71, 117, 0.45);
 }

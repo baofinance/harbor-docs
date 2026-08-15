@@ -15,12 +15,12 @@ Live pools are **StabilityPool_v1 / v2** (compounding balances). **ERC-20 pool s
 
 ## Deposit
 
-1. User calls `deposit(amount)` / `deposit(amount, receiver)` with **ha**.  
+1. User calls `deposit(assetAmount, receiver, minAmount)` with **ha** (`type(uint256).max` = full balance for `minAmount` when accepting any credited amount).  
 2. Pool pulls ha from the sender and credits the receiver’s **compounding ha balance**.  
 3. No stake-token mint and no gauge stake on live v1/v2.  
-4. `Deposited` (or equivalent) is emitted.
+4. `Deposit` is emitted (`owner`, `receiver`, `amount`).
 
-```
+```text
 User deposits 100 ha
 ↓
 Pool ha balance of user += 100 (subject to loss product accounting)
@@ -30,7 +30,7 @@ User may later claim separate reward tokens if any accrued
 
 ## Withdrawal
 
-1. User calls `withdraw` for an **ha amount** (not “burn stake tokens”).  
+1. User calls `withdraw(assetAmount, receiver, minAmount)` for an **ha amount** (not “burn stake tokens”).  
 2. Live pools may enforce a **request / delay window** and early-withdrawal fees (see pool page).  
 3. ha is returned to the user; balance decreases.  
 4. Unclaimed **reward tokens** remain claimable via `claim` / `claimable` — they are not “unstaked from a gauge.”

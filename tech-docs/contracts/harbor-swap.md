@@ -50,12 +50,12 @@ flowchart LR
 
 ## Two execution modes
 
-| Mode | Typical caller | How |
-| ---- | -------------- | --- |
-| **Direct** | Hot path (`HarborYield.compound`) | On-chain route registry → executor `swap` (no off-chain calldata) |
-| **Aggregator** | Discretionary (`redistribute`) | Keeper builds opaque `routerData`; role-gated on Harbor Yield (`REDISTRIBUTOR_ROLE`) |
+| Mode | Typical caller | Slippage / floor |
+| ---- | -------------- | ---------------- |
+| **Direct** | Hot path (`HarborYield.compound`) | Executor envelope: `minAmountOutPerUnitIn` — **rate** floor (out per 1e18 in **spent**) |
+| **Aggregator** | Discretionary (`redistribute`) | Consumer-provided **absolute** `minAmountOut` (or equivalent) on the Yield/redistribute call; opaque `routerData` to Velora / 1inch |
 
-Authorization for aggregators lives on the **consumer** (Harbor Yield), not inside the open-access adapter. Selector allowlists do **not** validate swap parameters — treat calldata as untrusted and rely on the executor envelope + `minAmountOutPerUnitIn`.
+Authorization for aggregators lives on the **consumer** (Harbor Yield), not inside the open-access adapter. Selector allowlists do **not** validate swap parameters — treat calldata as untrusted. Rely on the **direct** executor’s `minAmountOutPerUnitIn` for registry routes, and on the **absolute** output minimum for aggregator redistribute paths — do not assume the per-unit rate bound covers both modes.
 
 ### Velora (primary)
 

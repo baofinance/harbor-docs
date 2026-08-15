@@ -37,7 +37,7 @@ There is **no** public `burnPeggedToken` / `burnLeveragedToken`. Exit with **red
 
 ### Illustrative ha mint (not a quote)
 
-```
+```text
 User holds 10 wrapped collateral units
 ↓
 mintPeggedTokenDryRun(10e18) → incentiveRatio, wrappedFee, taken, peggedMinted, price, rate

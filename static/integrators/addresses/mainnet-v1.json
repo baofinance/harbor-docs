@@ -9,7 +9,7 @@
     "harbor-app/harbor-app-1/src/config/contracts.ts (live + relaunch-pending)",
     "harbor-docs/tech-docs/markets/hausd/* (usd-*)"
   ],
-  "note": "Bind to proxy addresses. Market pages remain the human SoT. App marketId steth-usd == integrator key usd-steth (see marketIdAliases).",
+  "note": "Bind to proxy addresses. Market pages remain the human SoT. App marketId steth-usd == integrator key usd-steth (see marketIdAliases). Prefer canonical key order <index>-<collateral>; some keys still use <collateral>-<index> to match harbor-app — harbor-app should normalize to one order and keep aliases for former keys.",
   "markets": {
     "eth-fxusd": {
       "id": "eth-fxusd",
@@ -309,7 +309,7 @@
       "id": "usd-steth",
       "name": "stETH - USD",
       "startBlock": null,
-      "status": "coming-soon",
+      "status": "live",
       "addresses": {
         "minter": "0xC14837C30BEdF3081cBa2cDeB067fA6F0381e69b",
         "peggedToken": "0x2536A8636A99466173229AB15fdb37Fcaa05BA1A",
@@ -334,7 +334,7 @@
       "id": "usd-wbtc",
       "name": "wBTC - USD",
       "startBlock": null,
-      "status": "coming-soon",
+      "status": "live",
       "addresses": {
         "minter": "0x0aA2b6Ee6D079f39A52725B33B15854505542B51",
         "peggedToken": "0x2536A8636A99466173229AB15fdb37Fcaa05BA1A",
