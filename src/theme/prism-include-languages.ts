@@ -1,5 +1,13 @@
 import siteConfig from "@generated/docusaurus.config";
 
+/**
+ * Registers Prism language grammars used in Harbor docs code blocks.
+ *
+ * Loads `themeConfig.prism.additionalLanguages` plus Solidity (`prism-clike` /
+ * `prism-solidity`) via static requires so webpack can bundle them.
+ *
+ * @param PrismObject - Prism instance provided by Docusaurus / prism-react-renderer
+ */
 export default function prismIncludeLanguages(
   PrismObject: typeof import("prismjs")
 ): void {
