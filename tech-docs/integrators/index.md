@@ -39,7 +39,9 @@ Shipped as [`@harbor/sdk`](./sdk.md) ([baofinance/harbor-sdk](https://github.com
 | `quoteMint` / `quoteRedeem` | `*DryRun` views on the minter |
 | `encodeTx` | `mint*` / `redeem*` + ERC-20 `approve` |
 | `encodeZap` | Genesis / minter zap calldata |
-| `swap.getRoute` / `encodeSwap` | `Swapper_v1` + executor (pass `swapper` address) |
+| `swap.getRoute` | Lookup `(from, to)` on `Swapper_v1` (pass `swapper` into the client) |
+| `swap.encodeSwap` | Encode a call to a **supplied** executor |
+| `swap.encodeRouteSwap` | `getRoute` then encode that executor (convenience) |
 
 Still eng follow-on: Chainlink-shaped [oracle adapters](./oracle-adapters.md); npm registry publish of `@harbor/sdk`. There is **no** public REST/WebSocket API.
 

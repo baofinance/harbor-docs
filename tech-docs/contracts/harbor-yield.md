@@ -18,7 +18,7 @@ These rules apply at every level that touches a stability pool (or its Compounde
 | **Pool deposit (SP_v3 / pre-prod)** | Same ha-only rule; receive rebasing **hp…** ERC-20 shares — **not** live UX yet |
 | **Compounder deposit** | ERC-4626 `deposit()` takes **haXXX** (`asset()` = pegged token). Optional `depositStabilityPool` wraps an existing pool position — **pre-prod** |
 | **Pool yield** | **Both** pools accrue concentrated collateral yield / harvest + revenue share on haToken deposits |
-| **Rebalance payout** | Collateral pool → **collateral**; Sail pool → **hsTokens** (deposited haTokens are burned). **hsTokens** do not earn concentrated yield on their own |
+| **Rebalance payout** | Collateral pool → **wrapped collateral** (e.g. fxSAVE / wstETH); Sail pool → **hsTokens** (deposited haTokens are burned). **hsTokens** do not earn concentrated yield on their own |
 
 Product UX: [Harbor Yield](/harbor-yield). Live pool behaviour: [Stability pool](./stability-pool.md).
 

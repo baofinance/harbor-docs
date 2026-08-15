@@ -2,7 +2,7 @@
 
 Machine-readable **address JSON** and **ABI JSON** ship under this docs site’s static integrator package. Market pages remain the human source of truth for proxies; bind to the **proxy**, not a historical implementation.
 
-**Availability:** `@harbor/sdk` **0.2.0** is installable from [GitHub](https://github.com/baofinance/harbor-sdk) (`npm install github:baofinance/harbor-sdk`). Address and ABI JSON below are **docs-hosted** from `static/integrators/`. npm registry publication of the SDK (and a future ABI npm package) is **pending**. There is **no** public REST/WebSocket API.
+**Availability:** `@harbor/sdk` **0.2.0** is installable from [GitHub](https://github.com/baofinance/harbor-sdk) (`npm install github:baofinance/harbor-sdk#f7dcd51853bf1efa083d3149b3b90dc710525f1a`). Address and ABI JSON below are **docs-hosted** from `static/integrators/`. npm registry publication of the SDK (and a future ABI npm package) is **pending**. There is **no** public REST/WebSocket API.
 
 ## Published package (mainnet v1)
 
@@ -43,6 +43,8 @@ Each market entry includes `status`:
 | Zero address (`0x000…0`) | Historical placeholder (e.g. unused `rebalancePool*`) — **not** a deployed contract; treat as absent |
 
 Missing keys vs `0x000…0`: consumers should treat **absent keys** and **zero addresses** as “not deployed / not used” unless a market page says otherwise.
+
+`startBlock`: integer when known; **`null`** when the deployment block is unknown (e.g. some relaunch-pending or USD entries). Consumers must handle `null` explicitly — do not treat it as block `0`.
 
 ## Market id key order
 

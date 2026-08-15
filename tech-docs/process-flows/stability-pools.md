@@ -19,7 +19,7 @@ Placeholder: live SP lifecycle (deposit ha → compounding balance → claim rew
 
 ## Deposit
 
-1. User calls `deposit(assetAmount, receiver, minAmount)` with **ha** (`type(uint256).max` = full balance for `minAmount` when accepting any credited amount).  
+1. User calls `deposit(assetAmount, receiver, minAmount)` with **ha**. Use `type(uint256).max` for **`assetAmount`** to deposit the full balance; set **`minAmount`** to `0` or a quoted lower bound (not the max sentinel).  
 2. Pool pulls ha from the sender and credits the receiver’s **compounding ha balance**.  
 3. No stake-token mint and no gauge stake on live v1/v2.  
 4. `Deposit` is emitted (`owner`, `receiver`, `amount`).
@@ -53,7 +53,7 @@ Users claim rewards explicitly. Withdrawals move ha; they do not substitute for 
 Coordinated by [Stability pool manager](../contracts/stability-pool-manager.md):
 
 1. CR below threshold → `rebalance(bountyReceiver, minPeggedLiquidated)`.  
-2. Pools contribute ha (burned); manager mints / routes payout tokens.  
+2. Manager sweeps ha from pools and **redeems** via the minter (`freeRedeemPeggedToken`); payout tokens are routed back to each pool.  
 3. Collateral pool: **wrapped collateral** via `notifyLiquidation` / reward path.  
 4. Sail pool: **hs (leveraged)** via the same pattern.  
 5. Depositors’ ha balances adjust via the loss product; payout tokens accrue as claimable rewards.

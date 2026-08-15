@@ -101,7 +101,7 @@ App-wired addresses for the mainnet USD stack (`contracts.mainnetUsd.ts`). Earli
 
 ## Market Integration
 
-Prefer the inventory address on each pair page. Where the live app still wires a legacy alias (notably early ETH/BTC markets), both addresses are listed on the pair detail page. Consumers:
+Prefer the **market-wired** address on each pair / market page as the primary integration target. Where an **inventory-only** alias is also listed (notably some early ETH/BTC markets), treat it as a secondary reference only. Consumers:
 
 | Oracle pair | Market doc(s) |
 | ----------- | ------------- |

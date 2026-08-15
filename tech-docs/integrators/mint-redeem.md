@@ -27,7 +27,7 @@ Prefer wrapped collateral when integrating another protocol (fewer moving parts,
 minter.mintPeggedTokenDryRun(wrappedCollateralIn)
 ```
 
-Returns incentive ratio, fees, output amounts, price, and rate (see minter page). If the ratio is **1e18**, the action is **disallowed** at the current CR — do not send the tx.
+Returns incentive ratio, fees, output amounts, price, and rate (see minter page). Abort without sending the tx if the ratio is **1e18** (disallowed at the current CR) **or** any relevant taken / used / out amount is **0**.
 
 4. Set `minPeggedOut` from the dry-run output with your slippage buffer.  
 5. Execute:

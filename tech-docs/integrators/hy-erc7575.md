@@ -18,7 +18,7 @@ Placeholder: ERC-7575 share + doors (hy share center, doors per asset; Compounde
 | **hyTOKEN share** (`hyXXX`) | `HarborYield_v1` | **ERC-7575 share** (+ ERC-20 / EIP-2612) | Multi-asset basket share. **Not** ERC-4626 — a single `asset()` would be a lie. Discovers doors via `vault(asset)`. |
 | **hy entry/exit door** | `HarborYieldEntry_v1` | **ERC-7575 vault** = ERC-4626 **minus** ERC-20 | One door per holding. `share()` → `hyXXX`. Deposit/redeem that door’s `asset()`; doors mint/burn the shared hy share. |
 
-**hyTOKEN is ERC-7575, not ERC-4626.** The doors reuse the familiar ERC-4626 mutation surface (`deposit` / `mint` / `withdraw` / `redeem` / `preview*`), but the **share token is split out** onto `hyXXX` (ERC-7575’s share/vault split). Approvals for exits go to **hyXXX**, not the door.
+**hyTOKEN is ERC-7575, not ERC-4626.** The doors reuse the familiar ERC-4626 mutation surface (`deposit` / `mint` / `withdraw` / `redeem` / `preview*`), but the **share token is split out** onto `hyXXX` (ERC-7575’s share/vault split). For exits, approve **hyXXX shares** with the discovered **door as spender** (`IERC20(hyXXX).approve(door, shares)`), then call `redeem` / `withdraw` on the door.
 
 ```text
 door = IERC7575Share(hyXXX).vault(asset)   // discovery

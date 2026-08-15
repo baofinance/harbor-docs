@@ -15,7 +15,7 @@ Addresses and ABIs match the docs-hosted package: [Addresses and ABIs](./address
 ## Install
 
 ```bash
-npm install github:baofinance/harbor-sdk viem
+npm install github:baofinance/harbor-sdk#f7dcd51853bf1efa083d3149b3b90dc710525f1a viem
 ```
 
 After npm publish:
@@ -67,20 +67,28 @@ const mint = harbor.encodeTx.mintPeggedToken({
 | `quoteMint` / `quoteRedeem` | `*DryRun` (`allowed` is false when incentive ratio is `1e18`) |
 | `encodeTx.*` | `mint*` / `redeem*` + ERC-20 `approve` |
 | `encodeZap.*` | Genesis / minter zap calldata (market must list zap addresses) |
-| `swap.getRoute` / `encodeSwap` | Harbor Swap registry + executor — pass `swapper` into `createHarborClient` |
+| `swap.getRoute` / `encodeSwap` / `encodeRouteSwap` | Harbor Swap: lookup route; encode a supplied executor; or resolve-then-encode — pass `swapper` into `createHarborClient` |
 
 Default `minOut` uses **50 bps** slippage off the dry-run out amount; override per call.
 
 ### Zaps
 
 ```ts
+const zapCollateralIn = 1_000_000n; // e.g. 1 USDC (6 decimals) on a USDC rail
+// Prefer a zap-specific preview when available. Otherwise:
+// - wrap leg: set a conservative minWrappedCollateralOut
+// - minter leg: quoteMint / *DryRun for the same market+side after converting to wrapped units
+const mintQuote = await harbor.quoteMint("eth-fxusd", {
+  side: "pegged",
+  wrappedCollateralIn: /* wrapped amount expected from the wrap leg */ 10n ** 18n,
+});
 harbor.encodeZap.minterCollateralToToken({
   marketId: "eth-fxusd",
   side: "pegged",
   receiver: "0x0000000000000000000000000000000000000001",
-  collateralAmount: 1_000_000n,
-  minWrappedCollateralOut: 0n,
-  minTokenOut: quote.minOut,
+  collateralAmount: zapCollateralIn,
+  minWrappedCollateralOut: 0n, // replace with wrap-leg floor
+  minTokenOut: mintQuote.minOut, // minter-leg floor from that quote, not an unrelated mint
 });
 ```
 
@@ -97,12 +105,16 @@ const harbor = createHarborClient({
 });
 const from = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" as HexAddress; // USDC
 const to = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" as HexAddress; // WETH
+const amountIn = 1_000_000n; // 1 USDC (6 decimals)
 const route = await harbor.swap!.getRoute(from, to);
+// Derive a nonzero rate floor from an off-chain quote + slippage (illustrative 50 bps):
+// minAmountOutPerUnitIn ≈ expectedOut * 1e18 / amountIn * 9950 / 10000
+const minAmountOutPerUnitIn = 995_000_000_000_000_000n; // replace with quote-derived floor
 const tx = await harbor.swap!.encodeRouteSwap({
   fromToken: from,
   toToken: to,
-  amountIn: 10n ** 18n,
-  minAmountOutPerUnitIn: 0n, // rate floor on direct executors; see ISwapExecutor
+  amountIn,
+  minAmountOutPerUnitIn,
 });
 ```
 

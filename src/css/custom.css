@@ -224,13 +224,13 @@ h6 {
   color: #1e4775;
 }
 
-/* Body text - charcoal for readability (scoped; do not paint layout/code divs) */
-p,
-li,
-td,
-th,
-.markdown,
-.theme-doc-markdown {
+/* Body text - charcoal for readability (light theme only; do not paint layout/code divs) */
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] td,
+[data-theme="light"] th,
+[data-theme="light"] .markdown,
+[data-theme="light"] .theme-doc-markdown {
   color: #333333;
 }
 

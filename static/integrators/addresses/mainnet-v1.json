@@ -9,7 +9,7 @@
     "harbor-app/harbor-app-1/src/config/contracts.ts (live + relaunch-pending)",
     "harbor-docs/tech-docs/markets/hausd/* (usd-*)"
   ],
-  "note": "Bind to proxy addresses. Market pages remain the human SoT. App marketId steth-usd == integrator key usd-steth (see marketIdAliases). Prefer canonical key order <index>-<collateral>; some keys still use <collateral>-<index> to match harbor-app — harbor-app should normalize to one order and keep aliases for former keys.",
+  "note": "Bind to proxy addresses. Market pages remain the human SoT. App marketId steth-usd == integrator key usd-steth (see marketIdAliases). Prefer canonical key order <index>-<collateral>; some keys still use <collateral>-<index> to match harbor-app \u2014 harbor-app should normalize to one order and keep aliases for former keys.",
   "markets": {
     "eth-fxusd": {
       "id": "eth-fxusd",
@@ -152,7 +152,7 @@
     "fxusd-gold": {
       "id": "fxusd-gold",
       "name": "fxUSD - GOLD",
-      "startBlock": 0,
+      "startBlock": null,
       "addresses": {
         "wrappedCollateralToken": "0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39",
         "collateralToken": "0x085780639CC2cACd35E474e71f4d000e2405d8f6",
@@ -179,7 +179,7 @@
     "steth-gold": {
       "id": "steth-gold",
       "name": "stETH - GOLD",
-      "startBlock": 0,
+      "startBlock": null,
       "addresses": {
         "wrappedCollateralToken": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
         "collateralToken": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
@@ -206,7 +206,7 @@
     "fxusd-silver": {
       "id": "fxusd-silver",
       "name": "fxUSD - SILVER",
-      "startBlock": 0,
+      "startBlock": null,
       "addresses": {
         "wrappedCollateralToken": "0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39",
         "collateralToken": "0x085780639CC2cACd35E474e71f4d000e2405d8f6",
@@ -233,7 +233,7 @@
     "steth-silver": {
       "id": "steth-silver",
       "name": "stETH - SILVER",
-      "startBlock": 0,
+      "startBlock": null,
       "addresses": {
         "wrappedCollateralToken": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
         "collateralToken": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
@@ -260,7 +260,7 @@
     "steth-mcap": {
       "id": "steth-mcap",
       "name": "stETH - MCAP",
-      "startBlock": 0,
+      "startBlock": null,
       "addresses": {
         "wrappedCollateralToken": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
         "collateralToken": "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
@@ -284,7 +284,7 @@
     "fxusd-mcap": {
       "id": "fxusd-mcap",
       "name": "fxUSD - MCAP",
-      "startBlock": 0,
+      "startBlock": null,
       "addresses": {
         "wrappedCollateralToken": "0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39",
         "collateralToken": "0x085780639CC2cACd35E474e71f4d000e2405d8f6",

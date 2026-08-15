@@ -23,7 +23,7 @@
     "package": "@harbor/sdk",
     "version": "0.2.0",
     "repo": "https://github.com/baofinance/harbor-sdk",
-    "install": "npm install github:baofinance/harbor-sdk",
+    "install": "npm install github:baofinance/harbor-sdk#f7dcd51853bf1efa083d3149b3b90dc710525f1a",
     "status": "github-published; npm pending"
   }
 }

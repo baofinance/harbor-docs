@@ -49,11 +49,11 @@ flowchart LR
 
     StabilityPoolCollateral -->|ASSET_TOKEN ha| PeggedToken
     StabilityPoolCollateral -->|LIQUIDATION_TOKEN| WrappedCollateral
-    StabilityPoolCollateral -->|notifyLiquidation| StabilityPoolManager
+    StabilityPoolManager -->|notifyLiquidation| StabilityPoolCollateral
 
     StabilityPoolSail -->|ASSET_TOKEN ha| PeggedToken
     StabilityPoolSail -->|LIQUIDATION_TOKEN hs| LeveragedToken
-    StabilityPoolSail -->|notifyLiquidation| StabilityPoolManager
+    StabilityPoolManager -->|notifyLiquidation| StabilityPoolSail
 ```
 
 :::note

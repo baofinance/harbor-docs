@@ -76,7 +76,7 @@ For detailed information, explore the sections below or start with our [Technica
 - [Stability Pools](/stability-pools) - Learn about system security and yield
 - [How Yield is Generated](/yield) - Understand the yield concentration mechanism
 - [Maiden Voyage](/maiden-voyage) - How new markets are launched
-- [Harbor Yield](/harbor-yield) - Three levels: stability pool, Compounder (ERC-4626), hyTOKEN (ERC-7575) (mid-term)
+- [Harbor Yield](/harbor-yield) - Level 1 stability pools (live); Levels 2–3 are sibling mid-term products: Compounder (ERC-4626) and hyTOKEN (ERC-7575)
 - [Supporting Features](/supporting-features) - Price aggregators and zaps
 - [TIDE Token](/tide-token/overview) - Governance, incentives and buyback-driven value accrual
 - [Roadmap](/roadmap) - Protocol development plans

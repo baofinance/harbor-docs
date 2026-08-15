@@ -35,7 +35,7 @@ ETH-family entrypoints commonly include `zapNativeAsset`, `zapCollateral`, and `
 
 1. Read `genesisZap` / `peggedTokenZap` / `leveragedTokenZap` from the market page (or app config). Empty / “none” means **no zap** — deposit wrapped collateral.  
 2. Approve the **input token** to the zap (except native ETH `msg.value` paths).  
-3. Set slippage / min-out the same way you would for a mint dry-run — if the zap has no dry-run, preview via the **minter** `*DryRun` after converting amounts to wrapped units.  
+3. Set slippage / min-out **per leg**. Prefer a zap-specific preview. If the zap exposes none, use the **minter** `*DryRun` for the **minter** leg only (after converting to wrapped units), and set a separate conservative minimum for the wrap leg — see [SDK helpers](#sdk-helpers).  
 4. Pegged and leveraged minter zaps are often the **same contract** (`peggedTokenZap` = `leveragedTokenZap`).
 
 ## SDK helpers

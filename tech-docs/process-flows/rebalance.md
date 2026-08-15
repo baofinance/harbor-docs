@@ -31,12 +31,12 @@ stabilityPoolManager.rebalance(bountyReceiver, minPeggedLiquidated);
 
 - Checks CR is below the rebalance threshold (reverts otherwise).  
 - `minPeggedLiquidated` is a **slippage / minimum burn** guard (not a “max rebalance” circuit breaker).  
-- Caller / `bountyReceiver` receives a **rebalance bounty** cut of the payout tokens (configured `rebalanceBountyRatio`).
+- The explicitly supplied **`bountyReceiver`** receives a **rebalance bounty** cut of the payout tokens (configured `rebalanceBountyRatio`) — not necessarily `msg.sender`.
 
 ### 2. Burn ha from pools
 
 - Manager pulls ha from the **collateral** and **Sail** stability pools (fee-free path via `ZERO_FEE_ROLE`).  
-- ha is burned / redeemed through the minter so system pegged supply falls and CR rises.  
+- ha is redeemed through the minter (`freeRedeemPeggedToken`) so system pegged supply falls and CR rises.  
 - Each pool’s ha balances scale down via the **loss product**.
 
 ### 3. Pay out rebalance tokens
@@ -46,18 +46,19 @@ stabilityPoolManager.rebalance(bountyReceiver, minPeggedLiquidated);
 | Collateral stability pool | **Wrapped collateral** (e.g. fxSAVE, wstETH) |
 | Sail stability pool | **hs (leveraged)** |
 
-Payouts are attributed to the pools via `notifyLiquidation` / reward deposit paths. Depositors accrue them as **claimable** rewards — they do **not** auto-mint into the user’s ha balance. Claim with `claim()` / `claimable`.
+After the bounty to `bountyReceiver`, remaining wrapped collateral / hs is transferred to the pools and attributed via `notifyLiquidation` / reward deposit paths. Depositors accrue them as **claimable** rewards — they do **not** auto-mint into the user’s ha balance. Claim with `claim()` / `claimable`.
 
-### 4. Protocol cut
+### 4. Bounty only (no feeReceiver cut on rebalance)
 
-A configured cut may go to `feeReceiver` (see SPM). Remaining bounty goes to `bountyReceiver`.
+Rebalance pays the configured **bounty** to `bountyReceiver`. Protocol `feeReceiver` cuts apply on **harvest**, not on this rebalance path.
 
 ## Illustrative example
 
 - System CR drops below threshold (e.g. 130% → 120%).  
-- Keeper calls `rebalance(keeper, minPeggedLiquidated)`.  
-- ha is taken from both pools and burned.  
-- Collateral pool depositors can later claim wrapped collateral; Sail depositors can claim hs — proportional to pool accounting, after bounty/cut.
+- Keeper calls `rebalance(keeper, minPeggedLiquidated)` (or any `bountyReceiver`).  
+- ha is taken from both pools and redeemed via the minter.  
+- Bounty tokens go to `bountyReceiver`; remaining wrapped collateral / hs return to the pools.  
+- Collateral pool depositors can later claim wrapped collateral; Sail depositors can claim hs — proportional to pool accounting.
 
 ## What this is not
 
