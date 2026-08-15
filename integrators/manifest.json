@@ -1,0 +1,29 @@
+{
+  "name": "@harbor/integrators-artifacts",
+  "version": "1.0.0",
+  "description": "Harbor integrator address maps and ABIs (Ethereum mainnet). Docs-hosted until eng publishes an npm package.",
+  "chainId": 1,
+  "addresses": {
+    "mainnet-v1": "/integrators/addresses/mainnet-v1.json"
+  },
+  "abis": {
+    "Minter": "/integrators/abis/Minter.json",
+    "ERC20": "/integrators/abis/ERC20.json",
+    "StabilityPool": "/integrators/abis/StabilityPool.json",
+    "StabilityPoolManager": "/integrators/abis/StabilityPoolManager.json",
+    "Genesis": "/integrators/abis/Genesis.json",
+    "HarborPriceAggregator": "/integrators/abis/HarborPriceAggregator.json",
+    "WrappedPriceOracle": "/integrators/abis/WrappedPriceOracle.json"
+  },
+  "oracleAdapters": {
+    "status": "not-deployed",
+    "spec": "/tech-docs/integrators/oracle-adapters"
+  },
+  "sdk": {
+    "package": "@harbor/sdk",
+    "version": "0.2.0",
+    "repo": "https://github.com/baofinance/harbor-sdk",
+    "install": "npm install github:baofinance/harbor-sdk#f7dcd51853bf1efa083d3149b3b90dc710525f1a",
+    "status": "github-published; npm pending"
+  }
+}
