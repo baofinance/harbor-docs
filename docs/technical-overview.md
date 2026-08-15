@@ -4,6 +4,10 @@ sidebar_position: 3
 
 # Technical Overview
 
+:::note Graphics (design)
+Placeholder: three-claim diagram — collateral vs ha+hs NAV (100% efficiency) vs system CR (~130%). Design team to supply.
+:::
+
 ## Core Mechanics
 
 At its heart, Harbor operates as a **decentralized platform for creating and trading synthetic assets** — tokens that mirror the value of real-world or digital assets without needing direct custody of those assets. Each market functions as a shared collateralized debt position (CDP) with **100% collateral efficiency**: the combined NAV of **haTokens + hsTokens** equals the value of deposited collateral (subject to fees). That is **not** the same as minting haTokens 1:1 against collateral alone — hsTokens are the residual equity claim — and it is **not** the system **collateral ratio** (collateral value ÷ haToken value, e.g. **~130%**), which gates rebalancing.

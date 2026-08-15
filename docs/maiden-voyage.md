@@ -8,6 +8,10 @@ To launch new markets efficiently and fairly, Harbor uses **Maiden Voyage** — 
 
 **Maiden Voyage 2.0** is the starting point for new synthetic markets on Harbor. Live voyages and archived campaigns are listed in the app: [Maiden Voyage 2.0](https://app.harborfinance.io/genesis).
 
+:::note Graphics (design)
+Placeholder: voyage timeline (deposit while capped → launch claim ha/hs → ongoing Yield Share carve-out). Design team to supply.
+:::
+
 ## How Maiden Voyage 2.0 Works
 
 ### 1. Users Deposit While Capacity Lasts

@@ -8,6 +8,10 @@ Harbor Protocol is built on a robust and secure architecture that enables the cr
 
 Integrators: sequenced contract path in [Build on Harbor](/tech-docs/integrators).
 
+:::note Graphics (design)
+Placeholder: high-level system map (oracle → minter/tokens → two stability pools → fee/TIDE path). Design team to supply.
+:::
+
 ## System Components
 
 ### 1. Price Oracle for Pegged Tokens

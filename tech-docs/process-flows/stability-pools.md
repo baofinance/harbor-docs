@@ -4,6 +4,10 @@ How live stability pools take **ha** deposits, pay rewards, and participate in r
 
 Live pools are **StabilityPool_v1 / v2** (compounding balances). **ERC-20 pool shares (`hp…`)** and ERC-4626 Compounders are **Harbor Yield / SP_v3** (pre-prod) — not the live deposit UX. Integrator appendix: [Stability pools](../integrators/stability-pools.md). Contract SoT: [Stability pool](../contracts/stability-pool.md).
 
+:::note Graphics (design)
+Placeholder: live SP lifecycle (deposit ha → compounding balance → claim rewards → withdraw; distinct from rebalance sequence). Design team to supply.
+:::
+
 ## Overview
 
 | Rule | Detail |

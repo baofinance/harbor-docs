@@ -4,6 +4,10 @@ sidebar_position: 6
 
 # Protocol Fees
 
+:::note Graphics (design)
+Placeholder: fee pressure-valve / feedback loop (CR stress raises ha mint fees; discounts helpful actions). Design team to supply.
+:::
+
 ## Dynamic Fees: Built-In Market Regulation
 
 Harbor uses a real-time, responsive fee system for **mints and redemptions** of haTOKENS and hsTOKENS (not order-book maker/taker trading fees). It works like a pressure valve:

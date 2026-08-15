@@ -6,6 +6,10 @@ The Harbor Price Aggregator system provides validated price feeds for wrapped co
 
 Integrator pricing map and worked Chainlink-composed examples: [Pricing](../integrators/pricing.md). Chainlink-shaped wrappers are **not deployed** — [Oracle adapters](../integrators/oracle-adapters.md).
 
+:::note Graphics (design)
+Placeholder: aggregator compose (Chainlink feeds → Harbor latestAnswer → minter accounting). May share art with integrators/pricing. Design team to supply.
+:::
+
 ## Overview
 
 Harbor uses a system of price aggregators (`HarborAggregator_v3` and `HarborAggregator_v4`) that combine:

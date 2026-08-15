@@ -30,6 +30,10 @@ Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinan
 
 ### Architecture diagram (SVG)
 
+:::note Graphics (design)
+Refresh `harbor-swap-architecture.svg`: direct vs aggregator modes; Velora as primary when published. Design team to supply.
+:::
+
 ![Harbor Swap architecture](/img/harbor-swap-architecture.svg)
 
 ### Architecture diagram (Mermaid)

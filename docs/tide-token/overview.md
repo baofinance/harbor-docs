@@ -12,6 +12,10 @@ sidebar_position: 1
 
 TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and exposure to protocol value accrual through TIDE buybacks.
 
+:::note Graphics (design)
+Placeholder: TIDE utilities one-pager (governance + SP incentives + buyback/POL/burn) — only if `tide-content-flow.png` on Tokenomics is not enough. Design team to supply.
+:::
+
 ## Launch and Distribution
 
 Early participation was tracked with **Ledger Marks** (Maiden Voyage / Anchor activity) rather than a liquid pre-TGE farming token. Marks and snapshot programs feed into TIDE distribution / claim flows in the app.

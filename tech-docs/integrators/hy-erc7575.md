@@ -6,6 +6,10 @@
 
 Product **Levels 1–3** = design doc **0–2** (SP / Compounder / HarborYield). See [Token taxonomy](./token-taxonomy.md).
 
+:::note Graphics (design)
+Placeholder: ERC-7575 share + doors (hy share center, doors per asset; Compounder as sibling, not parent). Design team to supply.
+:::
+
 ## Standards (do not confuse)
 
 | Layer | Contract | Standard | What you integrate |

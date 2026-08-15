@@ -46,6 +46,10 @@ Harbor Yield adds:
 
 ## How the stack fits together
 
+:::note Graphics (design)
+Refresh or extend `harbor-yield-layers.svg`: Levels 1–3 journey (manual SP → Compounder → hyTOKEN siblings; HY does not wrap Compounder). Design team to supply.
+:::
+
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
 
 | Layer | Role |

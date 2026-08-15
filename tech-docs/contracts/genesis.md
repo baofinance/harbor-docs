@@ -2,6 +2,10 @@
 
 The Genesis contract provides a bootstrapping mechanism for new Harbor Protocol markets, allowing early participants to deposit collateral and receive initial pegged and leveraged tokens.
 
+:::note Graphics (design)
+Placeholder: genesis phases (deposit shares → end genesis → claim ha/hs proportional). Design team to supply.
+:::
+
 ## Overview
 
 The Genesis contract (`Genesis_v1`) is a UUPS upgradeable contract that facilitates the initial launch (Maiden Voyage) of a new market. Users deposit collateral during the genesis phase, and once the phase ends, they can claim their proportional share of minted pegged and leveraged tokens.

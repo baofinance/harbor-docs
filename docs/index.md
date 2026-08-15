@@ -12,6 +12,10 @@ We're bringing groundbreaking yields to places they've never reached: BTC, ETH, 
 
 Harbor is **live on Ethereum**, with a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of currently deployed mainnet contracts is **partial** — some post-audit upgrades shipped after the review, and packages such as zap contracts were out of scope. App: [app.harborfinance.io](https://app.harborfinance.io).
 
+:::note Graphics (design)
+Placeholder: hero mental model (yield-bearing collateral → ha peg + hs Sail; stability pools as yield/safety path). Design team to supply.
+:::
+
 ## What Is Harbor?
 
 Harbor is a synthetic asset protocol that transforms yield-bearing collateral — like fxSAVE or wstETH — into two powerful asset types:

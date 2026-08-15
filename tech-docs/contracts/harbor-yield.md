@@ -51,6 +51,10 @@ This docs site uses **product-facing Levels 1–3**. The design doc numbers the 
 | **3** | HarborYield | **ERC-7575** share **hy…** + per-holding doors | Multi-holding basket; doors reuse ERC-4626 mutations without a separate door ERC-20 |
 | — | Harbor Swap | — | Routing support for level 3 (`compound` / `redistribute`), not a yield tier |
 
+:::note Graphics (design)
+Refresh `harbor-yield-layers.svg`: Levels 1–3; Compounder and HY as siblings; hp… labeled pre-prod. Design team to supply.
+:::
+
 ![Harbor Yield layers](/img/harbor-yield-layers.svg)
 
 ## Foundation contracts (`harbor` yield branch)
