@@ -37,8 +37,8 @@ Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../ge
 | **collateralToken** | — | `0x085780639CC2cACd35E474e71f4d000e2405d8f6` (fxUSD) |
 | **wrappedCollateralToken** | — | `0x7743e50F534a7f9F1791DdE7dCD89F7783Eefc39` (fxSAVE) |
 | **genesisZap** | — | `0xF012a1BA66a411404FEae0a2AeD68dEB18D7de32` (GenesisUSDCZap_v2) |
-| **peggedTokenZap** | — | `0x7e4f98217A085F1a06332EDff805513b6Ea79357` (MinterUSDCZap_v3) |
-| **leveragedTokenZap** | — | `0x7e4f98217A085F1a06332EDff805513b6Ea79357` (MinterUSDCZap_v3) |
+| **peggedTokenZap** | — | `0x7DEAeA986944C8d742668C95fb6fABdE0c7Ca079` (MinterUSDCZap_v1) |
+| **leveragedTokenZap** | — | `0x7DEAeA986944C8d742668C95fb6fABdE0c7Ca079` (MinterUSDCZap_v1) |
 
 ## Token details
 
@@ -78,7 +78,7 @@ Convenience helpers from [`harbor-zap-contracts`](https://github.com/baofinance/
 | Zap | Contract | Address |
 | --- | -------- | ------- |
 | Genesis | GenesisUSDCZap_v2 | `0xF012a1BA66a411404FEae0a2AeD68dEB18D7de32` |
-| Pegged / leveraged (minter) | MinterUSDCZap_v3 | `0x7e4f98217A085F1a06332EDff805513b6Ea79357` |
+| Pegged / leveraged (minter) | MinterUSDCZap_v1 | `0x7DEAeA986944C8d742668C95fb6fABdE0c7Ca079` |
 
 ## Market parameters
 

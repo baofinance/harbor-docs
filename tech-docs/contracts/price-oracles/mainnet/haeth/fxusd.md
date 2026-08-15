@@ -3,7 +3,9 @@
 > **Status**: Active  
 > **Chain**: Ethereum mainnet (1)  
 > **Version**: v3  
-> **Address**: `0xea5292c58288DcE24C52C1dB13ca048275665EbC`
+> **Address (market-wired)**: `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097`
+
+Bind integrators and the app to the **market-wired** address on [fxUSD/ETH](../../../../markets/haeth/fxusd.md). Prefer that over inventory-only aliases.
 
 ## Summary
 
@@ -13,7 +15,7 @@
 | **Rate provider** | fxSAVE |
 | **Formula / feeds** | ETH/USD (inverted) |
 | **Type** | single |
-| **Contract address** | `0xea5292c58288DcE24C52C1dB13ca048275665EbC` |
+| **Market-wired address** | `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` |
 
 ## Feeds
 
@@ -26,13 +28,14 @@
 
 | Market | Role |
 | ------ | ---- |
-| [fxUSD/ETH Market](../../../../markets/haeth/fxusd.md) | Minter price oracle for `eth-fxusd` |
+| [fxUSD/ETH Market](../../../../markets/haeth/fxusd.md) | Minter `priceOracle` for `eth-fxusd` |
 
 ## Addresses / aliases
 
 | Address | Notes |
 | ------- | ----- |
-| `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` | App / market-wired address |
+| `0x71437C90F1E0785dd691FD02f7bE0B90cd14c097` | **Use this** — app / market / `mainnet-v1.json` |
+| `0xea5292c58288DcE24C52C1dB13ca048275665EbC` | Inventory / alternate listing — do not prefer over the market-wired proxy |
 
 ## See also
 

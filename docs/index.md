@@ -12,6 +12,10 @@ We're bringing groundbreaking yields to places they've never reached: BTC, ETH, 
 
 Harbor is **live on Ethereum**, with a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of currently deployed mainnet contracts is **partial** — some post-audit upgrades shipped after the review, and packages such as zap contracts were out of scope. App: [app.harborfinance.io](https://app.harborfinance.io).
 
+:::note Graphics (design)
+Placeholder: hero mental model (yield-bearing collateral → ha peg + hs Sail; stability pools as yield/safety path). Design team to supply.
+:::
+
 ## What Is Harbor?
 
 Harbor is a synthetic asset protocol that transforms yield-bearing collateral — like fxSAVE or wstETH — into two powerful asset types:
@@ -72,11 +76,12 @@ For detailed information, explore the sections below or start with our [Technica
 - [Stability Pools](/stability-pools) - Learn about system security and yield
 - [How Yield is Generated](/yield) - Understand the yield concentration mechanism
 - [Maiden Voyage](/maiden-voyage) - How new markets are launched
-- [Harbor Yield](/harbor-yield) - Three levels: stability pool, auto-compounder, hyTOKEN (mid-term)
+- [Harbor Yield](/harbor-yield) - Level 1 stability pools (live); Levels 2–3 are sibling mid-term products: Compounder (ERC-4626) and hyTOKEN (ERC-7575)
 - [Supporting Features](/supporting-features) - Price aggregators and zaps
 - [TIDE Token](/tide-token/overview) - Governance, incentives and buyback-driven value accrual
 - [Roadmap](/roadmap) - Protocol development plans
 - [FAQ](/faq) - Common questions and answers
+- [Build on Harbor](/tech-docs/integrators) - Integrator path: addresses, quotes, mint/redeem, prices
 
 ## Need Help?
 

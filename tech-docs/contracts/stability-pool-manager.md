@@ -2,6 +2,10 @@
 
 The Stability Pool Manager contract coordinates rebalancing and harvesting operations between the two stability pools for a market.
 
+:::note Graphics (design)
+Placeholder: manager as hub between collateral SP + Sail SP during rebalance (detail callout usable on rebalance graphic). Design team to supply.
+:::
+
 ## Overview
 
 The Stability Pool Manager (`StabilityPoolManager_v1`) is a UUPS upgradeable contract that manages two fixed stability pools and coordinates system rebalancing and yield harvesting. It does not create pools dynamically; instead, it manages two pre-configured pools set during contract construction.
@@ -85,8 +89,8 @@ Harvests yield accrued from holding wrapped collateral (e.g., staking rewards) a
 
 **Effects:**
 - Transfers yield to stability pools as rewards
-- Rewards are distributed via `depositReward()` on each pool
-- Pools distribute rewards to depositors via their gauge systems
+- Rewards are deposited via `depositReward()` on each pool
+- Depositors claim via `claimable` / `claim` (not a gauge system)
 
 ### View Functions
 

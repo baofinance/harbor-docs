@@ -2,7 +2,8 @@
 
 > **Status**: ✅ Deployed (mainnet USD stack, May 2026)  
 > **Chain**: Ethereum mainnet (1)  
-> **App `marketId`**: `wbtc-usd`
+> **App `marketId`**: `wbtc-usd`  
+> **Integrator / SDK key**: `usd-wbtc` (same market)
 
 Mint **haUSD** and **hsWBTC-USD** using **WBTC** as collateral. Shares **haUSD** with [stETH](./steth.md), [PAXG](./paxg.md), and [tBTC](./tbtc.md).
 

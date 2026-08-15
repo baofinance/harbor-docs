@@ -2,6 +2,10 @@
 
 The Genesis contract provides a bootstrapping mechanism for new Harbor Protocol markets, allowing early participants to deposit collateral and receive initial pegged and leveraged tokens.
 
+:::note Graphics (design)
+Placeholder: genesis phases (deposit shares → end genesis → claim ha/hs proportional). Design team to supply.
+:::
+
 ## Overview
 
 The Genesis contract (`Genesis_v1`) is a UUPS upgradeable contract that facilitates the initial launch (Maiden Voyage) of a new market. Users deposit collateral during the genesis phase, and once the phase ends, they can claim their proportional share of minted pegged and leveraged tokens.
@@ -21,8 +25,8 @@ Set during contract construction (cannot be changed):
 - **PEGGED_TOKEN**: The pegged token contract (haToken)
 - **WRAPPED_COLLATERAL_TOKEN**: The wrapped collateral token (e.g., wstETH)
 - **LEVERAGED_TOKEN**: The leveraged token contract (hsToken)
-- **STABILITY_POOL_COLLATERAL**: Address of the collateral stability pool
-- **STABILITY_POOL_LEVERAGED**: Address of the leveraged (Sail) stability pool
+- **STABILITY_POOL_COLLATERAL**: Address of the collateral stability pool (immutable; **not read** by genesis logic — historical wiring)
+- **STABILITY_POOL_LEVERAGED**: Address of the leveraged (Sail) stability pool (immutable; **not read** by genesis logic — historical wiring)
 
 ## Storage State
 
@@ -54,10 +58,12 @@ Owner calls `endGenesis()` to finalize the genesis phase:
 
 ### Phase 3: Claim Phase (Genesis Ended)
 
-After genesis ends, users have two options:
+After genesis ends:
 
-1. **Claim Tokens** (Free): Claim proportional share of minted pegged and leveraged tokens
-2. **Withdraw Collateral** (Fee): Withdraw original collateral (subject to Minter fees)
+1. **Claim tokens (only genesis exit)** — Call `claim(receiver)` for a proportional share of minted ha + hs. Shares go to zero (one-time).  
+2. **Optional later exit** — Once you hold ha/hs, redeem on the **Minter** (`redeemPeggedToken` / `redeemLeveragedToken`) if you want wrapped collateral back (subject to minter fees / CR bands).
+
+**`withdraw` is disabled after `endGenesis()`** (`GenesisIsEnded`). There is no genesis-level “withdraw collateral with minter fees” path.
 
 ## Key Functions
 
@@ -95,11 +101,11 @@ Withdraws collateral during the genesis phase (before genesis ends).
 - Emits `Withdraw` event
 
 **Requirements:**
-- Genesis phase must be active (not ended)
+- Genesis phase must be active (not ended) — after end, `withdraw` reverts `GenesisIsEnded`
 - Sender must have sufficient shares
 - Receiver cannot be zero address
 
-**Note:** After genesis ends, users cannot withdraw directly. They must either claim tokens or use Minter's redemption functions (which charge fees).
+**After genesis ends:** claim ha/hs via `claim`, then optionally redeem on the Minter. Do not call genesis `withdraw`.
 
 ### Claim Phase Functions
 
@@ -170,8 +176,7 @@ Ends the genesis phase and mints initial tokens.
 - **LEVERAGED_TOKEN**: The leveraged token contract (hsToken)
 - **PEGGED_TOKEN**: The pegged token contract (haToken)
 - **WRAPPED_COLLATERAL_TOKEN**: The wrapped collateral token (e.g., wstETH)
-- **STABILITY_POOL_COLLATERAL**: Collateral stability pool address
-- **STABILITY_POOL_LEVERAGED**: Leveraged stability pool address
+- **STABILITY_POOL_COLLATERAL** / **STABILITY_POOL_LEVERAGED**: Set in the constructor only; unused by deposit / withdraw / claim / endGenesis logic
 
 ## Use Cases
 
@@ -179,8 +184,8 @@ Ends the genesis phase and mints initial tokens.
 
 1. **Early Participation**: Deposit during genesis to get initial tokens
 2. **Risk-Free Entry**: Can withdraw before genesis ends if needed
-3. **Free Token Claim**: Claim tokens without fees after genesis ends
-4. **Flexible Exit**: Can claim tokens or withdraw collateral (with fees)
+3. **Free Token Claim**: Claim ha/hs without fees after genesis ends
+4. **Later collateral exit**: Redeem claimed tokens on the Minter (fees / bands apply)
 
 ### For Protocol
 

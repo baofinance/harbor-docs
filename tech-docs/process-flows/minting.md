@@ -1,125 +1,73 @@
 # Minting Process Flow
 
-This document describes the process of minting leveraged and pegged tokens in Harbor Protocol.
+This document describes minting and redeeming **ha** (pegged) and **hs** (Sail / leveraged) tokens via the market **minter**.
+
+Live minters are **Minter_v2**. Numeric examples below are **illustrative** only. For integration, use `*DryRun` views — [Mint and redeem](../integrators/mint-redeem.md). Function SoT: [Minter](../contracts/minter.md).
+
+:::note Graphics (design)
+Placeholder: mint vs redeem swimlane (approve → dry-run → mint/redeem → feeReceiver / reserve discount). May share art with integrators/mint-redeem. Design team to supply.
+:::
 
 ## Overview
 
-Users can mint two types of tokens:
-1. **Leveraged Tokens**: Provide leveraged exposure to the underlying asset
-2. **Pegged Tokens**: Provide 1:1 exposure to the underlying asset
+| Token | Role |
+| ----- | ---- |
+| **Pegged (ha)** | Anchored claim on the market peg |
+| **Leveraged (hs / Sail)** | Residual NAV of collateral vs ha |
 
-## Minting Leveraged Tokens
+Users deposit **wrapped collateral** (e.g. fxSAVE, wstETH). Prefer that path over zaps when you already hold wrapped collateral — [Zaps](../integrators/zaps.md).
 
-### Step-by-Step Process
+## Mint (public API)
 
-1. **User Initiates Mint**
-   - User calls `mintLeveragedToken(amount)` on the Minter contract
-   - Provides collateral (e.g., wstETH)
+Signatures (Minter_v2):
 
-2. **Price Oracle Query**
-   - Minter queries the price oracle for current collateral and asset prices
-   - Calculates exchange rate based on current prices
-
-3. **Fee Calculation**
-   - Protocol fees are calculated based on the mint amount
-   - Fees are sent to the fee receiver contract
-
-4. **Reserve Pool Update**
-   - A portion of collateral is allocated to the reserve pool
-   - Reserve pool balance is updated
-
-5. **Token Minting**
-   - Leveraged tokens are minted to the user
-   - Amount minted = (collateral amount - fees - reserve) × leverage ratio / asset price
-
-6. **Event Emission**
-   - `LeveragedTokenMinted` event is emitted with details
-
-### Example Flow
-
-```
-User deposits 10 wstETH
-↓
-Price Oracle: 1 wstETH = $3000, 1 ETH = $3000
-↓
-Fees: 0.5% = 0.05 wstETH → Fee Receiver
-Reserve: 1% = 0.1 wstETH → Reserve Pool
-Net: 9.85 wstETH
-↓
-Leverage: 3x
-Minted: (9.85 × 3) / 1 = 29.55 leveraged tokens
+```solidity
+mintPeggedToken(uint256 wrappedCollateralIn, address receiver, uint256 minPeggedOut);
+mintLeveragedToken(uint256 wrappedCollateralIn, address receiver, uint256 minLeveragedOut);
 ```
 
-## Minting Pegged Tokens
+### Step-by-step
 
-### Step-by-Step Process
+1. **Approve** wrapped collateral to the minter (or use a zap / permit path).  
+2. **Quote** with `mintPeggedTokenDryRun` / `mintLeveragedTokenDryRun`.  
+   - If incentive ratio is `1e18` **or** taken/out amount is `0`, the action is disallowed at the current CR — do not send the tx.  
+   - Near band edges, `taken` may be **less than** `wrappedCollateralIn` (partial fill).  
+3. Set `minOut` from the dry-run with your slippage buffer.  
+4. **Execute** `mintPeggedToken` / `mintLeveragedToken`.  
+5. Protocol **fees** (when the incentive ratio is a fee) go to `feeReceiver`.  
+6. **Discounts** (when the ratio is negative) are funded via `ReservePool.requestBonus` when the reserve has balance — not “reserve allocation on mint.”
 
-1. **User Initiates Mint**
-   - User calls `mintPeggedToken(amount)` on the Minter contract
-   - Provides collateral (e.g., wstETH)
+There is **no** public `burnPeggedToken` / `burnLeveragedToken`. Exit with **redeem** (below).
 
-2. **Price Oracle Query**
-   - Minter queries price oracle for current prices
-   - Calculates 1:1 exchange rate
+### Illustrative ha mint (not a quote)
 
-3. **Fee Calculation**
-   - Protocol fees are calculated
-   - Fees sent to fee receiver
-
-4. **Reserve Pool Update**
-   - Reserve allocation is made
-
-5. **Token Minting**
-   - Pegged tokens are minted 1:1 with collateral value
-   - Amount minted = (collateral amount - fees - reserve) / asset price
-
-6. **Event Emission**
-   - `PeggedTokenMinted` event is emitted
-
-### Example Flow
-
-```
-User deposits 10 wstETH
+```text
+User holds 10 wrapped collateral units
 ↓
-Price Oracle: 1 wstETH = $3000, 1 ETH = $3000
+mintPeggedTokenDryRun(10e18) → incentiveRatio, wrappedFee, taken, peggedMinted, price, rate
 ↓
-Fees: 0.5% = 0.05 wstETH → Fee Receiver
-Reserve: 1% = 0.1 wstETH → Reserve Pool
-Net: 9.85 wstETH
+If allowed: mintPeggedToken(10e18, receiver, minPeggedOut)
 ↓
-Minted: 9.85 pegged tokens (1:1 ratio)
+ha minted to receiver; fee (if any) → feeReceiver
 ```
 
-## Requirements
+## Redeem (public API)
 
-### Pre-Minting Checks
+```solidity
+redeemPeggedToken(uint256 peggedIn, address receiver, uint256 minWrappedCollateralOut);
+redeemLeveragedToken(uint256 leveragedIn, address receiver, uint256 minWrappedCollateralOut);
+```
 
-- Sufficient collateral balance
-- Protocol is not paused
-- Price oracle is not stale
-- Minimum mint amount requirements met
-- Maximum leverage limits not exceeded
+1. Quote with the matching `*DryRun`.  
+2. Burn path is internal to the minter (`Burn1Arg` / `Burn2Arg` / `BurnFrom` per market). Approve ha/hs to the minter only if the burn signature requires it.  
+3. Wrapped collateral returns to `receiver` (subject to fees/discounts and CR bands).
 
-### Post-Minting State
+## Restricted paths
 
-- User receives minted tokens
-- Fees distributed to fee receiver
-- Reserve pool updated
-- Protocol state updated
+`freeMint*` / `freeRedeem*` require `ZERO_FEE_ROLE` (stability pool manager / protocol). External integrators use the public `mint*` / `redeem*` functions.
 
-## Burning Tokens
+## Related
 
-The reverse process (burning) follows similar steps:
-
-1. User calls `burnLeveragedToken(amount)` or `burnPeggedToken(amount)`
-2. Tokens are burned
-3. Collateral is calculated based on current prices
-4. Fees are deducted
-5. Remaining collateral is returned to user
-
-## Gas Considerations
-
-- Minting operations require multiple contract calls
-- Price oracle updates may be needed
-- Multiple token transfers occur
-- Gas costs vary based on network conditions
+- [Mint and redeem](../integrators/mint-redeem.md)  
+- [Market state and fees](../integrators/market-state-and-fees.md)  
+- [Pricing](../integrators/pricing.md)

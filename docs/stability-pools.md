@@ -6,6 +6,10 @@ sidebar_position: 3
 
 Stability Pools are a core mechanism in Harbor that provides security, yield generation, and automated rebalancing capabilities.
 
+:::note Graphics (design)
+Placeholder: two-pool fork — same ha deposit / same yield path; rebalance payout diverges (collateral vs hs). Design team to supply.
+:::
+
 ## What are Stability Pools?
 
 In Harbor, system solvency is maintained through **Stability Pools**. These pools secure the protocol and offer yield and strategic flexibility to participants.

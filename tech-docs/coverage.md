@@ -65,6 +65,7 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | Harbor Yield (SP v3 / hyTOKENS) | [harbor-yield](/tech-docs/contracts/harbor-yield) | ✅ tech page (tracks `#33`; vaults pre-prod) |
 | Harbor Swap | [harbor-swap](/tech-docs/contracts/harbor-swap) | ✅ tech page (tracks `#3` Velora + merged hardening) |
 | Process flows | [process-flows](./process-flows/) | ✅ |
+| Integrators (Phase 1) | [Build on Harbor](./integrators/index.md) | ✅ cookbooks + docs-hosted ABI/address JSON; `@harbor/sdk` on GitHub (npm pending); no REST/WebSocket API |
 
 ---
 
@@ -89,3 +90,4 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | Market | Match sections on [haETH / fxUSD](./markets/haeth/fxusd.md) (includes zaps) |
 | Price aggregator | Match sections on any pair page under `contracts/price-oracles/<chain>/<hatoken>/` (not chain index pages) |
 | Zap overview | [contracts/zap.md](./contracts/zap.md) |
+| Integrators | Match tone/structure of [Build on Harbor](./integrators/index.md); do not duplicate market address tables |

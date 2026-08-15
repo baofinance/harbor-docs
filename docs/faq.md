@@ -111,10 +111,9 @@ Other deployments may exist for testing or expansion; treat the app’s network 
 
 ### How do I integrate with the protocol?
 
-- Interact with published smart contracts (see [Tech Documentation](/tech-docs))
-- Use the open-source app and contract repos under [github.com/baofinance](https://github.com/baofinance/)
+Follow **[Build on Harbor](/tech-docs/integrators)** in Tech Documentation: addresses, ABIs, pricing, mint/redeem dry-runs, and market state.
 
-There is no public REST/WebSocket SDK promised in these docs.
+A public REST/WebSocket API is **not shipped**. A thin on-chain TypeScript client (`@harbor/sdk`) is in scaffold form — see the [SDK guide](/tech-docs/integrators/sdk). You can also call `*DryRun` views and published ABIs from [Addresses and ABIs](/tech-docs/integrators/addresses-and-abis).
 
 ## Security
 

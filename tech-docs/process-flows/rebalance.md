@@ -1,162 +1,76 @@
 # Rebalance Process Flow
 
-This document describes how rebalancing works in Harbor Protocol and how stability pools participate in the rebalancing process.
+How the protocol restores collateral ratio by burning ha from stability pools and paying out rebalance tokens to those pools.
 
-## Overview
+Contract SoT: [Stability pool manager](../contracts/stability-pool-manager.md). Pool behaviour: [Stability pools process flow](./stability-pools.md).
 
-When the system-wide collateral ratio falls below the rebalance threshold, the protocol automatically rebalances by burning pegged tokens from stability pools. Stability pool depositors provide liquidity for rebalancing and receive rebalance tokens (collateral or leveraged tokens) as rewards.
+:::note Graphics (design)
+Placeholder: rebalance sequence (CR breach → manager.rebalance → pool payouts). Design team to supply.
+:::
 
-## Rebalance Trigger
+## Trigger
 
-### Conditions for Rebalancing
-
-The system becomes eligible for rebalancing when:
-- Global collateral ratio falls below the rebalance threshold (e.g., 130%)
-- Price movements cause the system to become undercollateralized
-- Oracle price updates reflect the new market conditions
-
-### Rebalance Check
+Rebalancing is allowed when the minter’s **collateral ratio** is below the manager’s **`rebalanceThreshold`** (view: `rebalanceable()`).
 
 ```solidity
-collateralRatio = totalCollateralValue / totalPeggedValue
+collateralRatio = collateralValue / peggedValue; // via Minter
 if (collateralRatio < rebalanceThreshold) {
-    // System can be rebalanced
+    // rebalance() may be called
 }
 ```
 
-## Rebalance Process
+Anyone can call it when eligible; keepers typically do for the bounty.
 
-### Step 1: Rebalance Initiation
+## Process
 
-1. **Keeper or User Calls Rebalance**
-   - Rebalancer calls `rebalance()` on the StabilityPoolManager
-   - Specifies minimum amount of pegged tokens expected to be burned
-   - Receives rebalance bounty as incentive
+### 1. Call
 
-2. **System Validation**
-   - Contract checks if collateral ratio is below threshold
-   - Verifies sufficient stability pool balances
-   - Validates rebalance amount
+```solidity
+stabilityPoolManager.rebalance(bountyReceiver, minPeggedLiquidated);
+```
 
-### Step 2: Pegged Token Burning
+- Checks CR is below the rebalance threshold (reverts otherwise).  
+- `minPeggedLiquidated` is a **slippage / minimum burn** guard (not a “max rebalance” circuit breaker).  
+- The explicitly supplied **`bountyReceiver`** receives a **rebalance bounty** cut of the payout tokens (configured `rebalanceBountyRatio`) — not necessarily `msg.sender`.
 
-1. **Token Collection**
-   - Pegged tokens are swept from stability pools
-   - Tokens are burned via Minter (fee-free redemption)
-   - Total pegged token supply decreases
+### 2. Burn ha from pools
 
-2. **Debt Reduction**
-   - System debt is reduced by the burned amount
-   - Global collateral ratio improves
+- Manager pulls ha from the **collateral** and **Sail** stability pools (fee-free path via `ZERO_FEE_ROLE`).  
+- ha is redeemed through the minter (`freeRedeemPeggedToken`) so system pegged supply falls and CR rises.  
+- Each pool’s ha balances scale down via the **loss product**.
 
-### Step 3: Rebalance Token Distribution
+### 3. Pay out rebalance tokens
 
-1. **Token Calculation**
-   - Collateral pool receives wrapped collateral (e.g., wstETH, fxSAVE)
-   - Leveraged pool receives leveraged tokens (hsTokens)
-   - Distribution proportional to each pool's contribution
+| Pool | Payout token |
+| ---- | ------------ |
+| Collateral stability pool | **Wrapped collateral** (e.g. fxSAVE, wstETH) |
+| Sail stability pool | **hs (leveraged)** |
 
-2. **Distribution to Depositors**
-   - Rebalance tokens are distributed to pools via `notifyLiquidation()`
-   - Distribution is proportional to depositor's stake in the pool
-   - Depositors receive rebalance tokens in exchange for their pegged tokens
+After the bounty to `bountyReceiver`, remaining wrapped collateral / hs is transferred to the pools and attributed via `notifyLiquidation` / reward deposit paths. Depositors accrue them as **claimable** rewards — they do **not** auto-mint into the user’s ha balance. Claim with `claim()` / `claimable`.
 
-### Step 4: Pool State Update
+### 4. Bounty only (no feeReceiver cut on rebalance)
 
-1. **Balance Updates**
-   - Rebalance token balance increases
-   - Individual depositor balances updated via checkpointing
-   - Total asset supply recalculated
+Rebalance pays the configured **bounty** to `bountyReceiver`. Protocol `feeReceiver` cuts apply on **harvest**, not on this rebalance path.
 
-2. **Reward Distribution**
-   - Rebalance tokens accumulate as rewards
-   - Depositors can claim rewards via `claim()`
-   - Rewards compound into balances automatically
+## Illustrative example
 
-## Stability Pool Types
+- System CR drops below threshold (e.g. 130% → 120%).  
+- Keeper calls `rebalance(keeper, minPeggedLiquidated)` (or any `bountyReceiver`).  
+- ha is taken from both pools and redeemed via the minter.  
+- Bounty tokens go to `bountyReceiver`; remaining wrapped collateral / hs return to the pools.  
+- Collateral pool depositors can later claim wrapped collateral; Sail depositors can claim hs — proportional to pool accounting.
 
-### Collateral Stability Pool
+## What this is not
 
-**Rebalance Token**: Wrapped Collateral (wstETH, fxSAVE)
+Do **not** assume these (not in the live SPM):
 
-**Process**:
-1. Depositors provide pegged tokens (haETH, haBTC)
-2. Pool participates in system rebalancing
-3. Depositors receive wrapped collateral as rebalance tokens
-4. Depositors can withdraw collateral or continue earning rewards
+- Rebalance queues or priority lanes  
+- Gas reimbursement beyond the bounty  
+- Circuit breakers / pause beyond normal access control  
+- A separate “maximum rebalance size” parameter (sizing is whatever the pools can provide under the CR math + `minPeggedLiquidated`)
 
-**Use Case**: Users want to earn yield while providing rebalancing liquidity, receiving collateral in return.
+## Depositor takeaways
 
-### Sail Stability Pool (Leveraged Pool)
-
-**Rebalance Token**: Leveraged Tokens (hsFXUSD-ETH, hsSTETH-BTC)
-
-**Process**:
-1. Depositors provide pegged tokens (haETH, haBTC)
-2. Pool participates in system rebalancing
-3. Depositors receive leveraged tokens as rebalance tokens
-4. Depositors can hold leveraged tokens for exposure or sell them
-
-**Use Case**: Users want leveraged exposure while earning yield, receiving leveraged tokens as rebalance rewards.
-
-## Rebalance Example
-
-### Scenario
-
-- System has: 1000 haETH pegged tokens
-- Collateral: 1300 wstETH
-- Current collateral ratio: 130%
-- Rebalance threshold: 130%
-- Price drops: Collateral value decreases
-- New ratio: 120% (below threshold)
-
-### Rebalance
-
-1. **StabilityPoolManager Rebalances**
-   - Burns 100 haETH from stability pools
-   - System debt reduced to 900 haETH
-
-2. **Token Distribution**
-   - 100 haETH redeemed for ~100 wstETH (at current price)
-   - Collateral pool receives wstETH
-   - Leveraged pool receives hsTokens (if applicable)
-
-3. **Depositor Rewards**
-   - Depositors receive rebalance tokens proportional to their stake
-   - Example: Depositor with 10% stake receives 10 wstETH (collateral pool) or equivalent hsTokens (leveraged pool)
-
-## Rebalance Incentives
-
-### For Rebalancers (Keepers)
-
-- Rebalance bounty (typically 0.5-1% of rebalance amount)
-- Gas cost reimbursement
-- Priority in rebalance queue
-- MEV opportunities
-
-### For Depositors
-
-- Receive rebalance tokens at favorable rates
-- Diversified exposure through rebalancing
-- Yield from protocol operations
-- Automatic compounding
-
-## Safety Mechanisms
-
-- **Minimum Rebalance Amount**: Prevents dust rebalances
-- **Maximum Rebalance**: Limits single rebalance size
-- **Slippage Protection**: `minPeggedLiquidated` parameter
-- **Circuit Breakers**: Pauses rebalancing in extreme conditions
-
-## Gas Optimization
-
-- Batch rebalances when possible
-- Efficient token transfers
-- Minimal state updates
-
-## Understanding Rebalancing
-
-1. **Know Your Pool**: Understand which rebalance tokens you'll receive
-2. **Monitor Ratio**: Track system collateral ratio
-3. **Timing**: Rebalances happen when ratio drops below threshold
-4. **Understand**: Know what rebalance tokens you'll receive
+1. Know which pool you are in (collateral vs Sail) — payout token differs.  
+2. Monitor CR / `rebalanceable()`.  
+3. After a rebalance, claim reward tokens; ha balance may be lower due to the loss product.

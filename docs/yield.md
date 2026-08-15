@@ -6,6 +6,10 @@ sidebar_position: 4
 
 Harbor's high yields come from concentrating collateral yield into a smaller pool of active users, plus protocol fee and incentive programs.
 
+:::note Graphics (design)
+Placeholder: yield concentration sketch ($100 collateral, $50 ha / $50 hs, only $30 ha in pool → ~3× base yield). Design team to supply.
+:::
+
 - **Yield Concentration:** When you mint haTOKENS (pegged tokens) and hsTOKENS (leveraged tokens), your collateral is pooled. However, **only haTOKENS deposited in a stability pool** (collateral **or** Sail) earn that concentrated yield. The two pool types share harvest / revenue allocated to pools; they differ mainly in **rebalance payout** (collateral vs hsTOKENS) — see [Stability Pools](/stability-pools).
 
 - **Example:**
@@ -29,6 +33,6 @@ Harbor's high yields come from concentrating collateral yield into a smaller poo
 
 - **Extra Boost:** Ledger Marks and team-directed **$TIDE** incentives can further increase effective returns for active participants where campaigns apply.
 
-- **Coming mid-term — Harbor Yield:** three levels (product **1–3** = design **0–2**) — (1) stability pool + claim rewards, (2) **auto-compounder**, (3) **hyTOKEN** peg vault via `deposit(asset, …)` of registered AC/equivalents. Autocompounders are usable on their own, not only under hyTOKENS. See [Harbor Yield](/harbor-yield).
+- **Coming mid-term — Harbor Yield:** three levels (product **1–3** = design **0–2**) — (1) stability pool + claim rewards, (2) **Compounder** (ERC-4626 over one pool), (3) **hyTOKEN** peg basket via **ERC-7575** doors (siblings of Compounders, not wrappers of them). See [Harbor Yield](/harbor-yield).
 
 > By concentrating collateral yield into the stability pool — and directing 75% of (post–Yield Share / post–TVL-take) protocol revenue to stability pools to grow markets — Harbor aims to deliver strong APRs to users who secure the protocol.
