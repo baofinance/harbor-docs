@@ -2,9 +2,12 @@
 
 Do not hard-code the illustrative mint fees from the [product fees page](/fees) (~0.25% / ~1%). Read **on-chain** state from the market minter and stability pool manager.
 
-:::note Graphics (design)
-Placeholder: CR bands → fee / discount / disallow. Design team to supply.
+![Collateral-ratio bands steer each action differently.](/img/15-cr-bands-fees.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Views to poll (minter)
 

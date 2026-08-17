@@ -7,9 +7,12 @@ Sequenced path for another protocol to integrate Harbor **without** a Harbor-hos
 **Not live for production integration:** Harbor Yield Compounders and **hyTOKENS** — see [hy / ERC-7575](./hy-erc7575.md).
 :::
 
-:::note Graphics (design)
-Placeholder: one-pager call graph (your protocol → minter / oracle / stability pool). Design team to supply.
+![The shortest supported path into Harbor.](/img/10-integrator-call-graph.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Read in this order
 

@@ -8,9 +8,12 @@ Harbor markets split collateral into a **pegged** claim and a **residual (levera
 | Level 2 | Level 1 | Compounder (`hc…`) — ERC-4626 |
 | Level 3 | Level 2 | HarborYield / **hyTOKEN** — ERC-7575 share + doors |
 
-:::note Graphics (design)
-Placeholder: token taxonomy (collateral → ha + hs; optional hp; sibling hc vs hy). Design team to supply.
+![Name the live tokens first. Keep the yield wrappers in their lane.](/img/11-token-taxonomy.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Live tokens (integrate these)
 

@@ -2,9 +2,12 @@
 
 The Stability Pool Manager contract coordinates rebalancing and harvesting operations between the two stability pools for a market.
 
-:::note Graphics (design)
-Placeholder: manager as hub between collateral SP + Sail SP during rebalance (detail callout usable on rebalance graphic). Design team to supply.
+![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/19-rebalance-sequence.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Overview
 

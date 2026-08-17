@@ -4,9 +4,12 @@ sidebar_position: 6
 
 # Protocol Fees
 
-:::note Graphics (design)
-Placeholder: fee pressure-valve / feedback loop (CR stress raises ha mint fees; discounts helpful actions). Design team to supply.
+![Fees act like a pressure valve.](/img/06-dynamic-fee-feedback.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Dynamic Fees: Built-In Market Regulation
 

@@ -12,10 +12,6 @@ Harbor is built to reward long-term participation, prioritize early growth, and 
 
 Protocol revenue is **collateral yield + mint/redeem fees**. It is allocated as follows:
 
-:::note Graphics (design)
-Refresh `tide-content-flow.png`: Yield Share first → any TVL take → 75% SP / 25% TIDE buyback/POL/burn. Design team to supply.
-:::
-
 ![Harbor protocol revenue and TIDE flow](/img/tide-content-flow.png)
 
 ### Top-level split

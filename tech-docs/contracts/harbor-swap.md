@@ -28,13 +28,14 @@ Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinan
 | **Shared envelope** | `SwapExecutorBase` — same-token guard, exact pull, `amountOut == 0` reverts, authoritative `minAmountOutPerUnitIn` (out per 1e18 in **spent**), refund unspent |
 | **Deploy** | BaoFactory CREATE3 via Harbor deploy helpers |
 
-### Architecture diagram (SVG)
+### Architecture diagram
 
-:::note Graphics (design)
-Refresh `harbor-swap-architecture.svg`: direct vs aggregator modes; Velora as primary when published. Design team to supply.
+![Direct executors for compound. Aggregator path for redistribute.](/img/24-harbor-swap-architecture.png)
+
+:::note
+WIP — final versions pending.
 :::
 
-![Harbor Swap architecture](/img/harbor-swap-architecture.svg)
 
 ### Architecture diagram (Mermaid)
 

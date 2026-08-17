@@ -12,9 +12,12 @@ sidebar_position: 1
 
 TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and exposure to protocol value accrual through TIDE buybacks.
 
-:::note Graphics (design)
-Placeholder: TIDE utilities one-pager (governance + SP incentives + buyback/POL/burn) — only if `tide-content-flow.png` on Tokenomics is not enough. Design team to supply.
+![Governance, incentives, and value accrual in one token.](/img/09-tide-utilities.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Launch and Distribution
 

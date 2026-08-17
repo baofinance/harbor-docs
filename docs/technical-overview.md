@@ -4,9 +4,12 @@ sidebar_position: 3
 
 # Technical Overview
 
-:::note Graphics (design)
-Placeholder: three-claim diagram — collateral vs ha+hs NAV (100% efficiency) vs system CR (~130%). Design team to supply.
+![Three statements that should never be conflated.](/img/03-three-claim-accounting.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Core Mechanics
 

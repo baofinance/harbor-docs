@@ -2,9 +2,12 @@
 
 The Genesis contract provides a bootstrapping mechanism for new Harbor Protocol markets, allowing early participants to deposit collateral and receive initial pegged and leveraged tokens.
 
-:::note Graphics (design)
-Placeholder: genesis phases (deposit shares → end genesis → claim ha/hs proportional). Design team to supply.
+![Deposit while open. Claim after end. No extra after-end mint.](/img/21-genesis-phases.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Overview
 

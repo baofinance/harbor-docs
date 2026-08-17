@@ -4,9 +4,12 @@ Zaps wrap **ETH / stETH / USDC / fxUSD** into the market’s wrapped collateral,
 
 Full address table: [Zap contracts](../contracts/zap.md). Per-market rows: `genesisZap`, `peggedTokenZap`, `leveragedTokenZap` on each [market page](../markets/haeth/fxusd.md).
 
-:::note Graphics (design)
-Placeholder: ETH/stETH/USDC → zap → wstETH/fxSAVE → genesis or minter. Design team to supply.
+![Convenience in. Canonical collateral out.](/img/14-zap-flow.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## When to use them
 
