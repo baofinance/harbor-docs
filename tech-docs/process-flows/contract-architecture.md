@@ -4,13 +4,12 @@ Overview of Harbor Protocol contracts and how they interact.
 
 ## Architecture Diagram
 
-:::note Graphics (design)
-Refresh `contract-architecture-diagram.svg`: match live Minter_v2 / SP_v1–v2 / manager; no invented modules. Design team to supply.
+![Live contracts, fixed pools, and explicit dependencies.](/img/23-contract-architecture-diagram.png)
+
+:::note
+WIP — final versions pending.
 :::
 
-### SVG
-
-![Contract Architecture Diagram](/img/contract-architecture-diagram.svg)
 
 ### Mermaid
 

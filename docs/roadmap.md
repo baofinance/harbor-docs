@@ -10,9 +10,12 @@ Harbor is a modular synthetic asset protocol with long-term ambitions to become 
 
 > **Note on Adaptability**: The crypto industry moves rapidly. While this roadmap represents our current vision and strategic direction, we adapt as the landscape changes.
 
-:::note Graphics (design)
-Placeholder: roadmap timeline (Live → market expansion → Harbor Yield → further). Low priority vs mechanism diagrams. Design team to supply.
+![Harbor grows from live markets into modular infrastructure.](/img/08-roadmap-timeline.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## 1. Live on Ethereum (Completed)
 

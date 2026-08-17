@@ -10,9 +10,12 @@ Contract SoT: [Harbor Swap](/tech-docs/contracts/harbor-swap). Yield consumer: [
 Registry + direct executors live on `harbor-swap` `main`. **Velora** as primary aggregator is still an open PR (`velora-swap` / [#3](https://github.com/baofinance/harbor-swap/pull/3)). Do not assume a mainnet swapper address until it is listed on a market / yield deploy page.
 :::
 
-:::note Graphics (design)
-Placeholder: HY/keeper → Swapper_v1 → UniV3/Curve/Balancer or Velora. Design team to supply.
+![Routing for Harbor Yield and keepers. Not mint or redeem.](/img/16-harbor-swap-integrator.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Two modes
 

@@ -2,9 +2,12 @@
 
 Harbor exposes **several price surfaces**. They are not interchangeable. ha/hs ERC-20s are mint/burn tokens — **do not assume** they implement Chainlink `latestRoundData` or a token `price()` unless you have verified the bytecode.
 
-:::note Graphics (design)
-Placeholder: pricing surface map (Chainlink → Harbor aggregator → minter views → your protocol). Design team to supply.
+![Choose the price surface that matches the job.](/img/12-pricing-oracle-compose.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 ## Which function to call
 

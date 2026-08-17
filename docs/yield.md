@@ -6,9 +6,12 @@ sidebar_position: 4
 
 Harbor's high yields come from concentrating collateral yield into a smaller pool of active users, plus protocol fee and incentive programs.
 
-:::note Graphics (design)
-Placeholder: yield concentration sketch ($100 collateral, $50 ha / $50 hs, only $30 ha in pool → ~3× base yield). Design team to supply.
+![Concentrate the yield. Not the collateral risk.](/img/05-yield-concentration.png)
+
+:::note
+WIP — final versions pending.
 :::
+
 
 - **Yield Concentration:** When you mint haTOKENS (pegged tokens) and hsTOKENS (leveraged tokens), your collateral is pooled. However, **only haTOKENS deposited in a stability pool** (collateral **or** Sail) earn that concentrated yield. The two pool types share harvest / revenue allocated to pools; they differ mainly in **rebalance payout** (collateral vs hsTOKENS) — see [Stability Pools](/stability-pools).
 
