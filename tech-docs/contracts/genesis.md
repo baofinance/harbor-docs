@@ -4,9 +4,6 @@ The Genesis contract provides a bootstrapping mechanism for new Harbor Protocol 
 
 ![Deposit while open. Claim after end. No extra after-end mint.](/img/21-genesis-phases.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Overview

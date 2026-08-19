@@ -4,9 +4,6 @@ The Stability Pool Manager contract coordinates rebalancing and harvesting opera
 
 ![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/19-rebalance-sequence.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Overview

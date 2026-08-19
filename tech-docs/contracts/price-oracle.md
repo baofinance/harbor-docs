@@ -8,9 +8,6 @@ Integrator pricing map and worked Chainlink-composed examples: [Pricing](../inte
 
 ![Choose the price surface that matches the job.](/img/12-pricing-oracle-compose.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Overview

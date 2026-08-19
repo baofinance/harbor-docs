@@ -4,139 +4,98 @@ sidebar_position: 4
 
 # Risk Considerations
 
-While Harbor is designed with security as a top priority, it's important for users to understand the potential risks involved. This document outlines the key risks to be aware of when interacting with the protocol.
+Harbor is designed for resilience, not zero risk. Read this **before** sizing positions — especially in [**Earn**](https://app.harborfinance.io/anchor) pools and [**Leverage**](https://app.harborfinance.io/sail). Deeper system detail follows below. Terms: [Glossary](/glossary).
 
-## System Risks
+## Plain-English summary
 
-### Black Swan Scenarios
+### 1. Stability pool deposits can change asset
 
-Despite its safeguards, Harbor cannot guarantee perfect outcomes under **severe and sustained market duress**. We transparently highlight edge-case risks.
+When you deposit **ha** in **Earn**, you earn yield. If the market rebalances and uses your deposit:
 
-#### Stability Pool Drain Risk
+- **Collateral pool** → your ha may become **collateral** (fxSAVE, wstETH, …) at oracle value
+- **Sail pool** → your ha may become **hs**
 
-If there is:
+You are compensated at oracle prices, but **you may not keep ha**. That is the core tradeoff for concentrated yield.
 
-- A **rapid, sustained drop in collateral price**, or
-- A **sudden spike in the price of the pegged token** relative to the collateral (effectively increasing debt vs. backing),
+### 2. hs can lose most or all value
 
-…then the **entire Stability Pool could be drained** during rebalancing.
+**Leverage** tokens (**hs**) absorb stress first. In severe or prolonged downturns, **hs can approach zero**. ha may trade below peg. The app does **not** offer margin-call liquidation like a perp — but **losses can still be total** on the hs side.
 
-This may occur **faster than new deposits can refill the pool**, even with aggressive incentives in place.
+Marketing “no liquidations” means **no classic margin liquidation UI** — not “cannot lose money.”
 
-If the Stability Pool is exhausted and further rebalancing is needed, the protocol may **temporarily fall below 100% collateralization**.
+### 3. Oracles, upgrades, and pauses
 
-### Undercollateralization Scenario
+Markets depend on **price feeds**. Failures, delays, or manipulation can affect mints, redemptions, and rebalances. Contracts are **upgradeable** (UUPS) with ownership controls — including **pause-via-upgrade** patterns. Governance and ops can change parameters.
 
-#### What Happens Below 100% Collateralization?
+### 4. Audits are real but not all-encompassing
 
-In this state:
+Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial** — post-audit upgrades shipped afterward; **zap contracts** were **out of scope**. No insurance product is documented here.
 
-- **Pegged tokens (haTokens)** are no longer fully backed by $1 of collateral
-- They begin to **float freely** and effectively **peg to the collateral value**
-- The system continues to function, but:
-  - **haTokens become partially collateralized**, priced by market expectations of recovery
-  - **hsTokens drop to $0**, as they represent the residual risk buffer — now exhausted
+### 5. Pool withdrawal windows
 
-This is the protocol's **graceful degradation mode**, which ensures fairness and ongoing composability — rather than hard shutdowns or arbitrary halts.
+Stability pools may require a **withdrawal request** and fee-free **window**. Exiting outside the window can incur **early-withdrawal fees**. Check the app before depositing.
 
-### Post-Stress Recovery Path
+### 6. Early-withdrawal and zap paths
 
-If Harbor's global **collateralization ratio drops below 100%**, the system enters a **distressed mode** where it remains fully functional, but with different economic behavior:
+Zaps and swap routes add **route risk, slippage, and third-party dependency**. Prefer **fxSAVE / wstETH** directly when you can. See [Supporting Features](/supporting-features).
 
-- **Pegged tokens (haTokens)** are backed by the proportional value of the remaining collateral
-- Recovery depends on:
-  - **Organic market dynamics**: As confidence returns and haTokens appreciate toward $1
-  - **Protocol incentives**: TIDE rewards redirected to recapitalize the Stability Pool
-  - **Governance intervention**: Community measures to raise system health
+---
 
-## Smart Contract Risks
+## System risks
 
-### Oracle Reliability
+### Black swan scenarios
 
-The protocol relies on price feeds to:
+Harbor cannot guarantee outcomes under **severe sustained stress**.
 
-- Determine collateralization ratios
-- Trigger rebalancing events
-- Calculate redemption values
+#### Stability pool drain
 
-Risks include:
+If collateral falls quickly or the peg spikes vs collateral, the **entire stability pool can drain** during rebalancing — possibly faster than new deposits refill it. If pools are exhausted, the protocol may **temporarily fall below 100% collateralization**.
 
-- Oracle manipulation
-- Delayed price updates
-- Technical failures in data transmission
-- Flash crash scenarios
+### Undercollateralization
 
-### Contract Vulnerabilities
+Below 100% collateralization:
 
-Despite audits and security measures, smart contracts may contain:
+- **ha** may no longer be fully backed at peg; can float with market expectations
+- **hs** can drop toward **$0** as the risk buffer is exhausted
 
-- Undiscovered bugs
-- Logic flaws that manifest under specific conditions
-- Complex interactions with other protocols
+The system may enter **graceful degradation** rather than hard shutdown.
 
-## Market Risks
+### Recovery
 
-### Collateral Volatility
+If global collateral ratio drops below 100%:
 
-- Dramatic price swings in the underlying collateral
-- Liquidity crises affecting collateral assets
+- **ha** backed by proportional remaining collateral
+- Recovery via market dynamics, incentives (TIDE to pools), and governance
 
-### External Market Factors
+## Smart contract risks
 
-- Regulatory changes affecting synthetic assets
-- Broader market contagion from failures in other protocols
-- Changes in yield sources for collateral assets
+### Oracle reliability
 
-## Prevention and Defense Layers
+Risks include manipulation, stale feeds, transmission failures, and flash crashes.
 
-Harbor is designed to minimize the likelihood of ever reaching critical states, through:
+### Contract vulnerabilities
 
-### Conservative Collateral Thresholds
+Audits reduce but do not eliminate unknown bugs or complex cross-protocol interactions.
 
-Stability mode is triggered **well before** the danger zone, using historically informed buffers designed to exceed any known 24-hour volatility windows.
+## Market risks
 
-### Incentive Optimization
+- Collateral volatility and liquidity crises
+- Regulatory or contagion effects
+- Changes in underlying yield sources (fxSAVE, wstETH, …)
 
-- Rewards encourage rapid Stability Pool participation during stress
-- Rebalance transactions include MEV-executable profit hooks to ensure swift execution
+## Defense layers
 
-### Real-Time Threat Monitoring
+- Conservative rebalance thresholds (e.g. ~130% CR trigger)
+- Incentive design for pool participation and MEV execution
+- Operational monitoring for oracle and contract anomalies
 
-Using advanced blockchain analytics, the protocol continuously scans for:
+## What you can do
 
-- Oracle anomalies
-- Front-running attempts
-- Smart contract threats
-- Unusual market behavior
-
-## Risk Mitigation Strategies for Users
-
-### 1. Diversification
-
-- Spread exposure across multiple protocol positions
-- Use both Collateral and Sail pools
-- Consider balancing haToken and hsToken holdings
-
-### 2. Position Sizing
-
-- Only commit funds you can afford to lose in worst-case scenarios
-- Scale exposure based on your risk tolerance
-- Consider the correlation of Harbor positions with your other investments
-
-### 3. Active Monitoring
-
-- Track global collateralization ratios through the dashboard
-- Monitor on-chain metrics through analytics tools
-- Stay informed via community channels about market conditions
-
-### 4. Understanding Recovery Mechanisms
-
-- Be aware of protocol governance power in extreme scenarios
-- Understand soft-peg dynamics during recovery periods
-- Know how to participate in recapitalization efforts if needed
+1. **Diversify** — pools, markets, ha/hs balance
+2. **Size** — only what you can lose in stress
+3. **Monitor** — app dashboards and community channels
+4. **Understand recovery** — soft-peg and governance roles in extremes
 
 ## Conclusion
 
-While Harbor incorporates multiple safeguards and is designed for resilience, users should maintain awareness of these risks and make informed decisions based on their individual risk tolerance. The protocol's transparent approach to risk disclosure and graceful degradation mechanisms aims to provide users with both protection and clarity.
-
-No DeFi protocol can guarantee zero risk, but Harbor's focus on risk management, transparent mechanisms, and community governance provides a foundation for responsible participation in synthetic assets.
+Harbor discloses risks transparently and uses stability pools plus rebalancing instead of auction liquidations. **Earn** and **Leverage** still carry meaningful downside — make choices that match your tolerance.

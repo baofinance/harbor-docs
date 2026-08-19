@@ -6,9 +6,6 @@ Contract SoT: [Stability pool manager](../contracts/stability-pool-manager.md). 
 
 ![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/19-rebalance-sequence.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Trigger

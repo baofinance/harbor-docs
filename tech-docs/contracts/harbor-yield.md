@@ -53,9 +53,6 @@ This docs site uses **product-facing Levels 1–3**. The design doc numbers the 
 
 ![Three levels, two sibling automation products.](/img/22-harbor-yield-layers.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Foundation contracts (`harbor` yield branch)

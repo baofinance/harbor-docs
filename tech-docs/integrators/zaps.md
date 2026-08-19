@@ -6,9 +6,6 @@ Full address table: [Zap contracts](../contracts/zap.md). Per-market rows: `gene
 
 ![Convenience in. Canonical collateral out.](/img/14-zap-flow.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## When to use them

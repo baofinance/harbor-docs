@@ -6,9 +6,6 @@ Overview of Harbor Protocol contracts and how they interact.
 
 ![Live contracts, fixed pools, and explicit dependencies.](/img/23-contract-architecture-diagram.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ### Mermaid
