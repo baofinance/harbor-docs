@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Supporting Features
 
-Packages around Harbor’s core: **markets on fxSAVE and wstETH**, mint/redeem, [**Earn**](/stability-pools), [**Leverage**](/faq), and [Maiden Voyage](/maiden-voyage).
+Packages around Harbor’s core: **markets on fxSAVE and wstETH**, mint/redeem, [**Earn**](/stability-pools), [**Leverage**](https://app.harborfinance.io/sail), and [Maiden Voyage](/maiden-voyage).
 
 **fxSAVE** is f(x) Protocol’s yield wrapper; **wstETH** is wrapped staked ETH. The app may show **fxUSD** / **stETH** balances, but markets hold the **wrapped** collateral. **fxUSD** is typically a **zap input**, not minter collateral. See [Glossary](/glossary).
 
@@ -34,7 +34,7 @@ Expect gas and route slippage when not depositing main collateral.
 
 ## Harbor Yield stack (mid-term)
 
-Not live mainnet UX yet — see [Harbor Yield](/harbor-yield):
+**Level 1** (stability pool + claim) is **live**. Levels **2–3** are not live mainnet UX yet — see [Harbor Yield](/harbor-yield):
 
 1. Stability pool + claim (**live**)
 2. **Compounder** — one pool, auto-compound

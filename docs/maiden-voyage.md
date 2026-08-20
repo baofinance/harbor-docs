@@ -24,7 +24,7 @@ When the voyage launches, participants claim:
 - **ha** — pegged token for that market (e.g. haETH, haEUR)
 - **hs** — leverage token (e.g. hsFXUSD-ETH, hsSTETH-EUR)
 
-Combined token NAV at launch matches deposited collateral value — value split across two risk profiles.
+Combined token NAV at launch matches deposited collateral value **subject to fees** — an initial NAV-preserving distribution split across two risk profiles (**ha** and **hs**). After launch, both still carry their usual downside (see [Risk Considerations](/risk-considerations)).
 
 ### 3. Yield Share
 
@@ -40,7 +40,7 @@ Claim **TIDE** separately on [Tide](https://app.harborfinance.io/tide) when elig
 
 - **Immediate liquidity** at launch
 - **Balanced ha and hs** float
-- **Low-risk entry at launch** — NAV preserved at distribution; you choose Earn, hold, or Leverage after
+- **NAV-preserving distribution at launch** — claim ha + hs matching deposit value (subject to fees); then choose Earn, hold, or Leverage
 - **Ongoing Yield Share** — not one-off liquidity mining
 
 ## Example: fxSAVE → ETH

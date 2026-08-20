@@ -8,7 +8,7 @@ What is on **Ethereum mainnet** today, aligned with the [Earn](https://app.harbo
 
 ## Headline product surface (Earn today)
 
-The app’s primary **Earn** set is **haETH**, **haBTC**, and **haEUR** across fxSAVE and wstETH collateral families. **haUSD** and commodity pegs are **soon** or **relaunch-pending**, not headline live markets.
+The app’s primary **Earn** set today is **fxSAVE → haETH**, **wstETH → haBTC**, and **wstETH → haEUR** (plus other live rows in the table — not every peg on every collateral). **haUSD** and commodity pegs are **soon** or **relaunch-pending**, not headline live markets.
 
 ## Market table
 
@@ -37,4 +37,4 @@ Historical voyages (e.g. early FXUSD-ETH / FXUSD-BTC / STETH-BTC launches) may s
 ## How to use this page
 
 - **Users** — pick collateral family (fxSAVE vs wstETH) and peg (ETH, BTC, EUR), then open the matching market in the app.
-- **Integrators** — use market pages and [Addresses and ABIs](/tech-docs/integrators/addresses-and-abis) for proxy addresses; app `marketId` may differ in key order from JSON keys (aliases documented there).
+- **Integrators** — use market pages and [Addresses and ABIs](/tech-docs/integrators/addresses-and-abis) for proxy addresses. Prefer integrator keys in **`<index>-<collateral>`** order (e.g. `usd-steth`); the app may use the reverse (e.g. `steth-usd`) — same market via `marketIdAliases` in the registry.

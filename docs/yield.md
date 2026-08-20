@@ -32,6 +32,6 @@ Diagram: [TIDE Tokenomics](/tide-token/tokenomics).
 
 ## Mid-term — Harbor Yield
 
-Three levels on top of pools: (1) pool + manual claim **live**; (2) **Compounder**; (3) **hyTOKEN** basket — siblings, not a stack. See [Harbor Yield](/harbor-yield) (levels 2–3 not live mainnet yet).
+Three **participation levels** (siblings, not a wrapping stack — levels 2 and 3 do **not** wrap each other): (1) pool + manual claim **live**; (2) **Compounder**; (3) **hyTOKEN** basket. See [Harbor Yield](/harbor-yield) (levels 2–3 not live mainnet yet).
 
 > By concentrating collateral yield into pools — and sending 75% of (post–Yield Share / post–TVL-take) revenue to pools — Harbor targets strong APRs for users who secure the protocol in **Earn**.

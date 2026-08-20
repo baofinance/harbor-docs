@@ -35,7 +35,7 @@ Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/
 
 Stability pools may require a **withdrawal request** and fee-free **window**. Exiting outside the window can incur **early-withdrawal fees**. Check the app before depositing.
 
-### 6. Early-withdrawal and zap paths
+### 6. Zap and swap paths
 
 Zaps and swap routes add **route risk, slippage, and third-party dependency**. Prefer **fxSAVE / wstETH** directly when you can. See [Supporting Features](/supporting-features).
 

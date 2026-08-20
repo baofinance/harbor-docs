@@ -8,7 +8,7 @@ sidebar_position: 3
 
 ## I have ETH and want yield
 
-1. **Wrap to wstETH** (or use a zap in the app if you prefer one transaction).
+1. **Stake ETH → stETH, then wrap to wstETH** (or use a zap in the app — it may stake and wrap in one transaction).
 2. **Pick a wstETH market** — e.g. haBTC or haEUR on [Live Markets](/markets).
 3. **Mint ha** in the app (deposit wstETH → receive haBTC / haEUR / …).
 4. Open [**Earn**](https://app.harborfinance.io/anchor) → deposit that **ha** into a **collateral** or **Sail** stability pool.

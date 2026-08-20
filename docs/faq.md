@@ -51,7 +51,7 @@ Rebalance into **collateral** or **hs**, oracle/contract risk, pool drain in ext
 
 ### How is yield calculated?
 
-Collateral yield + protocol revenue to pools (Yield Share first when eligible, then 75% pools) + Marks/TIDE where allocated — [How Yield is Generated](/yield).
+Collateral yield + protocol revenue to pools. Per market: **Yield Share** (up to ~5%) comes first when eligible; of the **remainder**, after any TVL treasury take, **75%** goes to pools and **25%** buys TIDE. Plus Marks/TIDE campaigns where allocated — [How Yield is Generated](/yield).
 
 ## Using the protocol
 
@@ -98,7 +98,7 @@ Yes — Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_
 
 ### What is TIDE?
 
-Governance and value-accrual token (1B cap). [Tide dashboard](https://app.harborfinance.io/tide) · [TIDE overview](/tide-token/overview).
+Governance and value-accrual token (1B cap). [TIDE (Tide dashboard)](https://app.harborfinance.io/tide) · [TIDE overview](/tide-token/overview).
 
 ### How do I participate in governance?
 

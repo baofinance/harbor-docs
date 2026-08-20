@@ -13,7 +13,7 @@ Harbor uses a few names in the app, on tokens, and in contract code. This page i
 | **Earn** | Deposit **ha** into a stability pool to earn concentrated yield | [/anchor](https://app.harborfinance.io/anchor) |
 | **Leverage** | Mint or hold **hs** for directional exposure (no funding fee, no margin-call UI) | [/sail](https://app.harborfinance.io/sail) |
 | **Maiden Voyage** | Capacity-capped bootstrap for a **new market** before or at launch | [/genesis](https://app.harborfinance.io/genesis) |
-| **Tide** | TIDE token dashboard — claim, allocation, BAO swap | [/tide](https://app.harborfinance.io/tide) |
+| **TIDE (Tide dashboard)** | Token claim / allocation / BAO swap UI | [/tide](https://app.harborfinance.io/tide) |
 
 **Earn** and **Leverage** are the primary labels in docs. “Anchor” and “Sail” are the token **families** (ha / hs), not interchangeable names for the app tabs.
 
