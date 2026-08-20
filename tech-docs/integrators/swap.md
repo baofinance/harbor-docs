@@ -12,9 +12,6 @@ Registry + direct executors live on `harbor-swap` `main`. **Velora** as primary 
 
 ![Routing for Harbor Yield and keepers. Not mint or redeem.](/img/16-harbor-swap-integrator.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Two modes

@@ -6,9 +6,6 @@ Live pools are **StabilityPool_v1 / v2** (compounding balances). **ERC-20 pool s
 
 ![A live SP_v1 / v2 position is a balance, not a share token.](/img/20-stability-pool-lifecycle.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Overview

@@ -4,9 +4,6 @@ Integrate against the market **minter** proxy. Quotes are **view dry-runs**; exe
 
 ![Quote first. Guard with minOut. Then submit.](/img/13-mint-redeem-swimlane.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 Process-flow narrative (illustrative math, not a quote): [Minting process flow](../process-flows/minting.md). Function SoT: [Minter](../contracts/minter.md).

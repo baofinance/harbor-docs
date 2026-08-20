@@ -4,9 +4,6 @@ Harbor exposes **several price surfaces**. They are not interchangeable. ha/hs E
 
 ![Choose the price surface that matches the job.](/img/12-pricing-oracle-compose.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Which function to call

@@ -4,102 +4,68 @@ sidebar_position: 4
 
 # Maiden Voyage
 
-To launch new markets efficiently and fairly, Harbor uses **Maiden Voyage** — capacity-capped campaigns that bootstrap liquidity, collateral backing, and community ownership from day one.
+Harbor bootstraps new markets with **capacity-capped Maiden Voyage** campaigns — fair deposits, launch liquidity, and ongoing **Yield Share** for eligible supporters.
 
-**Maiden Voyage 2.0** is the starting point for new synthetic markets on Harbor. Live voyages and archived campaigns are listed in the app: [Maiden Voyage 2.0](https://app.harborfinance.io/genesis).
+Open live and archived voyages: [**Maiden Voyage**](https://app.harborfinance.io/genesis). Terms: [Glossary](/glossary).
 
 ![From capped deposit to lasting market participation.](/img/07-maiden-voyage-timeline.png)
 
-:::note
-WIP — final versions pending.
-:::
+## How it works
 
+### 1. Deposit while capacity is open
 
-## How Maiden Voyage 2.0 Works
+- Deposit approved collateral (fxSAVE, wstETH, or zap paths from fxUSD / ETH / USDC per voyage rules)
+- Voyages are **capacity-capped**; when full, the market can launch
 
-### 1. Users Deposit While Capacity Lasts
+### 2. Market launch — claim ha and hs
 
-- Participants deposit approved collateral (e.g., fxUSD / fxSAVE / USDC, or ETH / stETH / wstETH depending on the market) while the voyage has open capacity
-- Deposits form the initial backing of the new synthetic market
-- Voyages are **capacity-capped**; when the cap is reached, the market can launch
+When the voyage launches, participants claim:
 
-### 2. Market Launch → Anchor + Sail Tokens
+- **ha** — pegged token for that market (e.g. haETH, haEUR)
+- **hs** — leverage token (e.g. hsFXUSD-ETH, hsSTETH-EUR)
 
-When the voyage launches, participants can claim:
+Combined token NAV at launch matches deposited collateral value **subject to fees** — an initial NAV-preserving distribution split across two risk profiles (**ha** and **hs**). After launch, both still carry their usual downside (see [Risk Considerations](/risk-considerations)).
 
-- **Anchor tokens (haTokens)**: Pegged assets for that market (e.g., haETH, haEUR)
-- **Sail tokens (hsTokens)**: Leveraged residual exposure for that market (e.g., hsFXUSD-ETH, hsSTETH-EUR)
+### 3. Yield Share
 
-The combined net asset value (NAV) of the issued tokens matches the value of the original collateral at launch — participants **retain their value**, split across two tokens with different risk-return profiles.
-
-### 3. Yield Share (Ongoing Market Revenue)
-
-Eligible Maiden Voyage participants can earn a lasting share of that market’s revenue — **up to ~5% of market revenue** under voyage rules (mint/redeem fees and collateral yield). That carve-out comes **first**: e.g. **$100** revenue → **~$5** to Yield Share → the other **~$95** follows the global protocol path (any post–$10M TVL treasury take, then **75%** stability pools / **25%** buy TIDE). See [TIDE Tokenomics](/tide-token/tokenomics). Staying deposited in Harbor tokens after launch helps maximize eligibility; withdrawals reduce it. Details are shown per voyage in the app.
+Eligible participants can earn up to **~5% of that market’s revenue** (fees + collateral yield). That slice comes **first**; the remainder follows the global path (treasury take if applicable, then **75% pools** / **25% buy TIDE**). See [TIDE Tokenomics](/tide-token/tokenomics). Staying deposited after launch supports eligibility — details per voyage in the app.
 
 ### 4. Ledger Marks
 
-During active voyages (and related Anchor activity), participants earn **Ledger Marks**. Marks track early support for conversion / claim programs around TIDE. Exact rates and boosts are campaign-specific — check the app dashboard rather than hard-coding rates here.
+Active voyages earn **Ledger Marks** toward TIDE programs. Rates are campaign-specific — see the app dashboard.
 
-TIDE itself is claimable separately via the [Tide](https://app.harborfinance.io/tide) dashboard when you are eligible (airdrop / BAO swap / allocation snapshots).
+Claim **TIDE** separately on [Tide](https://app.harborfinance.io/tide) when eligible.
 
-## Why Maiden Voyage Is Important
+## Why it matters
 
-### Instant Market Liquidity
+- **Immediate liquidity** at launch
+- **Balanced ha and hs** float
+- **NAV-preserving distribution at launch** — claim ha + hs matching deposit value (subject to fees); then choose Earn, hold, or Leverage
+- **Ongoing Yield Share** — not one-off liquidity mining
 
-Participants provide immediate collateral and token float so markets are usable from launch.
+## Example: fxSAVE → ETH
 
-### Balanced System Collateralization
+Voyage accepts fxUSD / fxSAVE / USDC (per rules). After launch:
 
-Both the stable (Anchor) side and the leveraged (Sail) side are populated in healthy proportions.
+- **haETH** — pegged ETH
+- **hsFXUSD-ETH** — leverage vs fxUSD collateral
 
-### Low-Risk Entry at Launch
+Then: **Earn** with haETH, hold/trade hsFXUSD-ETH in **Leverage**, track Yield Share and Marks.
 
-- Total NAV of Anchor + Sail equals deposited collateral at launch
-- Users then choose to hold, trade, stake in stability pools, or withdraw according to risk appetite
+## Archived voyages
 
-### Permanent Ownership Upside
+Completed voyages close new deposits. Claims/withdrawals depend on stage — see each card in the app. Historical FXUSD-ETH, FXUSD-BTC, STETH-BTC voyages may appear archived.
 
-Unlike temporary liquidity mining, Yield Share is designed so early support can keep earning from market fees and collateral yield over time — subject to eligibility rules.
+## How to join
 
-## Example: fxSAVE → ETH Market
+1. [Maiden Voyage](https://app.harborfinance.io/genesis)
+2. Review voyage — collateral, capacity, Yield Share
+3. Deposit main collateral (fxSAVE / wstETH) or use a [zap](/supporting-features) for convenience
+4. After launch — claim **ha** / **hs**; use **Earn** or **Leverage** as you prefer
 
-Suppose Harbor runs a Maiden Voyage for **fxSAVE / fxUSD collateral** with an **ETH** peg.
+## Summary
 
-During the voyage:
-
-- Users deposit **fxUSD**, **fxSAVE**, or **USDC** (as accepted by that voyage)
-- After launch, users receive:
-  - **haETH**: Harbor Anchored ETH
-  - **hsFXUSD-ETH**: Harbor Sail fxUSD–ETH leveraged token
-
-Participants can:
-
-- Hold haETH and deposit into Stability Pools for yield
-- Hold or trade hsFXUSD-ETH for leveraged ETH exposure vs the collateral
-- Remain eligible for **Yield Share** and track **Marks** in the app
-
-## Completed and Archived Voyages
-
-- **Completed / archived** voyages disable new deposits
-- Withdrawals and claims may still be available depending on stage — see each voyage card in the app
-- Historical voyages (e.g. FXUSD-ETH, FXUSD-BTC, STETH-BTC) appear under archived lists when deposits are closed
-
-## Participating in Maiden Voyage
-
-### How to Join
-
-1. **Open the app** — [Maiden Voyage 2.0](https://app.harborfinance.io/genesis)
-2. **Review the active voyage** — collateral, capacity, stage, and Yield Share rules
-3. Prepare approved **main collateral** when you can (fxSAVE or wstETH for the voyage), or use a **zap** only for convenience if you start from ETH/USDC — see [Supporting Features](/supporting-features)
-4. **Deposit while capacity is open**
-5. **After launch** — claim Anchor + Sail tokens and manage Yield Share / Marks from your dashboard
-
-## Benefits Summary
-
-- **Kickstarts new markets** with immediate collateral and token distribution
-- **Fair, capacity-limited participation** — no reliance on a single market maker
-- **Choice after launch** — hold Anchor, Sail, or both; use Stability Pools
-- **NAV-preserving at launch** — tokens match deposited value at distribution
-- **Yield Share + Marks** — lasting revenue eligibility and early-supporter tracking (campaign-specific)
-
-Maiden Voyage is the launchpad for Harbor markets — turning early participation into ownership of market economics while seeding liquidity, peg health, and community ownership.
+- Fair, capped bootstrap for new markets
+- **ha + hs** at launch with preserved NAV
+- **Yield Share + Marks** for early supporters
+- Gateway to live [**Earn**](https://app.harborfinance.io/anchor) and [**Leverage**](https://app.harborfinance.io/sail) after launch

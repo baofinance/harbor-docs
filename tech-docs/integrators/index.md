@@ -9,9 +9,6 @@ Sequenced path for another protocol to integrate Harbor **without** a Harbor-hos
 
 ![The shortest supported path into Harbor.](/img/10-integrator-call-graph.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Read in this order

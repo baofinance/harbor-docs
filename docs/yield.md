@@ -2,40 +2,36 @@
 sidebar_position: 4
 ---
 
-# How Yield is Generated for haTOKENS
+# How Yield is Generated
 
-Harbor's high yields come from concentrating collateral yield into a smaller pool of active users, plus protocol fee and incentive programs.
+Harbor’s high yields come from **concentrating** collateral yield and protocol revenue into stability pool depositors. Deposit **ha** in [**Earn**](https://app.harborfinance.io/anchor). Terms: [Glossary](/glossary).
 
 ![Concentrate the yield. Not the collateral risk.](/img/05-yield-concentration.png)
 
-:::note
-WIP — final versions pending.
-:::
+## Yield concentration
 
+When you mint **ha** and **hs**, collateral sits in a shared pool. **Only ha deposited in a stability pool** (collateral **or** Sail) earns that **concentrated** yield. Pool types share harvest / revenue to pools; they differ in **rebalance payout** (collateral vs **hs**) — [Stability Pools](/stability-pools).
 
-- **Yield Concentration:** When you mint haTOKENS (pegged tokens) and hsTOKENS (leveraged tokens), your collateral is pooled. However, **only haTOKENS deposited in a stability pool** (collateral **or** Sail) earn that concentrated yield. The two pool types share harvest / revenue allocated to pools; they differ mainly in **rebalance payout** (collateral vs hsTOKENS) — see [Stability Pools](/stability-pools).
+**Example:** $100 collateral backs $50 ha and $50 hs. If only $30 ha sits in the pool, that $30 earns yield attributed to the full $100 backing — roughly **~3×** the base collateral APR before incentives (e.g. 7% collateral → ~20%+ pool APR illustrative).
 
-- **Example:**
-  Suppose there is $100 of collateral backing $50 of haETH and $50 of hsFXUSD-ETH.  
-  If only $30 of haETH is deposited in the stability pool (and the rest is in wallets or liquidity pools), then that $30 is earning yield from the full $100 of collateral.  
-  This means the stability pool can earn **~3x the base yield**—so if the collateral earns 7% APR, the stability pool could see ~20%+ APR before incentives.
+## Protocol revenue
 
-- **Protocol Revenue Enhancement:**
+Revenue = collateral yield + mint/redeem fees. Per market:
 
-  Protocol revenue (collateral yield + mint/redeem fees) is allocated as:
+1. Up to **~5%** → **Maiden Voyage Yield Share** (when eligible)
+2. Remainder → any post–$10M TVL treasury take → **75% stability pools** / **25% buy TIDE**
 
-  1. Up to **~5%** of that market’s revenue → **Maiden Voyage Yield Share** (when eligible)
-  2. Of the remaining **~95%**: after any post–$10M TVL treasury take → **75%** stability pools / **25%** buy TIDE (treasury → POL → burn)
+Diagram: [TIDE Tokenomics](/tide-token/tokenomics).
 
-  See the full diagram on [TIDE Tokenomics](/tide-token/tokenomics).
+## Who earns what
 
-- **Result:**
+- **ha in a stability pool** — high APR vs collateral alone + pool revenue share
+- **hs** — benefits from rebalancing / risk role; **does not** earn concentrated collateral yield directly
 
-  - **haTOKENS** in the stability pool earn a much higher APR than the underlying collateral alone, plus fee/revenue sharing to pools
-  - **hsTOKENS** benefit from rebalancing and risk management, but do not earn the concentrated collateral yield directly
+**Marks** and **TIDE** campaigns can boost effective returns where allocated.
 
-- **Extra Boost:** Ledger Marks and team-directed **$TIDE** incentives can further increase effective returns for active participants where campaigns apply.
+## Mid-term — Harbor Yield
 
-- **Coming mid-term — Harbor Yield:** three levels (product **1–3** = design **0–2**) — (1) stability pool + claim rewards, (2) **Compounder** (ERC-4626 over one pool), (3) **hyTOKEN** peg basket via **ERC-7575** doors (siblings of Compounders, not wrappers of them). See [Harbor Yield](/harbor-yield).
+Three **participation levels** (siblings, not a wrapping stack — levels 2 and 3 do **not** wrap each other): (1) pool + manual claim **live**; (2) **Compounder**; (3) **hyTOKEN** basket. See [Harbor Yield](/harbor-yield) (levels 2–3 not live mainnet yet).
 
-> By concentrating collateral yield into the stability pool — and directing 75% of (post–Yield Share / post–TVL-take) protocol revenue to stability pools to grow markets — Harbor aims to deliver strong APRs to users who secure the protocol.
+> By concentrating collateral yield into pools — and sending 75% of (post–Yield Share / post–TVL-take) revenue to pools — Harbor targets strong APRs for users who secure the protocol in **Earn**.

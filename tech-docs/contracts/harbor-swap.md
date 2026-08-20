@@ -32,9 +32,6 @@ Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinan
 
 ![Direct executors for compound. Aggregator path for redistribute.](/img/24-harbor-swap-architecture.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ### Architecture diagram (Mermaid)

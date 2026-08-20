@@ -7,6 +7,10 @@ const sidebars: SidebarsConfig = {
       id: "index",
       label: "Intro",
     },
+    "glossary",
+    "get-started",
+    "how-it-works",
+    "markets",
     {
       type: "category",
       label: "Protocol Overview",

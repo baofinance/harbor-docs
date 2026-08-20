@@ -10,9 +10,6 @@ Harbor markets split collateral into a **pegged** claim and a **residual (levera
 
 ![Name the live tokens first. Keep the yield wrappers in their lane.](/img/11-token-taxonomy.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Live tokens (integrate these)

@@ -6,9 +6,6 @@ Live minters are **Minter_v2**. Numeric examples below are **illustrative** only
 
 ![Quote first. Guard with minOut. Then submit.](/img/13-mint-redeem-swimlane.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Overview

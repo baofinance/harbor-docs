@@ -128,6 +128,14 @@ const config: Config = {
               to: "/",
             },
             {
+              label: "Get Started",
+              to: "/get-started",
+            },
+            {
+              label: "How It Works",
+              to: "/how-it-works",
+            },
+            {
               label: "Technical Overview",
               to: "/technical-overview",
             },

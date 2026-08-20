@@ -52,7 +52,4 @@ Track alongside [Price oracles](../contracts/price-oracle.md) and [Pricing](./pr
 
 ![Translate Harbor prices for Chainlink-shaped consumers.](/img/17-oracle-adapter.png)
 
-:::note
-WIP — final versions pending.
-:::
 

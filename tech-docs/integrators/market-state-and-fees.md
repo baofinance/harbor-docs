@@ -4,9 +4,6 @@ Do not hard-code the illustrative mint fees from the [product fees page](/fees) 
 
 ![Collateral-ratio bands steer each action differently.](/img/15-cr-bands-fees.png)
 
-:::note
-WIP — final versions pending.
-:::
 
 
 ## Views to poll (minter)
