@@ -47,7 +47,7 @@ TIDE holders can:
 - TIDE holders benefit from protocol growth through the buyback path: treasury (to **30% of total supply**) → POL (to **15% of total supply**) → burn
 - Long-term holders accumulate value as protocol revenue increases
 - Treasury ownership target (**≥30% of total TIDE supply**) supports sustainability
-- Team interests aligned with token holders through founder allocations
+- **Team interests aligned with token holders** through founder allocations — ~20% of supply on five **TVL + POL** cliffs, max **4%/year** (\*KPI schedule pending) ([tokenomics](/tide-token/tokenomics#founder-kpi-unlocks-20-of-supply))
 
 :::note
 For live claim, airdrop, and BAO swap status, use [app.harborfinance.io/tide](https://app.harborfinance.io/tide). Full revenue diagram: [TIDE Tokenomics](/tide-token/tokenomics).

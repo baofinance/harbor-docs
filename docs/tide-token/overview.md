@@ -8,6 +8,8 @@ sidebar_position: 1
 
 **Status:** TIDE launch and BAO → TIDE migration claims are rolling out via the [Tide dashboard](https://app.harborfinance.io/tide). BAO is being retired in favor of TIDE as the primary ecosystem token.
 
+Founder tokens: **~2%** liquid at launch; **~20%** via five **TVL + POL** cliffs (**$1M/1% → $50M/15%**), **4% per cliff**, max **4%/year** (\*KPI schedule pending). Full allocation table: [TIDE Tokenomics](/tide-token/tokenomics).
+
 ## Overview
 
 TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and exposure to protocol value accrual through TIDE buybacks.

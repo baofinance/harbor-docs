@@ -68,7 +68,40 @@ There is a **claim window** (timing TBA) for BAO and veBAO holders. **Unclaimed 
 
 | Category | Allocation | Details |
 | -------- | ---------- | ------- |
-| Founders | 22% | ~2% initially liquid; remaining ~20% tied to protocol KPIs / milestones |
+| Founders | 22% | ~2% initially liquid; remaining **~20%** locked until **TVL + POL KPIs** are met (see below)\* |
+
+#### Founder KPI unlocks (~20% of supply)\*
+
+\* **KPI schedule pending** — the cliff table below is the working design; final numbers and vesting-contract wording may change before launch. Treat as provisional until confirmed on-chain / in the Tide dashboard.
+
+The KPI-locked founder allocation unlocks against **five TVL + POL cliffs**. Each cliff that is met unlocks **up to 4% of total supply**, and unlocks are capped at **4% of total supply per year** — even if Harbor is ahead of the KPI schedule. POL is a share of **total TIDE supply** (1B hard cap).
+
+| Cliff | TVL\* | POL\* (of total TIDE supply) | Unlock when met |
+| ----- | ----- | ---------------------------- | --------------- |
+| **1** | ≥ **$1M** | ≥ **1%** | **4%** |
+| **2** | ≥ **$5M** | ≥ **2.5%** | **4%** |
+| **3** | ≥ **$10M** | ≥ **4.5%** | **4%** |
+| **4** | ≥ **$25M** | ≥ **9%** | **4%** |
+| **5** | ≥ **$50M** | ≥ **15%** | **4%** |
+| | | **Total** | **20%** |
+
+| Example cumulative | Unlock | Cumulative |
+| ------------------- | ------ | ---------- |
+| After cliff 1 | 4% | **4%** |
+| After cliff 2 | 4% | **8%** |
+| After cliff 3 | 4% | **12%** |
+| After cliff 4 | 4% | **16%** |
+| After cliff 5 | 4% | **20%** |
+
+Notes:
+
+- **Both metrics required** at each cliff (TVL **and** POL). Cliffs are taken **in order** (1 → 5).
+- **Cliffs, not drip:** no continuous unlock between cliffs — only when a cliff is newly satisfied.
+- **Max 4% per year:** unlocking cannot exceed **4% of total supply in any year**, even if several cliffs are already met early. Full release of the 20% therefore takes **at least five years**.
+- Cliff 1 is intentionally easy (**$1M / 1% POL**); cliff 5 matches the long-term POL ownership goal (**$50M / 15% POL**).
+- Separately, **~2%** of supply is founder liquid at launch (outside this 20% KPI schedule). Total founder allocation remains **22%**.
+- \* **Pending confirmation** before TGE — do not treat cliff TVL/POL figures as final until published with vesting contracts.
+
 
 ### Treasury
 
@@ -87,7 +120,7 @@ Expected circulating supply at launch is approximately **43.5%**.
 The remaining **~56.5%** is primarily:
 
 - Harbor Treasury reserves
-- Founder KPI-locked allocations
+- Founder KPI-locked allocations\* (**5 cliffs × 4%**; max **4%/year**; cliff 1 **$1M / 1% POL** → cliff 5 **$50M / 15% POL**)
 - Future booster reserves
 
 Initial liquidity may be relatively limited, and early price discovery may be volatile — that is expected. Harbor focuses on sustainable ownership and protocol-driven buybacks rather than engineering short-term token price action.
@@ -144,6 +177,9 @@ Harbor uses **team-controlled emissions** rather than gauge voting in the early 
 - Provides warchest for incentives and growth
 - Until buyback ownership targets are met, purchased TIDE is retained rather than burned
 
+### 6. Founder alignment (TVL + POL)
+
+~20% of supply (founder KPI lock) unlocks against five **TVL + POL** cliffs (**$1M/1% → $5M/2.5% → $10M/4.5% → $25M/9% → $50M/15%**), **4% per cliff**, with a hard cap of **4% of supply per year**. Full unlock takes at least five years even if KPIs are hit early. \*KPI schedule pending — provisional until vesting contracts / Tide dashboard confirm.
 ---
 
 ## Vesting Overview
@@ -166,7 +202,7 @@ Exact circulating mix at TGE depends on claim timing and unlock schedules — us
 ### Locked / reserved at launch (~56.5%)
 
 - Harbor Treasury (34.5%)
-- Founder KPI / milestone locks (~20% of the 22% founder allocation)
+- Founder KPI locks (~20% of supply)\* — five cliffs (**$1M/1% → … → $50M/15%**), **4% each**, max **4%/year** (see [Founder KPI unlocks](#founder-kpi-unlocks-20-of-supply))
 - Future booster reserves (2%)
 
 ---

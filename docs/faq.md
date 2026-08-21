@@ -100,6 +100,8 @@ Yes — Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_
 
 Governance and value-accrual token (1B cap). [TIDE (Tide dashboard)](https://app.harborfinance.io/tide) · [TIDE overview](/tide-token/overview).
 
+Founder allocation (~22%): ~2% liquid at launch; ~20% via five cliffs — **$1M/1% → $5M/2.5% → $10M/4.5% → $25M/9% → $50M/15% POL**, **4% each**, max **4%/year** (\*KPI schedule pending). See [TIDE Tokenomics](/tide-token/tokenomics#founder-kpi-unlocks-20-of-supply).
+
 ### How do I participate in governance?
 
 Discord / community discussion; team-directed incentives today. [Governance & TIDE](/tide-token/governance).
