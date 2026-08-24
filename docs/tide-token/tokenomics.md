@@ -72,7 +72,7 @@ There is a **claim window** (timing TBA) for BAO and veBAO holders. **Unclaimed 
 
 #### Founder KPI unlocks (~20% of supply)\*
 
-\* **KPI schedule pending** — the cliff table below is the working design; final numbers and vesting-contract wording may change before launch. Treat as provisional until confirmed on-chain / in the Tide dashboard.
+\* **KPI schedule pending** — the cliff table below is the working design. Final numbers and vesting-contract wording may still be updated; treat as provisional until confirmed on-chain / in the Tide dashboard.
 
 The KPI-locked founder allocation unlocks against **five TVL + POL cliffs**. Each cliff that is met unlocks **up to 4% of total supply**, and unlocks are capped at **4% of total supply per year** — even if Harbor is ahead of the KPI schedule. POL is a share of **total TIDE supply** (1B hard cap).
 
@@ -100,7 +100,7 @@ Notes:
 - **Max 4% per year:** unlocking cannot exceed **4% of total supply in any year**, even if several cliffs are already met early. Full release of the 20% therefore takes **at least five years**.
 - Cliff 1 is intentionally easy (**$1M / 1% POL**); cliff 5 matches the long-term POL ownership goal (**$50M / 15% POL**).
 - Separately, **~2%** of supply is founder liquid at launch (outside this 20% KPI schedule). Total founder allocation remains **22%**.
-- \* **Pending confirmation** before TGE — do not treat cliff TVL/POL figures as final until published with vesting contracts.
+- \* **Pending confirmation** — do not treat cliff TVL/POL figures as final until published with vesting contracts / the Tide dashboard.
 
 
 ### Treasury

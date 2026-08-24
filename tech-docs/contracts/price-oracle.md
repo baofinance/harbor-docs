@@ -202,7 +202,7 @@ Library for retrieving and validating rates from Chainlink feeds.
 **Key Features:**
 - **Rate Normalization**: Normalizes rates to 18 decimals regardless of feed decimals
 - **Staleness Validation**: Validates feed freshness using heartbeat thresholds (default: 24 hours)
-- **Bounds Validation**: Validates rates are within acceptable bounds (default: 1e18 to 2e18)
+- **Bounds Validation**: Validates wrapped collateral rates (fxSAVE / wstETH vs underlying) against min/max bounds (default: **0.9e18–3e18**, i.e. **0.9–3.0** in 18-decimal fixed point)
 - **Error Handling**: Reverts with specific errors for invalid rates or stale feeds
 
 **Functions:**
@@ -210,13 +210,17 @@ Library for retrieving and validating rates from Chainlink feeds.
 - `getRate(feed, feedDecimals, minRate, maxRate, maxAge)`: Get rate with custom validation
 
 **Default Constants:**
-- `DEFAULT_MIN_RATE`: 1e18
-- `DEFAULT_MAX_RATE`: 2e18
+- `DEFAULT_MIN_RATE`: **0.9e18** (0.9×)
+- `DEFAULT_MAX_RATE`: **3e18** (3.0×)
 - `DEFAULT_MAX_AGE`: 86,400 seconds (24 hours)
 
 **Errors:**
-- `InvalidRate(uint256 rate)`: Rate is invalid (negative, zero, or out of bounds)
+- `InvalidRate(uint256 rate)`: Rate is invalid (negative, zero, or **outside the configured bounds** — default **0.9–3.0**)
 - `StaleRateSource(address source, uint256 updatedAt)`: Feed data is stale
+
+:::note Monitor / ops
+If the wrapped rate (fxSAVE or wstETH vs underlying) moves **outside 0.9–3.0**, the aggregator reverts **`InvalidRate`** on the rate path. Mint, redeem, and other minter flows that depend on a fresh oracle read will **fail** until the rate returns in range or feeds are updated. This is separate from **staleness** / heartbeat checks — both can block reads.
+:::
 
 ### MultiFeedSumPriceLib
 
@@ -288,7 +292,7 @@ All prices are validated for:
 2. **Zero Values**: Invalid feeds return zero (reverts in Minter)
 3. **Decimals**: All prices normalized to 18 decimals
 4. **Feed Health**: Chainlink feed status checked
-5. **Rate Bounds**: Rates validated against min/max bounds (via `ChainlinkRateLib`)
+5. **Rate bounds**: Wrapped collateral rates (fxSAVE / wstETH vs underlying) validated via `ChainlinkRateLib` — default **0.9–3.0** (`0.9e18`–`3e18`); out of range reverts **`InvalidRate`** and blocks dependent mint/redeem reads
 
 ## Chain-Specific Deployments
 

@@ -30,7 +30,7 @@ function latestAnswer()
     );
 ```
 
-Today min and max are typically equal (bounds reserved). Wrapped rate is fxSAVE / wstETH (etc.) vs underlying. Full behaviour: [Price oracle contracts](../contracts/price-oracle.md).
+Today min and max are typically equal (bounds reserved). Wrapped rate is fxSAVE / wstETH (etc.) vs underlying, validated by `ChainlinkRateLib` (default **0.9–3.0×**; out of range → `InvalidRate`). Full behaviour: [Price oracle contracts](../contracts/price-oracle.md).
 
 Minter views: [Minter](../contracts/minter.md) (`peggedTokenPrice`, `leveragedTokenPrice`, `collateralRatio`).
 
