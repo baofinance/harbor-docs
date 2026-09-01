@@ -11,7 +11,7 @@ slug: /terms-of-use
 
 These Terms apply to your access to and use of the Interface from the Effective date above. If you used the Interface before these Terms were first published on the Interface or documentation site, your **continued use after publication** constitutes your ratification of, and agreement to, these Terms for all such use from the Effective date forward.
 
-These Terms of Use ("Terms") govern your access to and use of the Harbor web interface at [app.harborfinance.io](https://app.harborfinance.io) and related Harbor front ends (the "Interface"). The Interface helps you interact with Harbor Protocol smart contracts on public blockchains (the "Protocol").
+These Terms of Use ("Terms") govern your access to and use of the Harbor web interface at [app.harborfinance.io](https://app.harborfinance.io) and related Harbor front ends (the "Interface"). The Interface helps you interact with Harbor Protocol smart contracts on public blockchains (the "Protocol"). Our [Privacy Policy](/privacy-policy) describes how the Interface handles data.
 
 **If you do not agree to these Terms, do not use the Interface.**
 
@@ -51,7 +51,7 @@ It is important to understand the distinction:
 
 **Third-party dependencies:** The Interface and Protocol may rely on third-party services or infrastructure, including wallet providers, RPC nodes, indexers, oracle providers, swap aggregators, bridges, and other external software. We do not control and are not responsible for the operation, availability, accuracy, or security of such third-party services.
 
-**Disclaimer:** These Terms apply to the Interface only. We have no control over the Protocol's underlying code execution once your transaction is submitted to a blockchain.
+**Disclaimer:** These Terms apply to the Interface only. Once your transaction is submitted to a blockchain, we cannot reverse its execution. Authorized contract upgrades may change future Protocol behavior; they do not affect transactions already finalized on-chain.
 
 ---
 
@@ -60,7 +60,7 @@ It is important to understand the distinction:
 The Interface may expose access to various Harbor products, which can change over time, including but not limited to:
 
 - **Earn (ha tokens):** Minting, redeeming, and depositing into stability pools pegged to assets such as USD, ETH, BTC, EUR, gold, or silver.
-- **Leverage (hs tokens):** Minting and redeeming leveraged exposure via Sail markets.
+- **Leverage (hs tokens):** Minting and redeeming leveraged exposure via Leverage (Sail) markets.
 - **Harbor Yield (hy tokens):** Auto-compounding or yield-oriented products where deployed.
 - **Maiden Voyage / genesis:** Time-limited or capped deposit phases for new markets.
 - **Zaps and bundled transactions:** One-click paths that combine approvals, swaps, mints, and pool deposits.
@@ -150,13 +150,13 @@ Any dispute arising out of these Terms shall be resolved through binding arbitra
 
 ## 12. Modification of terms
 
-DAO contributors may modify these Terms at any time. Updated Terms will be posted on the Interface and/or documentation site with a revised effective date. Your continued use of the Interface after changes are posted constitutes acceptance of the modified Terms. If you used the Interface before an updated version was posted, your continued use after that update is posted constitutes ratification of the updated Terms for your use from the revised effective date, to the extent permitted by applicable law.
+Harbor contributors may modify these Terms at any time. Updated Terms will be posted on the Interface and/or documentation site with a revised effective date. Your continued use of the Interface after changes are posted constitutes acceptance of the modified Terms. If you used the Interface before an updated version was posted, your continued use after that update is posted constitutes ratification of the updated Terms for your use from the revised effective date, to the extent permitted by applicable law.
 
 ---
 
 ## 13. Contact
 
-Harbor is community-maintained. For questions about these Terms, use official Harbor communication channels linked from the Interface (e.g., [Discord](https://discord.com/invite/BW3P62vJXT)). There is no guaranteed response time and no obligation to provide support.
+Harbor is community-maintained. For questions about these Terms or the [Privacy Policy](/privacy-policy), use official Harbor communication channels linked from the Interface (e.g., [Discord](https://discord.com/invite/BW3P62vJXT)). There is no guaranteed response time and no obligation to provide support.
 
 ---
 

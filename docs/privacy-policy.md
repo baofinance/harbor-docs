@@ -15,7 +15,7 @@ Harbor is a **non-custodial** interface for interacting with Harbor Protocol sma
 
 This policy describes **what the Interface does touch**, **why**, and **what we do not do**. It applies to [app.harborfinance.io](https://app.harborfinance.io) and related Harbor front ends (the "Interface"). For rules of use, see [Terms of Use](/terms-of-use).
 
-The Interface is maintained by open-source contributors and community members (collectively, "Harbor Protocol," "Harbor," "we," or the "DAO"). Harbor is operationally coordinated by **core contributors** from the broader community. That coordination does not create a company, partnership, or other legal entity that holds your personal data as a traditional service provider would.
+The Interface is maintained by open-source contributors and community members (collectively, "Harbor Protocol," "Harbor," "we," or the "DAO"). Harbor is operationally led by **core contributors** who emerged from the broader Harbor community. That coordination does not create a company, partnership, or other legal entity that holds your personal data as a traditional service provider would.
 
 ---
 
@@ -57,7 +57,7 @@ Harbor does not receive or store your **private keys**.
 
 To read chain state and submit transactions, the Interface communicates with blockchain nodes. Depending on configuration:
 
-- **Default path:** Some traffic may be routed through Harbor's **server-side RPC proxy** (`/api/rpc`) so provider API keys stay off the client. That proxy sees request metadata (such as IP address and user agent) and the JSON-RPC payloads needed to serve your request, which may relate to addresses you query.
+- **Default path:** Some traffic may be routed through Harbor's **server-side RPC proxy** (`/api/rpc`) so provider API keys stay off the client. That proxy sees request metadata (such as IP address and user agent) and the JSON-RPC payloads needed to serve your request, which may relate to addresses you query. We use this path for **transient processing** to serve the request; we do not maintain long-term user profiles from RPC proxy traffic.
 - **Direct RPC:** Some chains may use public or configured RPC endpoints from your browser. Those endpoints see traffic from your connection under their own terms.
 
 You can reduce reliance on Harbor's default RPC path by using wallet or network settings that point to RPC endpoints you trust, where the Interface exposes that option.
@@ -95,7 +95,7 @@ Our [Terms of Use](/terms-of-use) restrict use from certain jurisdictions. We **
 
 ## No trackers, no sale of data
 
-As of the date above, the Harbor Interface does **not** intentionally run first-party third-party **analytics**, **advertising pixels**, or **fingerprinting** scripts (for example, Google Analytics, Meta Pixel, or similar).
+As of the Effective date above, the Harbor Interface does **not** intentionally run third-party **analytics**, **advertising pixels**, or **fingerprinting** scripts (for example, Google Analytics, Meta Pixel, or similar).
 
 We do **not** sell, rent, trade, or "share" (as U.S. state privacy laws use that term) personal data about you for cross-context behavioral advertising.
 
@@ -124,6 +124,7 @@ Market and portfolio data shown in the Interface is generally derived from **pub
 
 | Data type | Typical retention |
 |-----------|-------------------|
+| RPC proxy traffic | Transient processing to serve requests; not stored as user profiles |
 | Server / edge logs | Approximately **one day** on Vercel; operational metadata only, not user profiles |
 | On-chain transactions | **Permanent** on the blockchain; not controlled by Harbor |
 | Browser preferences | Until you clear site storage |
@@ -148,7 +149,7 @@ Depending on where you live, privacy law may give you rights to **access**, **co
 - **Clear browser storage** for the site to remove local preferences and session data
 - **Use the Protocol without this Interface** via block explorers, scripts, or other tools
 
-**Contact us** through official Harbor channels linked from the Interface (for example, [Discord](https://discord.com/invite/BW3P62vJXT)) to exercise rights regarding data stored on our systems. We will respond where required by law.
+**Contact us** at [chickn@harborfinance.io](mailto:chickn@harborfinance.io) to exercise rights regarding data stored on our systems. You may also use official Harbor channels linked from the Interface (for example, [Discord](https://discord.com/invite/BW3P62vJXT)). We will respond where required by law.
 
 **Honest limit:** Blockchain transactions are **public and permanent**. No one, including Harbor, can delete or edit confirmed on-chain activity. Deletion rights cannot reach data that lives on-chain or on third-party explorers.
 
@@ -170,7 +171,7 @@ Continued use of the Interface after an update means you accept the revised poli
 
 ## Contact
 
-Harbor is community-maintained. Privacy questions or requests: use official channels published on the Interface (for example, Discord). There is no guaranteed response time.
+Harbor is community-maintained. Privacy questions or requests: [chickn@harborfinance.io](mailto:chickn@harborfinance.io). There is no guaranteed response time.
 
 For product and risk context, see [Risk Considerations](/risk-considerations) and [Terms of Use](/terms-of-use).
 
