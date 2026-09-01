@@ -5,13 +5,11 @@ description: How the Harbor Protocol web interface handles data at app.harborfin
 slug: /privacy-policy
 ---
 
-:::caution Legal review pending
-This Privacy Policy draft is published for documentation integration only. **Legal counsel must review** before relying on it for production (GDPR/CCPA, DAO operator wording, retention periods, and related claims). Verify against production: geoblocking, hosting analytics, vote retention, and RPC routing.
-:::
-
 # Harbor Protocol Privacy Policy
 
-**Last updated:** 1 September 2026
+**Effective date:** 19 December 2025
+
+This policy applies to your use of the Interface from the Effective date above. If you used the Interface before this policy was first published on the Interface or documentation site, your **continued use after publication** constitutes your ratification of, and agreement to, this policy for all such use from the Effective date forward.
 
 Harbor is a **non-custodial** interface for interacting with Harbor Protocol smart contracts. There is **no sign-up form**, **no identity verification**, and **no requirement** to provide your name, email address, phone number, or government identifiers. We do not want them and we do not ask for them.
 
@@ -50,7 +48,6 @@ Connecting a wallet uses standard browser wallet extensions or connectors (for e
 When you sign a message or transaction:
 
 - **On-chain transactions** are broadcast to the network and become public record.
-- **Off-chain signatures** (for example, typed data for Map Room voting) are verified by our servers only to authenticate your request. We store what is needed for that feature, as described below.
 
 Harbor does not receive or store your **private keys**.
 
@@ -67,23 +64,6 @@ You can reduce reliance on Harbor's default RPC path by using wallet or network 
 
 ---
 
-## Map Room and Flow voting
-
-The **Flow / Map Room** voting feature lets you allocate points to price feeds using a **wallet signature**.
-
-When you vote, our backend may store:
-
-- Your **wallet address**
-- Your **vote allocations** (feed identifiers and point values)
-- A **nonce** used to prevent replay
-- The fact that a signature was verified
-
-Votes are persisted in a database service (**Upstash Redis**) when configured in production. In some preview or staging environments, votes may be stored in memory only and not persist across restarts.
-
-We use this data **only** to operate voting (totals, your current allocation, anti-replay). We do not use it for advertising or unrelated profiling.
-
----
-
 ## Preferences and data on your device
 
 The Interface stores some settings in your browser:
@@ -93,7 +73,7 @@ The Interface stores some settings in your browser:
 | `localStorage` | Background theme (e.g. Ethereum vs MegaETH), dashboard module layout, in-progress genesis deposit state | Remember UI preferences and resume flows |
 | `sessionStorage` | Optional admin "view as wallet" address (only when that feature is enabled) | Internal support / QA tooling |
 
-These values stay on your device except where sending them is required for a feature (for example, submitting a transaction or vote). Clearing site data in your browser removes them.
+These values stay on your device except where sending them is required for a feature (for example, submitting a transaction). Clearing site data in your browser removes them.
 
 The Interface does **not** set advertising or cross-site tracking cookies for Harbor's own analytics.
 
@@ -101,9 +81,9 @@ The Interface does **not** set advertising or cross-site tracking cookies for Ha
 
 ## Server and hosting logs
 
-Like most web applications, our hosting and API infrastructure (for example, **Vercel** and related edge/network providers) records **standard request metadata**: IP address, user agent, requested path, timestamps, and error diagnostics. We use this to operate the service, debug issues, enforce rate limits, and protect against abuse.
+Our hosting and API infrastructure (for example, **Vercel** and related edge/network providers) may record **standard operational request metadata** while handling a request: for example, IP address, user agent, requested path, timestamps, and error diagnostics. We use this only to operate the service, debug issues, enforce rate limits, and protect against abuse.
 
-**Retention:** Logs are kept for a **limited operational period** (typically days to weeks, depending on provider settings), not for long-term profiling. Exact retention follows our hosting provider's configuration and may change.
+We do **not** maintain user accounts, profiles, or long-term log histories on our hosting platform. **Retention:** on Vercel, logs are kept for approximately **one day**, then discarded. We do not use hosting logs to build user-related records beyond that short operational window.
 
 ---
 
@@ -132,7 +112,6 @@ Using the Interface necessarily involves services we do not operate. They receiv
 - **Wallet extensions and connectors** when you connect or sign
 - **Blockchain RPC providers** (directly or via our proxy)
 - **Hosting and CDN / edge providers** (for example, Vercel)
-- **Vote storage** (Upstash, when enabled)
 - **Indexers and subgraphs** that serve public on-chain data
 - **Block explorers** when you follow links from the Interface
 - **Community links** (for example, Discord) when you leave the app
@@ -145,12 +124,11 @@ Market and portfolio data shown in the Interface is generally derived from **pub
 
 | Data type | Typical retention |
 |-----------|-------------------|
-| Vote allocations and nonces | While the voting feature is active and records remain useful for totals and your current vote |
-| Server / edge logs | Short operational window per hosting configuration |
+| Server / edge logs | Approximately **one day** on Vercel; operational metadata only, not user profiles |
 | On-chain transactions | **Permanent** on the blockchain; not controlled by Harbor |
 | Browser preferences | Until you clear site storage |
 
-We apply reasonable administrative and technical safeguards to systems we operate. The structural security story for users is: **we never hold your private keys or custody your assets**. A compromise of Interface servers could expose metadata described on this page (for example, IP logs, vote records, RPC request patterns), not your seed phrase.
+We apply reasonable administrative and technical safeguards to systems we operate. The structural security story for users is: **we never hold your private keys or custody your assets**. A compromise of Interface servers could expose metadata described on this page (for example, IP logs and RPC request patterns), not your seed phrase.
 
 ---
 
@@ -184,9 +162,9 @@ The Interface is not directed at anyone under **18**. We do not knowingly collec
 
 ## Changes to this policy
 
-We may update this policy if our practices change. The **Last updated** date at the top will change when we do. Material changes may also be noted on the Interface or documentation site.
+We may update this policy if our practices change. The **Effective date** at the top will change when we do. Material changes may also be noted on the Interface or documentation site.
 
-Continued use of the Interface after an update means you accept the revised policy for new processing from that date forward.
+Continued use of the Interface after an update means you accept the revised policy for new processing from that date forward. If you used the Interface before an updated version was posted, your continued use after that update is posted constitutes ratification of the updated policy for your use from the revised effective date, to the extent permitted by applicable law.
 
 ---
 
@@ -202,7 +180,7 @@ For product and risk context, see [Risk Considerations](/risk-considerations) an
 
 - **Wallet-only.** No accounts, no email signup, no KYC.
 - **Public chain.** Addresses and transactions are visible on-chain to everyone.
-- **Limited server data.** RPC proxy traffic, short-lived logs, and optional vote records.
+- **Limited server data.** RPC proxy traffic and ~1-day operational hosting logs (no user accounts or profiles).
 - **Local prefs.** Some UI state stays in your browser.
 - **No Harbor ad tracking.** We do not sell your data for ads.
 - **You stay in control** of your keys; we are non-custodial.
