@@ -35,12 +35,13 @@ As Harbor matures, governance will transition to a **governance committee model*
 
 ## TIDE Holder Rights
 
-TIDE holders can:
+During the **team-directed phase**, core contributors make operational and protocol decisions ([Terms of Use](/terms-of-use)). TIDE holders can still:
 
 - **Propose Protocol Changes**: Submit proposals for community discussion
-- **Vote on Major Decisions**: Participate in governance votes on significant protocol upgrades
 - **Participate in Discussions**: Shape protocol direction through active community engagement
 - **Treasury Oversight**: Provide input on treasury usage and strategic initiatives
+
+When Harbor implements **formal community governance** (as the Protocol gains traction), TIDE holders will be able to vote on major protocol decisions through that framework.
 
 ## Alignment Incentives
 
