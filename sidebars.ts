@@ -41,9 +41,9 @@ const sidebars: SidebarsConfig = {
       label: "Roadmap",
     },
     {
-      type: "doc",
-      id: "terms-of-use",
-      label: "Terms of Use",
+      type: "category",
+      label: "Legal",
+      items: ["terms-of-use", "privacy-policy"],
     },
   ],
 };
