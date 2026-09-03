@@ -40,6 +40,11 @@ const sidebars: SidebarsConfig = {
       id: "roadmap",
       label: "Roadmap",
     },
+    {
+      type: "category",
+      label: "Legal",
+      items: ["terms-of-use", "privacy-policy"],
+    },
   ],
 };
 

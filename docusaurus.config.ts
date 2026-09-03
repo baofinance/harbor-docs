@@ -167,6 +167,19 @@ const config: Config = {
           ],
         },
         {
+          title: "Legal",
+          items: [
+            {
+              label: "Terms of Use",
+              to: "/terms-of-use",
+            },
+            {
+              label: "Privacy Policy",
+              to: "/privacy-policy",
+            },
+          ],
+        },
+        {
           title: "More",
           items: [
             {
