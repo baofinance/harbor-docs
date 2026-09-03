@@ -149,7 +149,7 @@ Depending on where you live, privacy law may give you rights to **access**, **co
 - **Clear browser storage** for the site to remove local preferences and session data
 - **Use the Protocol without this Interface** via block explorers, scripts, or other tools
 
-**Contact us** at [chickn@harborfinance.io](mailto:chickn@harborfinance.io) to exercise rights regarding data stored on our systems. You may also use official Harbor channels linked from the Interface (for example, [Discord](https://discord.com/invite/BW3P62vJXT)). We will respond where required by law.
+**Contact us** at [team@harborfinance.io](mailto:team@harborfinance.io) to exercise rights regarding data stored on our systems. You may also use official Harbor channels linked from the Interface (for example, [Discord](https://discord.com/invite/BW3P62vJXT)). We will respond where required by law.
 
 **Honest limit:** Blockchain transactions are **public and permanent**. No one, including Harbor, can delete or edit confirmed on-chain activity. Deletion rights cannot reach data that lives on-chain or on third-party explorers.
 
@@ -171,7 +171,7 @@ Continued use of the Interface after an update means you accept the revised poli
 
 ## Contact
 
-Harbor is community-maintained. Privacy questions or requests: [chickn@harborfinance.io](mailto:chickn@harborfinance.io). There is no guaranteed response time.
+Harbor is community-maintained. Privacy questions or requests: [team@harborfinance.io](mailto:team@harborfinance.io). There is no guaranteed response time.
 
 For product and risk context, see [Risk Considerations](/risk-considerations) and [Terms of Use](/terms-of-use).
 

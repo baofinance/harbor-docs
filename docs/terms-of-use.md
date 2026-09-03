@@ -35,10 +35,25 @@ These Terms are a binding agreement between you ("User" or "you") and the open-s
 By using the Interface, you represent and warrant that:
 
 - You are at least 18 years old.
-- You are **not** a resident, citizen, or agent of a Prohibited Jurisdiction, including but not limited to: the United States, Canada, Mainland China, North Korea, Iran, Syria, Cuba, Crimea, or any other country or territory subject to comprehensive sanctions by OFAC, the UN, or the EU.
-- You are not on any sanctions list (e.g., Specially Designated Nationals (SDNs)).
+- You are **not** a resident, citizen, or agent of a **Prohibited Jurisdiction**, and you are **not** a person or entity on a **Restricted Party List**, as defined below.
 
-We may restrict access to the Interface (including via geoblocking) from any Prohibited Jurisdiction. Use of a virtual private network (VPN) or other tools to circumvent these restrictions is a breach of these Terms.
+### 2.1 Policy-based Prohibited Jurisdictions
+
+Harbor's own Interface access policy (separate from mandatory sanctions law) treats the following as **Prohibited Jurisdictions**: the United States, Canada, Mainland China, and any other country or territory Harbor designates by notice on the Interface or documentation site.
+
+We may restrict access to the Interface (including via geoblocking) from any Prohibited Jurisdiction. Use of a VPN or other tools to circumvent these restrictions is a breach of these Terms.
+
+### 2.2 Legally mandated sanctions
+
+Independently of Harbor's policy exclusions in Section 2.1, you represent that you are **not** located in, ordinarily resident in, or organized under the laws of a comprehensively sanctioned country or territory, and that you are **not** identified on any of the following **Restricted Party Lists** (as updated from time to time by the issuing authority):
+
+- **United States:** the OFAC [Specially Designated Nationals and Blocked Persons List (SDN List)](https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists) and OFAC [Consolidated Non-SDN Sanctions List](https://ofac.treasury.gov/consolidated-non-sdn-list-human-readable-lists), administered by the U.S. Department of the Treasury's Office of Foreign Assets Control
+- **United Nations:** the [UN Security Council Consolidated List](https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list)
+- **European Union:** the [EU Consolidated Financial Sanctions List](https://data.europa.eu/data/datasets/consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions)
+
+**Effective reference:** for purposes of these Terms, the Restricted Party Lists and comprehensive country/territory sanctions programs are those in force as of this Terms' **Effective date** (19 December 2025), as subsequently amended by the relevant authority. You must comply with the **then-current** version of each list and program when you use the Interface.
+
+**Precedence:** if the OFAC, UN, and EU sources conflict as applied to you or your activity, the **most restrictive** applicable restriction controls for Interface eligibility under these Terms. Where Harbor's policy-based Prohibited Jurisdictions (Section 2.1) are broader than legally mandated sanctions (this Section 2.2), the policy exclusion still applies to Interface access; it does **not** replace or limit any legal sanctions obligation you may have under applicable law.
 
 ---
 
@@ -140,11 +155,11 @@ You agree to indemnify and hold harmless the DAO and its contributors from any c
 
 ### 11.1 Binding arbitration
 
-Any dispute arising out of these Terms shall be resolved through binding arbitration on an individual basis. Because there is no legal entity to "sue," arbitration shall be conducted between you and the specific contributors or parties you allege are responsible, as permitted by applicable law.
+To the fullest extent permitted by applicable law, any dispute arising out of or relating to these Terms or your use of the Interface shall be resolved through binding arbitration on an **individual** basis between **you** and **Harbor** (as defined in Section 1). Harbor has no single legal entity; naming Harbor as the arbitration counterparty does **not** create a company, partnership, or other legal person, and does **not** make any individual contributor, developer, token holder, or governance participant a separate arbitration counterparty or personally liable, except as required by applicable law or unless that person has separately agreed in writing to be bound as a party to the dispute. Any arbitration award or claim remains subject to the limitations and waivers in Section 9.
 
 ### 11.2 Class action waiver
 
-**YOU WAIVE THE RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION.** You agree that any dispute will be resolved solely on an individual basis.
+**YOU WAIVE THE RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION AGAINST HARBOR OR ANY PERSON COVERED BY SECTION 9.** You agree that any dispute under these Terms will be resolved solely on an individual basis between you and Harbor as provided in Section 11.1.
 
 ---
 
