@@ -47,7 +47,7 @@ We may restrict access to the Interface (including via geoblocking) from any Pro
 
 Independently of Harbor's policy exclusions in Section 2.1, you represent that you are **not** located in, ordinarily resident in, or organized under the laws of a comprehensively sanctioned country or territory, and that you are **not** identified on any of the following **Restricted Party Lists** (as updated from time to time by the issuing authority):
 
-- **United States:** the OFAC [Specially Designated Nationals and Blocked Persons List (SDN List)](https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists) and OFAC [Consolidated Non-SDN Sanctions List](https://ofac.treasury.gov/consolidated-non-sdn-list-human-readable-lists), administered by the U.S. Department of the Treasury's Office of Foreign Assets Control
+- **United States:** the OFAC [Specially Designated Nationals and Blocked Persons List (SDN List)](https://ofac.treasury.gov/specially-designated-nationals-and-blocked-persons-list-sdn-human-readable-lists) and OFAC [Consolidated Non-SDN Sanctions List](https://ofac.treasury.gov/sanctions-list-service), administered by the U.S. Department of the Treasury's Office of Foreign Assets Control
 - **United Nations:** the [UN Security Council Consolidated List](https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list)
 - **European Union:** the [EU Consolidated Financial Sanctions List](https://data.europa.eu/data/datasets/consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions)
 
