@@ -38,9 +38,9 @@ Statuses come from the [mainnet-v1 integrator registry](https://github.com/baofi
 
 ## Maiden Voyage & archived campaigns
 
-Historical voyages (e.g. early FXUSD-ETH / FXUSD-BTC / STETH-BTC launches) may show as **archived** in the app when deposits are closed. Claims and withdrawals depend on voyage stage, see each card in [genesis](https://app.harborfinance.io/genesis).
+Historical voyages (e.g. early FXUSD-ETH / FXUSD-BTC / STETH-BTC launches) may show as **archived** in the app when deposits are closed. Claims and withdrawals depend on voyage stage; see each card in [genesis](https://app.harborfinance.io/genesis).
 
 ## How to use this page
 
 - **Users**: pick collateral family (fxSAVE vs wstETH) and peg (ETH, BTC, EUR), then open the matching market in the app.
-- **Integrators**: use market pages and [Addresses and ABIs](/tech-docs/integrators/addresses-and-abis) for proxy addresses. Prefer integrator keys in **`<index>-<collateral>`** order (e.g. `usd-steth`); the app may use the reverse (e.g. `steth-usd`), same market via `marketIdAliases` in the registry.
+- **Integrators**: use market pages and [Addresses and ABIs](/tech-docs/integrators/addresses-and-abis) for proxy addresses. Prefer integrator keys in **`<index>-<collateral>`** order (e.g. `usd-steth`); the app may use the reverse (e.g. `steth-usd`). Both map to the same market via `marketIdAliases` in the registry.

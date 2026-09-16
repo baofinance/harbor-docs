@@ -15,7 +15,7 @@ Packages around Harbor’s core: **markets on fxSAVE and wstETH**, mint/redeem, 
 - **Chainlink** feeds + rate sources (fxSAVE, wstETH)
 - Market-specific composed prices (fxUSD/ETH, stETH/EUR, …)
 - Freshness checks for mint and rebalance safety
-- Wrapped collateral rates are **clamped to 0.9–3.0×** vs underlying; out-of-range rates revert and can block mint/redeem until feeds recover, see [Price oracle contracts](/tech-docs/contracts/price-oracle#chainlinkratelib)
+- Wrapped collateral rates are **clamped to 0.9–3.0×** vs underlying; out-of-range rates revert and can block mint/redeem until feeds recover. See [Price oracle contracts](/tech-docs/contracts/price-oracle#chainlinkratelib)
 - Shown on market pages in the app
 
 Without oracles, **ha** and **hs** cannot stay pegged or rebalance safely. Engineers: [Tech docs, price oracles](/tech-docs/contracts/price-oracle).
@@ -35,7 +35,7 @@ Expect gas and route slippage when not depositing main collateral.
 
 ## Harbor Yield stack (mid-term)
 
-**Level 1** (stability pool + claim) is **live**. Levels **2–3** are not live mainnet UX yet, see [Harbor Yield](/harbor-yield):
+**Level 1** (stability pool + claim) is **live**. Levels **2–3** are not live mainnet UX yet. See [Harbor Yield](/harbor-yield):
 
 1. Stability pool + claim (**live**)
 2. **Compounder**: one pool, auto-compound

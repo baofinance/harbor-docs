@@ -38,13 +38,13 @@ New here? Start with [How It Works](/how-it-works) (plain English) or [Get Start
 
 ## Security & audits
 
-Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial**, some post-audit upgrades shipped after the review, and packages such as **zap contracts** were out of scope. Harbor Sail is protected from **margin-style liquidation**, but **hs can still lose value** (including toward zero) if a market is severely stressed. See [Risk Considerations](/risk-considerations).
+Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial**; some post-audit upgrades shipped after the review, and packages such as **zap contracts** were out of scope. Harbor Sail is protected from **margin-style liquidation**, but **hs can still lose value** (including toward zero) if a market is severely stressed. See [Risk Considerations](/risk-considerations).
 
 ## Core pieces
 
 ### ha - pegged (“anchored”)
 
-Synthetic assets pegged to reference prices (ETH, BTC, EUR, …). Redeemable through the protocol. **Earn** amplified yield by depositing ha into stability pools. Examples: haETH, haBTC, haEUR, see [Live Markets](/markets).
+Synthetic assets pegged to reference prices (ETH, BTC, EUR, …). Redeemable through the protocol. **Earn** amplified yield by depositing ha into stability pools. Examples: haETH, haBTC, haEUR. See [Live Markets](/markets).
 
 ### hs - leverage (“sail”)
 

@@ -29,7 +29,7 @@ Markets depend on **price feeds**. Failures, delays, or manipulation can affect 
 
 ### 4. Audits are real but not all-encompassing
 
-Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial**, post-audit upgrades shipped afterward; **zap contracts** were **out of scope**. No insurance product is documented here.
+Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial**; post-audit upgrades shipped afterward; **zap contracts** were **out of scope**. No insurance product is documented here.
 
 ### 5. Pool withdrawal windows
 
@@ -98,4 +98,4 @@ Audits reduce but do not eliminate unknown bugs or complex cross-protocol intera
 
 ## Conclusion
 
-Harbor discloses risks transparently and uses stability pools plus rebalancing instead of auction liquidations. **Earn** and **Leverage** still carry meaningful downside, make choices that match your tolerance.
+Harbor discloses risks transparently and uses stability pools plus rebalancing instead of auction liquidations. **Earn** and **Leverage** still carry meaningful downside; make choices that match your tolerance.

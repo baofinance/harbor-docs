@@ -12,11 +12,11 @@ Pick the path that matches your wallet, then open the linked app tab. Read [Risk
 
 ## I have ETH and want yield
 
-1. **Stake ETH → stETH, then wrap to wstETH** (or use a zap in the app, it may stake and wrap in one transaction).
+1. **Stake ETH → stETH, then wrap to wstETH** (or use a zap in the app; it may stake and wrap in one transaction).
 2. **Pick a wstETH market**: e.g. haBTC or haEUR on [Live Markets](/markets).
 3. **Mint ha** in the app (deposit wstETH → receive haBTC / haEUR / …).
 4. Open [**Earn**](https://app.harborfinance.io/anchor) → deposit that **ha** into a **collateral** or **Sail** stability pool.
-5. **Claim rewards** periodically, or leave them to accrue, see the Rewards panel.
+5. **Claim rewards** periodically, or leave them to accrue; see the Rewards panel.
 
 **Risk you accept:** during a rebalance, your deposited ha may be exchanged for **collateral** (collateral pool) or **hs** (Sail pool). You still earned yield up to that point. See [Risk Considerations](/risk-considerations).
 
@@ -34,7 +34,7 @@ fxSAVE is f(x) Protocol’s yield wrapper; Harbor fxUSD markets do not hold raw 
 2. Choose a market whose **hs** matches the exposure you want (collateral vs peg in the name, e.g. **hsFXUSD-ETH**, **hsSTETH-BTC**).
 3. **Mint hs** against collateral, or buy hs on secondary markets where liquidity exists.
 
-**You do not** set leverage or stop-loss in the UI, effective leverage comes from the market’s collateral ratio and token pricing.
+**You do not** set leverage or stop-loss in the UI. Effective leverage comes from the market’s collateral ratio and token pricing.
 
 **What can go wrong:** if collateral falls vs the peg or the system depletes its risk buffer, **hs can lose most or all value**. ha can trade below peg. This is not a margin-call liquidation, but losses can still be severe. Read [Risk Considerations](/risk-considerations) before sizing a position.
 
@@ -48,7 +48,7 @@ To reduce surprise:
 - **Size down**: only deposit what you can accept converting during a downturn.
 - **Monitor** market health in the app and [Risk Considerations](/risk-considerations).
 
-Yield is attractive precisely because depositors help absorb stress, that is the tradeoff.
+Yield is attractive precisely because depositors help absorb stress; that is the tradeoff.
 
 ## A new market is launching
 
@@ -63,4 +63,4 @@ Details: [Maiden Voyage](/maiden-voyage).
 
 Skip the product pages above, start at **[Build on Harbor](/tech-docs/integrators)** for addresses, ABIs, dry-runs, and pricing.
 
-Public REST/WebSocket API is **not shipped**. On-chain integration uses published ABIs and optional scaffold SDK, see tech docs only.
+Public REST/WebSocket API is **not shipped**. On-chain integration uses published ABIs and optional scaffold SDK; see tech docs only.

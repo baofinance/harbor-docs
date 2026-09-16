@@ -24,15 +24,15 @@ When the voyage launches, participants claim:
 - **ha**: pegged token for that market (e.g. haETH, haEUR)
 - **hs**: leverage token (e.g. hsFXUSD-ETH, hsSTETH-EUR)
 
-Combined token NAV at launch matches deposited collateral value **subject to fees**, an initial NAV-preserving distribution split across two risk profiles (**ha** and **hs**). After launch, both still carry their usual downside (see [Risk Considerations](/risk-considerations)).
+Combined token NAV at launch matches deposited collateral value **subject to fees**: an initial NAV-preserving distribution split across two risk profiles (**ha** and **hs**). After launch, both still carry their usual downside (see [Risk Considerations](/risk-considerations)).
 
 ### 3. Yield Share
 
-Eligible participants can earn up to **~5% of that market’s revenue** (fees + collateral yield). That slice comes **first**; the remainder follows the global path (treasury take if applicable, then **75% pools** / **25% buy TIDE**). See [TIDE Tokenomics](/tide-token/tokenomics). Staying deposited after launch supports eligibility, details per voyage in the app.
+Eligible participants can earn up to **~5% of that market’s revenue** (fees + collateral yield). That slice comes **first**; the remainder follows the global path (treasury take if applicable, then **75% pools** / **25% buy TIDE**). See [TIDE Tokenomics](/tide-token/tokenomics). Staying deposited after launch supports eligibility; details per voyage in the app.
 
 ### 4. Ledger Marks
 
-Active voyages earn **Ledger Marks** toward TIDE programs. Rates are campaign-specific, see the app dashboard.
+Active voyages earn **Ledger Marks** toward TIDE programs. Rates are campaign-specific; see the app dashboard.
 
 Claim **TIDE** separately on [Tide](https://app.harborfinance.io/tide) when eligible.
 
@@ -54,7 +54,7 @@ Then: **Earn** with haETH, hold/trade hsFXUSD-ETH in **Leverage**, track Yield S
 
 ## Archived voyages
 
-Completed voyages close new deposits. Claims/withdrawals depend on stage, see each card in the app. Historical FXUSD-ETH, FXUSD-BTC, STETH-BTC voyages may appear archived.
+Completed voyages close new deposits. Claims/withdrawals depend on stage; see each card in the app. Historical FXUSD-ETH, FXUSD-BTC, STETH-BTC voyages may appear archived.
 
 ## How to join
 

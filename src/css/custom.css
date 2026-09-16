@@ -617,14 +617,10 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
   font-size: 0.95em;
   border: 1px solid var(--harbor-table-border);
   border-radius: 0.5rem;
-  overflow: hidden;
 }
 
 .markdown thead th,
 .theme-doc-markdown thead th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
   background: var(--ifm-background-surface-color);
   color: var(--ifm-heading-color);
   border-bottom: 2px solid var(--harbor-table-border);
@@ -913,6 +909,7 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
 /* Code blocks */
 .theme-code-block {
   --prism-background-color: #282c34;
+
   box-shadow: none;
   border: 1px solid rgba(30, 71, 117, 0.45);
   border-radius: 0.65rem;

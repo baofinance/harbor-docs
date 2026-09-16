@@ -28,12 +28,12 @@ Connect at [app.harborfinance.io](https://app.harborfinance.io). Pick a market (
 - **fxSAVE markets**: collateral earns f(x) yield; you can zap from fxUSD if convenient.
 - **wstETH markets**: collateral earns staking yield; you can zap from ETH/stETH if convenient.
 
-Prefer holding the market’s **main collateral** (fxSAVE or wstETH) when you can. Zaps are shortcuts, not the core design, see [Supporting Features](/supporting-features).
+Prefer holding the market’s **main collateral** (fxSAVE or wstETH) when you can. Zaps are shortcuts, not the core design. See [Supporting Features](/supporting-features).
 
 ### 2. Mint ha and/or hs
 
 - **ha** behaves like a pegged asset (haETH tracks ETH, haBTC tracks BTC, …).
-- **hs** behaves like **variable leverage** on collateral vs that peg, no funding fee, no leverage slider, no stop-loss ticket.
+- **hs** behaves like **variable leverage** on collateral vs that peg: no funding fee, no leverage slider, no stop-loss ticket.
 
 You can hold either or both. Only **ha** goes into stability pools.
 
@@ -52,7 +52,7 @@ Read [Stability Pools](/stability-pools) and [How Yield is Generated](/yield).
 
 ### 4. Leverage - hold or mint hs
 
-Use [**Leverage**](https://app.harborfinance.io/sail) to mint or manage **hs**. hs can gain or lose value quickly. In extreme stress, hs can approach **zero** while ha may trade below peg, see [Risk Considerations](/risk-considerations).
+Use [**Leverage**](https://app.harborfinance.io/sail) to mint or manage **hs**. hs can gain or lose value quickly. In extreme stress, hs can approach **zero** while ha may trade below peg. See [Risk Considerations](/risk-considerations).
 
 ### 5. Maiden Voyage - new markets
 

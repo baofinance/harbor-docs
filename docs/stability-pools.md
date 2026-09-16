@@ -23,10 +23,10 @@ There are **two pool types** with different rebalance outcomes:
 ### Sail pools
 
 - **ha** deposited here converts to **hs** (Harbor Sail leverage tokens) when used in a rebalance
-- **Same yield path** as collateral pools on the **ha** deposit, Sail is not “yield-free rebalance only”
+- **Same yield path** as collateral pools on the **ha** deposit; Sail is not “yield-free rebalance only”
 - Useful if you want leveraged rebound exposure after stress
 
-**hs** itself does not earn concentrated pool yield, only **ha in either pool** does.
+**hs** itself does not earn concentrated pool yield; only **ha in either pool** does.
 
 ## How pools protect the system
 

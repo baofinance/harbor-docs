@@ -29,8 +29,8 @@ A decentralized protocol for synthetic assets, tokens that track price feeds, ba
 
 - Variable exposure vs the peg
 - No funding fees, no margin-call UI
-- No leverage slider or stop-loss, outcome of market ratio and supply
-- Can lose most or all value in stress, [Risk Considerations](/risk-considerations)
+- No leverage slider or stop-loss; outcome of market ratio and supply
+- Can lose most or all value in stress. See [Risk Considerations](/risk-considerations)
 
 ## Earn (stability pools)
 
@@ -43,15 +43,15 @@ Pools that secure the protocol, pay yield, and execute rebalances. Deposit **ha*
 1. [Earn](https://app.harborfinance.io/anchor)
 2. Pick market and pool (collateral or Sail)
 3. Deposit **ha**
-4. Earn yield, [Stability Pools](/stability-pools)
+4. Earn yield. See [Stability Pools](/stability-pools)
 
 ### What are the risks?
 
-Rebalance into **collateral** or **hs**, oracle/contract risk, pool drain in extremes, [Risk Considerations](/risk-considerations).
+Rebalance into **collateral** or **hs**; oracle/contract risk; pool drain in extremes. See [Risk Considerations](/risk-considerations).
 
 ### How is yield calculated?
 
-Collateral yield + protocol revenue to pools. Per market: **Yield Share** (up to ~5%) comes first when eligible; of the **remainder**, after any TVL treasury take, **75%** goes to pools and **25%** buys TIDE. Plus Marks/TIDE campaigns where allocated, [How Yield is Generated](/yield).
+Collateral yield + protocol revenue to pools. Per market: **Yield Share** (up to ~5%) comes first when eligible; of the **remainder**, after any TVL treasury take, **75%** goes to pools and **25%** buys TIDE. Plus Marks/TIDE campaigns where allocated. See [How Yield is Generated](/yield).
 
 ## Using the protocol
 
@@ -59,7 +59,7 @@ Collateral yield + protocol revenue to pools. Per market: **Yield Share** (up to
 
 1. Connect wallet
 2. Open a market ([Live Markets](/markets))
-3. Deposit **fxSAVE** or **wstETH** (or zap from ETH/USDC/fxUSD, [Supporting Features](/supporting-features))
+3. Deposit **fxSAVE** or **wstETH** (or zap from ETH/USDC/fxUSD; see [Supporting Features](/supporting-features))
 4. Mint **ha**
 
 Or receive **ha** from [Maiden Voyage](/maiden-voyage) at launch.
@@ -78,7 +78,7 @@ Or receive **ha** from [Maiden Voyage](/maiden-voyage) at launch.
 
 ### Wallets & networks
 
-Web3 wallets via the app (MetaMask, WalletConnect, etc.). **Ethereum mainnet** is the primary network, use the app network selector as source of truth.
+Web3 wallets via the app (MetaMask, WalletConnect, etc.). **Ethereum mainnet** is the primary network; use the app network selector as source of truth.
 
 ### How do I integrate?
 

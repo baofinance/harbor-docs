@@ -57,7 +57,7 @@ Compounders and **hy** are **siblings**. [Harbor Yield](/harbor-yield) · [Tech 
 
 ## 5. Permissionless market factory (long-term)
 
-Launch markets with collateral, oracle, and stability pool config, infrastructure for external protocols.
+Launch markets with collateral, oracle, and stability pool config, plus infrastructure for external protocols.
 
 ## Governance (ongoing)
 

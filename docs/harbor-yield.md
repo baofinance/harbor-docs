@@ -33,7 +33,7 @@ Today (level 1):
 
 1. Hold **ha** (and optionally **hs**)
 2. Deposit **ha** into a collateral or Sail stability pool
-3. Claim rewards and decide what to do with them, on rebalance, receive **collateral** or **hs** depending on pool
+3. Claim rewards and decide what to do with them. On rebalance, receive **collateral** or **hs** depending on pool
 
 Harbor Yield adds:
 
@@ -67,7 +67,7 @@ Wraps **one** stability pool. Depositors hold **hc…** shares; keepers or users
 
 ## Level 3 - hyTOKEN (mid-term)
 
-One **hy** share per peg (e.g. hyETH) over several pool positions plus peg-equivalent vaults. Enter/exit through vault **doors**, product UX, not live app yet.
+One **hy** share per peg (e.g. hyETH) over several pool positions plus peg-equivalent vaults. Enter/exit through vault **doors** (product UX, not live app yet).
 
 **For builders:** [hy / ERC-7575](/tech-docs/integrators/hy-erc7575) · [Harbor Swap](/tech-docs/contracts/harbor-swap).
 
@@ -81,11 +81,11 @@ One **hy** share per peg (e.g. hyETH) over several pool positions plus peg-equiv
 
 ## Relationship to other yield
 
-- **Yield concentration**: **ha** in pools earns from full collateral backing, [How Yield is Generated](/yield)
-- **Protocol revenue**: Yield Share first, then 75% pools / 25% buy TIDE, [TIDE Tokenomics](/tide-token/tokenomics)
+- **Yield concentration**: **ha** in pools earns from full collateral backing. See [How Yield is Generated](/yield)
+- **Protocol revenue**: Yield Share first, then 75% pools / 25% buy TIDE. See [TIDE Tokenomics](/tide-token/tokenomics)
 - **Maiden Voyage Yield Share**: [Maiden Voyage](/maiden-voyage)
 
-Harbor Yield adds **convenience and pooling** on top, it does not replace those economics.
+Harbor Yield adds **convenience and pooling** on top; it does not replace those economics.
 
 ## Status
 
