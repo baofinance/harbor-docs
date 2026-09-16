@@ -20,7 +20,7 @@ Mint **haMCAP** and **hsSTETH-MCAP** using **stETH** via **wstETH** as collatera
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → MCAP/stETH](../generic.md#mcapsteth). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |

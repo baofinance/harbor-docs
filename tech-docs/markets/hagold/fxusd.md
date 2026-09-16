@@ -20,7 +20,7 @@ Mint **haGOLD** and **hsFXUSD-GOLD** using **fxUSD** via **fxSAVE** as collatera
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → GOLD/fxUSD](../generic.md#goldfxusd). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |

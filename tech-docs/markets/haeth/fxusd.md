@@ -20,7 +20,7 @@ Mint **haETH** and **hsFXUSD-ETH** using **fxUSD** via **fxSAVE** as collateral.
 
 ## Contract addresses
 
-Proxy keys and **CREATE3 salt strings**: [Generic → Mainnet proxy table](../generic.md#mainnet-proxy-table). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
+Proxy keys and **CREATE3 salt strings**: [Generic → ETH/fxUSD](../generic.md#ethfxusd). Authoritative file: [`deployments/mainnet/harbor_v1.state.json`](https://github.com/baofinance/harbor/blob/main/deployments/mainnet/harbor_v1.state.json).
 
 | Component | Proxy key | Address |
 | --------- | --------- | ------- |

@@ -681,6 +681,7 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
 /*
   3+ column tables (Term | Meaning | App):
   keep a compact first column for short tokens like fxSAVE.
+  Do not clamp max-width — long proxy keys need room.
 */
 .markdown table:has(td:nth-child(3)) th:first-child,
 .markdown table:has(td:nth-child(3)) td:first-child,
@@ -690,9 +691,9 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
 .theme-doc-markdown table:has(td:nth-child(3)) td:first-child,
 .theme-doc-markdown table:has(th:nth-child(3)) th:first-child,
 .theme-doc-markdown table:has(th:nth-child(3)) td:first-child {
-  width: 11rem;
+  width: auto;
   min-width: 9.5rem;
-  max-width: 14rem;
+  max-width: none;
   overflow-wrap: normal;
   word-break: keep-all;
 }
@@ -776,6 +777,50 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
 .table-markets table th:nth-child(5),
 .table-markets table td:nth-child(5) {
   width: 1%;
+}
+
+/* Proxy / CREATE3 registry tables — wide first column for long keys */
+.markdown .table-proxy table,
+.theme-doc-markdown .table-proxy table {
+  font-size: 0.85em;
+  min-width: 68rem;
+}
+
+.markdown .table-proxy table th,
+.markdown .table-proxy table td,
+.theme-doc-markdown .table-proxy table th,
+.theme-doc-markdown .table-proxy table td {
+  padding: 0.5rem 0.7rem;
+  vertical-align: middle;
+}
+
+.markdown .table-proxy table th:first-child,
+.markdown .table-proxy table td:first-child,
+.theme-doc-markdown .table-proxy table th:first-child,
+.theme-doc-markdown .table-proxy table td:first-child {
+  width: 26rem;
+  min-width: 24rem;
+  max-width: none;
+  white-space: nowrap;
+}
+
+.markdown .table-proxy table th:nth-child(2),
+.markdown .table-proxy table td:nth-child(2),
+.markdown .table-proxy table th:nth-child(3),
+.markdown .table-proxy table td:nth-child(3),
+.theme-doc-markdown .table-proxy table th:nth-child(2),
+.theme-doc-markdown .table-proxy table td:nth-child(2),
+.theme-doc-markdown .table-proxy table th:nth-child(3),
+.theme-doc-markdown .table-proxy table td:nth-child(3) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.markdown .table-proxy table code,
+.theme-doc-markdown .table-proxy table code {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 /* Diagrams & figures */
