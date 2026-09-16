@@ -330,20 +330,177 @@ a:hover {
   color: #ff8a7a;
 }
 
-/* Search */
+/* Search — modern DocSearch-like local search */
+:root {
+  --search-local-modal-background: #ffffff;
+  --search-local-modal-width: 640px;
+  --search-local-modal-width-sm: min(100vw - 2rem, 420px);
+  --search-local-modal-shadow: 0 18px 50px rgba(13, 43, 67, 0.22),
+    0 2px 8px rgba(13, 43, 67, 0.08);
+  --search-local-hit-background: #f5f7fa;
+  --search-local-hit-shadow: none;
+  --search-local-hit-color: #2a3340;
+  --search-local-hit-height: 60px;
+  --search-local-highlight-color: #1e4775;
+  --search-local-hit-active-color: #ffffff;
+  --search-local-muted-color: #6b7a8d;
+  --search-local-spacing: 10px;
+  --search-local-input-active-border-color: #b8ebd5;
+  --search-local-icon-stroke-width: 1.6;
+}
+
+[data-theme="dark"] {
+  --search-local-modal-background: #121c2e;
+  --search-local-modal-shadow: 0 22px 55px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(126, 182, 232, 0.12);
+  --search-local-hit-background: #1a2740;
+  --search-local-hit-color: #d7dee8;
+  --search-local-highlight-color: #9ec9ef;
+  --search-local-hit-active-color: #0a1220;
+  --search-local-muted-color: #8fa0b5;
+  --search-local-input-active-border-color: #7eb6e8;
+}
+
+.navbar__search {
+  position: relative;
+}
+
 .navbar__search-input {
-  background-color: rgba(255, 255, 255, 0.2);
+  width: 13.5rem;
+  height: 2.35rem;
+  padding: 0 2.6rem 0 2.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+    width 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar__search-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 500;
+}
+
+.navbar__search-input:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(184, 235, 213, 0.45);
 }
 
 .navbar__search-input:focus {
-  background-color: rgba(255, 255, 255, 0.3);
+  width: 16.5rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.22);
   border-color: #b8ebd5;
+  box-shadow: 0 0 0 3px rgba(184, 235, 213, 0.28);
+}
+
+/* Shortcut hint (⌘K / Ctrl+K) */
+.navbar__search kbd,
+.navbar__search [class*="searchHint"] {
+  border-radius: 0.35rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  background: rgba(13, 43, 67, 0.45) !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-family: var(--ifm-font-family-monospace) !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  padding: 0.15rem 0.35rem !important;
+}
+
+/* Dropdown panel (module class names are hashed) */
+[class*="dropdownMenu"] {
+  border: 1px solid rgba(30, 71, 117, 0.12) !important;
+  border-radius: 1rem !important;
+  padding: 0.65rem !important;
+  margin-top: 0.65rem !important;
+  overflow: hidden;
+  animation: harbor-search-in 0.16s ease-out;
+}
+
+[data-theme="dark"] [class*="dropdownMenu"] {
+  border-color: rgba(126, 182, 232, 0.16) !important;
+}
+
+@keyframes harbor-search-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Result hits */
+[class*="SearchBar"][class*="suggestion"],
+[class*="suggestion"][class*="SearchBar"],
+div[class*="dropdownMenu"] > [class*="suggestion"],
+div[class*="dropdownMenu"] [class*="suggestion"] {
+  border-radius: 0.65rem !important;
+  border: 1px solid transparent;
+  transition: background 0.12s ease, border-color 0.12s ease, transform 0.12s ease;
+}
+
+div[class*="dropdownMenu"] [class*="suggestion"]:hover {
+  border-color: rgba(30, 71, 117, 0.12);
+  transform: translateY(-1px);
+}
+
+div[class*="dropdownMenu"] [class*="suggestion"][class*="cursor"],
+div[class*="dropdownMenu"] [class*="suggestion"].cursor {
+  background: linear-gradient(135deg, #1e4775 0%, #2a5989 100%) !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 20px rgba(30, 71, 117, 0.28);
+}
+
+[data-theme="dark"] div[class*="dropdownMenu"] [class*="suggestion"][class*="cursor"],
+[data-theme="dark"] div[class*="dropdownMenu"] [class*="suggestion"].cursor {
+  background: linear-gradient(135deg, #7eb6e8 0%, #9ec9ef 100%) !important;
+  box-shadow: 0 8px 22px rgba(126, 182, 232, 0.25);
+}
+
+div[class*="dropdownMenu"] mark {
+  color: var(--harbor-coral) !important;
+  font-weight: 650;
+}
+
+div[class*="dropdownMenu"] [class*="cursor"] mark {
+  color: #b8ebd5 !important;
+  text-decoration: none !important;
+}
+
+div[class*="dropdownMenu"] [class*="hitFooter"] a {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
+  color: var(--harbor-coral);
+  text-decoration: underline;
+}
+
+@media (max-width: 996px) {
+  .navbar__search-input,
+  .navbar__search-input:focus {
+    width: 2.35rem;
+    padding-left: 2.1rem;
+    padding-right: 0.5rem;
+  }
+
+  .navbar__search-input:focus {
+    width: min(70vw, 14rem);
+  }
 }
 
 /* Mobile Menu (Navbar Sidebar) */
