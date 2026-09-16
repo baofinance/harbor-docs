@@ -11,9 +11,9 @@ Harbor: modular synthetic assets on Ethereum, expanding toward tokenized market 
 ## 1. Live on Ethereum (completed)
 
 - Core contracts on mainnet (minter, stability pools, rebalance)
-- **Earn** markets: **haETH**, **haBTC**, **haEUR** — [Live Markets](/markets)
+- **Earn** markets: **haETH**, **haBTC**, **haEUR** ([Live Markets](/markets))
 - [app.harborfinance.io](https://app.harborfinance.io)
-- Sherlock audit (bao-base / bao-minter — partial vs today’s surface; [Risk Considerations](/risk-considerations))
+- Sherlock audit (bao-base / bao-minter, partial vs today’s surface; [Risk Considerations](/risk-considerations))
 - **Ledger Marks**, **TIDE** claim flows
 
 Friendly fork of f(x) / Aladdin-style mechanics with **fxSAVE** and **wstETH** collateral.
@@ -31,22 +31,22 @@ Deploy when oracles, collateral, and demand align.
 
 ### Soon / relaunch
 
-- **haUSD** stacks — soon on Earn
-- **haGOLD**, **haSILVER**, **haMCAP** — relaunch pending
+- **haUSD** stacks, soon on Earn
+- **haGOLD**, **haSILVER**, **haMCAP**, relaunch pending
 
 ### Maiden Voyage 2.0
 
 Ongoing voyages with **Yield Share**. [Maiden Voyage](/maiden-voyage).
 
-**Infrastructure:** [price aggregators](https://github.com/baofinance/harbor-price-aggregators), [zaps](https://github.com/baofinance/harbor-zap-contracts) — [Supporting Features](/supporting-features).
+**Infrastructure:** [price aggregators](https://github.com/baofinance/harbor-price-aggregators), [zaps](https://github.com/baofinance/harbor-zap-contracts), [Supporting Features](/supporting-features).
 
 ## 3. Harbor Yield (mid-term)
 
 Three levels (product 1–3):
 
-1. **Stability pool** — **live** ([**Earn**](https://app.harborfinance.io/anchor))
-2. **Compounder** — auto-compound one pool (not live mainnet)
-3. **hyTOKEN** — peg basket (not live mainnet)
+1. **Stability pool**: **live** ([**Earn**](https://app.harborfinance.io/anchor))
+2. **Compounder**: auto-compound one pool (not live mainnet)
+3. **hyTOKEN**: peg basket (not live mainnet)
 
 Compounders and **hy** are **siblings**. [Harbor Yield](/harbor-yield) · [Tech docs](/tech-docs/contracts/harbor-yield).
 
@@ -57,7 +57,7 @@ Compounders and **hy** are **siblings**. [Harbor Yield](/harbor-yield) · [Tech 
 
 ## 5. Permissionless market factory (long-term)
 
-Launch markets with collateral, oracle, and stability pool config — infrastructure for external protocols.
+Launch markets with collateral, oracle, and stability pool config, infrastructure for external protocols.
 
 ## Governance (ongoing)
 

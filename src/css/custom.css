@@ -231,8 +231,10 @@
 /* Pagination */
 .pagination-nav__link {
   border: 1px solid rgba(30, 71, 117, 0.2);
+  border-radius: 0.65rem;
   transition: all 0.2s ease;
   color: #1e4775;
+  background: transparent;
 }
 
 .pagination-nav__link:hover {
@@ -247,6 +249,27 @@
 .pagination-nav__sublabel {
   color: #1e4775;
   opacity: 0.7;
+}
+
+[data-theme="dark"] .pagination-nav__link {
+  border: 1px solid rgba(126, 182, 232, 0.28);
+  background: var(--ifm-background-surface-color);
+  color: #e8eef6;
+}
+
+[data-theme="dark"] .pagination-nav__link:hover {
+  border-color: var(--harbor-coral);
+  background: rgba(126, 182, 232, 0.1);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .pagination-nav__label {
+  color: #e8eef6;
+}
+
+[data-theme="dark"] .pagination-nav__sublabel {
+  color: rgba(232, 238, 246, 0.72);
+  opacity: 1;
 }
 
 /* Headings */
@@ -321,13 +344,13 @@ h6 {
   color: #d6deeb !important;
 }
 
-/* Links */
+/* Links — theme-aware (avoid hardcoding navy in dark mode) */
 a {
-  color: #1e4775;
+  color: var(--ifm-link-color);
 }
 
 a:hover {
-  color: #ff8a7a;
+  color: var(--ifm-link-hover-color);
 }
 
 /* Search — modern DocSearch-like local search */
@@ -345,7 +368,7 @@ a:hover {
   --search-local-hit-active-color: #ffffff;
   --search-local-muted-color: #6b7a8d;
   --search-local-spacing: 10px;
-  --search-local-input-active-border-color: #b8ebd5;
+  --search-local-input-active-border-color: var(--harbor-coral);
   --search-local-icon-stroke-width: 1.6;
 }
 
@@ -358,62 +381,82 @@ a:hover {
   --search-local-highlight-color: #9ec9ef;
   --search-local-hit-active-color: #0a1220;
   --search-local-muted-color: #8fa0b5;
-  --search-local-input-active-border-color: #7eb6e8;
+  --search-local-input-active-border-color: var(--harbor-coral);
 }
 
 .navbar__search {
   position: relative;
 }
 
+/* Dark tag-shaped input + coral highlight */
 .navbar__search-input {
-  width: 13.5rem;
+  width: 14rem;
   height: 2.35rem;
-  padding: 0 2.6rem 0 2.35rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  padding: 0 3.4rem 0 2.35rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--harbor-coral);
+  background: #1a1d23;
+  color: #c8c8d0;
   font-family: var(--ifm-font-family-base);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.01em;
-  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
-    width 0.2s ease;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgba(255, 138, 122, 0.2),
+    0 0 12px rgba(255, 138, 122, 0.18);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, width 0.2s ease;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .navbar__search-input::placeholder {
-  color: rgba(255, 255, 255, 0.72);
-  font-weight: 500;
+  color: #9a9aa3;
+  font-weight: 400;
+  opacity: 1;
 }
 
 .navbar__search-input:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(184, 235, 213, 0.45);
+  background: #1a1d23;
+  border-color: #ff9a8c;
+  box-shadow: 0 0 0 1px rgba(255, 138, 122, 0.28),
+    0 0 16px rgba(255, 138, 122, 0.28);
 }
 
 .navbar__search-input:focus {
   width: 16.5rem;
   outline: none;
-  background: rgba(255, 255, 255, 0.22);
-  border-color: #b8ebd5;
-  box-shadow: 0 0 0 3px rgba(184, 235, 213, 0.28);
+  background: #1a1d23;
+  border-color: var(--harbor-coral);
+  box-shadow: 0 0 0 2px rgba(255, 138, 122, 0.35),
+    0 0 18px rgba(255, 138, 122, 0.35);
 }
 
-/* Shortcut hint (⌘K / Ctrl+K) */
+/* Magnifying-glass icon */
+.navbar__search [class*="searchIcon"] {
+  color: #9a9aa3 !important;
+  opacity: 1;
+}
+
+/* Shortcut hint (⌘ K) — white, no border */
+.navbar__search [class*="searchHintContainer"] {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  gap: 0.2rem !important;
+}
+
 .navbar__search kbd,
 .navbar__search [class*="searchHint"] {
-  border-radius: 0.35rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
-  background: rgba(13, 43, 67, 0.45) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
   box-shadow: none !important;
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: #ffffff !important;
   font-family: var(--ifm-font-family-monospace) !important;
-  font-size: 0.7rem !important;
+  font-size: 0.75rem !important;
   font-weight: 500 !important;
   line-height: 1.2 !important;
-  padding: 0.15rem 0.35rem !important;
+  padding: 0 0.1rem !important;
+  opacity: 1 !important;
 }
 
 /* Dropdown panel (module class names are hashed) */
@@ -583,10 +626,17 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
   top: 0;
   z-index: 1;
   background: var(--ifm-background-surface-color);
+  color: var(--ifm-heading-color);
   border-bottom: 2px solid var(--harbor-table-border);
   font-weight: 650;
   text-align: left;
   white-space: nowrap;
+}
+
+[data-theme="dark"] .markdown thead th,
+[data-theme="dark"] .theme-doc-markdown thead th {
+  color: #e8eef6;
+  background: #162033;
 }
 
 .markdown tbody tr:nth-child(even),
@@ -598,10 +648,64 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
 .markdown table td,
 .theme-doc-markdown table th,
 .theme-doc-markdown table td {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
   padding: 0.65rem 0.85rem;
   border-color: var(--harbor-table-border);
   vertical-align: top;
+}
+
+/*
+  2-column tables (Goal | Start here, Term | Meaning):
+  give the first column most of the room so phrases don't wrap
+  while short link columns sit empty.
+*/
+.markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) th:first-child,
+.markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) td:first-child,
+.theme-doc-markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) th:first-child,
+.theme-doc-markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) td:first-child {
+  width: 58%;
+  min-width: 14rem;
+  max-width: none;
+}
+
+.markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) th:nth-child(2),
+.markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) td:nth-child(2),
+.theme-doc-markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) th:nth-child(2),
+.theme-doc-markdown table:not(:has(td:nth-child(3))):not(:has(th:nth-child(3))) td:nth-child(2) {
+  width: 42%;
+  white-space: normal;
+}
+
+/*
+  3+ column tables (Term | Meaning | App):
+  keep a compact first column for short tokens like fxSAVE.
+*/
+.markdown table:has(td:nth-child(3)) th:first-child,
+.markdown table:has(td:nth-child(3)) td:first-child,
+.markdown table:has(th:nth-child(3)) th:first-child,
+.markdown table:has(th:nth-child(3)) td:first-child,
+.theme-doc-markdown table:has(td:nth-child(3)) th:first-child,
+.theme-doc-markdown table:has(td:nth-child(3)) td:first-child,
+.theme-doc-markdown table:has(th:nth-child(3)) th:first-child,
+.theme-doc-markdown table:has(th:nth-child(3)) td:first-child {
+  width: 11rem;
+  min-width: 9.5rem;
+  max-width: 14rem;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+[data-theme="dark"] .markdown table a,
+[data-theme="dark"] .theme-doc-markdown table a {
+  color: #9ec9ef;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .markdown table a:hover,
+[data-theme="dark"] .theme-doc-markdown table a:hover {
+  color: #ff9a8c;
 }
 
 /* Mobile: allow horizontal scroll without crushing columns */
@@ -623,6 +727,55 @@ div[class*="dropdownMenu"] [class*="hitFooter"] a:hover {
   min-width: 5.5rem;
   white-space: nowrap;
   word-break: normal;
+}
+
+/* Wide / dense tables (markets): scroll horizontally, avoid mid-token wraps */
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0 1.25rem;
+  border: 1px solid var(--harbor-table-border);
+  border-radius: 0.5rem;
+}
+
+.table-scroll table {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  min-width: 52rem;
+}
+
+.table-markets table {
+  font-size: 0.9em;
+  table-layout: auto;
+}
+
+.table-markets table th,
+.table-markets table td {
+  padding: 0.55rem 0.75rem;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table-markets table th:first-child,
+.table-markets table td:first-child {
+  width: auto;
+  min-width: 8.5rem;
+  max-width: none;
+}
+
+.table-markets table th:nth-child(2),
+.table-markets table td:nth-child(2),
+.table-markets table th:nth-child(3),
+.table-markets table td:nth-child(3) {
+  width: 1%;
+}
+
+.table-markets table th:nth-child(5),
+.table-markets table td:nth-child(5) {
+  width: 1%;
 }
 
 /* Diagrams & figures */

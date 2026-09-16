@@ -23,10 +23,10 @@ There are **two pool types** with different rebalance outcomes:
 ### Sail pools
 
 - **ha** deposited here converts to **hs** (Harbor Sail leverage tokens) when used in a rebalance
-- **Same yield path** as collateral pools on the **ha** deposit — Sail is not “yield-free rebalance only”
+- **Same yield path** as collateral pools on the **ha** deposit, Sail is not “yield-free rebalance only”
 - Useful if you want leveraged rebound exposure after stress
 
-**hs** itself does not earn concentrated pool yield — only **ha in either pool** does.
+**hs** itself does not earn concentrated pool yield, only **ha in either pool** does.
 
 ## How pools protect the system
 
@@ -41,9 +41,9 @@ No auctions or external liquidators required.
 ## Why participate
 
 - **Concentrated yield** from collateral (fxSAVE, wstETH) on **ha** deposits in **both** pool types
-- **Rebalance choice** — collateral vs **hs** payout if your deposit is used
+- **Rebalance choice**: collateral vs **hs** payout if your deposit is used
 - **Marks / TIDE** where campaigns allocate them
-- **Protocol revenue** — after Yield Share (~5%) and any TVL treasury take, **75%** to pools / **25%** buy TIDE — [TIDE Tokenomics](/tide-token/tokenomics)
+- **Protocol revenue**: after Yield Share (~5%) and any TVL treasury take, **75%** to pools / **25%** buy TIDE, [TIDE Tokenomics](/tide-token/tokenomics)
 
 ## Example: market downturn
 
@@ -83,10 +83,10 @@ Use the Earn / Rewards panel in the app.
 
 ## Best practices
 
-1. **Diversify** — pools and markets
-2. **Monitor** — collateral ratios in the app
-3. **Position** — collateral pool for backing assets; Sail pool for rebound **hs**
-4. **Read risks** — [Risk Considerations](/risk-considerations)
+1. **Diversify**: pools and markets
+2. **Monitor**: collateral ratios in the app
+3. **Position**: collateral pool for backing assets; Sail pool for rebound **hs**
+4. **Read risks**: [Risk Considerations](/risk-considerations)
 
 ## Summary
 
@@ -97,7 +97,7 @@ Use the Earn / Rewards panel in the app.
 
 ## Technical details
 
-Pools are **per market**. Browse in the app or see [Tech Documentation — markets](/tech-docs/markets/generic) for engineers.
+Pools are **per market**. Browse in the app or see [Tech Documentation, markets](/tech-docs/markets/generic) for engineers.
 
 ## Support
 

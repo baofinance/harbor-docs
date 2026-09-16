@@ -20,7 +20,7 @@ TIDE turns users, builders, and liquidity providers into long-term stakeholders 
 
 Early participation was tracked with **Ledger Marks** (Maiden Voyage and [**Earn**](https://app.harborfinance.io/anchor) activity) rather than a liquid pre-TGE farming token. Marks and snapshot programs feed into TIDE distribution / claim flows in the app.
 
-Historical docs referred to a “12-week points phase before token launch.” That bootstrap phase is complete relative to TIDE going live — use the app for current claim status, not the old pre-launch framing.
+Historical docs referred to a “12-week points phase before token launch.” That bootstrap phase is complete relative to TIDE going live, use the app for current claim status, not the old pre-launch framing.
 
 ## Token Utilities
 

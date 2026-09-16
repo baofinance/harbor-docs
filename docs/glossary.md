@@ -21,9 +21,9 @@ Harbor uses a few names in the app, on tokens, and in contract code. This page i
 
 | Symbol | Full name | Role | Examples |
 | ------ | --------- | ---- | -------- |
-| **ha** | Harbor Anchored | Pegged synthetic — tracks a price feed | haETH, haBTC, haEUR |
+| **ha** | Harbor Anchored | Pegged synthetic, tracks a price feed | haETH, haBTC, haEUR |
 | **hs** | Harbor Sail | Residual leverage claim on collateral vs peg | hsFXUSD-ETH, hsSTETH-BTC |
-| **hy** | Harbor Yield (mid-term) | Pooled yield product over several pools per peg — **not live on mainnet yet** | hyETH, hyUSD (planned) |
+| **hy** | Harbor Yield (mid-term) | Pooled yield product over several pools per peg, **not live on mainnet yet** | hyETH, hyUSD (planned) |
 
 Use **`ha` / `hs` + ticker** in prose (`haETH`, not “HA Tokens” or `haTOKENS`). Spell out **Harbor Anchored** / **Harbor Sail** once per page on first mention if helpful.
 
@@ -31,7 +31,7 @@ Use **`ha` / `hs` + ticker** in prose (`haETH`, not “HA Tokens” or `haTOKENS
 
 | Term | Meaning |
 | ---- | ------- |
-| **fxSAVE** | f(x) Protocol’s yield-bearing wrapper around **fxUSD**. Harbor **fxUSD-family** markets hold fxSAVE as wrapped collateral — not raw fxUSD. |
+| **fxSAVE** | f(x) Protocol’s yield-bearing wrapper around **fxUSD**. Harbor **fxUSD-family** markets hold fxSAVE as wrapped collateral, not raw fxUSD. |
 | **wstETH** | Wrapped staked ETH. Harbor **stETH-family** markets use wstETH as wrapped collateral. |
 | **fxUSD** | f(x) stablecoin. Often a **zap input** (fxUSD → fxSAVE); not the token sitting in the minter’s collateral pool. |
 
@@ -59,10 +59,10 @@ Details: [Technical Overview](/technical-overview) (power user) and [How It Work
 | ha, hs, Earn, Leverage | `peggedToken`, `leveragedToken`, `Minter_v2` |
 | stability pool | `StabilityPool`, `StabilityPoolManager` |
 | Maiden Voyage | `Genesis_v1` |
-| Compounder, hyTOKEN (product names) | ERC-4626 / ERC-7575 interfaces — see [Build on Harbor](/tech-docs/integrators) |
+| Compounder, hyTOKEN (product names) | ERC-4626 / ERC-7575 interfaces, see [Build on Harbor](/tech-docs/integrators) |
 
 ## Words to avoid in user docs
 
-- **`haTOKENS` / `hsTOKENS`** (all-caps plurals) — use **ha** / **hs** or a concrete ticker.
-- **`HA Tokens` / `HS Tokens`** as headings — use **ha (Harbor Anchored)** or the ticker.
-- **“Anchor flow” / “Sail flow”** without saying **Earn** / **Leverage** — link the app tab users actually click.
+- **`haTOKENS` / `hsTOKENS`** (all-caps plurals), use **ha** / **hs** or a concrete ticker.
+- **`HA Tokens` / `HS Tokens`** as headings, use **ha (Harbor Anchored)** or the ticker.
+- **“Anchor flow” / “Sail flow”** without saying **Earn** / **Leverage**: link the app tab users actually click.

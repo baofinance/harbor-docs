@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Harbor is built to reward long-term participation, prioritize early growth, and create sustainable value accrual.
 
-**Total Supply:** 1,000,000,000 TIDE (1 billion tokens) — hard-capped in the TIDE token contracts.
+**Total Supply:** 1,000,000,000 TIDE (1 billion tokens), hard-capped in the TIDE token contracts.
 
 ## Protocol Revenue Flow
 
@@ -35,7 +35,7 @@ Both ownership targets use the hard-capped **1B total supply** as denominator (n
 
 Landing (“75% grow markets / 25% strengthen TIDE”) and the Tide app (treasury → POL → burn) describe the **same** flow at different zoom levels (on revenue **after** Yield Share).
 
-The long-term goal is simple: **let the protocol itself become the long-term buyer of TIDE**. Lower prices do not increase emissions — they increase how much TIDE protocol revenue can buy back over time.
+The long-term goal is simple: **let the protocol itself become the long-term buyer of TIDE**. Lower prices do not increase emissions, they increase how much TIDE protocol revenue can buy back over time.
 
 ---
 
@@ -55,7 +55,7 @@ There is a **claim window** (timing TBA) for BAO and veBAO holders. **Unclaimed 
 
 | Category | Allocation | Details |
 | -------- | ---------- | ------- |
-| BAO migration airdrop | 25% | All liquid BAO and veBAO — former Bao treasury allocation, distributed to holders |
+| BAO migration airdrop | 25% | All liquid BAO and veBAO, former Bao treasury allocation, distributed to holders |
 | veBAO holders | 5% | **Additional** 5% for veBAO only |
 | Community sale | 5% | Increased from the prior 1.5% |
 | Aladdin DAO | 3% | Strategic partnership allocation |
@@ -72,9 +72,9 @@ There is a **claim window** (timing TBA) for BAO and veBAO holders. **Unclaimed 
 
 #### Founder KPI unlocks (~20% of supply)\*
 
-\* **KPI schedule pending** — the cliff table below is the working design. Final numbers and vesting-contract wording may still be updated; treat as provisional until confirmed on-chain / in the Tide dashboard.
+\* **KPI schedule pending**, the cliff table below is the working design. Final numbers and vesting-contract wording may still be updated; treat as provisional until confirmed on-chain / in the Tide dashboard.
 
-The KPI-locked founder allocation unlocks against **five TVL + POL cliffs**. Each cliff that is met unlocks **up to 4% of total supply**, and unlocks are capped at **4% of total supply per year** — even if Harbor is ahead of the KPI schedule. POL is a share of **total TIDE supply** (1B hard cap).
+The KPI-locked founder allocation unlocks against **five TVL + POL cliffs**. Each cliff that is met unlocks **up to 4% of total supply**, and unlocks are capped at **4% of total supply per year**, even if Harbor is ahead of the KPI schedule. POL is a share of **total TIDE supply** (1B hard cap).
 
 | Cliff | TVL\* | POL\* (of total TIDE supply) | Unlock when met |
 | ----- | ----- | ---------------------------- | --------------- |
@@ -96,11 +96,11 @@ The KPI-locked founder allocation unlocks against **five TVL + POL cliffs**. Eac
 Notes:
 
 - **Both metrics required** at each cliff (TVL **and** POL). Cliffs are taken **in order** (1 → 5).
-- **Cliffs, not drip:** no continuous unlock between cliffs — only when a cliff is newly satisfied.
+- **Cliffs, not drip:** no continuous unlock between cliffs, only when a cliff is newly satisfied.
 - **Max 4% per year:** unlocking cannot exceed **4% of total supply in any year**, even if several cliffs are already met early. Full release of the 20% therefore takes **at least five years**.
 - Cliff 1 is intentionally easy (**$1M / 1% POL**); cliff 5 matches the long-term POL ownership goal (**$50M / 15% POL**).
 - Separately, **~2%** of supply is founder liquid at launch (outside this 20% KPI schedule). Total founder allocation remains **22%**.
-- \* **Pending confirmation** — do not treat cliff TVL/POL figures as final until published with vesting contracts / the Tide dashboard.
+- \* **Pending confirmation**, do not treat cliff TVL/POL figures as final until published with vesting contracts / the Tide dashboard.
 
 
 ### Treasury
@@ -123,7 +123,7 @@ The remaining **~56.5%** is primarily:
 - Founder KPI-locked allocations\* (**5 cliffs × 4%**; max **4%/year**; cliff 1 **$1M / 1% POL** → cliff 5 **$50M / 15% POL**)
 - Future booster reserves
 
-Initial liquidity may be relatively limited, and early price discovery may be volatile — that is expected. Harbor focuses on sustainable ownership and protocol-driven buybacks rather than engineering short-term token price action.
+Initial liquidity may be relatively limited, and early price discovery may be volatile, that is expected. Harbor focuses on sustainable ownership and protocol-driven buybacks rather than engineering short-term token price action.
 
 ### Claim windows
 
@@ -153,7 +153,7 @@ All treasury token usage should follow:
 
 Harbor prioritizes **permanent liquidity** over rented liquidity:
 
-- Target: **15% of total TIDE supply** (hard-capped **1B**) as protocol-owned liquidity — same denominator as the treasury goal (**30% of total supply**), not of circulating supply
+- Target: **15% of total TIDE supply** (hard-capped **1B**) as protocol-owned liquidity, same denominator as the treasury goal (**30% of total supply**), not of circulating supply
 - Provides stability through market cycles
 - Reduces long-term token dilution from mercenary liquidity mining
 
@@ -161,7 +161,7 @@ Harbor prioritizes **permanent liquidity** over rented liquidity:
 
 - **25%** of (post–Yield Share and post–TVL-take) revenue buys TIDE on the open market
 - Bought TIDE first fills treasury (to **30% of total supply**), then POL (to **15% of total supply**), then burns
-- Scales with protocol revenue — the protocol is designed as the long-term buyer of TIDE
+- Scales with protocol revenue, the protocol is designed as the long-term buyer of TIDE
 
 ### 4. Team-Directed Incentives
 
@@ -179,7 +179,18 @@ Harbor uses **team-controlled emissions** rather than gauge voting in the early 
 
 ### 6. Founder alignment (TVL + POL)
 
-~20% of supply (founder KPI lock) unlocks against five **TVL + POL** cliffs (**$1M/1% → $5M/2.5% → $10M/4.5% → $25M/9% → $50M/15%**), **4% per cliff**, with a hard cap of **4% of supply per year**. Full unlock takes at least five years even if KPIs are hit early. \*KPI schedule pending — provisional until vesting contracts / Tide dashboard confirm.
+~**20%** of supply stays locked until founders hit **TVL + POL** cliffs. Each cliff unlocks **4%** of supply; unlocks are capped at **4%/year**, so the full 20% takes **at least five years** even if KPIs are hit early.
+
+| Cliff | TVL | POL | Unlock |
+| ----- | --- | --- | ------ |
+| 1 | $1M | 1% | 4% |
+| 2 | $5M | 2.5% | 4% |
+| 3 | $10M | 4.5% | 4% |
+| 4 | $25M | 9% | 4% |
+| 5 | $50M | 15% | 4% |
+
+Details and notes: [Founder KPI unlocks](#founder-kpi-unlocks-20-of-supply). \*KPI schedule pending, provisional until vesting contracts / Tide dashboard confirm.
+
 ---
 
 ## Vesting Overview
@@ -197,12 +208,12 @@ Primarily community & ecosystem distributions, including:
 - Harbor Marks (1%)
 - Plus ~2% initially liquid founder tokens (founder total remains 22%)
 
-Exact circulating mix at TGE depends on claim timing and unlock schedules — use the app for live figures.
+Exact circulating mix at TGE depends on claim timing and unlock schedules, use the app for live figures.
 
 ### Locked / reserved at launch (~56.5%)
 
 - Harbor Treasury (34.5%)
-- Founder KPI locks (~20% of supply)\* — five cliffs (**$1M/1% → … → $50M/15%**), **4% each**, max **4%/year** (see [Founder KPI unlocks](#founder-kpi-unlocks-20-of-supply))
+- Founder KPI locks (~20% of supply)\*, five TVL + POL cliffs, **4% each**, max **4%/year** (see [Founder KPI unlocks](#founder-kpi-unlocks-20-of-supply))
 - Future booster reserves (2%)
 
 ---
