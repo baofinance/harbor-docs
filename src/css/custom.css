@@ -24,9 +24,29 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(30, 71, 117, 0.1);
 
+  /* Typography — readability first */
+  --ifm-font-family-base: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --ifm-heading-font-family: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  --ifm-font-family-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.7;
+  --ifm-heading-line-height: 1.3;
+  --ifm-leading: calc(var(--ifm-line-height-base) * 1rem);
+  --ifm-paragraph-margin-bottom: 1.15rem;
+  --ifm-h1-font-size: 2.15rem;
+  --ifm-h2-font-size: 1.55rem;
+  --ifm-h3-font-size: 1.25rem;
+
+  /* Measure */
+  --ifm-container-width-xl: 1280px;
+  --doc-item-max-width: 52rem;
+
   /* Background colors */
   --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f8f9fa;
+  --ifm-background-surface-color: #f5f7fa;
 
   /* Navbar colors */
   --ifm-navbar-background-color: #1e4775;
@@ -34,31 +54,46 @@
   --ifm-navbar-link-hover-color: #b8ebd5;
 
   /* Text colors */
-  --ifm-font-color-base: #333333;
+  --ifm-font-color-base: #2a3340;
   --ifm-heading-color: #1e4775;
+  --ifm-link-color: #1e4775;
+  --ifm-link-hover-color: #ff8a7a;
 
   /* Footer colors */
   --ifm-footer-background-color: #1e4775;
   --ifm-footer-color: #ffffff;
   --ifm-footer-link-color: rgba(255, 255, 255, 0.8);
   --ifm-footer-link-hover-color: #b8ebd5;
+
+  /* Tables / admonitions */
+  --harbor-table-stripe: rgba(30, 71, 117, 0.04);
+  --harbor-table-border: rgba(30, 71, 117, 0.14);
+  --harbor-figure-border: rgba(30, 71, 117, 0.16);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #1e4775;
-  --ifm-color-primary-dark: #173d64;
-  --ifm-color-primary-darker: #123754;
-  --ifm-color-primary-darkest: #0d2b43;
-  --ifm-color-primary-light: #2a5989;
-  --ifm-color-primary-lighter: #356b9d;
-  --ifm-color-primary-lightest: #417eb1;
-  --docusaurus-highlighted-code-line-bg: rgba(30, 71, 117, 0.3);
+  --ifm-color-primary: #7eb6e8;
+  --ifm-color-primary-dark: #6aa8df;
+  --ifm-color-primary-darker: #5a9bd6;
+  --ifm-color-primary-darkest: #3f7fb8;
+  --ifm-color-primary-light: #95c4ee;
+  --ifm-color-primary-lighter: #a9d0f2;
+  --ifm-color-primary-lightest: #c5e0f7;
+  --docusaurus-highlighted-code-line-bg: rgba(126, 182, 232, 0.15);
 
-  /* Keep blue theme in dark mode but adjust backgrounds */
   --ifm-background-color: #0a1220;
-  --ifm-background-surface-color: #0f1a2d;
-  --ifm-navbar-background-color: #1e4775;
+  --ifm-background-surface-color: #121c2e;
+  --ifm-navbar-background-color: #132742;
+  --ifm-font-color-base: #d7dee8;
+  --ifm-heading-color: #e8eef6;
+  --ifm-link-color: #9ec9ef;
+  --ifm-link-hover-color: #ff9a8c;
+  --ifm-toc-border-color: rgba(126, 182, 232, 0.18);
+
+  --harbor-table-stripe: rgba(126, 182, 232, 0.06);
+  --harbor-table-border: rgba(126, 182, 232, 0.18);
+  --harbor-figure-border: rgba(126, 182, 232, 0.22);
 }
 
 /* Custom styles - Blue and White Theme */
@@ -221,7 +256,28 @@ h3,
 h4,
 h5,
 h6 {
-  color: #1e4775;
+  color: var(--ifm-heading-color);
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.markdown h1:first-child,
+.theme-doc-markdown h1:first-child {
+  margin-bottom: 1rem;
+}
+
+.markdown > h2,
+.theme-doc-markdown > h2 {
+  margin-top: 2.25rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--harbor-table-border);
+}
+
+.markdown > h2:first-of-type,
+.theme-doc-markdown > h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
 }
 
 /* Body text - charcoal for readability (light theme only; do not paint layout/code divs) */
@@ -231,7 +287,24 @@ h6 {
 [data-theme="light"] th,
 [data-theme="light"] .markdown,
 [data-theme="light"] .theme-doc-markdown {
-  color: #333333;
+  color: #2a3340;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--ifm-heading-color);
+}
+
+[data-theme="dark"] a {
+  color: var(--ifm-link-color);
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--ifm-link-hover-color);
 }
 
 .prism-code,
@@ -255,19 +328,6 @@ a {
 
 a:hover {
   color: #ff8a7a;
-}
-
-/* Code blocks: One Dark, Harbor-navy adjacent */
-.theme-code-block {
-  --prism-background-color: #282c34;
-
-  box-shadow: none;
-  border: 1px solid rgba(30, 71, 117, 0.45);
-}
-
-.prism-code {
-  background-color: #282c34 !important;
-  font-size: 0.9rem;
 }
 
 /* Search */
@@ -353,6 +413,28 @@ a:hover {
   width: 100%;
   max-width: 100%;
   table-layout: auto;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  border: 1px solid var(--harbor-table-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.markdown thead th,
+.theme-doc-markdown thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--ifm-background-surface-color);
+  border-bottom: 2px solid var(--harbor-table-border);
+  font-weight: 650;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.markdown tbody tr:nth-child(even),
+.theme-doc-markdown tbody tr:nth-child(even) {
+  background: var(--harbor-table-stripe);
 }
 
 .markdown table th,
@@ -360,6 +442,21 @@ a:hover {
 .theme-doc-markdown table th,
 .theme-doc-markdown table td {
   overflow-wrap: anywhere;
+  padding: 0.65rem 0.85rem;
+  border-color: var(--harbor-table-border);
+  vertical-align: top;
+}
+
+/* Mobile: allow horizontal scroll without crushing columns */
+@media (max-width: 996px) {
+  .markdown table,
+  .theme-doc-markdown table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0.5rem;
+  }
 }
 
 /* Keep a narrow first column readable (e.g. Level) */
@@ -371,13 +468,32 @@ a:hover {
   word-break: normal;
 }
 
-/* Diagrams: SVG + Mermaid full content width */
-.markdown img[src$=".svg"],
-.theme-doc-markdown img[src$=".svg"] {
+/* Diagrams & figures */
+.markdown img,
+.theme-doc-markdown img {
   display: block;
-  width: 100%;
   max-width: 100%;
   height: auto;
+  margin: 1.25rem auto 0.5rem;
+  border: 1px solid var(--harbor-figure-border);
+  border-radius: 0.65rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.markdown img[src$=".svg"],
+.theme-doc-markdown img[src$=".svg"] {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+.markdown img + em,
+.theme-doc-markdown img + em,
+.markdown p > img + br + em {
+  display: block;
+  text-align: center;
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-top: 0.25rem;
 }
 
 .markdown .docusaurus-mermaid-container,
@@ -388,4 +504,167 @@ a:hover {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid var(--harbor-figure-border);
+  border-radius: 0.65rem;
+  background: var(--ifm-background-surface-color);
+}
+
+/* Admonitions — clearer hierarchy */
+.alert {
+  border-radius: 0.65rem;
+  border-width: 0 0 0 4px;
+  box-shadow: none;
+}
+
+.alert--secondary,
+.theme-admonition-note {
+  --ifm-alert-background-color: rgba(30, 71, 117, 0.06);
+  --ifm-alert-border-color: #1e4775;
+}
+
+.alert--success,
+.theme-admonition-tip {
+  --ifm-alert-background-color: rgba(184, 235, 213, 0.35);
+  --ifm-alert-border-color: #2a9d6e;
+}
+
+.alert--warning,
+.theme-admonition-caution,
+.theme-admonition-warning {
+  --ifm-alert-background-color: rgba(255, 138, 122, 0.14);
+  --ifm-alert-border-color: #ff8a7a;
+}
+
+.alert--danger,
+.theme-admonition-danger {
+  --ifm-alert-background-color: rgba(220, 53, 69, 0.1);
+  --ifm-alert-border-color: #c62828;
+}
+
+[data-theme="dark"] .alert--secondary,
+[data-theme="dark"] .theme-admonition-note {
+  --ifm-alert-background-color: rgba(126, 182, 232, 0.1);
+  --ifm-alert-border-color: #7eb6e8;
+}
+
+[data-theme="dark"] .alert--success,
+[data-theme="dark"] .theme-admonition-tip {
+  --ifm-alert-background-color: rgba(184, 235, 213, 0.12);
+  --ifm-alert-border-color: #6bc49a;
+}
+
+/* Code blocks */
+.theme-code-block {
+  --prism-background-color: #282c34;
+  box-shadow: none;
+  border: 1px solid rgba(30, 71, 117, 0.45);
+  border-radius: 0.65rem;
+  margin: 1.15rem 0;
+  overflow: hidden;
+}
+
+.theme-code-block pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.prism-code {
+  background-color: #282c34 !important;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.theme-code-block .theme-code-block-highlighted-line {
+  background: rgba(126, 182, 232, 0.12);
+}
+
+/* Article measure */
+article .markdown,
+article .theme-doc-markdown {
+  max-width: var(--doc-item-max-width);
+}
+
+/* Homepage CTA row */
+.harbor-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.harbor-cta-row .button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.harbor-lead {
+  font-size: 1.08em;
+  line-height: 1.65;
+  max-width: 42rem;
+}
+
+.button--outline.button--primary {
+  color: #1e4775;
+  border-color: #1e4775;
+  background: transparent;
+}
+
+.button--outline.button--primary:hover {
+  color: #ffffff;
+  background: #1e4775;
+  border-color: #1e4775;
+}
+
+[data-theme="dark"] .button--outline.button--primary {
+  color: #9ec9ef;
+  border-color: #7eb6e8;
+}
+
+[data-theme="dark"] .button--outline.button--primary:hover {
+  color: #0a1220;
+  background: #7eb6e8;
+  border-color: #7eb6e8;
+}
+
+[data-theme="dark"] .main-wrapper {
+  background-color: var(--ifm-background-color);
+}
+
+[data-theme="dark"] .theme-doc-sidebar-container {
+  background-color: var(--ifm-background-surface-color);
+  border-right-color: var(--harbor-table-border);
+}
+
+[data-theme="dark"] .menu__link {
+  color: #c5d4e6;
+}
+
+[data-theme="dark"] .menu__link:hover {
+  color: #ff9a8c;
+  background-color: rgba(126, 182, 232, 0.08);
+}
+
+[data-theme="dark"] .menu__link--active {
+  color: #e8eef6;
+  background-color: rgba(126, 182, 232, 0.14);
+}
+
+[data-theme="dark"] .table-of-contents {
+  background-color: var(--ifm-background-surface-color);
+  border-left-color: var(--harbor-table-border);
+}
+
+[data-theme="dark"] .table-of-contents__link {
+  color: #a8bbd0;
+}
+
+[data-theme="dark"] .table-of-contents__link:hover,
+[data-theme="dark"] .table-of-contents__link--active {
+  color: #e8eef6;
+}
+
+div[class*="announcementBar"] a {
+  color: #b8ebd5;
+  text-decoration: underline;
 }

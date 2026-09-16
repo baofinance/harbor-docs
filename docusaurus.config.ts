@@ -88,10 +88,25 @@ const config: Config = {
     port: 3001,
   },
 
+  stylesheets: [
+    {
+      href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",
+      type: "text/css",
+    },
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: "./img/docusaurus-social-card.jpg",
     favicon: "img/logowhitenobg.png",
+    announcementBar: {
+      id: "harbor-live-ethereum",
+      content:
+        'Harbor is live on Ethereum — <a target="_blank" rel="noopener noreferrer" href="https://app.harborfinance.io">Open the app</a> · <a href="/get-started">Get started</a> · <a href="/markets">Markets</a>',
+      backgroundColor: "#0d2b43",
+      textColor: "#ffffff",
+      isCloseable: true,
+    },
     navbar: {
       logo: {
         alt: "Harbor Logo",

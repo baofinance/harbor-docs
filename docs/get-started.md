@@ -6,6 +6,10 @@ sidebar_position: 3
 
 “I have X, I want Y” — short paths into the live app. Vocabulary: [Glossary](/glossary). Markets: [Live Markets](/markets).
 
+:::tip Next step
+Pick the path that matches your wallet, then open the linked app tab. Read [Risk Considerations](/risk-considerations) before sizing anything large.
+:::
+
 ## I have ETH and want yield
 
 1. **Stake ETH → stETH, then wrap to wstETH** (or use a zap in the app — it may stake and wrap in one transaction).

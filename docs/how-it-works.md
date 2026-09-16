@@ -6,6 +6,8 @@ sidebar_position: 4
 
 What happens to your money in Harbor — without CDP jargon first. For NAV, collateral ratios, and fee math, see [Technical Overview](/technical-overview). Terms: [Glossary](/glossary).
 
+![One collateral position. Two complementary claims.](/img/01-hero-mental-model.png)
+
 ## The 60-second version
 
 1. You deposit **productive collateral** — usually **fxSAVE** (fxUSD markets) or **wstETH** (stETH markets).

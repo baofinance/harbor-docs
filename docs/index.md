@@ -4,7 +4,9 @@ sidebar_position: 1
 
 # Safer Leverage & Real Yield for Every Asset.
 
+<p class="harbor-lead">
 Let's be real: synthetic assets sound powerful. But most of them? Clunky, brittle, overly complicated — and definitely not paying your bills.
+</p>
 
 **Harbor changes that.**
 
@@ -14,6 +16,13 @@ Harbor is **live on Ethereum** at [app.harborfinance.io](https://app.harborfinan
 
 - **ha (Harbor Anchored)** — pegged to a price feed (e.g. haETH, haBTC, haEUR). Put **ha** in a stability pool to earn **concentrated yield**.
 - **hs (Harbor Sail)** — variable leverage on collateral vs that peg (e.g. hsFXUSD-ETH). No funding fee, no margin-call UI.
+
+<div class="harbor-cta-row">
+  <a class="button button--primary button--lg" href="https://app.harborfinance.io/anchor">Earn in app</a>
+  <a class="button button--secondary button--lg" href="https://app.harborfinance.io/sail">Leverage in app</a>
+  <a class="button button--outline button--primary button--lg" href="/get-started">Get started</a>
+  <a class="button button--outline button--primary button--lg" href="/how-it-works">How it works</a>
+</div>
 
 **What is fxSAVE?** f(x) Protocol’s yield-bearing wrapper around fxUSD. Harbor **fxUSD-family** markets hold **fxSAVE** as collateral — not raw fxUSD. See [Glossary](/glossary).
 

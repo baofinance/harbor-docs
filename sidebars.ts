@@ -14,16 +14,19 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Protocol Overview",
+      collapsed: true,
       items: ["technical-overview", "architecture", "risk-considerations"],
     },
     {
       type: "category",
       label: "Core Features",
+      collapsed: true,
       items: ["stability-pools", "yield", "maiden-voyage", "harbor-yield", "fees", "supporting-features"],
     },
     {
       type: "category",
       label: "TIDE Token",
+      collapsed: true,
       items: [
         "tide-token/overview",
         "tide-token/governance",
@@ -43,6 +46,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Legal",
+      collapsed: true,
       items: ["terms-of-use", "privacy-policy"],
     },
   ],
