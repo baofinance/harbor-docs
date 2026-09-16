@@ -60,11 +60,11 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 | Area | Docs | Gap |
 | ---- | ---- | --- |
-| Minter, SPs, genesis, reserve, fee, rewards | [Contracts](./contracts/) | ✅ baseline |
+| Minter, SPs, genesis, reserve, fee, rewards | [Contracts](./contracts/minter.md) | ✅ baseline |
 | BaoFactory / CREATE3 | [bao-factory](./contracts/bao-factory.md) + generic | ✅ |
 | Harbor Yield (SP v3 / hyTOKENS) | [harbor-yield](/tech-docs/contracts/harbor-yield) | ✅ tech page (tracks `#33`; vaults pre-prod) |
 | Harbor Swap | [harbor-swap](/tech-docs/contracts/harbor-swap) | ✅ tech page (tracks `#3` Velora + merged hardening) |
-| Process flows | [process-flows](./process-flows/) | ✅ |
+| Process flows | [process-flows](./process-flows/contract-architecture.md) | ✅ |
 | Integrators (Phase 1) | [Build on Harbor](./integrators/index.md) | ✅ cookbooks + docs-hosted ABI/address JSON; `@harbor/sdk` on GitHub (npm pending); no REST/WebSocket API |
 
 ---
