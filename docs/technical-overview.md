@@ -10,9 +10,9 @@ Power-user mechanics: CDP structure, NAV, collateral ratio, rebalancing, and fee
 
 ## Core mechanics
 
-Harbor is a **decentralized platform for synthetic assets** — tokens that track price feeds without custody of the underlying. Each market is a shared collateralized debt position (CDP) with **100% collateral efficiency**: the combined NAV of **ha + hs** equals deposited collateral value (subject to fees).
+Harbor is a **decentralized platform for synthetic assets**: tokens that track price feeds without custody of the underlying. Each market is a shared collateralized debt position (CDP) with **100% collateral efficiency**; the combined NAV of **ha + hs** equals deposited collateral value (subject to fees).
 
-That is **not** the same as minting ha 1:1 against collateral alone — **hs** is the residual equity claim. It is also **not** the system **collateral ratio** (collateral value ÷ ha value, e.g. **~130%**), which gates rebalancing.
+That is **not** the same as minting ha 1:1 against collateral alone; **hs** is the residual equity claim. It is also **not** the system **collateral ratio** (collateral value ÷ ha value, e.g. **~130%**), which gates rebalancing.
 
 - **Collateral**: yield-bearing assets (fxSAVE, wstETH) in the market pool
 - **ha (Harbor Anchored)**: pegged synthetic debt
@@ -30,8 +30,8 @@ Users can:
 ### 1. Collateral
 
 - Approved yield-bearing collateral per market (fxSAVE, wstETH, …)
-- Collectively managed — not isolated per-user CDPs
-- Global minimum **collateralization ratio** (collateral ÷ ha, e.g. **130%**) for solvency — distinct from mint-time **100% collateral efficiency** (ha + hs NAV ≈ collateral)
+- Collectively managed, not isolated per-user CDPs
+- Global minimum **collateralization ratio** (collateral ÷ ha, e.g. **130%**) for solvency, distinct from mint-time **100% collateral efficiency** (ha + hs NAV ≈ collateral)
 - Collateral yield + mint/redeem fees → protocol revenue
 
 **Revenue waterfall (per market):**
@@ -69,17 +69,17 @@ Both pool types earn yield on **ha** deposits; rebalance **payout** differs. See
 
 ## Protocol workflow
 
-1. **Mint** — user deposits collateral via minter or zaps; mints ha and/or hs with 100% collateral efficiency (subject to [dynamic fees](/fees))
-2. **Earn** — deposit ha into collateral or Sail stability pool; claim rewards
-3. **Leverage** — mint or hold hs for directional exposure
-4. **Rebalance** — automated when thresholds hit
+1. **Mint**: user deposits collateral via minter or zaps; mints ha and/or hs with 100% collateral efficiency (subject to [dynamic fees](/fees))
+2. **Earn**: deposit ha into collateral or Sail stability pool; claim rewards
+3. **Leverage**: mint or hold hs for directional exposure
+4. **Rebalance**: automated when thresholds hit
 
 ## Security & audits
 
-Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial** — post-audit upgrades shipped afterward; **zap contracts** and some packages were **out of scope**. See [Risk Considerations](/risk-considerations).
+Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) covering **bao-base** and **bao-minter** (now Harbor core). Coverage of **currently deployed mainnet contracts is partial**; post-audit upgrades shipped afterward; **zap contracts** and some packages were **out of scope**. See [Risk Considerations](/risk-considerations).
 
 ## Related
 
-- [How It Works](/how-it-works) — user-first narrative
-- [Architecture Overview](/architecture) — system map
-- [Build on Harbor](/tech-docs/integrators) — contracts and ABIs
+- [How It Works](/how-it-works): user-first narrative
+- [Architecture Overview](/architecture): system map
+- [Build on Harbor](/tech-docs/integrators): contracts and ABIs

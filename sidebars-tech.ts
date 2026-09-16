@@ -34,6 +34,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Contracts",
+      collapsed: true,
       items: [
         "contracts/minter",
         "contracts/stability-pool-manager",
@@ -47,6 +48,7 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Price Oracles",
+          collapsed: true,
           items: [
             "contracts/price-oracle",
             {
@@ -394,6 +396,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Markets",
+      collapsed: true,
       items: [
         { type: "doc", id: "markets/generic", label: "Generic" },
         {
@@ -477,6 +480,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Process Flows",
+      collapsed: true,
       items: [
         "process-flows/contract-architecture",
         "process-flows/minting",
@@ -487,6 +491,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Remediation",
+      collapsed: true,
       items: ["remediation/fxusd-eth-sail-rebalance"],
     },
   ],

@@ -72,10 +72,10 @@ High-level map of Harbor on Ethereum. User walkthrough: [How It Works](/how-it-w
 
 ## Security
 
-Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) for **bao-base** and **bao-minter** (now Harbor core). **Partial** coverage of live mainnet deploys — post-audit upgrades; **zaps out of scope**. [Risk Considerations](/risk-considerations).
+Harbor has a Sherlock [Collaborative Audit Report](https://www.harborfinance.io/2025_10_21_Final_Harbor_Collaborative_Audit_Report_1761050317.pdf) for **bao-base** and **bao-minter** (now Harbor core). **Partial** coverage of live mainnet deploys, post-audit upgrades; **zaps out of scope**. [Risk Considerations](/risk-considerations).
 
 ## Future direction
 
-- More markets and pegs — [Roadmap](/roadmap)
+- More markets and pegs, [Roadmap](/roadmap)
 - Cross-chain TIDE (Chainlink CCIP)
 - Harbor Yield levels 2–3 when shipped
