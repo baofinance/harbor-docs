@@ -68,7 +68,20 @@ const config: Config = {
     ],
   ],
 
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: [
+    "@docusaurus/theme-mermaid",
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: ["/", "tech-docs"],
+        docsDir: ["docs", "tech-docs"],
+      },
+    ],
+  ],
 
   // Add port configuration
   customFields: {
