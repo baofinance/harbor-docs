@@ -6,7 +6,7 @@ The Harbor Price Aggregator system provides validated price feeds for wrapped co
 
 Integrator pricing map and worked Chainlink-composed examples: [Pricing](../integrators/pricing.md). Chainlink-shaped wrappers are **not deployed** — [Oracle adapters](../integrators/oracle-adapters.md).
 
-![Choose the price surface that matches the job.](/img/12-pricing-oracle-compose.png)
+![Choose the price surface that matches the job.](/img/v2/12-pricing.jpg)
 
 
 

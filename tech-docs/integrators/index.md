@@ -7,7 +7,7 @@ Sequenced path for another protocol to integrate Harbor **without** a Harbor-hos
 **Not live for production integration:** Harbor Yield Compounders and **hyTOKENS** — see [hy / ERC-7575](./hy-erc7575.md).
 :::
 
-![The shortest supported path into Harbor.](/img/10-integrator-call-graph.png)
+![The shortest supported path into Harbor.](/img/v2/10-integrators.jpg)
 
 
 

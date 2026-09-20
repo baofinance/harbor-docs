@@ -50,6 +50,6 @@ Track alongside [Price oracles](../contracts/price-oracle.md) and [Pricing](./pr
 - Call Harbor `latestAnswer()` / minter views directly (this is the supported integration).  
 - Or compose Chainlink feeds yourself using the pair page formula — you then own staleness and rate-provider risk.
 
-![Translate Harbor prices for Chainlink-shaped consumers.](/img/17-oracle-adapter.png)
+![Translate Harbor prices for Chainlink-shaped consumers.](/img/v2/17-oracle-adapters.jpg)
 
 

@@ -4,7 +4,7 @@ Overview of Harbor Protocol contracts and how they interact.
 
 ## Architecture Diagram
 
-![Live contracts, fixed pools, and explicit dependencies.](/img/23-contract-architecture-diagram.png)
+![Live contracts, fixed pools, and explicit dependencies.](/img/v2/23-contract-architecture.jpg)
 
 
 

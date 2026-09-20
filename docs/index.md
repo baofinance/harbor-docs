@@ -12,7 +12,7 @@ Let's be real: synthetic assets sound powerful. But most of them? Clunky, brittl
 
 Harbor is **live on Ethereum** at [app.harborfinance.io](https://app.harborfinance.io). Deposit productive collateral (**fxSAVE** or **wstETH**), and the protocol splits it into two tokens:
 
-![One collateral position. Two complementary claims.](/img/01-hero-mental-model.png)
+![One collateral position. Two complementary claims.](/img/v2/01-protocol-overview.jpg)
 
 - **ha (Harbor Anchored)**: pegged to a price feed (e.g. haETH, haBTC, haEUR). Put **ha** in a stability pool to earn **concentrated yield**.
 - **hs (Harbor Sail)**: variable leverage on collateral vs that peg (e.g. hsFXUSD-ETH). No funding fee, no margin-call UI.

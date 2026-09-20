@@ -12,7 +12,7 @@ Harbor is built to reward long-term participation, prioritize early growth, and 
 
 Protocol revenue is **collateral yield + mint/redeem fees**. It is allocated as follows:
 
-![Harbor protocol revenue and TIDE flow](/img/tide-content-flow.png)
+![Harbor protocol revenue and TIDE flow](/img/v2/tide-tokenomics.jpg)
 
 ### Top-level split
 

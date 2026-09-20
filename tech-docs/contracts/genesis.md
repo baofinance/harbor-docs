@@ -2,7 +2,7 @@
 
 The Genesis contract provides a bootstrapping mechanism for new Harbor Protocol markets, allowing early participants to deposit collateral and receive initial pegged and leveraged tokens.
 
-![Deposit while open. Claim after end. No extra after-end mint.](/img/21-genesis-phases.png)
+![Deposit while open. Claim after end. No extra after-end mint.](/img/v2/21-genesis.jpg)
 
 
 

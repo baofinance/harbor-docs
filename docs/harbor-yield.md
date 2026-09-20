@@ -44,7 +44,7 @@ Harbor Yield adds:
 
 ## How the stack fits together
 
-![Three levels, two sibling automation products.](/img/22-harbor-yield-layers.png)
+![Three levels, two sibling automation products.](/img/v2/22-harbor-yield.jpg)
 
 | Layer | Role |
 | ----- | ---- |

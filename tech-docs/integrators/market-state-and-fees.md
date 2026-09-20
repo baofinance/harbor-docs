@@ -2,7 +2,7 @@
 
 Do not hard-code the illustrative mint fees from the [product fees page](/fees) (~0.25% / ~1%). Read **on-chain** state from the market minter and stability pool manager.
 
-![Collateral-ratio bands steer each action differently.](/img/15-cr-bands-fees.png)
+![Collateral-ratio bands steer each action differently.](/img/v2/15-market-state-fees.jpg)
 
 
 

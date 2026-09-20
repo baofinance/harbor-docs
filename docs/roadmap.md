@@ -11,27 +11,28 @@ Harbor grows in **two directions at once**:
 
 These workstreams run **in parallel**. Nothing below is a hard gate on everything else.
 
-![Harbor grows from live markets into modular infrastructure.](/img/08-roadmap-timeline.png)
+![Harbor grows from live markets into modular infrastructure.](/img/v2/08-roadmap.jpg)
 
 ## Status at a glance
 
-Dates are when the item first appeared in **this docs repo** (not product launch dates).
+**Launched** = product go-live. For **core markets / stability pools / Ledger Marks**, that is **Genesis End** (market kickoff after `endGenesis()`). For **Maiden Voyage + Yield Share**, that is **Genesis Start** (voyage opens). **Added to docs** = first appearance in this docs repo (git).
 
-| Area | Status | Added to docs | Notes |
-| ---- | ------ | ------------- | ----- |
-| Core mainnet markets (ETH / BTC / EUR pegs) | **Shipped** | 8 Aug 2026 | Live on [Earn](https://app.harborfinance.io/anchor) / [Leverage](https://app.harborfinance.io/sail) |
-| Stability pools (Level 1) | **Shipped** | 8 Aug 2026 | Manual claim in Earn |
-| Maiden Voyage + Yield Share | **Shipped** | 8 Aug 2026 | Ongoing voyages in [genesis](https://app.harborfinance.io/genesis) |
-| TIDE / Ledger Marks | **Shipped** | 3 Nov 2025 | Claims in [Tide](https://app.harborfinance.io/tide); live framing refreshed 8 Aug 2026 |
-| Integrator docs (addresses, ABIs, mint/redeem, pricing, SPs) | **Shipped** | 15 Aug 2026 | [Build on Harbor](/tech-docs/integrators) |
-| `@harbor/sdk` | **Partial** | 15 Aug 2026 | Install from GitHub; **npm publish pending** |
-| Public REST / WebSocket API | **Not shipped** | 15 Aug 2026 | On-chain dry-runs + views only |
-| **haUSD** (wstETH → USD) product surface | **Soon** | 8 Aug 2026 | Contracts deployed; Earn surfacing may still lag — [Markets](/markets) |
-| **haGOLD / haSILVER / haMCAP** | **Pending** | 8 Aug 2026 | Relaunch pending |
-| Compounder (**hc…**) / **hy** vaults | **In development** | 8 Aug 2026 | Not live mainnet UX — [Harbor Yield](/harbor-yield) |
-| External lending / Pendle / aggregators | **Next / Later** | 18 Sep 2026 | Integration workstreams below |
-| Cross-chain Harbor + omnichain TIDE | **Later** | 8 Aug 2026 | As readiness allows |
-| Permissionless market factory | **Later** | 7 May 2025 | Long-term infrastructure |
+| Area | Status | Launched | Added to docs | Notes |
+| ---- | ------ | -------- | ------------- | ----- |
+| Core mainnet markets (ETH / BTC / EUR pegs) | **Shipped** | **4 Jan 2026** (ETH/BTC); **2 Feb 2026** (EUR) | 8 Aug 2026 | First-wave Genesis End on [haETH/fxUSD](/tech-docs/markets/haeth/fxusd), [haBTC/fxUSD](/tech-docs/markets/habtc/fxusd), [haBTC/stETH](/tech-docs/markets/habtc/steth); EUR on [haEUR/fxUSD](/tech-docs/markets/haeur/fxusd) / [haEUR/stETH](/tech-docs/markets/haeur/steth). Live on [Earn](https://app.harborfinance.io/anchor) / [Leverage](https://app.harborfinance.io/sail) |
+| Stability pools (Level 1) | **Shipped** | **4 Jan 2026** (ETH/BTC); **2 Feb 2026** (EUR) | 8 Aug 2026 | Same dates as core market kickoff |
+| Maiden Voyage + Yield Share | **Shipped** | **19 Dec 2025** (ETH/BTC); **19 Jan 2026** (EUR) | 8 Aug 2026 | Genesis **Start** on market pages (first windows → End 4 Jan / 2 Feb 2026); ongoing in [genesis](https://app.harborfinance.io/genesis) |
+| Ledger Marks | **Shipped** | **4 Jan 2026** (ETH/BTC); **2 Feb 2026** (EUR) | 8 Aug 2026 | Same dates as core market kickoff (Genesis End) |
+| TIDE (token + Tide dashboard) | **Shipped** | **July 2026** | 3 Nov 2025 | Claims in [Tide](https://app.harborfinance.io/tide); live framing refreshed 8 Aug 2026 |
+| Integrator docs (addresses, ABIs, mint/redeem, pricing, SPs) | **Shipped** | — | 15 Aug 2026 | [Build on Harbor](/tech-docs/integrators) |
+| `@harbor/sdk` | **Partial** | — | 15 Aug 2026 | Install from GitHub; **npm publish pending** |
+| Public REST / WebSocket API | **Not shipped** | — | 15 Aug 2026 | On-chain dry-runs + views only |
+| **haUSD** (wstETH → USD) product surface | **Soon** | — | 8 Aug 2026 | Genesis still open through **1 Jan 2027** ([haUSD/stETH](/tech-docs/markets/hausd/steth)); Earn surfacing may still lag — [Markets](/markets) |
+| **haGOLD / haSILVER / haMCAP** | **Pending** | — | 8 Aug 2026 | Prior voyages ended **23 Feb 2026**; relaunch pending (prior Genesis windows in tech market pages) |
+| Compounder (**hc…**) / **hy** vaults | **In development** | — | 8 Aug 2026 | Not live mainnet UX — [Harbor Yield](/harbor-yield) |
+| External lending / Pendle / aggregators | **Next / Later** | — | 18 Sep 2026 | Integration workstreams below |
+| Cross-chain Harbor + omnichain TIDE | **Later** | — | 8 Aug 2026 | As readiness allows |
+| Permissionless market factory | **Later** | — | 7 May 2025 | Long-term infrastructure |
 
 App UI is source of truth for live / soon / archived. Detail: [Live Markets](/markets).
 
@@ -39,13 +40,14 @@ App UI is source of truth for live / soon / archived. Detail: [Live Markets](/ma
 
 ## Shipped (today)
 
-What users and integrators can already rely on (*docs refreshed 8 Aug 2026*; integrator pack *15 Aug 2026*):
+What users and integrators can already rely on:
 
 - **Ethereum mainnet** core stack: minter, stability pools, rebalance, oracles, zaps (where published)
-- **Headline Earn surface**: fxSAVE → **haETH**; wstETH → **haBTC** / **haEUR** (plus related **hs**); see [Live Markets](/markets)
+- **Headline Earn surface**: first markets kicked off **4 Jan 2026** (Genesis End for fxUSD→ETH/BTC and stETH→BTC); EUR markets **2 Feb 2026**. See [Live Markets](/markets)
+- **Maiden Voyage** from Genesis **Start** (**19 Dec 2025** ETH/BTC, **19 Jan 2026** EUR); **Ledger Marks** from core market kickoff (**4 Jan 2026** ETH/BTC, **2 Feb 2026** EUR); **TIDE** token / Tide dashboard from **July 2026**
 - **App**: [app.harborfinance.io](https://app.harborfinance.io) (Earn, Leverage, Maiden Voyage, Tide)
 - Sherlock audit on bao-base / bao-minter (partial vs today’s surface — [Risk Considerations](/risk-considerations))
-- **Integrator Phase 1**: market architecture, token taxonomy, addresses + ABIs, mint/redeem, `price()` / dry-runs, Chainlink-style pricing notes, stability pools, fees/market state, oracle adapters, Harbor Swap docs — [Build on Harbor](/tech-docs/integrators)
+- **Integrator Phase 1** (*docs 15 Aug 2026*): market architecture, token taxonomy, addresses + ABIs, mint/redeem, `price()` / dry-runs, Chainlink-style pricing notes, stability pools, fees/market state, oracle adapters, Harbor Swap docs — [Build on Harbor](/tech-docs/integrators)
 - Thin **`@harbor/sdk`** for common encode/quote helpers ([SDK](/tech-docs/integrators/sdk); GitHub install today)
 
 Friendly fork of f(x) / Aladdin-style mechanics with **fxSAVE** and **wstETH** collateral.

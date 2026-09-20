@@ -8,7 +8,7 @@ Harbor bootstraps new markets with **capacity-capped Maiden Voyage** campaigns, 
 
 Open live and archived voyages: [**Maiden Voyage**](https://app.harborfinance.io/genesis). Terms: [Glossary](/glossary).
 
-![From capped deposit to lasting market participation.](/img/07-maiden-voyage-timeline.png)
+![From capped deposit to lasting market participation.](/img/v2/07-maiden-voyage.jpg)
 
 ## How it works
 
