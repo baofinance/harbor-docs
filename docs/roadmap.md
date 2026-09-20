@@ -28,7 +28,7 @@ These workstreams run **in parallel**. Nothing below is a hard gate on everythin
 | `@harbor/sdk` | **Partial** | — | 15 Aug 2026 | Install from GitHub; **npm publish pending** |
 | Public REST / WebSocket API | **Not shipped** | — | 15 Aug 2026 | On-chain dry-runs + views only |
 | **haUSD** (wstETH → USD) product surface | **Soon** | — | 8 Aug 2026 | Genesis still open through **1 Jan 2027** ([haUSD/stETH](/tech-docs/markets/hausd/steth)); Earn surfacing may still lag — [Markets](/markets) |
-| **haGOLD / haSILVER / haMCAP** | **Pending** | Prior voyages ended **23 Feb 2026** | 8 Aug 2026 | Relaunch pending (prior Genesis windows in tech market pages) |
+| **haGOLD / haSILVER / haMCAP** | **Pending** | — | 8 Aug 2026 | Prior voyages ended **23 Feb 2026**; relaunch pending (prior Genesis windows in tech market pages) |
 | Compounder (**hc…**) / **hy** vaults | **In development** | — | 8 Aug 2026 | Not live mainnet UX — [Harbor Yield](/harbor-yield) |
 | External lending / Pendle / aggregators | **Next / Later** | — | 18 Sep 2026 | Integration workstreams below |
 | Cross-chain Harbor + omnichain TIDE | **Later** | — | 8 Aug 2026 | As readiness allows |
