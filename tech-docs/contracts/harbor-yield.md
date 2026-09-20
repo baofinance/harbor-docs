@@ -51,7 +51,7 @@ This docs site uses **product-facing Levels 1–3**. The design doc numbers the 
 | **3** | HarborYield | **ERC-7575** share **hy…** + per-holding doors | Multi-holding basket; doors reuse ERC-4626 mutations without a separate door ERC-20 |
 | — | Harbor Swap | — | Routing support for level 3 (`compound` / `redistribute`), not a yield tier |
 
-![Three levels, two sibling automation products.](/img/22-harbor-yield-layers.png)
+![Three levels, two sibling automation products.](/img/v2/22-harbor-yield.jpg)
 
 
 

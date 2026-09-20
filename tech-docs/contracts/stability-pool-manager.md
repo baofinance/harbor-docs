@@ -2,7 +2,7 @@
 
 The Stability Pool Manager contract coordinates rebalancing and harvesting operations between the two stability pools for a market.
 
-![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/19-rebalance-sequence.png)
+![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/v2/19-rebalance.jpg)
 
 
 

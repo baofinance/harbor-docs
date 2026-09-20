@@ -4,7 +4,7 @@ How the protocol restores collateral ratio by burning ha from stability pools an
 
 Contract SoT: [Stability pool manager](../contracts/stability-pool-manager.md). Pool behaviour: [Stability pools process flow](./stability-pools.md).
 
-![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/19-rebalance-sequence.png)
+![CR breach, pool ha, minter redeem, then pool-specific payouts.](/img/v2/19-rebalance.jpg)
 
 
 

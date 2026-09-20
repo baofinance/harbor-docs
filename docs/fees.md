@@ -6,7 +6,7 @@ sidebar_position: 6
 
 Dynamic mint/redeem fees for **ha** and **hs**, not order-book trading fees. Terms: [Glossary](/glossary).
 
-![Fees act like a pressure valve.](/img/06-dynamic-fee-feedback.png)
+![Fees act like a pressure valve.](/img/v2/06-protocol-fees.jpg)
 
 ## Dynamic fees
 

@@ -30,7 +30,7 @@ Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinan
 
 ### Architecture diagram
 
-![Direct executors for compound. Aggregator path for redistribute.](/img/24-harbor-swap-architecture.png)
+![Direct executors for compound. Aggregator path for redistribute.](/img/v2/24-harbor-swap-architecture.jpg)
 
 
 

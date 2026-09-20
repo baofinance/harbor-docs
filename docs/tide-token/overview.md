@@ -14,7 +14,7 @@ Founder tokens: **~2%** liquid at launch; **~20%** via five **TVL + POL** cliffs
 
 TIDE turns users, builders, and liquidity providers into long-term stakeholders aligned with Harbor's success through governance power and exposure to protocol value accrual through TIDE buybacks.
 
-![Governance, incentives, and value accrual in one token.](/img/09-tide-utilities.png)
+![Governance, incentives, and value accrual in one token.](/img/v2/09-tide.jpg)
 
 ## Launch and Distribution
 

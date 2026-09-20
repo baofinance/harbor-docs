@@ -6,7 +6,7 @@ sidebar_position: 4
 
 What happens to your money in Harbor, without CDP jargon first. For NAV, collateral ratios, and fee math, see [Technical Overview](/technical-overview). Terms: [Glossary](/glossary).
 
-![One collateral position. Two complementary claims.](/img/01-hero-mental-model.png)
+![One collateral position. Two complementary claims.](/img/v2/01-protocol-overview.jpg)
 
 ## The 60-second version
 

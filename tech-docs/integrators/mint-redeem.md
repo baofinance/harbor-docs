@@ -2,7 +2,7 @@
 
 Integrate against the market **minter** proxy. Quotes are **view dry-runs**; execution is `approve` (or permit via zap) then `mint*` / `redeem*`. Live minters are **Minter_v2**.
 
-![Quote first. Guard with minOut. Then submit.](/img/13-mint-redeem-swimlane.png)
+![Quote first. Guard with minOut. Then submit.](/img/v2/13-mint-redeem.jpg)
 
 
 

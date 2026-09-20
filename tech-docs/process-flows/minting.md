@@ -4,7 +4,7 @@ This document describes minting and redeeming **ha** (pegged) and **hs** (Sail /
 
 Live minters are **Minter_v2**. Numeric examples below are **illustrative** only. For integration, use `*DryRun` views — [Mint and redeem](../integrators/mint-redeem.md). Function SoT: [Minter](../contracts/minter.md).
 
-![Quote first. Guard with minOut. Then submit.](/img/13-mint-redeem-swimlane.png)
+![Quote first. Guard with minOut. Then submit.](/img/v2/13-mint-redeem.jpg)
 
 
 

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 High-level map of Harbor on Ethereum. User walkthrough: [How It Works](/how-it-works). Integrators: [Build on Harbor](/tech-docs/integrators).
 
-![Oracle, minter, pools, and TIDE as one system.](/img/02-high-level-system-map.png)
+![Oracle, minter, pools, and TIDE as one system.](/img/v2/02-architecture.jpg)
 
 ## System components
 

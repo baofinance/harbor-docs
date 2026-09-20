@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Stability pools secure Harbor, pay concentrated yield, and execute rebalances. Use them in the app’s [**Earn**](https://app.harborfinance.io/anchor) section. Terms: [Glossary](/glossary).
 
-![Same deposit. Same yield path. Different rebalance outcomes.](/img/04-stability-pool-two-pool-fork.png)
+![Same deposit. Same yield path. Different rebalance outcomes.](/img/v2/04-stability-pools.jpg)
 
 ## What are stability pools?
 

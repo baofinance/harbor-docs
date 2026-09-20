@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Power-user mechanics: CDP structure, NAV, collateral ratio, rebalancing, and fees. For a plain-English walkthrough first, read [How It Works](/how-it-works). Terms: [Glossary](/glossary).
 
-![Three statements that should never be conflated.](/img/03-three-claim-accounting.png)
+![Three statements that should never be conflated.](/img/v2/03-technical-overview.jpg)
 
 ## Core mechanics
 

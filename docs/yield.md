@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Harbor’s high yields come from **concentrating** collateral yield and protocol revenue into stability pool depositors. Deposit **ha** in [**Earn**](https://app.harborfinance.io/anchor). Terms: [Glossary](/glossary).
 
-![Concentrate the yield. Not the collateral risk.](/img/05-yield-concentration.png)
+![Concentrate the yield. Not the collateral risk.](/img/v2/05-yield.jpg)
 
 ## Yield concentration
 
