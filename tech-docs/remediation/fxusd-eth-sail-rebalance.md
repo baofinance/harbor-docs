@@ -60,3 +60,4 @@ The same narrative also lives in the harbor repo as [`doc/rebalance-remediation.
 ## Related documentation
 
 - [Minter contract](../contracts/minter) — includes the March 2026 minter upgrade summary
+- [stETH Sail rebalance dilution](./steth-sail-dilution) — 16 October 2026, haBTC / stETH and haEUR / stETH

@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
         "integrators/mint-redeem",
         "integrators/zaps",
         "integrators/market-state-and-fees",
+        "integrators/fee-bands",
         "integrators/stability-pools",
         "integrators/swap",
         "integrators/oracle-adapters",
@@ -492,7 +493,10 @@ const sidebars: SidebarsConfig = {
       type: "category",
       label: "Remediation",
       collapsed: true,
-      items: ["remediation/fxusd-eth-sail-rebalance"],
+      items: [
+        "remediation/fxusd-eth-sail-rebalance",
+        "remediation/steth-sail-dilution",
+      ],
     },
   ],
 };

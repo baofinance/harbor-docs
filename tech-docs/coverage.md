@@ -63,7 +63,7 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 | Minter, SPs, genesis, reserve, fee, rewards | [Contracts](./contracts/minter.md) | ✅ baseline |
 | BaoFactory / CREATE3 | [bao-factory](./contracts/bao-factory.md) + generic | ✅ |
 | Harbor Yield (SP v3 / hyTOKENS) | [harbor-yield](/tech-docs/contracts/harbor-yield) | ✅ tech page (tracks `#33`; vaults pre-prod) |
-| Harbor Swap | [harbor-swap](/tech-docs/contracts/harbor-swap) | ✅ tech page (tracks `#3` Velora + merged hardening) |
+| Harbor Swap | [harbor-swap](/tech-docs/contracts/harbor-swap) | ✅ tech page (`main` `00111f3`; Velora `#3` merged) |
 | Process flows | [process-flows](./process-flows/contract-architecture.md) | ✅ |
 | Integrators (Phase 1) | [Build on Harbor](./integrators/index.md) | ✅ cookbooks + docs-hosted ABI/address JSON; `@harbor/sdk` on GitHub (npm pending); no REST/WebSocket API |
 
@@ -73,8 +73,9 @@ Checklist of Harbor repos / branches / open PRs vs what this tech-docs tree cove
 
 | Repo | Open PR / branch (re-checked) | Docs coverage |
 | ---- | ------------------------------ | ------------- |
-| [harbor](https://github.com/baofinance/harbor) | [#33](https://github.com/baofinance/harbor/pull/33) `harbor-yield` | Core markets ✅; [Yield](/tech-docs/contracts/harbor-yield) ✅ |
-| [harbor-swap](https://github.com/baofinance/harbor-swap) | [#3](https://github.com/baofinance/harbor-swap/pull/3) `velora-swap` (open); `#2`/`#4` merged on `main` | [Swap](/tech-docs/contracts/harbor-swap) ✅ |
+| [harbor](https://github.com/baofinance/harbor) | `main` `d534ee7b` (18 May 2026) live. [#33](https://github.com/baofinance/harbor/pull/33) `harbor-yield` still **open**, HEAD `a5b9d834` (2 Nov 2026) | Core markets ✅; [Yield](/tech-docs/contracts/harbor-yield) ✅ |
+| [harbor-yield](https://github.com/baofinance/harbor-yield) | `multi-asset` `1e9ce4c` (2 Nov 2026). `main` is the Sep 2025 scaffold | [Yield](/tech-docs/contracts/harbor-yield) ✅ |
+| [harbor-swap](https://github.com/baofinance/harbor-swap) | `main` `00111f3` (29 Sep 2026). [#2](https://github.com/baofinance/harbor-swap/pull/2), [#3](https://github.com/baofinance/harbor-swap/pull/3), [#4](https://github.com/baofinance/harbor-swap/pull/4) merged. No open PRs | [Swap](/tech-docs/contracts/harbor-swap) ✅ |
 | [harbor-zap-contracts](https://github.com/baofinance/harbor-zap-contracts) | — | ✅ [Zap contracts](./contracts/zap.md) |
 | [harbor-tide](https://github.com/baofinance/harbor-tide) | no open PRs | ❌ cross-chain / token tech TBD |
 | [harbor-price-aggregators](https://github.com/baofinance/harbor-price-aggregators) | [#4](https://github.com/baofinance/harbor-price-aggregators/pull/4) `harbor-yield` | Inventories ✅; Yield ETH-peg feeds pending merge → rows |

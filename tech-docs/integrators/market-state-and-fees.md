@@ -29,12 +29,14 @@ Call `rebalance(bountyReceiver, minPeggedLiquidated)` only when CR is below thre
 
 ## Per-market parameters
 
-Fee **bands** and exact rebalance thresholds are **per minter / manager**, not global constants. Until each market page lists a snapshot table:
+Fee **bands** and exact rebalance thresholds are **per minter / manager**, not global constants. The deployed schedules, and the collateral-ratio levels that matter for rebalance (100% hs-redeem disallow, ≈105.3% leverage cap, 105–130% rebalance thresholds), are in [Fee bands](./fee-bands.md).
+
+Still read them from the chain before you encode a transaction:
 
 1. `eth_call` `config()` and `rebalanceThreshold()` on that market’s contracts.  
 2. Cache in your indexer; refresh on `updateConfig` / threshold-setting events (owner-only).
 
-Incident / risk context: [fxUSD–ETH Sail rebalance remediation](../remediation/fxusd-eth-sail-rebalance.md), [Risk considerations](/risk-considerations).
+Incident / risk context: [fxUSD–ETH Sail rebalance remediation](../remediation/fxusd-eth-sail-rebalance.md), [stETH Sail dilution](../remediation/steth-sail-dilution.md), [Risk considerations](/risk-considerations).
 
 ## Protocol revenue (off-chain split)
 

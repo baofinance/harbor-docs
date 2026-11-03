@@ -48,9 +48,11 @@ stabilityPoolManager.rebalance(bountyReceiver, minPeggedLiquidated);
 
 After the bounty to `bountyReceiver`, remaining wrapped collateral / hs is transferred to the pools and attributed via `notifyLiquidation` / reward deposit paths. Depositors accrue them as **claimable** rewards — they do **not** auto-mint into the user’s ha balance. Claim with `claim()` / `claimable`.
 
-### 4. Bounty only (no feeReceiver cut on rebalance)
+### 4. Bounty on the live manager
 
-Rebalance pays the configured **bounty** to `bountyReceiver`. Protocol `feeReceiver` cuts apply on **harvest**, not on this rebalance path.
+Live `StabilityPoolManager_v1` pays the configured **bounty** (deployed **1%**) to `bountyReceiver`. Protocol `feeReceiver` cuts apply on **harvest**, not on this rebalance path.
+
+`StabilityPoolManager_v2` on `harbor` `harbor-yield` also takes a rebalance **cut** (branch config: bounty **0.5%**, cut **0.5%**, ceiling 200× `aboutADollar`). That manager is not what ran on 16 October.
 
 ## Illustrative example
 

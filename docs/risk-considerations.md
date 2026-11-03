@@ -85,9 +85,11 @@ Audits reduce but do not eliminate unknown bugs or complex cross-protocol intera
 
 ## Defense layers
 
-- Conservative rebalance thresholds (e.g. ~130% CR trigger)
+- Rebalance thresholds are per market (**105% / 115% / 125% / 130%**), not one global 130% — [Fee bands](/tech-docs/integrators/fee-bands)
 - Incentive design for pool participation and MEV execution
 - Operational monitoring for oracle and contract anomalies
+
+On **16 October 2026**, hs on haBTC / stETH and haEUR / stETH fell about **90%** in one rebalance because `Minter_v2` minted Sail at its **20×** leverage cap once collateral ratio was pushed to about **105%**. Markets were paused on 21 October. Write-up: [stETH Sail dilution](/tech-docs/remediation/steth-sail-dilution).
 
 ## What you can do
 

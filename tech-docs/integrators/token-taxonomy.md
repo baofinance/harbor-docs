@@ -33,10 +33,11 @@ ha tokens are **not** minted 1:1 against collateral alone. Combined ha + hs NAV 
 | ----- | ---- | --------- | ------ |
 | *(live pool position)* | Compounding **ha** balance inside SP_v1/v2 | Not an ERC-20 share — see [Stability pool](../contracts/stability-pool.md) | **Live** mainnet |
 | **hpXXX.COLn** | Rebasing stability-pool share | ERC-20 shares (SP_v3 design) | **Pre-prod / not deployed** — do not treat as live |
-| **hcXXX.COLn** | Compounder share (one pool) | **ERC-4626** (`asset` = **haXXX**) | **Pre-prod** (`harbor-yield`) |
+| **hcXXX.COLn** | Compounder share, collateral pool | **ERC-4626** (`asset` = **haXXX**) | **Pre-prod** (`harbor-yield` `multi-asset`) |
+| **hcXXX.hsCOLn** | Compounder share, Sail pool | **ERC-4626** (`asset` = **haXXX**) | **Pre-prod**. Same contract. **hs** rebalance receipts are claimed, not compounded |
 | **hyXXX** | Peg basket share | **ERC-7575 share** (ERC-20); per-asset **ERC-7575 doors** reuse ERC-4626 mutations without their own share token | **Pre-prod** — [hy / ERC-7575](./hy-erc7575.md) |
 
-Compounder and HarborYield are **siblings** over the same pools: HY holds pool positions **directly** (plus peg-equivalent vaults); it does **not** wrap Compounder shares.
+Compounder and HarborYield are **siblings**. HY holds **collateral-pool** positions directly (plus peg-equivalent vaults). It does not wrap Compounder shares, and it does not register the Sail Compounder.
 
 ## Naming
 

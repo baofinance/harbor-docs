@@ -26,6 +26,7 @@ Both pool types earn **concentrated collateral yield** on **ha** deposits. They 
 
 - **Level 1** is **live** on Ethereum mainnet.
 - **Compounders (level 2) and hy (level 3) are siblings**, not a stack. One pool + auto-compound → Compounder. Diversified peg yield → **hy**. Neither wraps the other.
+- Each market has **two** Compounders: one over the collateral pool, one over the Sail pool. **hy** holds the collateral-pool side. The Sail Compounder stays a level-2 product on its own.
 
 ## Why it exists
 
@@ -37,8 +38,8 @@ Today (level 1):
 
 Harbor Yield adds:
 
-- **Level 2 (Compounder)**: automatic compounding over one pool
-- **Level 3 (hyTOKEN)**: one share per peg over several pool positions and peg-equivalent vaults
+- **Level 2 (Compounder)**: automatic compounding over one pool, collateral or Sail
+- **Level 3 (hyTOKEN)**: one share per peg over collateral-pool positions and peg-equivalent vaults
 
 [Harbor Swap](/tech-docs/contracts/harbor-swap) is routing support for **hy** vaults, not a separate yield tier.
 
@@ -61,13 +62,20 @@ See [Stability Pools](/stability-pools).
 
 ## Level 2 - Compounder (mid-term)
 
-Wraps **one** stability pool. Depositors hold **hc…** shares; keepers or users trigger compounding so rewards roll back into pool exposure without manual claims.
+Each market deploys two Compounders from the same contract (`Compounder_v1`). Each wraps **one** stability pool. Depositors hold **hc…** shares. Keepers (usually the stability pool manager, on every harvest and rebalance) or users call `compound()`, which turns pending wrapped collateral into more of that pool.
+
+| Pool | Share | What `compound()` rolls in |
+| ---- | ----- | -------------------------- |
+| Collateral | **hcXXX.COLn** | Harvest and rebalance wrapped collateral, minted back to **ha** and redeposited |
+| Sail | **hcXXX.hsCOLn** | Harvest wrapped collateral. **hs** paid on rebalance stays claimable with `claim()` |
+
+**hy** holds collateral-pool positions. Sail-pool auto-compound stays on **hcXXX.hsCOLn**.
 
 **For builders:** [Harbor Yield contracts](/tech-docs/contracts/harbor-yield).
 
 ## Level 3 - hyTOKEN (mid-term)
 
-One **hy** share per peg (e.g. hyETH) over several pool positions plus peg-equivalent vaults. Enter/exit through vault **doors** (product UX, not live app yet).
+One **hy** share per peg (e.g. hyETH) over **collateral-pool** positions plus peg-equivalent vaults. Enter/exit through vault **doors** (product UX, not live app yet). Sail-pool exposure stays on the Sail Compounder at level 2.
 
 **For builders:** [hy / ERC-7575](/tech-docs/integrators/hy-erc7575) · [Harbor Swap](/tech-docs/contracts/harbor-swap).
 
