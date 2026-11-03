@@ -5,7 +5,7 @@
 > **Product overview**: [Harbor Yield (hyTOKENS)](/harbor-yield)  
 > **Integrator standards**: [hy / ERC-7575](../integrators/hy-erc7575.md)
 
-Harbor Yield is the mid-term yield stack on top of stability pools. Product framing uses **three participation levels**; this page tracks the **contract surface**. Authoritative design: [`doc/design.md`](https://github.com/baofinance/harbor-yield/blob/main/doc/design.md), integrations: [`doc/integrations.md`](https://github.com/baofinance/harbor-yield/blob/main/doc/integrations.md).
+Harbor Yield is the mid-term yield stack on top of stability pools. Product framing uses **three participation levels**; this page tracks the **contract surface**. Authoritative design: [`doc/design.md`](https://github.com/baofinance/harbor-yield/blob/multi-asset/doc/design.md) on branch `multi-asset` (checked 2 Nov 2026, `1e9ce4c`). `main` on that repo is an older scaffold. Integrations: [`doc/integrations.md`](https://github.com/baofinance/harbor-yield/blob/multi-asset/doc/integrations.md).
 
 ## Deposit and rebalance rules (shared with product)
 
@@ -39,8 +39,8 @@ This docs site uses **product-facing Levels 1–3**. The design doc numbers the 
 | **3** | Deposit via **ERC-7575 door** (wrappedCollateral or equivalent asset) → **hyXXX** | `HarborYield_v1` + `HarborYieldEntry_v1` |
 
 - **Level 1** (stability pools) is live on **Ethereum mainnet**. Levels **2** and **3** ship with Harbor Yield.
-- **Compounder and HarborYield are siblings** over the same pools — neither holds the other. HY holds **StabilityPool positions directly** plus peg-equivalent ERC-4626 vaults.
-- Sail Compounders remain available at level 2; HY baskets focus on collateral-pool holdings + equivalents (see design doc for registration).
+- **Compounder and HarborYield are siblings**. Neither holds the other. HY holds **collateral-pool** positions directly, plus peg-equivalent ERC-4626 vaults.
+- One `Compounder_v1` serves both pool kinds. Deploy ships two per market: collateral share **hcXXX.COLn** and Sail share **hcXXX.hsCOLn**. The Sail Compounder stays at level 2. HY does not register it (design doc §6.4).
 
 ## Layer model (contracts)
 
@@ -61,15 +61,15 @@ PR [#33](https://github.com/baofinance/harbor/pull/33) widens the **data envelop
 
 | Contract | Version on branch | Notes |
 | -------- | ----------------- | ----- |
-| **StabilityPool** | **v3** | ERC-20 pool shares (Solady + EIP-2612); floor clamps; clamp-then-fee withdrawals; still **haToken** deposits |
-| **StabilityPoolManager** | **v2** | Manager updates for v3 pools / compounding flows |
-| **Minter** | **v3** | Mint/redeem **ha** / **hs** + fee paths aligned with yield consumers |
+| **StabilityPool** | **v3** | ERC-20 pool shares (Solady + EIP-2612); floor clamps; clamp-then-fee withdrawals; still **haToken** deposits. Views drop the `get` prefix: `earlyWithdrawalFeeRatio()`, `withdrawalWindow()`, `feeReceiver()`. Live v2 keeps `getEarlyWithdrawalFee()` / `getWithdrawalWindow()` |
+| **StabilityPoolManager** | **v2** | Calls `IYieldVault.compound()` after harvest and rebalance. Branch config: rebalance bounty **0.5%** and cut **0.5%**, ceiling 200× `aboutADollar`; harvest bounty **0.5%**, cut **99.5%**. Live v1 is bounty-only at **1%** |
+| **Minter** | **v3** | `MAX_LEVERAGE_RATIO = 100` (minimum CR ≈ **101.01%**). A Sail-leg redeem below that floor reverts. Live `Minter_v2` cap stays **20×** at ≈ **105.3%** |
 
 ### Upgrade path (mainnet)
 
 | Field | Value |
 | ----- | ----- |
-| **Scripts** | `script/Deploy_StabilityPool_v3_mainnet.s.sol`, `script/UpgradeStabilityPool_v2_v3/` |
+| **Scripts** | `script/Upgrade_MarketsToV3_mainnet.s.sol`, `script/UpgradeStabilityPool_v2_v3/` |
 | **State** | Continues to use BaoFactory CREATE3 + `harbor_v1.state.json` patterns |
 | **Live status** | Treat as **pre-production** until upgrades are executed |
 
@@ -77,18 +77,19 @@ PR [#33](https://github.com/baofinance/harbor/pull/33) widens the **data envelop
 
 | Contract | Standard | Role |
 | -------- | -------- | ---- |
-| **`Compounder_v1`** | **ERC-4626** | One pool; `compound()` claims/routes rewards into that pool |
+| **`Compounder_v1`** | **ERC-4626** | One pool per deployment (collateral or Sail). `compound()` converts pending wrapped collateral into more of that pool. Extra rewards, including **hs** on a Sail pool, stay on `claim()` |
 | **`HarborYield_v1`** | **ERC-7575 share** (+ ERC-20) | Peg basket; holds pools **directly** + equivalent vaults; `vault(asset)`, `redeemProportional`, `compound` |
 | **`HarborYieldEntry_v1`** | **ERC-7575 vault** (ERC-4626 minus ERC-20) | One door per holding; `share()` → hyXXX; door `asset` = wrappedCollateral or equivalent asset |
 | **`WstETH_ERC4626_v1`** | ERC-4626 adapter | Thin wrap so non-vault yield sources can be HY holdings |
 
 | Field | Value |
 | ----- | ----- |
-| **Collateral Compounder `compound()`** | Claims **wCOLn** → mint ha when fees allow → redeposit |
-| **Sail Compounder `compound()`** | Compounds **harvest wCOLn only**; does not value illiquid **hs** rebalance receipts |
-| **HY `compound()`** | Prices every destination end-to-end (swap + take); cheapest wins; water-fills; refusal-tolerant |
+| **Collateral Compounder `compound()`** | Claims **wCOLn** (harvest and rebalance) → mint **ha** when the fee cap allows → redeposit |
+| **Sail Compounder `compound()`** | Same function, harvest **wCOLn** only. **hs** rebalance receipts stay per-holder and are taken with `claim()` |
+| **HY `compound()`** | Prices destinations it can read, end to end (swap + take); cheapest wins; water-fills. An unpriceable source pool sits the pass out with its yield still claimable. An unpriceable destination drops out of the round (`1e9ce4c`) |
 | **hy entry/exit** | ERC-7575 doors — **not** a single ERC-4626 `asset()` on hyXXX |
-| **Harbor Swap use** | Direct routes on hot path; Velora (primary) / 1inch (optional) on `redistribute` |
+| **Harbor Swap use** | Direct routes on the hot path (`minAmountOut`, whole order). Velora (primary, on `harbor-swap` `main`) / 1inch (optional) on `redistribute` |
+| **Early-withdrawal fee (branch config)** | `ConfigStabilityPool` returns **5%** (`5e16`), 1 hour delay, 25 hour window. Live `main` config is **1%**. The v3 upgrade applies the branch figure |
 
 Deploy phasing still tracks Swap’s consumer/yield vault phase after Minter_v3 / SP_v3 / oracles / swap registry.
 

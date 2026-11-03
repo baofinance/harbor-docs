@@ -1,7 +1,7 @@
 # hyTOKEN / ERC-7575 (design only)
 
 :::danger Not production
-**Compounders** (`hc…`) and **hyTOKENS** (`hy…`) are **not** live mainnet UX. Do **not** integrate them for production until addresses ship on market pages / [`mainnet-v1.json`](/integrators/addresses/mainnet-v1.json). Design source: [`baofinance/harbor-yield`](https://github.com/baofinance/harbor-yield) ([`doc/design.md`](https://github.com/baofinance/harbor-yield/blob/main/doc/design.md), [`doc/integrations.md`](https://github.com/baofinance/harbor-yield/blob/main/doc/integrations.md)). Product: [Harbor Yield](/harbor-yield). Tech: [Harbor Yield contracts](../contracts/harbor-yield.md).
+**Compounders** (`hc…`) and **hyTOKENS** (`hy…`) are **not** live mainnet UX. Do **not** integrate them for production until addresses ship on market pages / [`mainnet-v1.json`](/integrators/addresses/mainnet-v1.json). Design source: [`baofinance/harbor-yield`](https://github.com/baofinance/harbor-yield) branch `multi-asset` ([`doc/design.md`](https://github.com/baofinance/harbor-yield/blob/multi-asset/doc/design.md), [`doc/integrations.md`](https://github.com/baofinance/harbor-yield/blob/multi-asset/doc/integrations.md)). `main` on that repo is an older scaffold. Product: [Harbor Yield](/harbor-yield). Tech: [Harbor Yield contracts](../contracts/harbor-yield.md).
 :::
 
 Product **Levels 1–3** = design doc **0–2** (SP / Compounder / HarborYield). See [Token taxonomy](./token-taxonomy.md).
@@ -14,7 +14,7 @@ Product **Levels 1–3** = design doc **0–2** (SP / Compounder / HarborYield).
 
 | Layer | Contract | Standard | What you integrate |
 | ----- | -------- | -------- | ------------------ |
-| **Compounder** (`hcXXX.COLn`) | `Compounder_v1` | **ERC-4626** (+ EIP-2612) | Plain single-asset vault. `asset()` is the **pegged token** (`haXXX`), not the pool token. |
+| **Compounder** (`hcXXX.COLn`, `hcXXX.hsCOLn`) | `Compounder_v1` | **ERC-4626** (+ EIP-2612) | One deployment per pool. `asset()` is the **pegged token** (`haXXX`). `compound()` rolls wrapped collateral back in. On the Sail share, **hs** stays on `claim()`. |
 | **hyTOKEN share** (`hyXXX`) | `HarborYield_v1` | **ERC-7575 share** (+ ERC-20 / EIP-2612) | Multi-asset basket share. **Not** ERC-4626 — a single `asset()` would be a lie. Discovers doors via `vault(asset)`. |
 | **hy entry/exit door** | `HarborYieldEntry_v1` | **ERC-7575 vault** = ERC-4626 **minus** ERC-20 | One door per holding. `share()` → `hyXXX`. Deposit/redeem that door’s `asset()`; doors mint/burn the shared hy share. |
 
@@ -33,12 +33,12 @@ Peg-priced **ERC-4626-style views** on `hyXXX` (`totalAssets`, `convertToShares`
 
 ## Architecture (siblings, not a stack)
 
-Compounder and HarborYield both wrap stability pools **independently**. Neither holds the other.
+Compounder and HarborYield wrap stability pools **independently**. Neither holds the other.
 
 | Product | Holds | Enter with |
 | ------- | ----- | ---------- |
-| Compounder | **One** StabilityPool position | `haXXX` (standard ERC-4626 `deposit`) |
-| HarborYield | **Several** pool positions **directly** + peg-equivalent ERC-4626 vaults (e.g. wstETH adapter) | Door `asset()` = market **wrappedCollateral** (pool holding) or the equivalent vault’s own asset |
+| Compounder | **One** StabilityPool position (collateral **or** Sail) | `haXXX` (standard ERC-4626 `deposit`) |
+| HarborYield | **Collateral-pool** positions **directly** + peg-equivalent ERC-4626 vaults (e.g. wstETH adapter). The Sail Compounder stays outside the basket | Door `asset()` = market **wrappedCollateral** (collateral-pool holding) or the equivalent vault’s own asset |
 
 Do **not** asset-hunt for an ERC-4626 inside HY holdings for hy depositors — internal adapters are for the basket, not for hy holders. Follow `vault(asset)`.
 

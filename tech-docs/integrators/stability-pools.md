@@ -19,7 +19,7 @@ Live pools are **v1/v2** compounding-balance contracts, not ERC-4626. Harbor Yie
 1. User holds **ha** (mint via [mint/redeem](./mint-redeem.md) or buy).  
 2. `ha.approve(stabilityPool, amount)`.  
 3. `deposit(assetAmount, receiver, minAmount)` — `type(uint256).max` on **`assetAmount`** = full wallet balance; `minAmount` is a lower bound (`0` or a quoted minimum).  
-4. Withdrawals use a **delay window**: read `getWithdrawalWindow()` / `getEarlyWithdrawalFee()`, then `requestWithdrawal()` and `withdraw` inside the window. Early-exit fees may apply.  
+4. Withdrawals use a **delay window**: on live v2 read `getWithdrawalWindow()` / `getEarlyWithdrawalFee()`, then `requestWithdrawal()` and `withdraw` inside the window. Early-exit fees may apply. `StabilityPool_v3` on the yield branch renames those views to `withdrawalWindow()` and `earlyWithdrawalFeeRatio()`.  
 5. Rewards / rebalance receipts: `claimable` / `claim` (token = wrapped collateral or hs, depending on pool).
 
 Minimum deposit and `MIN_TOTAL_ASSET_SUPPLY` floors apply — see the stability pool page.

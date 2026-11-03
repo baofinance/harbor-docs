@@ -38,8 +38,8 @@ Expect gas and route slippage when not depositing main collateral.
 **Level 1** (stability pool + claim) is **live**. Levels **2–3** are not live mainnet UX yet. See [Harbor Yield](/harbor-yield):
 
 1. Stability pool + claim (**live**)
-2. **Compounder**: one pool, auto-compound
-3. **hyTOKEN**: peg basket
+2. **Compounder**: one per pool. Collateral share **hcXXX.COLn**, Sail share **hcXXX.hsCOLn**. `compound()` rolls wrapped collateral back in; **hs** on the Sail Compounder is taken with `claim()`
+3. **hyTOKEN**: peg basket over collateral-pool positions
 
 [Harbor Swap](https://github.com/baofinance/harbor-swap) routes for **hy** vaults. Tech: [Harbor Yield](/tech-docs/contracts/harbor-yield) · [Harbor Swap](/tech-docs/contracts/harbor-swap).
 

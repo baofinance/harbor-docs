@@ -1,6 +1,6 @@
 # Harbor Swap
 
-> **Status**: Library live on `main`; **Velora** primary aggregator on open PR [`velora-swap` (#3)](https://github.com/baofinance/harbor-swap/pull/3)  
+> **Status**: Library on `main` (checked 3 Nov 2026, `00111f3`, 29 Sep 2026). **Velora** landed with [#3](https://github.com/baofinance/harbor-swap/pull/3), merged 28 Sep 2026. No mainnet swapper address is published yet.  
 > **Repo**: [baofinance/harbor-swap](https://github.com/baofinance/harbor-swap)  
 > **Consumed by**: [Harbor Yield](/tech-docs/contracts/harbor-yield) (and future Harbor products)
 
@@ -10,22 +10,22 @@ Integrator notes (not for mint/redeem): [Harbor Swap](../integrators/swap.md).
 
 | Ref | State | What it delivers |
 | --- | ----- | ---------------- |
-| `main` | default | Registry + UniV3 / Curve / Balancer / FxSave↔wstETH executors; `SwapExecutorBase` hardening; `minAmountOutPerUnitIn` **rate** floor ([#2](https://github.com/baofinance/harbor-swap/pull/2), [#4](https://github.com/baofinance/harbor-swap/pull/4) merged) |
-| `velora-swap` / [#3](https://github.com/baofinance/harbor-swap/pull/3) | **open** | **Velora Augustus v6.2** as primary aggregator adapter; 1inch remains optional |
-| `refund-handling` | merged → main | Refund / amount-spent pro-rating on executor envelope |
-| `swap-executor-hardening` | merged → main | Shared `SwapExecutorBase` (exact-pull, `ZeroAmountOut`, refunds) |
+| `main` | default (`00111f3`) | Registry; UniV3, Curve, Balancer; fxSAVE composites (wstETH, WBTC, LBTC, EURC); wstETH↔WBTC and wstETH↔LBTC; Velora + optional 1inch; `SwapExecutorBase`. Empty Base and Robinhood config placeholders |
+| `velora-swap` / [#3](https://github.com/baofinance/harbor-swap/pull/3) | **merged** 28 Sep 2026 | **Velora Augustus v6.2** as primary aggregator; 1inch stays optional |
+| [#4](https://github.com/baofinance/harbor-swap/pull/4) `refund-handling` | merged → main | Refund of unspent input. Later commits on `main` state the floor as a **whole-order** `minAmountOut`, pro-rated by the input actually spent |
+| [#2](https://github.com/baofinance/harbor-swap/pull/2) `swap-executor-hardening` | merged → main | Shared `SwapExecutorBase` (exact-pull, `ZeroAmountOut`, refunds) |
 | `swap-adapter` | older branch | Historical adapter work |
 
-Source docs on the PR branch: [`src/swap/README.md`](https://github.com/baofinance/harbor-swap/blob/velora-swap/src/swap/README.md), [`script/DEPLOY_SWAP.md`](https://github.com/baofinance/harbor-swap/blob/velora-swap/script/DEPLOY_SWAP.md).
+Source docs on `main`: [`src/swap/README.md`](https://github.com/baofinance/harbor-swap/blob/main/src/swap/README.md), [`script/DEPLOY_SWAP.md`](https://github.com/baofinance/harbor-swap/blob/main/script/DEPLOY_SWAP.md).
 
 ## Architecture
 
 | Field | Value |
 | ----- | ----- |
 | **Registry** | `Swapper_v1` — `(from, to) → {executor, routeCostRatio}` |
-| **Direct executors** | UniV3, Curve, Balancer V2, `FxSaveWstEthSwapper_v1` (composite) |
-| **Aggregators** | `VeloraSwapper_v1` (primary, PR #3); `OneInchSwapper_v1` (optional) |
-| **Shared envelope** | `SwapExecutorBase` — same-token guard, exact pull, `amountOut == 0` reverts, authoritative `minAmountOutPerUnitIn` (out per 1e18 in **spent**), refund unspent |
+| **Direct executors** | UniV3, Curve, Balancer V2, `FxSaveWstEthSwapper_v1`, `FxSaveWbtcSwapper_v1`, `FxSaveLbtcSwapper_v1`, `FxSaveEurcSwapper_v1`, `WstEthWbtcSwapper_v1`, `WstEthLbtcSwapper_v1` |
+| **Aggregators** | `VeloraSwapper_v1` (primary, on `main`); `OneInchSwapper_v1` (optional) |
+| **Shared envelope** | `SwapExecutorBase` — same-token guard, exact pull, `amountOut == 0` reverts, whole-order `minAmountOut` in `toToken` units (pro-rated by the fraction of `amountIn` spent; `0` disables the floor), refund unspent |
 | **Deploy** | BaoFactory CREATE3 via Harbor deploy helpers |
 
 ### Architecture diagram
@@ -54,10 +54,10 @@ flowchart LR
 
 | Mode | Typical caller | Slippage / floor |
 | ---- | -------------- | ---------------- |
-| **Direct** | Hot path (`HarborYield.compound`) | Executor envelope: `minAmountOutPerUnitIn` — **rate** floor (out per 1e18 in **spent**) |
-| **Aggregator** | Discretionary (`redistribute`) | Consumer-provided **absolute** `minAmountOut` (or equivalent) on the Yield/redistribute call; opaque `routerData` to Velora / 1inch |
+| **Direct** | Hot path (`HarborYield.compound`) | Executor `swap(..., minAmountOut)` — whole-order floor in `toToken` units, pro-rated by input spent |
+| **Aggregator** | Discretionary (`redistribute`) | Same whole-order `minAmountOut` on `IAggregatorSwapper.swap`, plus opaque `routerData` to Velora / 1inch |
 
-Authorization for aggregators lives on the **consumer** (Harbor Yield), not inside the open-access adapter. Selector allowlists do **not** validate swap parameters — treat calldata as untrusted. Rely on the **direct** executor’s `minAmountOutPerUnitIn` for registry routes, and on the **absolute** output minimum for aggregator redistribute paths — do not assume the per-unit rate bound covers both modes.
+Authorization for aggregators lives on the **consumer** (Harbor Yield), not inside the open-access adapter. Selector allowlists do **not** validate swap parameters — treat calldata as untrusted. Both modes use that whole-order floor. A partial fill must meet the same price as the full order, because the executor scales the floor by the fraction of `amountIn` it actually spent.
 
 ### Velora (primary)
 
@@ -89,7 +89,12 @@ Full salt = `{saltPrefix}::{key}` (e.g. `harbor_v1::eth::swapper`). Predict with
 | `balancerSwapper` | `BalancerSwapper_v1` |
 | `veloraSwapper` | `VeloraSwapper_v1` |
 | `oneInchSwapper` | `OneInchSwapper_v1` |
-| `fxSaveWstEthSwapper` | `FxSaveWstEthSwapper_v1` (mainnet fxSAVE ↔ wstETH) |
+| `fxSaveWstEthSwapper` | `FxSaveWstEthSwapper_v1` (fxSAVE ↔ wstETH) |
+| `fxSaveWbtcSwapper` | `FxSaveWbtcSwapper_v1` (fxSAVE ↔ WBTC) |
+| `fxSaveLbtcSwapper` | `FxSaveLbtcSwapper_v1` (fxSAVE ↔ LBTC) |
+| `fxSaveEurcSwapper` | `FxSaveEurcSwapper_v1` |
+| `wstEthWbtcSwapper` | `WstEthWbtcSwapper_v1` |
+| `wstEthLbtcSwapper` | `WstEthLbtcSwapper_v1` |
 
 Per-peg Harbor Yield salts (`{pegKey}::harborYield`, beacons, …) live in the yield consumer deploy config — not in this registry table.
 

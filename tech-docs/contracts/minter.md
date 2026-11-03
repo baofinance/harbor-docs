@@ -184,6 +184,8 @@ The contract implements a sophisticated incentive system based on collateral rat
 
 Fees and discounts are calculated as definite integrals across collateral ratio boundaries, ensuring fairness regardless of transaction size.
 
+Deployed band tables and the critical ratios (hs redeem disallowed only below **100%**, leverage cap of **20×** at about **105.3%**, rebalance thresholds **105–130%**): [Fee bands](../integrators/fee-bands.md).
+
 ## Dependencies
 
 - **LEVERAGED_TOKEN**: The leveraged token contract (MintableBurnableERC20)

@@ -107,18 +107,17 @@ const from = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" as HexAddress; // USDC
 const to = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" as HexAddress; // WETH
 const amountIn = 1_000_000n; // 1 USDC (6 decimals)
 const route = await harbor.swap!.getRoute(from, to);
-// Derive a nonzero rate floor from an off-chain quote + slippage (illustrative 50 bps):
-// minAmountOutPerUnitIn ≈ expectedOut * 1e18 / amountIn * 9950 / 10000
-const minAmountOutPerUnitIn = 995_000_000_000_000_000n; // replace with quote-derived floor
+// Whole-order floor in toToken units (illustrative). harbor-swap main pro-rates this by input actually spent.
+const minAmountOut = 990_000n; // replace with a quote-derived floor
 const tx = await harbor.swap!.encodeRouteSwap({
   fromToken: from,
   toToken: to,
   amountIn,
-  minAmountOutPerUnitIn,
+  minAmountOut,
 });
 ```
 
-Not for mint/redeem. See [Harbor Swap](./swap.md).
+`harbor-swap` `main` takes that whole-order `minAmountOut`. `@harbor/sdk` `0.2.0` (`f7dcd51`, 14 Aug 2026) still encodes the older `minAmountOutPerUnitIn` rate. Do not send that rate into the current executor. Not for mint/redeem. See [Harbor Swap](./swap.md).
 
 Not shipped: Chainlink-shaped [oracle adapters](./oracle-adapters.md).
 

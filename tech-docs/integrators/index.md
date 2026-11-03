@@ -19,7 +19,7 @@ Sequenced path for another protocol to integrate Harbor **without** a Harbor-hos
 4. [Pricing](./pricing.md) — minter prices vs aggregator `latestAnswer` vs Chainlink examples  
 5. [Mint and redeem](./mint-redeem.md) — approve → dry-run → tx  
 6. [Zaps](./zaps.md) — ETH/stETH/USDC convenience wrap + genesis/minter  
-7. [Market state and fees](./market-state-and-fees.md) — CR, incentive bands, `config()`  
+7. [Market state and fees](./market-state-and-fees.md) — CR, incentive bands, `config()`; numeric schedules in [Fee bands](./fee-bands.md)  
 8. [Stability pools](./stability-pools.md) — ha-only deposits, claims, rebalance receipts  
 9. [Harbor Swap](./swap.md) — DEX routing for Harbor Yield / keepers (not mint)  
 10. [Oracle adapters](./oracle-adapters.md) — Chainlink-shaped wrappers (spec; not deployed)  
